@@ -24,16 +24,19 @@ yq -i '
   .servers = [{"url": "https://ALGOLIA_APPLICATION_ID.algolia.net"}]
 ' openapi.yaml
 
+# Portable sed -i (GNU vs BSD differ in -i syntax)
+sed_inplace() { if sed --version >/dev/null 2>&1; then sed -i "$@"; else sed -i '' "$@"; fi; }
+
 # Fix browseParamsObject → browseParamsConfig to avoid C# naming collision:
 # The oneOf union generates a property named "Object" (from browseParamsObject)
 # which collides with the auto-generated "object? Object" getter in the union struct.
-sed -i '' 's/browseParamsObject/browseParamsConfig/g' openapi.yaml
+sed_inplace 's/browseParamsObject/browseParamsConfig/g' openapi.yaml
 
 # Fix searchForFacetsOptions/searchForHitsOptions → *Settings to avoid C# naming collision:
 # The allOf union generates local variables named "options" which shadow the
 # JsonSerializerOptions method parameter in generated JsonConverter code.
-sed -i '' 's/searchForFacetsOptions/searchForFacetsSettings/g' openapi.yaml
-sed -i '' 's/searchForHitsOptions/searchForHitsSettings/g' openapi.yaml
+sed_inplace 's/searchForFacetsOptions/searchForFacetsSettings/g' openapi.yaml
+sed_inplace 's/searchForHitsOptions/searchForHitsSettings/g' openapi.yaml
 
 autosdk generate openapi.yaml \
   --namespace Algolia \
