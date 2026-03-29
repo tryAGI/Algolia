@@ -1,0 +1,18 @@
+
+#nullable enable
+
+namespace Algolia.Recommend
+{
+    /// <summary>
+    /// Order of facet values. One object for each facet.
+    /// </summary>
+    public sealed partial class Values
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

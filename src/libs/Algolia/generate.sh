@@ -42,3 +42,31 @@ autosdk generate openapi.yaml \
   --output Generated \
   --exclude-deprecated-operations \
   --security-scheme Http:Header:Bearer
+
+# --- Recommend API ---
+curl -o recommend-openapi.yaml \
+  https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/bundled/recommend.yml
+
+# Fix auth: same dual-header auth as Search API
+yq -i '
+  .components.securitySchemes = {
+    "BearerAuth": {
+      "type": "http",
+      "scheme": "bearer"
+    }
+  } |
+  .security = [{"BearerAuth": []}] |
+  .servers = [{"url": "https://ALGOLIA_APPLICATION_ID.algolia.net"}]
+' recommend-openapi.yaml
+
+# Generate Recommend client in sub-namespace with its own models.
+# The Recommend spec shares ~127 schemas with the Search spec; the unique Recommend
+# schemas (~44) require full model generation in the Recommend namespace.
+autosdk generate recommend-openapi.yaml \
+  --namespace Algolia.Recommend \
+  --clientClassName AlgoliaRecommendClient \
+  --targetFramework net10.0 \
+  --output Generated/Recommend \
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer \
+  --json-serializer-context RecommendSourceGenerationContext
