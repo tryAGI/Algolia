@@ -358,6 +358,7 @@ namespace Algolia
             bool? clearExistingDictionaryEntries = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.BatchDictionaryEntriesRequest
             {
                 ClearExistingDictionaryEntries = clearExistingDictionaryEntries,

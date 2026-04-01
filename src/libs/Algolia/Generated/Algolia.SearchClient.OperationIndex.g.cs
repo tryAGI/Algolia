@@ -405,6 +405,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<global::Algolia.ScopeType>? scope = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.OperationIndexRequest
             {
                 Operation = operation,

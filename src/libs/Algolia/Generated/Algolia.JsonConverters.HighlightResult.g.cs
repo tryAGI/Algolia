@@ -157,19 +157,19 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.HighlightResultOption), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.HighlightResultOption?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.HighlightResultOption).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultOption, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultOption!, typeInfo);
             }
             else if (value.IsHighlightResultMap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.HighlightResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.HighlightResultMap?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.HighlightResultMap).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultMap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultMap!, typeInfo);
             }
             else if (value.IsHighlightResultArray)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.HighlightResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.HighlightResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultArray, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultArray!, typeInfo);
             }
         }
     }

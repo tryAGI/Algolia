@@ -351,6 +351,7 @@ namespace Algolia
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.Source
             {
                 Source1 = source1,

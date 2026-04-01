@@ -155,19 +155,19 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SnippetResultOption), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SnippetResultOption?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SnippetResultOption).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultOption, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultOption!, typeInfo);
             }
             else if (value.IsSnippetResultMap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SnippetResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SnippetResultMap?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SnippetResultMap).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultMap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultMap!, typeInfo);
             }
             else if (value.IsSnippetResultArray)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultArray, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultArray!, typeInfo);
             }
         }
     }

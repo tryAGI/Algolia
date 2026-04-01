@@ -127,13 +127,13 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseRecommendRequest, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseRecommendRequest!, typeInfo);
             }
             else if (value.IsFrequently)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.FrequentlyBoughtTogether), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.FrequentlyBoughtTogether?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.FrequentlyBoughtTogether).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Frequently, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Frequently!, typeInfo);
             }
         }
     }

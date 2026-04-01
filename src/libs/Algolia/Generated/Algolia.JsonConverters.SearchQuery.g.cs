@@ -146,13 +146,13 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchForHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchForHits> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchForHits).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForHits, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForHits!.Value, typeInfo);
             }
             else if (value.IsForFacets)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchForFacets), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchForFacets> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchForFacets).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForFacets, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForFacets!.Value, typeInfo);
             }
         }
     }

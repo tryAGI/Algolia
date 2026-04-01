@@ -182,19 +182,19 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendSearchParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendSearchParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
             else if (value.IsQuery)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchParamsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchParamsQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchParamsQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Query, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Query!, typeInfo);
             }
             else if (value.IsIndexSettings)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexSettings, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexSettings!.Value, typeInfo);
             }
         }
     }

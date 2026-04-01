@@ -178,13 +178,13 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseIndexSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base1!, typeInfo);
             }
             else if (value.IsBase2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendIndexSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base2!, typeInfo);
             }
         }
     }

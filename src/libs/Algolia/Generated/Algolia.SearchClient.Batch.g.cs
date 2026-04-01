@@ -363,6 +363,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<global::Algolia.BatchWriteParamsRequest> requests,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.BatchWriteParams
             {
                 Requests = requests,

@@ -392,6 +392,7 @@ namespace Algolia
             global::Algolia.OneOf<bool?, object>? enabled = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.SearchRulesRequest
             {
                 Query = query,

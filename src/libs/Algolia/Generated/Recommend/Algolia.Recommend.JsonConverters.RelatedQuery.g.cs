@@ -127,13 +127,13 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseRecommendRequest, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseRecommendRequest!, typeInfo);
             }
             else if (value.IsProducts)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RelatedProducts), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RelatedProducts?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RelatedProducts).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Products, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Products!, typeInfo);
             }
         }
     }

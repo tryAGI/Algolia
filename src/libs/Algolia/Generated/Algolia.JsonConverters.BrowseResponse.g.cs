@@ -220,25 +220,25 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearch!, typeInfo);
             }
             else if (value.IsPagination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pagination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pagination!, typeInfo);
             }
             else if (value.IsSearchHits)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchHits, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchHits!, typeInfo);
             }
             else if (value.IsCursor)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cursor, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cursor!, typeInfo);
             }
         }
     }

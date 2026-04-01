@@ -420,6 +420,7 @@ namespace Algolia
             int? validity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.ApiKey
             {
                 Acl = acl,
