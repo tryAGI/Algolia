@@ -349,7 +349,6 @@ namespace Algolia
             global::System.Collections.Generic.IList<global::Algolia.MultipleBatchRequestRequest> requests,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Algolia.MultipleBatchRequest
             {
                 Requests = requests,

@@ -345,7 +345,6 @@ namespace Algolia.Recommend
             global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsRequest> requests,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Algolia.Recommend.GetRecommendationsRequest
             {
                 Requests = requests,

@@ -428,7 +428,6 @@ namespace Algolia
             bool? createIfNotExists = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new object
             {
             };

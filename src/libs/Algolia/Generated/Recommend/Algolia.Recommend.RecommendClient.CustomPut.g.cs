@@ -360,7 +360,6 @@ namespace Algolia.Recommend
             object? parameters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new object
             {
             };

@@ -440,7 +440,6 @@ namespace Algolia
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? insidePolygon = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Algolia.DeleteByParams
             {
                 FacetFilters = facetFilters,

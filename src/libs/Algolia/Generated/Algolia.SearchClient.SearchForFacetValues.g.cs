@@ -382,7 +382,6 @@ namespace Algolia
             int? maxFacetHits = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Algolia.SearchForFacetValuesRequest
             {
                 Params = @params,
