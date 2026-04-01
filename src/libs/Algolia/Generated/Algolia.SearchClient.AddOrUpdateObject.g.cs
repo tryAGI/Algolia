@@ -375,7 +375,6 @@ namespace Algolia
             string objectID,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new object
             {
             };

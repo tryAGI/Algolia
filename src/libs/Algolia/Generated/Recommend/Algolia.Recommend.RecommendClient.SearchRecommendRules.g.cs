@@ -408,7 +408,6 @@ namespace Algolia.Recommend
             int? maxValuesPerFacet = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Algolia.Recommend.SearchRecommendRulesRequest
             {
                 Query = query,
