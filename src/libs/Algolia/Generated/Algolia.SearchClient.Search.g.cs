@@ -357,6 +357,7 @@ namespace Algolia
             global::Algolia.SearchStrategy? strategy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.SearchRequest
             {
                 Requests = requests,

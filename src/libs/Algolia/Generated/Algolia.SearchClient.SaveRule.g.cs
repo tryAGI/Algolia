@@ -415,6 +415,7 @@ namespace Algolia
             global::Algolia.Condition? condition = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.Rule
             {
                 ObjectID = requestObjectID,

@@ -181,13 +181,13 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseIndexSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
             else if (value.IsAsSearchParams)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettingsAsSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettingsAsSearchParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettingsAsSearchParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AsSearchParams, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AsSearchParams!, typeInfo);
             }
         }
     }

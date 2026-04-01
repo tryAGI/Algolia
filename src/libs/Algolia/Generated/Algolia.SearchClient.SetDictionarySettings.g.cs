@@ -345,6 +345,7 @@ namespace Algolia
             global::Algolia.StandardEntries disableStandardEntries,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.SetDictionarySettingsRequest
             {
                 DisableStandardEntries = disableStandardEntries,

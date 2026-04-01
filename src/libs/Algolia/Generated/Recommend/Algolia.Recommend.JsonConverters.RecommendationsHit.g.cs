@@ -129,13 +129,13 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendHit), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendHit?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendHit).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Recommend, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Recommend!, typeInfo);
             }
             else if (value.IsTrendingFacetHit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TrendingFacetHit), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TrendingFacetHit?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TrendingFacetHit).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TrendingFacetHit, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TrendingFacetHit!, typeInfo);
             }
         }
     }

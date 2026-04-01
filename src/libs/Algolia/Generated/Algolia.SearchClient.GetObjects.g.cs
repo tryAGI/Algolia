@@ -345,6 +345,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<global::Algolia.GetObjectsRequestRequest> requests,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Algolia.GetObjectsRequest
             {
                 Requests = requests,

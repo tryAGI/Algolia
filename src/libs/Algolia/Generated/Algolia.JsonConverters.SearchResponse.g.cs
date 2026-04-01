@@ -186,19 +186,19 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
             else if (value.IsPagination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchPagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchPagination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchPagination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pagination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pagination!, typeInfo);
             }
             else if (value.IsHits)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hits, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hits!, typeInfo);
             }
         }
     }

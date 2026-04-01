@@ -184,19 +184,19 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseSearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearchResponse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearchResponse!, typeInfo);
             }
             else if (value.IsSearchPagination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchPagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchPagination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchPagination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchPagination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchPagination!, typeInfo);
             }
             else if (value.IsHits)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendationsHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendationsHits?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendationsHits).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hits, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hits!, typeInfo);
             }
         }
     }
