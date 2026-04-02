@@ -55,7 +55,7 @@ namespace Algolia.Recommend.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Algolia.Recommend.RecommendSearchParams? searchParametersAsObject = default;
-            object? value2 = default;
+            object? fallbackParamsVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -82,7 +82,7 @@ namespace Algolia.Recommend.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fallbackParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +93,7 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (searchParametersAsObject == null && value2 == null)
+            if (searchParametersAsObject == null && fallbackParamsVariant2 == null)
             {
                 try
                 {
@@ -114,7 +114,7 @@ namespace Algolia.Recommend.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fallbackParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +127,7 @@ namespace Algolia.Recommend.JsonConverters
             var __value = new global::Algolia.Recommend.FallbackParams(
                 searchParametersAsObject,
 
-                value2
+                fallbackParamsVariant2
                 );
 
             return __value;
@@ -148,11 +148,11 @@ namespace Algolia.Recommend.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendSearchParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchParametersAsObject!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsFallbackParamsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FallbackParamsVariant2!, typeInfo);
             }
         }
     }

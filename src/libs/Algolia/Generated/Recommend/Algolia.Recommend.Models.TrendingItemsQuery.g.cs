@@ -13,35 +13,35 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.BaseRecommendRequest? Value1 { get; init; }
+        public global::Algolia.Recommend.BaseRecommendRequest? BaseRecommendRequest { get; init; }
 #else
-        public global::Algolia.Recommend.BaseRecommendRequest? Value1 { get; }
+        public global::Algolia.Recommend.BaseRecommendRequest? BaseRecommendRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseRecommendRequest))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBaseRecommendRequest => BaseRecommendRequest != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.TrendingItems? Value2 { get; init; }
+        public global::Algolia.Recommend.TrendingItems? TrendingItems { get; init; }
 #else
-        public global::Algolia.Recommend.TrendingItems? Value2 { get; }
+        public global::Algolia.Recommend.TrendingItems? TrendingItems { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingItems))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTrendingItems => TrendingItems != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.BaseRecommendRequest?(TrendingItemsQuery @this) => @this.Value1;
+        public static implicit operator global::Algolia.Recommend.BaseRecommendRequest?(TrendingItemsQuery @this) => @this.BaseRecommendRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public TrendingItemsQuery(global::Algolia.Recommend.BaseRecommendRequest? value)
         {
-            Value1 = value;
+            BaseRecommendRequest = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.TrendingItems?(TrendingItemsQuery @this) => @this.Value2;
+        public static implicit operator global::Algolia.Recommend.TrendingItems?(TrendingItemsQuery @this) => @this.TrendingItems;
 
         /// <summary>
         /// 
         /// </summary>
         public TrendingItemsQuery(global::Algolia.Recommend.TrendingItems? value)
         {
-            Value2 = value;
+            TrendingItems = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TrendingItemsQuery(
-            global::Algolia.Recommend.BaseRecommendRequest? value1,
-            global::Algolia.Recommend.TrendingItems? value2
+            global::Algolia.Recommend.BaseRecommendRequest? baseRecommendRequest,
+            global::Algolia.Recommend.TrendingItems? trendingItems
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            BaseRecommendRequest = baseRecommendRequest;
+            TrendingItems = trendingItems;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TrendingItems as object ??
+            BaseRecommendRequest as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            BaseRecommendRequest?.ToString() ??
+            TrendingItems?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBaseRecommendRequest && IsTrendingItems;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? value1 = null,
-            global::System.Func<global::Algolia.Recommend.TrendingItems?, TResult>? value2 = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? baseRecommendRequest = null,
+            global::System.Func<global::Algolia.Recommend.TrendingItems?, TResult>? trendingItems = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBaseRecommendRequest && baseRecommendRequest != null)
             {
-                return value1(Value1!);
+                return baseRecommendRequest(BaseRecommendRequest!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTrendingItems && trendingItems != null)
             {
-                return value2(Value2!);
+                return trendingItems(TrendingItems!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? value1 = null,
-            global::System.Action<global::Algolia.Recommend.TrendingItems?>? value2 = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? baseRecommendRequest = null,
+            global::System.Action<global::Algolia.Recommend.TrendingItems?>? trendingItems = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBaseRecommendRequest)
             {
-                value1?.Invoke(Value1!);
+                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
             }
-            else if (IsValue2)
+            else if (IsTrendingItems)
             {
-                value2?.Invoke(Value2!);
+                trendingItems?.Invoke(TrendingItems!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Algolia.Recommend
         {
             var fields = new object?[]
             {
-                Value1,
+                BaseRecommendRequest,
                 typeof(global::Algolia.Recommend.BaseRecommendRequest),
-                Value2,
+                TrendingItems,
                 typeof(global::Algolia.Recommend.TrendingItems),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Algolia.Recommend
         public bool Equals(TrendingItemsQuery other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendRequest?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingItems?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendRequest?>.Default.Equals(BaseRecommendRequest, other.BaseRecommendRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingItems?>.Default.Equals(TrendingItems, other.TrendingItems) 
                 ;
         }
 

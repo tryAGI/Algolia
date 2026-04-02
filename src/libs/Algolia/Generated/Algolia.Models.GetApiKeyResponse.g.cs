@@ -13,35 +13,35 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.BaseGetApiKeyResponse? Value1 { get; init; }
+        public global::Algolia.BaseGetApiKeyResponse? Base { get; init; }
 #else
-        public global::Algolia.BaseGetApiKeyResponse? Value1 { get; }
+        public global::Algolia.BaseGetApiKeyResponse? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// API key object.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.ApiKey? Value2 { get; init; }
+        public global::Algolia.ApiKey? ApiKey { get; init; }
 #else
-        public global::Algolia.ApiKey? Value2 { get; }
+        public global::Algolia.ApiKey? ApiKey { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsApiKey => ApiKey != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.BaseGetApiKeyResponse?(GetApiKeyResponse @this) => @this.Value1;
+        public static implicit operator global::Algolia.BaseGetApiKeyResponse?(GetApiKeyResponse @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public GetApiKeyResponse(global::Algolia.BaseGetApiKeyResponse? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.ApiKey?(GetApiKeyResponse @this) => @this.Value2;
+        public static implicit operator global::Algolia.ApiKey?(GetApiKeyResponse @this) => @this.ApiKey;
 
         /// <summary>
         /// 
         /// </summary>
         public GetApiKeyResponse(global::Algolia.ApiKey? value)
         {
-            Value2 = value;
+            ApiKey = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public GetApiKeyResponse(
-            global::Algolia.BaseGetApiKeyResponse? value1,
-            global::Algolia.ApiKey? value2
+            global::Algolia.BaseGetApiKeyResponse? @base,
+            global::Algolia.ApiKey? apiKey
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            ApiKey = apiKey;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ApiKey as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            ApiKey?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsApiKey;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseGetApiKeyResponse?, TResult>? value1 = null,
-            global::System.Func<global::Algolia.ApiKey?, TResult>? value2 = null,
+            global::System.Func<global::Algolia.BaseGetApiKeyResponse?, TResult>? @base = null,
+            global::System.Func<global::Algolia.ApiKey?, TResult>? apiKey = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsApiKey && apiKey != null)
             {
-                return value2(Value2!);
+                return apiKey(ApiKey!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseGetApiKeyResponse?>? value1 = null,
-            global::System.Action<global::Algolia.ApiKey?>? value2 = null,
+            global::System.Action<global::Algolia.BaseGetApiKeyResponse?>? @base = null,
+            global::System.Action<global::Algolia.ApiKey?>? apiKey = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsApiKey)
             {
-                value2?.Invoke(Value2!);
+                apiKey?.Invoke(ApiKey!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::Algolia.BaseGetApiKeyResponse),
-                Value2,
+                ApiKey,
                 typeof(global::Algolia.ApiKey),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Algolia
         public bool Equals(GetApiKeyResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseGetApiKeyResponse?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.ApiKey?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseGetApiKeyResponse?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.ApiKey?>.Default.Equals(ApiKey, other.ApiKey) 
                 ;
         }
 

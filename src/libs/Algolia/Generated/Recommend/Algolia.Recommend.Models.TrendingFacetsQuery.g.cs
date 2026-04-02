@@ -13,18 +13,18 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.TrendingFacets? Value1 { get; init; }
+        public global::Algolia.Recommend.TrendingFacets? TrendingFacets { get; init; }
 #else
-        public global::Algolia.Recommend.TrendingFacets? Value1 { get; }
+        public global::Algolia.Recommend.TrendingFacets? TrendingFacets { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingFacets))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTrendingFacets => TrendingFacets != null;
         /// <summary>
         /// 
         /// </summary>
@@ -33,28 +33,28 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.TrendingFacets?(TrendingFacetsQuery @this) => @this.Value1;
+        public static implicit operator global::Algolia.Recommend.TrendingFacets?(TrendingFacetsQuery @this) => @this.TrendingFacets;
 
         /// <summary>
         /// 
         /// </summary>
         public TrendingFacetsQuery(global::Algolia.Recommend.TrendingFacets? value)
         {
-            Value1 = value;
+            TrendingFacets = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            TrendingFacets as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() 
+            TrendingFacets?.ToString() 
             ;
 
         /// <summary>
@@ -62,14 +62,14 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsTrendingFacets;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.TrendingFacets?, TResult>? value1 = null,
+            global::System.Func<global::Algolia.Recommend.TrendingFacets?, TResult>? trendingFacets = null,
             bool validate = true)
         {
             if (validate)
@@ -77,9 +77,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTrendingFacets && trendingFacets != null)
             {
-                return value1(Value1!);
+                return trendingFacets(TrendingFacets!);
             }
 
             return default(TResult);
@@ -89,7 +89,7 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.TrendingFacets?>? value1 = null,
+            global::System.Action<global::Algolia.Recommend.TrendingFacets?>? trendingFacets = null,
             bool validate = true)
         {
             if (validate)
@@ -97,9 +97,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTrendingFacets)
             {
-                value1?.Invoke(Value1!);
+                trendingFacets?.Invoke(TrendingFacets!);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Algolia.Recommend
         {
             var fields = new object?[]
             {
-                Value1,
+                TrendingFacets,
                 typeof(global::Algolia.Recommend.TrendingFacets),
             };
             const int offset = unchecked((int)2166136261);
@@ -128,7 +128,7 @@ namespace Algolia.Recommend
         public bool Equals(TrendingFacetsQuery other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingFacets?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingFacets?>.Default.Equals(TrendingFacets, other.TrendingFacets) 
                 ;
         }
 

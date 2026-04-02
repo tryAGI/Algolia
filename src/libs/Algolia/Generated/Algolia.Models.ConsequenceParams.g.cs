@@ -13,53 +13,53 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.BaseSearchParamsWithoutQuery? Value1 { get; init; }
+        public global::Algolia.BaseSearchParamsWithoutQuery? BaseSearchWithoutQuery { get; init; }
 #else
-        public global::Algolia.BaseSearchParamsWithoutQuery? Value1 { get; }
+        public global::Algolia.BaseSearchParamsWithoutQuery? BaseSearchWithoutQuery { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseSearchWithoutQuery))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBaseSearchWithoutQuery => BaseSearchWithoutQuery != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.IndexSettingsAsSearchParams? Value2 { get; init; }
+        public global::Algolia.IndexSettingsAsSearchParams? IndexSettingsAsSearch { get; init; }
 #else
-        public global::Algolia.IndexSettingsAsSearchParams? Value2 { get; }
+        public global::Algolia.IndexSettingsAsSearchParams? IndexSettingsAsSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexSettingsAsSearch))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsIndexSettingsAsSearch => IndexSettingsAsSearch != null;
 
         /// <summary>
         /// Parameters to apply to this search.<br/>
         /// You can use all search parameters, plus special `automaticFacetFilters`, `automaticOptionalFacetFilters`, and `query`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Params? Value3 { get; init; }
+        public global::Algolia.Params? Params { get; init; }
 #else
-        public global::Algolia.Params? Value3 { get; }
+        public global::Algolia.Params? Params { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsParams => Params != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.BaseSearchParamsWithoutQuery?(ConsequenceParams @this) => @this.Value1;
+        public static implicit operator global::Algolia.BaseSearchParamsWithoutQuery?(ConsequenceParams @this) => @this.BaseSearchWithoutQuery;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsequenceParams(global::Algolia.BaseSearchParamsWithoutQuery? value)
         {
-            Value1 = value;
+            BaseSearchWithoutQuery = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.IndexSettingsAsSearchParams?(ConsequenceParams @this) => @this.Value2;
+        public static implicit operator global::Algolia.IndexSettingsAsSearchParams?(ConsequenceParams @this) => @this.IndexSettingsAsSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsequenceParams(global::Algolia.IndexSettingsAsSearchParams? value)
         {
-            Value2 = value;
+            IndexSettingsAsSearch = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Params?(ConsequenceParams @this) => @this.Value3;
+        public static implicit operator global::Algolia.Params?(ConsequenceParams @this) => @this.Params;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsequenceParams(global::Algolia.Params? value)
         {
-            Value3 = value;
+            Params = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConsequenceParams(
-            global::Algolia.BaseSearchParamsWithoutQuery? value1,
-            global::Algolia.IndexSettingsAsSearchParams? value2,
-            global::Algolia.Params? value3
+            global::Algolia.BaseSearchParamsWithoutQuery? baseSearchWithoutQuery,
+            global::Algolia.IndexSettingsAsSearchParams? indexSettingsAsSearch,
+            global::Algolia.Params? @params
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            BaseSearchWithoutQuery = baseSearchWithoutQuery;
+            IndexSettingsAsSearch = indexSettingsAsSearch;
+            Params = @params;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Params as object ??
+            IndexSettingsAsSearch as object ??
+            BaseSearchWithoutQuery as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            BaseSearchWithoutQuery?.ToString() ??
+            IndexSettingsAsSearch?.ToString() ??
+            Params?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsBaseSearchWithoutQuery && IsIndexSettingsAsSearch && IsParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseSearchParamsWithoutQuery?, TResult>? value1 = null,
-            global::System.Func<global::Algolia.IndexSettingsAsSearchParams?, TResult>? value2 = null,
-            global::System.Func<global::Algolia.Params?, TResult>? value3 = null,
+            global::System.Func<global::Algolia.BaseSearchParamsWithoutQuery?, TResult>? baseSearchWithoutQuery = null,
+            global::System.Func<global::Algolia.IndexSettingsAsSearchParams?, TResult>? indexSettingsAsSearch = null,
+            global::System.Func<global::Algolia.Params?, TResult>? @params = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBaseSearchWithoutQuery && baseSearchWithoutQuery != null)
             {
-                return value1(Value1!);
+                return baseSearchWithoutQuery(BaseSearchWithoutQuery!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsIndexSettingsAsSearch && indexSettingsAsSearch != null)
             {
-                return value2(Value2!);
+                return indexSettingsAsSearch(IndexSettingsAsSearch!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsParams && @params != null)
             {
-                return value3(Value3!);
+                return @params(Params!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery?>? value1 = null,
-            global::System.Action<global::Algolia.IndexSettingsAsSearchParams?>? value2 = null,
-            global::System.Action<global::Algolia.Params?>? value3 = null,
+            global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery?>? baseSearchWithoutQuery = null,
+            global::System.Action<global::Algolia.IndexSettingsAsSearchParams?>? indexSettingsAsSearch = null,
+            global::System.Action<global::Algolia.Params?>? @params = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBaseSearchWithoutQuery)
             {
-                value1?.Invoke(Value1!);
+                baseSearchWithoutQuery?.Invoke(BaseSearchWithoutQuery!);
             }
-            else if (IsValue2)
+            else if (IsIndexSettingsAsSearch)
             {
-                value2?.Invoke(Value2!);
+                indexSettingsAsSearch?.Invoke(IndexSettingsAsSearch!);
             }
-            else if (IsValue3)
+            else if (IsParams)
             {
-                value3?.Invoke(Value3!);
+                @params?.Invoke(Params!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                BaseSearchWithoutQuery,
                 typeof(global::Algolia.BaseSearchParamsWithoutQuery),
-                Value2,
+                IndexSettingsAsSearch,
                 typeof(global::Algolia.IndexSettingsAsSearchParams),
-                Value3,
+                Params,
                 typeof(global::Algolia.Params),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace Algolia
         public bool Equals(ConsequenceParams other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchParamsWithoutQuery?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettingsAsSearchParams?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Params?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchParamsWithoutQuery?>.Default.Equals(BaseSearchWithoutQuery, other.BaseSearchWithoutQuery) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettingsAsSearchParams?>.Default.Equals(IndexSettingsAsSearch, other.IndexSettingsAsSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Params?>.Default.Equals(Params, other.Params) 
                 ;
         }
 

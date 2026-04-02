@@ -34,8 +34,8 @@ namespace Algolia.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Algolia.DictionaryLanguageVariant1? value1 = default;
-            object? value2 = default;
+            global::Algolia.DictionaryLanguageVariant1? dictionaryLanguageVariant1 = default;
+            object? dictionaryLanguageVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -44,7 +44,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.DictionaryLanguageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.DictionaryLanguageVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.DictionaryLanguageVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dictionaryLanguageVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -59,7 +59,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dictionaryLanguageVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -70,13 +70,13 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (dictionaryLanguageVariant1 == null && dictionaryLanguageVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.DictionaryLanguageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.DictionaryLanguageVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.DictionaryLanguageVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dictionaryLanguageVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -89,7 +89,7 @@ namespace Algolia.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dictionaryLanguageVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -100,9 +100,9 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.DictionaryLanguage(
-                value1,
+                dictionaryLanguageVariant1,
 
-                value2
+                dictionaryLanguageVariant2
                 );
 
             return __value;
@@ -117,17 +117,17 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsDictionaryLanguageVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.DictionaryLanguageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.DictionaryLanguageVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.DictionaryLanguageVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DictionaryLanguageVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsDictionaryLanguageVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DictionaryLanguageVariant2!, typeInfo);
             }
         }
     }

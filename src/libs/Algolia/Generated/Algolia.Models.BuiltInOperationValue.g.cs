@@ -13,35 +13,35 @@ namespace Algolia
         /// A string to append or remove for the `Add`, `Remove`, and `AddUnique` operations.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? BuiltInOperationValueVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? BuiltInOperationValueVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperationValueVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBuiltInOperationValueVariant1 => BuiltInOperationValueVariant1 != null;
 
         /// <summary>
         /// A number to add, remove, or append, depending on the operation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value2 { get; init; }
+        public int? BuiltInOperationValueVariant2 { get; init; }
 #else
-        public int? Value2 { get; }
+        public int? BuiltInOperationValueVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperationValueVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBuiltInOperationValueVariant2 => BuiltInOperationValueVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(BuiltInOperationValue @this) => @this.Value1;
+        public static implicit operator string?(BuiltInOperationValue @this) => @this.BuiltInOperationValueVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public BuiltInOperationValue(string? value)
         {
-            Value1 = value;
+            BuiltInOperationValueVariant1 = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(BuiltInOperationValue @this) => @this.Value2;
+        public static implicit operator int?(BuiltInOperationValue @this) => @this.BuiltInOperationValueVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public BuiltInOperationValue(int? value)
         {
-            Value2 = value;
+            BuiltInOperationValueVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public BuiltInOperationValue(
-            string? value1,
-            int? value2
+            string? builtInOperationValueVariant1,
+            int? builtInOperationValueVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            BuiltInOperationValueVariant1 = builtInOperationValueVariant1;
+            BuiltInOperationValueVariant2 = builtInOperationValueVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            BuiltInOperationValueVariant2 as object ??
+            BuiltInOperationValueVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            BuiltInOperationValueVariant1?.ToString() ??
+            BuiltInOperationValueVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsBuiltInOperationValueVariant1 && !IsBuiltInOperationValueVariant2 || !IsBuiltInOperationValueVariant1 && IsBuiltInOperationValueVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<int?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? builtInOperationValueVariant1 = null,
+            global::System.Func<int?, TResult>? builtInOperationValueVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBuiltInOperationValueVariant1 && builtInOperationValueVariant1 != null)
             {
-                return value1(Value1!);
+                return builtInOperationValueVariant1(BuiltInOperationValueVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBuiltInOperationValueVariant2 && builtInOperationValueVariant2 != null)
             {
-                return value2(Value2!);
+                return builtInOperationValueVariant2(BuiltInOperationValueVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<int?>? value2 = null,
+            global::System.Action<string?>? builtInOperationValueVariant1 = null,
+            global::System.Action<int?>? builtInOperationValueVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBuiltInOperationValueVariant1)
             {
-                value1?.Invoke(Value1!);
+                builtInOperationValueVariant1?.Invoke(BuiltInOperationValueVariant1!);
             }
-            else if (IsValue2)
+            else if (IsBuiltInOperationValueVariant2)
             {
-                value2?.Invoke(Value2!);
+                builtInOperationValueVariant2?.Invoke(BuiltInOperationValueVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                BuiltInOperationValueVariant1,
                 typeof(string),
-                Value2,
+                BuiltInOperationValueVariant2,
                 typeof(int),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Algolia
         public bool Equals(BuiltInOperationValue other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BuiltInOperationValueVariant1, other.BuiltInOperationValueVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(BuiltInOperationValueVariant2, other.BuiltInOperationValueVariant2) 
                 ;
         }
 

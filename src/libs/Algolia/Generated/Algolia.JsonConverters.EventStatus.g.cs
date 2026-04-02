@@ -54,8 +54,8 @@ namespace Algolia.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Algolia.EventStatusEnum? value1 = default;
-            object? value2 = default;
+            global::Algolia.EventStatusEnum? @enum = default;
+            object? eventStatusVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -65,7 +65,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.EventStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.EventStatusEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.EventStatusEnum).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +82,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        eventStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (@enum == null && eventStatusVariant2 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.EventStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.EventStatusEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.EventStatusEnum).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,7 +114,7 @@ namespace Algolia.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    eventStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,9 +125,9 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.EventStatus(
-                value1,
+                @enum,
 
-                value2
+                eventStatusVariant2
                 );
 
             return __value;
@@ -142,17 +142,17 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.EventStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.EventStatusEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.EventStatusEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEventStatusVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EventStatusVariant2!, typeInfo);
             }
         }
     }

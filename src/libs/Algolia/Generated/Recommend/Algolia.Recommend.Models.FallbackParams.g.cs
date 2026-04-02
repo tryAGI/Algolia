@@ -30,18 +30,18 @@ namespace Algolia.Recommend
         /// Search parameters to use for a fallback request if there aren't enough recommendations.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? FallbackParamsVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? FallbackParamsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FallbackParamsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFallbackParamsVariant2 => FallbackParamsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -65,18 +65,18 @@ namespace Algolia.Recommend
         /// </summary>
         public FallbackParams(
             global::Algolia.Recommend.RecommendSearchParams? searchParametersAsObject,
-            object? value2
+            object? fallbackParamsVariant2
             )
         {
             SearchParametersAsObject = searchParametersAsObject;
-            Value2 = value2;
+            FallbackParamsVariant2 = fallbackParamsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            FallbackParamsVariant2 as object ??
             SearchParametersAsObject as object 
             ;
 
@@ -85,7 +85,7 @@ namespace Algolia.Recommend
         /// </summary>
         public override string? ToString() =>
             SearchParametersAsObject?.ToString() ??
-            Value2?.ToString() 
+            FallbackParamsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsSearchParametersAsObject && IsValue2;
+            return IsSearchParametersAsObject && IsFallbackParamsVariant2;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.RecommendSearchParams?, TResult>? searchParametersAsObject = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<object?, TResult>? fallbackParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -113,9 +113,9 @@ namespace Algolia.Recommend
             {
                 return searchParametersAsObject(SearchParametersAsObject!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFallbackParamsVariant2 && fallbackParamsVariant2 != null)
             {
-                return value2(Value2!);
+                return fallbackParamsVariant2(FallbackParamsVariant2!);
             }
 
             return default(TResult);
@@ -126,7 +126,7 @@ namespace Algolia.Recommend
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.RecommendSearchParams?>? searchParametersAsObject = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<object?>? fallbackParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -138,9 +138,9 @@ namespace Algolia.Recommend
             {
                 searchParametersAsObject?.Invoke(SearchParametersAsObject!);
             }
-            else if (IsValue2)
+            else if (IsFallbackParamsVariant2)
             {
-                value2?.Invoke(Value2!);
+                fallbackParamsVariant2?.Invoke(FallbackParamsVariant2!);
             }
         }
 
@@ -153,7 +153,7 @@ namespace Algolia.Recommend
             {
                 SearchParametersAsObject,
                 typeof(global::Algolia.Recommend.RecommendSearchParams),
-                Value2,
+                FallbackParamsVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,7 +172,7 @@ namespace Algolia.Recommend
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendSearchParams?>.Default.Equals(SearchParametersAsObject, other.SearchParametersAsObject) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FallbackParamsVariant2, other.FallbackParamsVariant2) 
                 ;
         }
 

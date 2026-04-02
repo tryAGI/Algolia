@@ -43,8 +43,8 @@ namespace Algolia.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Algolia.BaseGetApiKeyResponse? value1 = default;
-            global::Algolia.ApiKey? value2 = default;
+            global::Algolia.BaseGetApiKeyResponse? @base = default;
+            global::Algolia.ApiKey? apiKey = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -53,7 +53,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseGetApiKeyResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseGetApiKeyResponse> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseGetApiKeyResponse).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -68,7 +68,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.ApiKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.ApiKey> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.ApiKey).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        apiKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,13 +79,13 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (@base == null && apiKey == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseGetApiKeyResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseGetApiKeyResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseGetApiKeyResponse).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -98,7 +98,7 @@ namespace Algolia.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.ApiKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.ApiKey> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.ApiKey).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    apiKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,9 +109,9 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.GetApiKeyResponse(
-                value1,
+                @base,
 
-                value2
+                apiKey
                 );
 
             return __value;
@@ -126,17 +126,17 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseGetApiKeyResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseGetApiKeyResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseGetApiKeyResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsApiKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.ApiKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.ApiKey?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.ApiKey).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
             }
         }
     }

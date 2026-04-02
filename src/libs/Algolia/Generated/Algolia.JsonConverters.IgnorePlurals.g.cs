@@ -66,9 +66,9 @@ namespace Algolia.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? value1 = default;
-            global::Algolia.BooleanString? value2 = default;
-            bool? value3 = default;
+            global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? ignorePluralsVariant1 = default;
+            global::Algolia.BooleanString? booleanString = default;
+            bool? ignorePluralsVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -78,7 +78,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        ignorePluralsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,7 +95,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BooleanString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BooleanString> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BooleanString).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        booleanString = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -112,7 +112,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        ignorePluralsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,14 +123,14 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (ignorePluralsVariant1 == null && booleanString == null && ignorePluralsVariant3 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    ignorePluralsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -144,7 +144,7 @@ namespace Algolia.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BooleanString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BooleanString> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BooleanString).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    booleanString = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -158,7 +158,7 @@ namespace Algolia.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    ignorePluralsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,11 +169,11 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.IgnorePlurals(
-                value1,
+                ignorePluralsVariant1,
 
-                value2,
+                booleanString,
 
-                value3
+                ignorePluralsVariant3
                 );
 
             return __value;
@@ -188,23 +188,23 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsIgnorePluralsVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IgnorePluralsVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBooleanString)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BooleanString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BooleanString> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BooleanString).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BooleanString!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsIgnorePluralsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IgnorePluralsVariant3!.Value, typeInfo);
             }
         }
     }

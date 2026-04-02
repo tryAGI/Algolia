@@ -111,9 +111,9 @@ namespace Algolia.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::Algolia.BaseSearchParamsWithoutQuery? value1 = default;
-            global::Algolia.IndexSettingsAsSearchParams? value2 = default;
-            global::Algolia.Params? value3 = default;
+            global::Algolia.BaseSearchParamsWithoutQuery? baseSearchWithoutQuery = default;
+            global::Algolia.IndexSettingsAsSearchParams? indexSettingsAsSearch = default;
+            global::Algolia.Params? @params = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -122,7 +122,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchParamsWithoutQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchParamsWithoutQuery> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchParamsWithoutQuery).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseSearchWithoutQuery = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -137,7 +137,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettingsAsSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettingsAsSearchParams> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettingsAsSearchParams).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        indexSettingsAsSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -152,7 +152,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Params> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Params).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @params = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -163,13 +163,13 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (baseSearchWithoutQuery == null && indexSettingsAsSearch == null && @params == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchParamsWithoutQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchParamsWithoutQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchParamsWithoutQuery).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseSearchWithoutQuery = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -182,7 +182,7 @@ namespace Algolia.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettingsAsSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettingsAsSearchParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettingsAsSearchParams).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    indexSettingsAsSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -195,7 +195,7 @@ namespace Algolia.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Params> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Params).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @params = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -206,11 +206,11 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.ConsequenceParams(
-                value1,
+                baseSearchWithoutQuery,
 
-                value2,
+                indexSettingsAsSearch,
 
-                value3
+                @params
                 );
 
             return __value;
@@ -225,23 +225,23 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBaseSearchWithoutQuery)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchParamsWithoutQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchParamsWithoutQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchParamsWithoutQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearchWithoutQuery!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsIndexSettingsAsSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettingsAsSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettingsAsSearchParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettingsAsSearchParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexSettingsAsSearch!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsParams)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Params?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Params).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Params!, typeInfo);
             }
         }
     }
