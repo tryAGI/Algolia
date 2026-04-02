@@ -328,7 +328,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Hit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchHits))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Hit>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponse), TypeInfoPropertyName = "SearchResponse3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponse), TypeInfoPropertyName = "SearchResponse2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchTypeDefault), TypeInfoPropertyName = "SearchTypeDefault2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForHitsSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForHits), TypeInfoPropertyName = "SearchForHits2")]
