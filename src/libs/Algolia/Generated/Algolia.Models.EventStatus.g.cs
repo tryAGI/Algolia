@@ -13,35 +13,35 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.EventStatusEnum? Value1 { get; init; }
+        public global::Algolia.EventStatusEnum? Enum { get; init; }
 #else
-        public global::Algolia.EventStatusEnum? Value1 { get; }
+        public global::Algolia.EventStatusEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? EventStatusVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? EventStatusVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EventStatusVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEventStatusVariant2 => EventStatusVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,42 +50,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.EventStatusEnum?(EventStatus @this) => @this.Value1;
+        public static implicit operator global::Algolia.EventStatusEnum?(EventStatus @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public EventStatus(global::Algolia.EventStatusEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public EventStatus(
-            global::Algolia.EventStatusEnum? value1,
-            object? value2
+            global::Algolia.EventStatusEnum? @enum,
+            object? eventStatusVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Enum = @enum;
+            EventStatusVariant2 = eventStatusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            EventStatusVariant2 as object ??
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToString() 
+            Enum?.ToValueString() ??
+            EventStatusVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsEnum && !IsEventStatusVariant2 || !IsEnum && IsEventStatusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.EventStatusEnum?, TResult>? value1 = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<global::Algolia.EventStatusEnum?, TResult>? @enum = null,
+            global::System.Func<object?, TResult>? eventStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,13 +109,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEventStatusVariant2 && eventStatusVariant2 != null)
             {
-                return value2(Value2!);
+                return eventStatusVariant2(EventStatusVariant2!);
             }
 
             return default(TResult);
@@ -125,8 +125,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.EventStatusEnum?>? value1 = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<global::Algolia.EventStatusEnum?>? @enum = null,
+            global::System.Action<object?>? eventStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,13 +134,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
-            else if (IsValue2)
+            else if (IsEventStatusVariant2)
             {
-                value2?.Invoke(Value2!);
+                eventStatusVariant2?.Invoke(EventStatusVariant2!);
             }
         }
 
@@ -151,9 +151,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::Algolia.EventStatusEnum),
-                Value2,
+                EventStatusVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -171,8 +171,8 @@ namespace Algolia
         public bool Equals(EventStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.EventStatusEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.EventStatusEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(EventStatusVariant2, other.EventStatusVariant2) 
                 ;
         }
 

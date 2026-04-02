@@ -17,18 +17,18 @@ namespace Algolia.Recommend
         /// Default Value: 10
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value1 { get; init; }
+        public int? AroundPrecisionVariant1 { get; init; }
 #else
-        public int? Value1 { get; }
+        public int? AroundPrecisionVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AroundPrecisionVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAroundPrecisionVariant1 => AroundPrecisionVariant1 != null;
 
         /// <summary>
         /// 
@@ -54,25 +54,25 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(AroundPrecision @this) => @this.Value1;
+        public static implicit operator int?(AroundPrecision @this) => @this.AroundPrecisionVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AroundPrecision(int? value)
         {
-            Value1 = value;
+            AroundPrecisionVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AroundPrecision(
-            int? value1,
+            int? aroundPrecisionVariant1,
             global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? rangeObjects
             )
         {
-            Value1 = value1;
+            AroundPrecisionVariant1 = aroundPrecisionVariant1;
             RangeObjects = rangeObjects;
         }
 
@@ -81,14 +81,14 @@ namespace Algolia.Recommend
         /// </summary>
         public object? Object =>
             RangeObjects as object ??
-            Value1 as object 
+            AroundPrecisionVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            AroundPrecisionVariant1?.ToString() ??
             RangeObjects?.ToString() 
             ;
 
@@ -97,14 +97,14 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsRangeObjects || !IsValue1 && IsRangeObjects;
+            return IsAroundPrecisionVariant1 && !IsRangeObjects || !IsAroundPrecisionVariant1 && IsRangeObjects;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<int?, TResult>? value1 = null,
+            global::System.Func<int?, TResult>? aroundPrecisionVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>?, TResult>? rangeObjects = null,
             bool validate = true)
         {
@@ -113,9 +113,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAroundPrecisionVariant1 && aroundPrecisionVariant1 != null)
             {
-                return value1(Value1!);
+                return aroundPrecisionVariant1(AroundPrecisionVariant1!);
             }
             else if (IsRangeObjects && rangeObjects != null)
             {
@@ -129,7 +129,7 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<int?>? value1 = null,
+            global::System.Action<int?>? aroundPrecisionVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>?>? rangeObjects = null,
             bool validate = true)
         {
@@ -138,9 +138,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAroundPrecisionVariant1)
             {
-                value1?.Invoke(Value1!);
+                aroundPrecisionVariant1?.Invoke(AroundPrecisionVariant1!);
             }
             else if (IsRangeObjects)
             {
@@ -155,7 +155,7 @@ namespace Algolia.Recommend
         {
             var fields = new object?[]
             {
-                Value1,
+                AroundPrecisionVariant1,
                 typeof(int),
                 RangeObjects,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>),
@@ -175,7 +175,7 @@ namespace Algolia.Recommend
         public bool Equals(AroundPrecision other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(AroundPrecisionVariant1, other.AroundPrecisionVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>?>.Default.Equals(RangeObjects, other.RangeObjects) 
                 ;
         }

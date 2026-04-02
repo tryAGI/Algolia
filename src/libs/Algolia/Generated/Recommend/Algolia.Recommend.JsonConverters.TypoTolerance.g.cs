@@ -54,8 +54,8 @@ namespace Algolia.Recommend.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            bool? value1 = default;
-            global::Algolia.Recommend.TypoToleranceEnum? value2 = default;
+            bool? typoToleranceVariant1 = default;
+            global::Algolia.Recommend.TypoToleranceEnum? @enum = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -65,7 +65,7 @@ namespace Algolia.Recommend.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        typoToleranceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +82,7 @@ namespace Algolia.Recommend.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TypoToleranceEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TypoToleranceEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TypoToleranceEnum).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (typoToleranceVariant1 == null && @enum == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    typoToleranceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,7 +114,7 @@ namespace Algolia.Recommend.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TypoToleranceEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TypoToleranceEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TypoToleranceEnum).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,9 +125,9 @@ namespace Algolia.Recommend.JsonConverters
             }
 
             var __value = new global::Algolia.Recommend.TypoTolerance(
-                value1,
+                typoToleranceVariant1,
 
-                value2
+                @enum
                 );
 
             return __value;
@@ -142,17 +142,17 @@ namespace Algolia.Recommend.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsTypoToleranceVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TypoToleranceVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TypoToleranceEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TypoToleranceEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TypoToleranceEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
         }
     }

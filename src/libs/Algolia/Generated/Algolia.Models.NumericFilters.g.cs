@@ -19,35 +19,35 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? NumericFiltersVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? Value1 { get; }
+        public global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? NumericFiltersVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NumericFiltersVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsNumericFiltersVariant1 => NumericFiltersVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? NumericFiltersVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? NumericFiltersVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NumericFiltersVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsNumericFiltersVariant2 => NumericFiltersVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -56,42 +56,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(NumericFilters @this) => @this.Value2;
+        public static implicit operator string?(NumericFilters @this) => @this.NumericFiltersVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public NumericFilters(string? value)
         {
-            Value2 = value;
+            NumericFiltersVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public NumericFilters(
-            global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? value1,
-            string? value2
+            global::System.Collections.Generic.IList<global::Algolia.NumericFilters>? numericFiltersVariant1,
+            string? numericFiltersVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            NumericFiltersVariant1 = numericFiltersVariant1;
+            NumericFiltersVariant2 = numericFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            NumericFiltersVariant2 as object ??
+            NumericFiltersVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            NumericFiltersVariant1?.ToString() ??
+            NumericFiltersVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -99,15 +99,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsNumericFiltersVariant1 && !IsNumericFiltersVariant2 || !IsNumericFiltersVariant1 && IsNumericFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?, TResult>? numericFiltersVariant1 = null,
+            global::System.Func<string?, TResult>? numericFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -115,13 +115,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsNumericFiltersVariant1 && numericFiltersVariant1 != null)
             {
-                return value1(Value1!);
+                return numericFiltersVariant1(NumericFiltersVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsNumericFiltersVariant2 && numericFiltersVariant2 != null)
             {
-                return value2(Value2!);
+                return numericFiltersVariant2(NumericFiltersVariant2!);
             }
 
             return default(TResult);
@@ -131,8 +131,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?>? numericFiltersVariant1 = null,
+            global::System.Action<string?>? numericFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -140,13 +140,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsNumericFiltersVariant1)
             {
-                value1?.Invoke(Value1!);
+                numericFiltersVariant1?.Invoke(NumericFiltersVariant1!);
             }
-            else if (IsValue2)
+            else if (IsNumericFiltersVariant2)
             {
-                value2?.Invoke(Value2!);
+                numericFiltersVariant2?.Invoke(NumericFiltersVariant2!);
             }
         }
 
@@ -157,9 +157,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                NumericFiltersVariant1,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.NumericFilters>),
-                Value2,
+                NumericFiltersVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -177,8 +177,8 @@ namespace Algolia
         public bool Equals(NumericFilters other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.NumericFilters>?>.Default.Equals(NumericFiltersVariant1, other.NumericFiltersVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(NumericFiltersVariant2, other.NumericFiltersVariant2) 
                 ;
         }
 

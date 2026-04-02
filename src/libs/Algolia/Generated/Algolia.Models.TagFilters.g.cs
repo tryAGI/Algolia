@@ -18,35 +18,35 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Algolia.TagFilters>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<global::Algolia.TagFilters>? TagFiltersVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Algolia.TagFilters>? Value1 { get; }
+        public global::System.Collections.Generic.IList<global::Algolia.TagFilters>? TagFiltersVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagFiltersVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTagFiltersVariant1 => TagFiltersVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? TagFiltersVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? TagFiltersVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagFiltersVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTagFiltersVariant2 => TagFiltersVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -55,42 +55,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(TagFilters @this) => @this.Value2;
+        public static implicit operator string?(TagFilters @this) => @this.TagFiltersVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TagFilters(string? value)
         {
-            Value2 = value;
+            TagFiltersVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TagFilters(
-            global::System.Collections.Generic.IList<global::Algolia.TagFilters>? value1,
-            string? value2
+            global::System.Collections.Generic.IList<global::Algolia.TagFilters>? tagFiltersVariant1,
+            string? tagFiltersVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            TagFiltersVariant1 = tagFiltersVariant1;
+            TagFiltersVariant2 = tagFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TagFiltersVariant2 as object ??
+            TagFiltersVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            TagFiltersVariant1?.ToString() ??
+            TagFiltersVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -98,15 +98,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsTagFiltersVariant1 && !IsTagFiltersVariant2 || !IsTagFiltersVariant1 && IsTagFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?, TResult>? tagFiltersVariant1 = null,
+            global::System.Func<string?, TResult>? tagFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -114,13 +114,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTagFiltersVariant1 && tagFiltersVariant1 != null)
             {
-                return value1(Value1!);
+                return tagFiltersVariant1(TagFiltersVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTagFiltersVariant2 && tagFiltersVariant2 != null)
             {
-                return value2(Value2!);
+                return tagFiltersVariant2(TagFiltersVariant2!);
             }
 
             return default(TResult);
@@ -130,8 +130,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?>? tagFiltersVariant1 = null,
+            global::System.Action<string?>? tagFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -139,13 +139,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTagFiltersVariant1)
             {
-                value1?.Invoke(Value1!);
+                tagFiltersVariant1?.Invoke(TagFiltersVariant1!);
             }
-            else if (IsValue2)
+            else if (IsTagFiltersVariant2)
             {
-                value2?.Invoke(Value2!);
+                tagFiltersVariant2?.Invoke(TagFiltersVariant2!);
             }
         }
 
@@ -156,9 +156,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                TagFiltersVariant1,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.TagFilters>),
-                Value2,
+                TagFiltersVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -176,8 +176,8 @@ namespace Algolia
         public bool Equals(TagFilters other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.TagFilters>?>.Default.Equals(TagFiltersVariant1, other.TagFiltersVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TagFiltersVariant2, other.TagFiltersVariant2) 
                 ;
         }
 

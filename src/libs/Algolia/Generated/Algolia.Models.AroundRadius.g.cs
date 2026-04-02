@@ -16,18 +16,18 @@ namespace Algolia
         /// Maximum search radius around a central location in meters.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value1 { get; init; }
+        public int? AroundRadiusVariant1 { get; init; }
 #else
-        public int? Value1 { get; }
+        public int? AroundRadiusVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AroundRadiusVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAroundRadiusVariant1 => AroundRadiusVariant1 != null;
 
         /// <summary>
         /// Return all records with a valid `_geoloc` attribute. Don't filter by distance.
@@ -53,14 +53,14 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(AroundRadius @this) => @this.Value1;
+        public static implicit operator int?(AroundRadius @this) => @this.AroundRadiusVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AroundRadius(int? value)
         {
-            Value1 = value;
+            AroundRadiusVariant1 = value;
         }
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace Algolia
         /// 
         /// </summary>
         public AroundRadius(
-            int? value1,
+            int? aroundRadiusVariant1,
             global::Algolia.AroundRadiusAll? all
             )
         {
-            Value1 = value1;
+            AroundRadiusVariant1 = aroundRadiusVariant1;
             All = all;
         }
 
@@ -98,14 +98,14 @@ namespace Algolia
         /// </summary>
         public object? Object =>
             All as object ??
-            Value1 as object 
+            AroundRadiusVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            AroundRadiusVariant1?.ToString() ??
             All?.ToValueString() 
             ;
 
@@ -114,14 +114,14 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsAll || !IsValue1 && IsAll;
+            return IsAroundRadiusVariant1 && !IsAll || !IsAroundRadiusVariant1 && IsAll;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<int?, TResult>? value1 = null,
+            global::System.Func<int?, TResult>? aroundRadiusVariant1 = null,
             global::System.Func<global::Algolia.AroundRadiusAll?, TResult>? all = null,
             bool validate = true)
         {
@@ -130,9 +130,9 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAroundRadiusVariant1 && aroundRadiusVariant1 != null)
             {
-                return value1(Value1!);
+                return aroundRadiusVariant1(AroundRadiusVariant1!);
             }
             else if (IsAll && all != null)
             {
@@ -146,7 +146,7 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<int?>? value1 = null,
+            global::System.Action<int?>? aroundRadiusVariant1 = null,
             global::System.Action<global::Algolia.AroundRadiusAll?>? all = null,
             bool validate = true)
         {
@@ -155,9 +155,9 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAroundRadiusVariant1)
             {
-                value1?.Invoke(Value1!);
+                aroundRadiusVariant1?.Invoke(AroundRadiusVariant1!);
             }
             else if (IsAll)
             {
@@ -172,7 +172,7 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                AroundRadiusVariant1,
                 typeof(int),
                 All,
                 typeof(global::Algolia.AroundRadiusAll),
@@ -192,7 +192,7 @@ namespace Algolia
         public bool Equals(AroundRadius other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(AroundRadiusVariant1, other.AroundRadiusVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.AroundRadiusAll?>.Default.Equals(All, other.All) 
                 ;
         }

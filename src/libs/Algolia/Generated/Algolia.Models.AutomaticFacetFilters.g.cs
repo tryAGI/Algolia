@@ -16,62 +16,62 @@ namespace Algolia
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? AutomaticFacetFiltersVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? Value1 { get; }
+        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? AutomaticFacetFiltersVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutomaticFacetFiltersVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAutomaticFacetFiltersVariant1 => AutomaticFacetFiltersVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? AutomaticFacetFiltersVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? AutomaticFacetFiltersVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutomaticFacetFiltersVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAutomaticFacetFiltersVariant2 => AutomaticFacetFiltersVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
         public AutomaticFacetFilters(
-            global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? automaticFacetFiltersVariant1,
+            global::System.Collections.Generic.IList<string>? automaticFacetFiltersVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AutomaticFacetFiltersVariant1 = automaticFacetFiltersVariant1;
+            AutomaticFacetFiltersVariant2 = automaticFacetFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            AutomaticFacetFiltersVariant2 as object ??
+            AutomaticFacetFiltersVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AutomaticFacetFiltersVariant1?.ToString() ??
+            AutomaticFacetFiltersVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -79,15 +79,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsAutomaticFacetFiltersVariant1 && !IsAutomaticFacetFiltersVariant2 || !IsAutomaticFacetFiltersVariant1 && IsAutomaticFacetFiltersVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?, TResult>? automaticFacetFiltersVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? automaticFacetFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -95,13 +95,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAutomaticFacetFiltersVariant1 && automaticFacetFiltersVariant1 != null)
             {
-                return value1(Value1!);
+                return automaticFacetFiltersVariant1(AutomaticFacetFiltersVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAutomaticFacetFiltersVariant2 && automaticFacetFiltersVariant2 != null)
             {
-                return value2(Value2!);
+                return automaticFacetFiltersVariant2(AutomaticFacetFiltersVariant2!);
             }
 
             return default(TResult);
@@ -111,8 +111,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?>? automaticFacetFiltersVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? automaticFacetFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -120,13 +120,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAutomaticFacetFiltersVariant1)
             {
-                value1?.Invoke(Value1!);
+                automaticFacetFiltersVariant1?.Invoke(AutomaticFacetFiltersVariant1!);
             }
-            else if (IsValue2)
+            else if (IsAutomaticFacetFiltersVariant2)
             {
-                value2?.Invoke(Value2!);
+                automaticFacetFiltersVariant2?.Invoke(AutomaticFacetFiltersVariant2!);
             }
         }
 
@@ -137,9 +137,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                AutomaticFacetFiltersVariant1,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>),
-                Value2,
+                AutomaticFacetFiltersVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -157,8 +157,8 @@ namespace Algolia
         public bool Equals(AutomaticFacetFilters other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?>.Default.Equals(AutomaticFacetFiltersVariant1, other.AutomaticFacetFiltersVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AutomaticFacetFiltersVariant2, other.AutomaticFacetFiltersVariant2) 
                 ;
         }
 

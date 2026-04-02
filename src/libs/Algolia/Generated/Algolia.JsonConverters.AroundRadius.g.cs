@@ -54,7 +54,7 @@ namespace Algolia.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            int? value1 = default;
+            int? aroundRadiusVariant1 = default;
             global::Algolia.AroundRadiusAll? all = default;
             if (__bestIndex >= 0)
             {
@@ -65,7 +65,7 @@ namespace Algolia.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        aroundRadiusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && all == null)
+            if (aroundRadiusVariant1 == null && all == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    aroundRadiusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,7 +125,7 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.AroundRadius(
-                value1,
+                aroundRadiusVariant1,
 
                 all
                 );
@@ -142,11 +142,11 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsAroundRadiusVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AroundRadiusVariant1!.Value, typeInfo);
             }
             else if (value.IsAll)
             {

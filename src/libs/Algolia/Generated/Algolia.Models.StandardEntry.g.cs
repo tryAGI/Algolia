@@ -14,35 +14,35 @@ namespace Algolia
         /// Example: {"fr":false}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.Dictionary<string, bool>? Value1 { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? StandardEntryVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.Dictionary<string, bool>? Value1 { get; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? StandardEntryVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardEntryVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStandardEntryVariant1 => StandardEntryVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? StandardEntryVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? StandardEntryVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardEntryVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStandardEntryVariant2 => StandardEntryVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::System.Collections.Generic.Dictionary<string, bool>?(StandardEntry @this) => @this.Value1;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, bool>?(StandardEntry @this) => @this.StandardEntryVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public StandardEntry(global::System.Collections.Generic.Dictionary<string, bool>? value)
         {
-            Value1 = value;
+            StandardEntryVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StandardEntry(
-            global::System.Collections.Generic.Dictionary<string, bool>? value1,
-            object? value2
+            global::System.Collections.Generic.Dictionary<string, bool>? standardEntryVariant1,
+            object? standardEntryVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            StandardEntryVariant1 = standardEntryVariant1;
+            StandardEntryVariant2 = standardEntryVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            StandardEntryVariant2 as object ??
+            StandardEntryVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            StandardEntryVariant1?.ToString() ??
+            StandardEntryVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsStandardEntryVariant1 && !IsStandardEntryVariant2 || !IsStandardEntryVariant1 && IsStandardEntryVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>?, TResult>? value1 = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>?, TResult>? standardEntryVariant1 = null,
+            global::System.Func<object?, TResult>? standardEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStandardEntryVariant1 && standardEntryVariant1 != null)
             {
-                return value1(Value1!);
+                return standardEntryVariant1(StandardEntryVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStandardEntryVariant2 && standardEntryVariant2 != null)
             {
-                return value2(Value2!);
+                return standardEntryVariant2(StandardEntryVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>?>? value1 = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>?>? standardEntryVariant1 = null,
+            global::System.Action<object?>? standardEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStandardEntryVariant1)
             {
-                value1?.Invoke(Value1!);
+                standardEntryVariant1?.Invoke(StandardEntryVariant1!);
             }
-            else if (IsValue2)
+            else if (IsStandardEntryVariant2)
             {
-                value2?.Invoke(Value2!);
+                standardEntryVariant2?.Invoke(StandardEntryVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace Algolia
         {
             var fields = new object?[]
             {
-                Value1,
+                StandardEntryVariant1,
                 typeof(global::System.Collections.Generic.Dictionary<string, bool>),
-                Value2,
+                StandardEntryVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace Algolia
         public bool Equals(StandardEntry other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, bool>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, bool>?>.Default.Equals(StandardEntryVariant1, other.StandardEntryVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(StandardEntryVariant2, other.StandardEntryVariant2) 
                 ;
         }
 

@@ -35,8 +35,8 @@ namespace Algolia.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            string? value1 = default;
-            global::Algolia.BuiltInOperation? value2 = default;
+            string? attributeToUpdateVariant1 = default;
+            global::Algolia.BuiltInOperation? builtInOperation = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -45,7 +45,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        attributeToUpdateVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +60,7 @@ namespace Algolia.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BuiltInOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BuiltInOperation> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BuiltInOperation).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        builtInOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,13 +71,13 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (attributeToUpdateVariant1 == null && builtInOperation == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    attributeToUpdateVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -90,7 +90,7 @@ namespace Algolia.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BuiltInOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BuiltInOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BuiltInOperation).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    builtInOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -101,9 +101,9 @@ namespace Algolia.JsonConverters
             }
 
             var __value = new global::Algolia.AttributeToUpdate(
-                value1,
+                attributeToUpdateVariant1,
 
-                value2
+                builtInOperation
                 );
 
             return __value;
@@ -118,17 +118,17 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsAttributeToUpdateVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AttributeToUpdateVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBuiltInOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BuiltInOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BuiltInOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BuiltInOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BuiltInOperation!, typeInfo);
             }
         }
     }

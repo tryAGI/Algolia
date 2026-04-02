@@ -13,35 +13,35 @@ namespace Algolia.Recommend
         /// Restrict [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) to records that match these filters.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.ReRankingApplyFilter? Value1 { get; init; }
+        public global::Algolia.Recommend.ReRankingApplyFilter? ReRankingApplyFilter { get; init; }
 #else
-        public global::Algolia.Recommend.ReRankingApplyFilter? Value1 { get; }
+        public global::Algolia.Recommend.ReRankingApplyFilter? ReRankingApplyFilter { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReRankingApplyFilter))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsReRankingApplyFilter => ReRankingApplyFilter != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? PropertiesReRankingApplyFilterVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? PropertiesReRankingApplyFilterVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PropertiesReRankingApplyFilterVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsPropertiesReRankingApplyFilterVariant2 => PropertiesReRankingApplyFilterVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,42 +50,42 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.ReRankingApplyFilter?(PropertiesReRankingApplyFilter @this) => @this.Value1;
+        public static implicit operator global::Algolia.Recommend.ReRankingApplyFilter?(PropertiesReRankingApplyFilter @this) => @this.ReRankingApplyFilter;
 
         /// <summary>
         /// 
         /// </summary>
         public PropertiesReRankingApplyFilter(global::Algolia.Recommend.ReRankingApplyFilter? value)
         {
-            Value1 = value;
+            ReRankingApplyFilter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public PropertiesReRankingApplyFilter(
-            global::Algolia.Recommend.ReRankingApplyFilter? value1,
-            object? value2
+            global::Algolia.Recommend.ReRankingApplyFilter? reRankingApplyFilter,
+            object? propertiesReRankingApplyFilterVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ReRankingApplyFilter = reRankingApplyFilter;
+            PropertiesReRankingApplyFilterVariant2 = propertiesReRankingApplyFilterVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            PropertiesReRankingApplyFilterVariant2 as object ??
+            ReRankingApplyFilter as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ReRankingApplyFilter?.ToString() ??
+            PropertiesReRankingApplyFilterVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsReRankingApplyFilter && !IsPropertiesReRankingApplyFilterVariant2 || !IsReRankingApplyFilter && IsPropertiesReRankingApplyFilterVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.ReRankingApplyFilter?, TResult>? value1 = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<global::Algolia.Recommend.ReRankingApplyFilter?, TResult>? reRankingApplyFilter = null,
+            global::System.Func<object?, TResult>? propertiesReRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,13 +109,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsReRankingApplyFilter && reRankingApplyFilter != null)
             {
-                return value1(Value1!);
+                return reRankingApplyFilter(ReRankingApplyFilter!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsPropertiesReRankingApplyFilterVariant2 && propertiesReRankingApplyFilterVariant2 != null)
             {
-                return value2(Value2!);
+                return propertiesReRankingApplyFilterVariant2(PropertiesReRankingApplyFilterVariant2!);
             }
 
             return default(TResult);
@@ -125,8 +125,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.ReRankingApplyFilter?>? value1 = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<global::Algolia.Recommend.ReRankingApplyFilter?>? reRankingApplyFilter = null,
+            global::System.Action<object?>? propertiesReRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,13 +134,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsReRankingApplyFilter)
             {
-                value1?.Invoke(Value1!);
+                reRankingApplyFilter?.Invoke(ReRankingApplyFilter!);
             }
-            else if (IsValue2)
+            else if (IsPropertiesReRankingApplyFilterVariant2)
             {
-                value2?.Invoke(Value2!);
+                propertiesReRankingApplyFilterVariant2?.Invoke(PropertiesReRankingApplyFilterVariant2!);
             }
         }
 
@@ -151,9 +151,9 @@ namespace Algolia.Recommend
         {
             var fields = new object?[]
             {
-                Value1,
+                ReRankingApplyFilter,
                 typeof(global::Algolia.Recommend.ReRankingApplyFilter),
-                Value2,
+                PropertiesReRankingApplyFilterVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -171,8 +171,8 @@ namespace Algolia.Recommend
         public bool Equals(PropertiesReRankingApplyFilter other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.ReRankingApplyFilter?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.ReRankingApplyFilter?>.Default.Equals(ReRankingApplyFilter, other.ReRankingApplyFilter) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(PropertiesReRankingApplyFilterVariant2, other.PropertiesReRankingApplyFilterVariant2) 
                 ;
         }
 
