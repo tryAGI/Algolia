@@ -5,6 +5,25 @@ namespace Algolia.Recommend
 {
     public partial class RecommendClient
     {
+
+
+        private static readonly global::Algolia.Recommend.EndPointSecurityRequirement s_CustomDeleteSecurityRequirement0 =
+            new global::Algolia.Recommend.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Algolia.Recommend.EndPointAuthorizationRequirement[]
+                {                    new global::Algolia.Recommend.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Algolia.Recommend.EndPointSecurityRequirement[] s_CustomDeleteSecurityRequirements =
+            new global::Algolia.Recommend.EndPointSecurityRequirement[]
+            {                s_CustomDeleteSecurityRequirement0,
+            };
         partial void PrepareCustomDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string path,
@@ -45,12 +64,18 @@ namespace Algolia.Recommend
                 path: ref path,
                 parameters: parameters);
 
+
+            var __authorizations = global::Algolia.Recommend.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CustomDeleteSecurityRequirements,
+                operationName: "CustomDeleteAsync");
+
             var __pathBuilder = new global::Algolia.Recommend.PathBuilder(
                 path: $"/{path}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("parameters", parameters?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -60,7 +85,7 @@ namespace Algolia.Recommend
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

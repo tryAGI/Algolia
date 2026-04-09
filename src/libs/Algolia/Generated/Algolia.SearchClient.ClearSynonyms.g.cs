@@ -5,6 +5,25 @@ namespace Algolia
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::Algolia.EndPointSecurityRequirement s_ClearSynonymsSecurityRequirement0 =
+            new global::Algolia.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Algolia.EndPointAuthorizationRequirement[]
+                {                    new global::Algolia.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Algolia.EndPointSecurityRequirement[] s_ClearSynonymsSecurityRequirements =
+            new global::Algolia.EndPointSecurityRequirement[]
+            {                s_ClearSynonymsSecurityRequirement0,
+            };
         partial void PrepareClearSynonymsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string indexName,
@@ -45,12 +64,18 @@ namespace Algolia
                 indexName: ref indexName,
                 forwardToReplicas: ref forwardToReplicas);
 
+
+            var __authorizations = global::Algolia.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ClearSynonymsSecurityRequirements,
+                operationName: "ClearSynonymsAsync");
+
             var __pathBuilder = new global::Algolia.PathBuilder(
                 path: $"/1/indexes/{indexName}/synonyms/clear",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("forwardToReplicas", forwardToReplicas?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -60,7 +85,7 @@ namespace Algolia
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

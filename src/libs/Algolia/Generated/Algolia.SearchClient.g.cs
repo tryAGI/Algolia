@@ -12,7 +12,7 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://ALGOLIA_APPLICATION_ID.algolia.net";
+        public const string DefaultBaseUrl = "https://algolia_application_id.algolia.net/";
 
         private bool _disposeHttpClient = true;
 

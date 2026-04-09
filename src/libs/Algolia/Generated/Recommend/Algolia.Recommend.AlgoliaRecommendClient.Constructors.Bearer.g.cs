@@ -6,6 +6,7 @@ namespace Algolia.Recommend
     public sealed partial class AlgoliaRecommendClient
     {
         /// <inheritdoc cref="AlgoliaRecommendClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Algolia.Recommend.EndPointAuthorization}?, bool)"/>
+
         public AlgoliaRecommendClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
