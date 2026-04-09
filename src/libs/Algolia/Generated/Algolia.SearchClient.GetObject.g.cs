@@ -5,6 +5,25 @@ namespace Algolia
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::Algolia.EndPointSecurityRequirement s_GetObjectSecurityRequirement0 =
+            new global::Algolia.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Algolia.EndPointAuthorizationRequirement[]
+                {                    new global::Algolia.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Algolia.EndPointSecurityRequirement[] s_GetObjectSecurityRequirements =
+            new global::Algolia.EndPointSecurityRequirement[]
+            {                s_GetObjectSecurityRequirement0,
+            };
         partial void PrepareGetObjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string indexName,
@@ -54,12 +73,18 @@ namespace Algolia
                 objectID: ref objectID,
                 attributesToRetrieve: attributesToRetrieve);
 
+
+            var __authorizations = global::Algolia.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetObjectSecurityRequirements,
+                operationName: "GetObjectAsync");
+
             var __pathBuilder = new global::Algolia.PathBuilder(
                 path: $"/1/indexes/{indexName}/{objectID}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("attributesToRetrieve", attributesToRetrieve, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -69,7 +94,7 @@ namespace Algolia
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
