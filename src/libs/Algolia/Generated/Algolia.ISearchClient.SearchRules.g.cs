@@ -12,12 +12,14 @@ namespace Algolia
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchRulesResponse> SearchRulesAsync(
             string indexName,
 
             global::Algolia.SearchRulesRequest request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for rules<br/>
@@ -59,6 +61,7 @@ namespace Algolia
         /// <param name="enabled">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchRulesResponse> SearchRulesAsync(
@@ -69,6 +72,7 @@ namespace Algolia
             int? page = default,
             int? hitsPerPage = default,
             global::Algolia.OneOf<bool?, object>? enabled = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

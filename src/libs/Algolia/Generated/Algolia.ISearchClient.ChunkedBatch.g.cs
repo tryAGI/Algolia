@@ -28,6 +28,7 @@ namespace Algolia
         /// </param>
         /// <param name="waitForTasks"></param>
         /// <param name="batchSize"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Algolia.BatchResponse>> ChunkedBatchAsync(
@@ -36,6 +37,7 @@ namespace Algolia
             global::Algolia.Action? action = default,
             bool? waitForTasks = default,
             int? batchSize = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

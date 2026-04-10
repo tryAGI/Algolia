@@ -10,12 +10,14 @@ namespace Algolia
         /// </summary>
         /// <param name="dictionaryName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchDictionaryEntriesResponse> SearchDictionaryEntriesAsync(
             global::Algolia.DictionaryType dictionaryName,
 
             global::Algolia.SearchDictionaryEntriesRequest request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search dictionary entries<br/>
@@ -36,6 +38,7 @@ namespace Algolia
         /// <param name="language">
         /// ISO code for a supported language.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchDictionaryEntriesResponse> SearchDictionaryEntriesAsync(
@@ -44,6 +47,7 @@ namespace Algolia
             int? page = default,
             int? hitsPerPage = default,
             global::Algolia.SupportedLanguage? language = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

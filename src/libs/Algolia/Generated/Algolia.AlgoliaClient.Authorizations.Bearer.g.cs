@@ -25,6 +25,7 @@ namespace Algolia
             Authorizations.Add(new global::Algolia.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

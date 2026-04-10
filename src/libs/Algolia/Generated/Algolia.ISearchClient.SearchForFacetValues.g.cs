@@ -16,6 +16,7 @@ namespace Algolia
         /// </param>
         /// <param name="facetName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchForFacetValuesResponse> SearchForFacetValuesAsync(
@@ -23,6 +24,7 @@ namespace Algolia
             string facetName,
 
             global::Algolia.SearchForFacetValuesRequest request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for facet values<br/>
@@ -47,6 +49,7 @@ namespace Algolia
         /// Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: 10
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchForFacetValuesResponse> SearchForFacetValuesAsync(
@@ -55,6 +58,7 @@ namespace Algolia
             string? @params = default,
             string? facetQuery = default,
             int? maxFacetHits = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

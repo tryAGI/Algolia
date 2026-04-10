@@ -22,12 +22,14 @@ namespace Algolia.Recommend
         /// You can check the task's progress with the [`task` operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.<br/>
         /// Example: 1514562690001
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.Recommend.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.Recommend.GetRecommendStatusResponse> GetRecommendStatusAsync(
             string indexName,
             global::Algolia.Recommend.RecommendModels model,
             long taskID,
+            global::Algolia.Recommend.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

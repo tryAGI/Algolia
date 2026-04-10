@@ -42,6 +42,7 @@ namespace Algolia
         /// Default Value: true
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.PartialUpdateObjectResponse> PartialUpdateObjectAsync(
@@ -50,6 +51,7 @@ namespace Algolia
 
             object request,
             bool? createIfNotExists = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add or update attributes<br/>
@@ -88,12 +90,14 @@ namespace Algolia
         /// <param name="createIfNotExists">
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.PartialUpdateObjectResponse> PartialUpdateObjectAsync(
             string indexName,
             string objectID,
             bool? createIfNotExists = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

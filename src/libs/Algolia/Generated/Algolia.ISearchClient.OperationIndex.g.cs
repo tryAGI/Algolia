@@ -30,12 +30,14 @@ namespace Algolia
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.UpdatedAtResponse> OperationIndexAsync(
             string indexName,
 
             global::Algolia.OperationIndexRequest request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Copy or move an index<br/>
@@ -75,6 +77,7 @@ namespace Algolia
         /// If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.<br/>
         /// If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.UpdatedAtResponse> OperationIndexAsync(
@@ -82,6 +85,7 @@ namespace Algolia
             global::Algolia.OperationType operation,
             string destination,
             global::System.Collections.Generic.IList<global::Algolia.ScopeType>? scope = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

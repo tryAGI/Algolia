@@ -18,6 +18,7 @@ namespace Algolia
         /// </param>
         /// <param name="forwardToReplicas"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SaveSynonymResponse> SaveSynonymAsync(
@@ -26,6 +27,7 @@ namespace Algolia
 
             global::Algolia.SynonymHit request,
             bool? forwardToReplicas = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or replace a synonym<br/>
@@ -72,6 +74,7 @@ namespace Algolia
         /// Query words that will match the [placeholder token](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/synonyms-placeholders).<br/>
         /// Example: [street, st]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SaveSynonymResponse> SaveSynonymAsync(
@@ -86,6 +89,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<string>? corrections = default,
             string? placeholder = default,
             global::System.Collections.Generic.IList<string>? replacements = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

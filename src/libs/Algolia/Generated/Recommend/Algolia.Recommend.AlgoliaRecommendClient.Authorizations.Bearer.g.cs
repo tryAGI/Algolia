@@ -25,6 +25,7 @@ namespace Algolia.Recommend
             Authorizations.Add(new global::Algolia.Recommend.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

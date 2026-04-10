@@ -17,12 +17,14 @@ namespace Algolia
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.UpdatedAtResponse> DeleteByAsync(
             string indexName,
 
             global::Algolia.DeleteByParams request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete records matching a filter<br/>
@@ -105,6 +107,7 @@ namespace Algolia
         /// This parameter is ignored if you also specify `insideBoundingBox`.<br/>
         /// Example: [[47.3165, 4.9665, 47.3424, 5.0201, 47.32, 4.9], [40.9234, 2.1185, 38.643, 1.9916, 39.2587, 2.0104]]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.UpdatedAtResponse> DeleteByAsync(
@@ -117,6 +120,7 @@ namespace Algolia
             global::Algolia.AroundRadius? aroundRadius = default,
             global::Algolia.InsideBoundingBox? insideBoundingBox = default,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? insidePolygon = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
