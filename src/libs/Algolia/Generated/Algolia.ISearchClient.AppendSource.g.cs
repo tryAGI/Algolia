@@ -9,11 +9,13 @@ namespace Algolia
         /// Adds a source to the list of allowed sources.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.AppendSourceResponse> AppendSourceAsync(
 
             global::Algolia.Source request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add a source<br/>
@@ -27,11 +29,13 @@ namespace Algolia
         /// Source description.<br/>
         /// Example: Server subnet
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.AppendSourceResponse> AppendSourceAsync(
             string source1,
             string? description = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

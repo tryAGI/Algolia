@@ -12,12 +12,14 @@ namespace Algolia
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchSynonymsResponse> SearchSynonymsAsync(
             string indexName,
 
             global::Algolia.SearchSynonymsRequest request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for synonyms<br/>
@@ -41,6 +43,7 @@ namespace Algolia
         /// Number of hits per page.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Algolia.SearchSynonymsResponse> SearchSynonymsAsync(
@@ -49,6 +52,7 @@ namespace Algolia
             global::Algolia.SynonymType? type = default,
             int? page = default,
             int? hitsPerPage = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
