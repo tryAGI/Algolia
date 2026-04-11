@@ -1,0 +1,59 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Add or replace a record",
+      "Slug": "addorupdateobject",
+      "Description": "If a record with the specified object ID exists, the existing record is replaced.\nOtherwise, a new record is added to the index.\n\nIf you want to use auto-generated object IDs, use the [\u0060saveObject\u0060 operation](https://www.algolia.com/doc/rest-api/search/save-object).\nTo update _some_ attributes of an existing record, use the [\u0060partial\u0060 operation](https://www.algolia.com/doc/rest-api/search/partial-update-object) instead.\nTo add, update, or replace multiple records, use the [\u0060batch\u0060 operation](https://www.algolia.com/doc/rest-api/search/batch).",
+      "Language": "http",
+      "Code": "### Add or replace a record\n# @name addOrUpdateObject\nPUT {{host}}/1/indexes/{{indexName}}/{{objectID}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022objectID\u0022: \u0022blackTShirt\u0022,\n  \u0022name\u0022: \u0022Black T-shirt\u0022,\n  \u0022color\u0022: \u0022#000000\u0022\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad request or request arguments.\n# Content-Type: application/json\n# 402\n# Description: This feature is not enabled on your Algolia account.\n# Content-Type: application/json\n# 403\n# Description: Method not allowed with this API key.\n# Content-Type: application/json\n# 404\n# Description: Index not found.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "addOrUpdateObject",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Batch indexing operations on one index",
+      "Slug": "batch",
+      "Description": "Adds, updates, or deletes records in one index with a single API request.\n\nBatching index updates reduces latency and increases data integrity.\n\n- Actions are applied in the order they\u0027re specified.\n- Actions are equivalent to the individual API requests of the same name.\n\nThis operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).",
+      "Language": "http",
+      "Code": "### Batch indexing operations on one index\n# @name batch\nPOST {{host}}/1/indexes/{{indexName}}/batch\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022requests\u0022: [\n    {\n      \u0022action\u0022: \u0022addObject\u0022,\n      \u0022body\u0022: {\n        \u0022name\u0022: \u0022Betty Jane McCamey\u0022,\n        \u0022company\u0022: \u0022Vita Foods Inc.\u0022,\n        \u0022email\u0022: \u0022betty@mccamey.com\u0022\n      }\n    },\n    {\n      \u0022action\u0022: \u0022addObject\u0022,\n      \u0022body\u0022: {\n        \u0022name\u0022: \u0022Gayla geimer\u0022,\n        \u0022company\u0022: \u0022Ortman McCain Co.\u0022,\n        \u0022email\u0022: \u0022gayla@geimer.com\u0022\n      }\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad request or request arguments.\n# Content-Type: application/json\n# 402\n# Description: This feature is not enabled on your Algolia account.\n# Content-Type: application/json\n# 403\n# Description: Method not allowed with this API key.\n# Content-Type: application/json\n# 404\n# Description: Index not found.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "batch",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Retrieve log entries",
+      "Slug": "getlogs",
+      "Description": "The request must be authenticated by an API key with the [\u0060logs\u0060 ACL](https://www.algolia.com/doc/guides/security/api-keys/#access-control-list-acl).\n\n- Logs are held for the last seven days.\n- Up to 1,000 API requests per server are logged.\n- This request counts towards your [operations quota](https://support.algolia.com/hc/articles/17245378392977-How-does-Algolia-count-records-and-operations) but doesn\u0027t appear in the logs itself.",
+      "Language": "csharp",
+      "Code": "using var client = new AlgoliaClient(apiKey);\n\nvar response = await client.Search.GetLogsAsync(\n    indexName: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Algolia.OneOf\u003Cstring, object\u003E\u003E(\n    @\u0022\u0022\u0022products\u0022\u0022\u0022)!\n);",
+      "Format": "sdk",
+      "OperationId": "getLogs",
+      "Setup": "This example assumes \u0060using Algolia;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 4,
+      "Title": "Batch indexing operations on multiple indices",
+      "Slug": "multiplebatch",
+      "Description": "Adds, updates, or deletes records in multiple indices with a single API request.\n\n- Actions are applied in the order they are specified.\n- Actions are equivalent to the individual API requests of the same name.\n\nThis operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).",
+      "Language": "csharp",
+      "Code": "using var client = new AlgoliaClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Algolia.MultipleBatchRequest\u003E(\n    @\u0022{\n  \u0022\u0022requests\u0022\u0022: [\n    {\n      \u0022\u0022action\u0022\u0022: \u0022\u0022addObject\u0022\u0022,\n      \u0022\u0022indexName\u0022\u0022: \u0022\u0022contacts\u0022\u0022,\n      \u0022\u0022body\u0022\u0022: {\n        \u0022\u0022name\u0022\u0022: \u0022\u0022Betty Jane McCamey\u0022\u0022,\n        \u0022\u0022company\u0022\u0022: \u0022\u0022Vita Foods Inc.\u0022\u0022,\n        \u0022\u0022email\u0022\u0022: \u0022\u0022betty@mccamey.com\u0022\u0022\n      }\n    },\n    {\n      \u0022\u0022action\u0022\u0022: \u0022\u0022addObject\u0022\u0022,\n      \u0022\u0022indexName\u0022\u0022: \u0022\u0022public_contacts\u0022\u0022,\n      \u0022\u0022body\u0022\u0022: {\n        \u0022\u0022name\u0022\u0022: \u0022\u0022Gayla Geimer\u0022\u0022,\n        \u0022\u0022company\u0022\u0022: \u0022\u0022Ortman McCain Co.\u0022\u0022,\n        \u0022\u0022email\u0022\u0022: \u0022\u0022gayla@geimer.com\u0022\u0022\n      }\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.Search.MultipleBatchAsync(\n    request: request\n);",
+      "Format": "sdk",
+      "OperationId": "multipleBatch",
+      "Setup": "This example assumes \u0060using Algolia;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 5,
+      "Title": "Add a new record (with auto-generated object ID)",
+      "Slug": "saveobject",
+      "Description": "Adds a record to an index or replaces it.\n\n- If the record doesn\u0027t have an object ID, a new record with an auto-generated object ID is added to your index.\n- If a record with the specified object ID exists, the existing record is replaced.\n- If a record with the specified object ID doesn\u0027t exist, a new record is added to your index.\n- If you add a record to an index that doesn\u0027t exist yet, a new index is created.\n\nTo update _some_ attributes of a record, use the [\u0060partial\u0060 operation](https://www.algolia.com/doc/rest-api/search/partial-update-object).\nTo add, update, or replace multiple records, use the [\u0060batch\u0060 operation](https://www.algolia.com/doc/rest-api/search/batch).\n\nThis operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).",
+      "Language": "http",
+      "Code": "### Add a new record (with auto-generated object ID)\n# @name saveObject\nPOST {{host}}/1/indexes/{{indexName}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022objectID\u0022: \u0022blackTShirt\u0022,\n  \u0022name\u0022: \u0022Black T-shirt\u0022,\n  \u0022color\u0022: \u0022#000000\u0022\n}\n\n## Responses\n# 201\n# Description: Created\n# Content-Type: application/json\n# 400\n# Description: Bad request or request arguments.\n# Content-Type: application/json\n# 402\n# Description: This feature is not enabled on your Algolia account.\n# Content-Type: application/json\n# 403\n# Description: Method not allowed with this API key.\n# Content-Type: application/json\n# 404\n# Description: Index not found.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "saveObject",
+      "Setup": null
+    }
+  ]
+}
