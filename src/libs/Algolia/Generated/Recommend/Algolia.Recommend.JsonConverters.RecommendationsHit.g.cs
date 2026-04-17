@@ -23,6 +23,14 @@ namespace Algolia.Recommend.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -30,6 +38,19 @@ namespace Algolia.Recommend.JsonConverters
             if (__jsonProps.Contains("_distinctSeqID")) __score0++;
             if (__jsonProps.Contains("_highlightResult")) __score0++;
             if (__jsonProps.Contains("_rankingInfo")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.filters")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.firstMatchedWord")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.geoDistance")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.geoPrecision")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.matchedGeoLocation")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.nbExactWords")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.nbTypos")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.personalization")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.promoted")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.promotedByReRanking")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.proximityDistance")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.userScore")) __score0++;
+            if (__jsonProps.Contains("_rankingInfo.words")) __score0++;
             if (__jsonProps.Contains("_score")) __score0++;
             if (__jsonProps.Contains("_snippetResult")) __score0++;
             if (__jsonProps.Contains("objectID")) __score0++;

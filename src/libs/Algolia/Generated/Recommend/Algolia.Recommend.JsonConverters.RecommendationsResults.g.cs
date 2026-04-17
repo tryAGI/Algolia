@@ -23,6 +23,14 @@ namespace Algolia.Recommend.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -34,6 +42,11 @@ namespace Algolia.Recommend.JsonConverters
             if (__jsonProps.Contains("aroundLatLng")) __score0++;
             if (__jsonProps.Contains("automaticRadius")) __score0++;
             if (__jsonProps.Contains("exhaustive")) __score0++;
+            if (__jsonProps.Contains("exhaustive.facetValues")) __score0++;
+            if (__jsonProps.Contains("exhaustive.facetsCount")) __score0++;
+            if (__jsonProps.Contains("exhaustive.nbHits")) __score0++;
+            if (__jsonProps.Contains("exhaustive.rulesMatch")) __score0++;
+            if (__jsonProps.Contains("exhaustive.typo")) __score0++;
             if (__jsonProps.Contains("exhaustiveFacetsCount")) __score0++;
             if (__jsonProps.Contains("exhaustiveNbHits")) __score0++;
             if (__jsonProps.Contains("exhaustiveTypo")) __score0++;
@@ -49,7 +62,11 @@ namespace Algolia.Recommend.JsonConverters
             if (__jsonProps.Contains("queryAfterRemoval")) __score0++;
             if (__jsonProps.Contains("queryID")) __score0++;
             if (__jsonProps.Contains("redirect")) __score0++;
+            if (__jsonProps.Contains("redirect.index")) __score0++;
             if (__jsonProps.Contains("renderingContent")) __score0++;
+            if (__jsonProps.Contains("renderingContent.facetOrdering")) __score0++;
+            if (__jsonProps.Contains("renderingContent.redirect")) __score0++;
+            if (__jsonProps.Contains("renderingContent.widgets")) __score0++;
             if (__jsonProps.Contains("serverTimeMS")) __score0++;
             if (__jsonProps.Contains("serverUsed")) __score0++;
             if (__jsonProps.Contains("userData")) __score0++;

@@ -23,6 +23,14 @@ namespace Algolia.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -82,10 +90,14 @@ namespace Algolia.JsonConverters
             if (__jsonProps.Contains("removeStopWords")) __score1++;
             if (__jsonProps.Contains("removeWordsIfNoResults")) __score1++;
             if (__jsonProps.Contains("renderingContent")) __score1++;
+            if (__jsonProps.Contains("renderingContent.facetOrdering")) __score1++;
+            if (__jsonProps.Contains("renderingContent.redirect")) __score1++;
+            if (__jsonProps.Contains("renderingContent.widgets")) __score1++;
             if (__jsonProps.Contains("replaceSynonymsInHighlight")) __score1++;
             if (__jsonProps.Contains("responseFields")) __score1++;
             if (__jsonProps.Contains("restrictHighlightAndSnippetArrays")) __score1++;
             if (__jsonProps.Contains("semanticSearch")) __score1++;
+            if (__jsonProps.Contains("semanticSearch.eventSources")) __score1++;
             if (__jsonProps.Contains("snippetEllipsisText")) __score1++;
             if (__jsonProps.Contains("sortFacetValuesBy")) __score1++;
             if (__jsonProps.Contains("typoTolerance")) __score1++;
