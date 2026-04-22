@@ -61,6 +61,14 @@ namespace Algolia
 
             typeof(global::Algolia.JsonConverters.MatchLevelNullableJsonConverter),
 
+            typeof(global::Algolia.JsonConverters.QueryCategorizationTypeJsonConverter),
+
+            typeof(global::Algolia.JsonConverters.QueryCategorizationTypeNullableJsonConverter),
+
+            typeof(global::Algolia.JsonConverters.CategoryPredictionBinJsonConverter),
+
+            typeof(global::Algolia.JsonConverters.CategoryPredictionBinNullableJsonConverter),
+
             typeof(global::Algolia.JsonConverters.SearchTypeDefaultJsonConverter),
 
             typeof(global::Algolia.JsonConverters.SearchTypeDefaultNullableJsonConverter),
@@ -178,6 +186,8 @@ namespace Algolia
             typeof(global::Algolia.JsonConverters.HighlightResultJsonConverter),
 
             typeof(global::Algolia.JsonConverters.SnippetResultJsonConverter),
+
+            typeof(global::Algolia.JsonConverters.AutoFilteringFilterEntryJsonConverter),
 
             typeof(global::Algolia.JsonConverters.SearchResponseJsonConverter),
 
@@ -326,10 +336,23 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Personalization))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.RankingInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Hit))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.QueryCategorizationType), TypeInfoPropertyName = "QueryCategorizationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.CategoryPredictionBin), TypeInfoPropertyName = "CategoryPredictionBin2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.HierarchyPathEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.CategoryPrediction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.HierarchyPathEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AutoFilteringFilterEntry), TypeInfoPropertyName = "AutoFilteringFilterEntry2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AutoFilteringResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.AutoFilteringFilterEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.QueryCategorization))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.CategoryPrediction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ResponseExtensions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchHits))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Hit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponse), TypeInfoPropertyName = "SearchResponse2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchTypeDefault), TypeInfoPropertyName = "SearchTypeDefault2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchExtensionsQueryCategorization))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchExtensions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForHitsSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForHits), TypeInfoPropertyName = "SearchForHits2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchTypeFacet), TypeInfoPropertyName = "SearchTypeFacet2")]
@@ -518,6 +541,9 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.RedirectRuleIndexMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.HighlightResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.SnippetResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.HierarchyPathEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.AutoFilteringFilterEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.CategoryPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Hit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.SearchForFacetValuesResponseFacetHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.BatchWriteParamsRequest>))]

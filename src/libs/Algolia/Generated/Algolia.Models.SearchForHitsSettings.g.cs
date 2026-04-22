@@ -27,6 +27,13 @@ namespace Algolia
         public global::Algolia.SearchTypeDefault? Type { get; set; }
 
         /// <summary>
+        /// Additional parameters for Algolia AI features.<br/>
+        /// Used to enable [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) and other AI-powered capabilities.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extensions")]
+        public global::Algolia.SearchExtensions? Extensions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,15 +51,21 @@ namespace Algolia
         /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: default
         /// </param>
+        /// <param name="extensions">
+        /// Additional parameters for Algolia AI features.<br/>
+        /// Used to enable [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) and other AI-powered capabilities.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SearchForHitsSettings(
             string indexName,
-            global::Algolia.SearchTypeDefault? type)
+            global::Algolia.SearchTypeDefault? type,
+            global::Algolia.SearchExtensions? extensions)
         {
             this.IndexName = indexName ?? throw new global::System.ArgumentNullException(nameof(indexName));
             this.Type = type;
+            this.Extensions = extensions;
         }
 
         /// <summary>

@@ -31,6 +31,13 @@ namespace Algolia
         public string? Params { get; set; }
 
         /// <summary>
+        /// AI-generated metadata returned alongside search results.<br/>
+        /// Present when Algolia AI features such as [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) are enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extensions")]
+        public global::Algolia.ResponseExtensions? Extensions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,17 +57,23 @@ namespace Algolia
         /// URL-encoded string of all search parameters.<br/>
         /// Example: query=a&amp;hitsPerPage=20
         /// </param>
+        /// <param name="extensions">
+        /// AI-generated metadata returned alongside search results.<br/>
+        /// Present when Algolia AI features such as [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) are enabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SearchHits(
             global::System.Collections.Generic.IList<global::Algolia.Hit> hits,
             string? query,
-            string? @params)
+            string? @params,
+            global::Algolia.ResponseExtensions? extensions)
         {
             this.Hits = hits ?? throw new global::System.ArgumentNullException(nameof(hits));
             this.Query = query;
             this.Params = @params;
+            this.Extensions = extensions;
         }
 
         /// <summary>
