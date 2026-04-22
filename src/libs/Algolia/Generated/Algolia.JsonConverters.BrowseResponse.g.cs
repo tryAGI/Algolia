@@ -76,6 +76,8 @@ namespace Algolia.JsonConverters
             if (__jsonProps.Contains("nbPages")) __score1++;
             if (__jsonProps.Contains("page")) __score1++;
             var __score2 = 0;
+            if (__jsonProps.Contains("extensions")) __score2++;
+            if (__jsonProps.Contains("extensions.queryCategorization")) __score2++;
             if (__jsonProps.Contains("hits")) __score2++;
             if (__jsonProps.Contains("params")) __score2++;
             if (__jsonProps.Contains("query")) __score2++;
