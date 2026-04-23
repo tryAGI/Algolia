@@ -42,12 +42,12 @@ namespace Algolia
             ref string content);
 
         /// <summary>
-        /// Search multiple indices<br/>
-        /// Sends multiple search requests to one or more indices.<br/>
-        /// This can be useful in these cases:<br/>
-        /// - Different indices for different purposes, such as, one index for products, another one for marketing content.<br/>
-        /// - Multiple searches to the same index—for example, with different filters.<br/>
-        /// Use the helper `searchForHits` or `searchForFacets` to get the results in a more convenient format, if you already know the return type you want.
+        /// Search multiple queries<br/>
+        /// Runs multiple search queries against one or more indices in a single API request.<br/>
+        /// Use cases include:<br/>
+        /// - Searching different indices, such as products and marketing content.<br/>
+        /// - Run multiple queries on the same index with different parameters or filters.<br/>
+        /// If you know the expected result type, use the `searchForHits` or `searchForFacets` helper to simplify the response format.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -544,12 +544,12 @@ namespace Algolia
             }
         }
         /// <summary>
-        /// Search multiple indices<br/>
-        /// Sends multiple search requests to one or more indices.<br/>
-        /// This can be useful in these cases:<br/>
-        /// - Different indices for different purposes, such as, one index for products, another one for marketing content.<br/>
-        /// - Multiple searches to the same index—for example, with different filters.<br/>
-        /// Use the helper `searchForHits` or `searchForFacets` to get the results in a more convenient format, if you already know the return type you want.
+        /// Search multiple queries<br/>
+        /// Runs multiple search queries against one or more indices in a single API request.<br/>
+        /// Use cases include:<br/>
+        /// - Searching different indices, such as products and marketing content.<br/>
+        /// - Run multiple queries on the same index with different parameters or filters.<br/>
+        /// If you know the expected result type, use the `searchForHits` or `searchForFacets` helper to simplify the response format.
         /// </summary>
         /// <param name="requests"></param>
         /// <param name="strategy">
