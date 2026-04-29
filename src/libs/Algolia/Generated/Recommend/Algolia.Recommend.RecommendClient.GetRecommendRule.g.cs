@@ -140,9 +140,9 @@ namespace Algolia.Recommend
                 PrepareGetRecommendRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    model: model,
-                    objectID: objectID);
+                    indexName: indexName!,
+                    model: model!,
+                    objectID: objectID!);
 
                 return __httpRequest;
             }

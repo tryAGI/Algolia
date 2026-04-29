@@ -138,8 +138,8 @@ namespace Algolia
                 PrepareGetTaskRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    taskID: taskID);
+                    indexName: indexName!,
+                    taskID: taskID!);
 
                 return __httpRequest;
             }

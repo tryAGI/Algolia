@@ -141,8 +141,8 @@ namespace Algolia
                 PrepareWaitForApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    key: key,
-                    operation: operation,
+                    key: key!,
+                    operation: operation!,
                     apiKey: apiKey);
 
                 return __httpRequest;

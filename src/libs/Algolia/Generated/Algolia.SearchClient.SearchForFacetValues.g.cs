@@ -149,8 +149,8 @@ namespace Algolia
                 PrepareSearchForFacetValuesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    facetName: facetName,
+                    indexName: indexName!,
+                    facetName: facetName!,
                     request: request);
 
                 return __httpRequest;

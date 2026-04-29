@@ -128,7 +128,7 @@ namespace Algolia
                 PrepareIndexExistsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName);
+                    indexName: indexName!);
 
                 return __httpRequest;
             }

@@ -142,7 +142,7 @@ namespace Algolia
                 PrepareUpdateApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    key: key,
+                    key: key!,
                     request: request);
 
                 return __httpRequest;

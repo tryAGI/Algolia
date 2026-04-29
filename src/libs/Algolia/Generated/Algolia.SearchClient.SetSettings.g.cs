@@ -150,7 +150,7 @@ namespace Algolia
                 PrepareSetSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
+                    indexName: indexName!,
                     forwardToReplicas: forwardToReplicas,
                     request: request);
 

@@ -128,7 +128,7 @@ namespace Algolia
                 PrepareWaitForAppTaskRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    taskID: taskID);
+                    taskID: taskID!);
 
                 return __httpRequest;
             }

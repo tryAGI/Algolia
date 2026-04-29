@@ -137,7 +137,7 @@ namespace Algolia
                 PrepareGetSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
+                    indexName: indexName!,
                     getVersion: getVersion);
 
                 return __httpRequest;

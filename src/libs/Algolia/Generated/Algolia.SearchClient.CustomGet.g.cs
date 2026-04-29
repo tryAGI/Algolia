@@ -135,7 +135,7 @@ namespace Algolia
                 PrepareCustomGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    path: path,
+                    path: path!,
                     parameters: parameters);
 
                 return __httpRequest;

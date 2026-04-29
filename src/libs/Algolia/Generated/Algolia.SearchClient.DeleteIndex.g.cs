@@ -132,7 +132,7 @@ namespace Algolia
                 PrepareDeleteIndexRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName);
+                    indexName: indexName!);
 
                 return __httpRequest;
             }

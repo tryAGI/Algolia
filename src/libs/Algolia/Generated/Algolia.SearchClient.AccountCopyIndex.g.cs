@@ -149,10 +149,10 @@ namespace Algolia
                 PrepareAccountCopyIndexRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sourceIndexName: sourceIndexName,
-                    destinationAppID: destinationAppID,
-                    destinationApiKey: destinationApiKey,
-                    destinationIndexName: destinationIndexName,
+                    sourceIndexName: sourceIndexName!,
+                    destinationAppID: destinationAppID!,
+                    destinationApiKey: destinationApiKey!,
+                    destinationIndexName: destinationIndexName!,
                     batchSize: batchSize);
 
                 return __httpRequest;

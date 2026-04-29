@@ -123,7 +123,7 @@ namespace Algolia
                 PrepareSetClientApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    apiKey: apiKey);
+                    apiKey: apiKey!);
 
                 return __httpRequest;
             }

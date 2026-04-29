@@ -160,8 +160,8 @@ namespace Algolia
                 PrepareReplaceAllObjectsWithTransformationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objects: objects,
+                    indexName: indexName!,
+                    objects: objects!,
                     batchSize: batchSize,
                     scopes: scopes);
 

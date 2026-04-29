@@ -149,7 +149,7 @@ namespace Algolia.Recommend
                 PrepareCustomPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    path: path,
+                    path: path!,
                     parameters: parameters,
                     request: request);
 

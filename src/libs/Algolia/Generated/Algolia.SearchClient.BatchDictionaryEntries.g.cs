@@ -139,7 +139,7 @@ namespace Algolia
                 PrepareBatchDictionaryEntriesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    dictionaryName: dictionaryName,
+                    dictionaryName: dictionaryName!,
                     request: request);
 
                 return __httpRequest;

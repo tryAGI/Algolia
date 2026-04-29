@@ -146,9 +146,9 @@ namespace Algolia.Recommend
                 PrepareGetRecommendStatusRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    model: model,
-                    taskID: taskID);
+                    indexName: indexName!,
+                    model: model!,
+                    taskID: taskID!);
 
                 return __httpRequest;
             }

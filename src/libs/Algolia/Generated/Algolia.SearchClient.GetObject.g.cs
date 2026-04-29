@@ -144,8 +144,8 @@ namespace Algolia
                 PrepareGetObjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectID: objectID,
+                    indexName: indexName!,
+                    objectID: objectID!,
                     attributesToRetrieve: attributesToRetrieve);
 
                 return __httpRequest;

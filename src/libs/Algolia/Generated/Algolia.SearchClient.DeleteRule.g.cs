@@ -144,8 +144,8 @@ namespace Algolia
                 PrepareDeleteRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectID: objectID,
+                    indexName: indexName!,
+                    objectID: objectID!,
                     forwardToReplicas: forwardToReplicas);
 
                 return __httpRequest;

@@ -127,7 +127,7 @@ namespace Algolia
                 PrepareGetAppTaskRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    taskID: taskID);
+                    taskID: taskID!);
 
                 return __httpRequest;
             }
