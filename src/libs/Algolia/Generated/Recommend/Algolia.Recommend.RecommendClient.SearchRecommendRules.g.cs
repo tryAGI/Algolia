@@ -147,8 +147,8 @@ namespace Algolia.Recommend
                 PrepareSearchRecommendRulesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    model: model,
+                    indexName: indexName!,
+                    model: model!,
                     request: request);
 
                 return __httpRequest;

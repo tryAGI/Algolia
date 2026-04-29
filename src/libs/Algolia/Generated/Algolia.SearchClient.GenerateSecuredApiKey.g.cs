@@ -141,8 +141,8 @@ namespace Algolia
                 PrepareGenerateSecuredApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    parentApiKey: parentApiKey,
-                    restrictions: restrictions);
+                    parentApiKey: parentApiKey!,
+                    restrictions: restrictions!);
 
                 return __httpRequest;
             }

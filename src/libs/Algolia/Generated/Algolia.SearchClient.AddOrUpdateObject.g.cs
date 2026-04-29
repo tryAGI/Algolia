@@ -153,8 +153,8 @@ namespace Algolia
                 PrepareAddOrUpdateObjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectID: objectID,
+                    indexName: indexName!,
+                    objectID: objectID!,
                     request: request);
 
                 return __httpRequest;

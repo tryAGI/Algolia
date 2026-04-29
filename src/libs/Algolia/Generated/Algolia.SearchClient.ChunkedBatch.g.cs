@@ -167,8 +167,8 @@ namespace Algolia
                 PrepareChunkedBatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objects: objects,
+                    indexName: indexName!,
+                    objects: objects!,
                     action: action,
                     waitForTasks: waitForTasks,
                     batchSize: batchSize);

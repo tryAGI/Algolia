@@ -135,7 +135,7 @@ namespace Algolia
                 PrepareClearRulesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
+                    indexName: indexName!,
                     forwardToReplicas: forwardToReplicas);
 
                 return __httpRequest;

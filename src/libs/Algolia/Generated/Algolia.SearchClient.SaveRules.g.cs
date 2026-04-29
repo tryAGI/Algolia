@@ -158,7 +158,7 @@ namespace Algolia
                 PrepareSaveRulesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
+                    indexName: indexName!,
                     forwardToReplicas: forwardToReplicas,
                     clearExistingRules: clearExistingRules,
                     request: request);

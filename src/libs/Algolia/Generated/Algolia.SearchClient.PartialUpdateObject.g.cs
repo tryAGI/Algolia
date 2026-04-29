@@ -182,8 +182,8 @@ namespace Algolia
                 PreparePartialUpdateObjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectID: objectID,
+                    indexName: indexName!,
+                    objectID: objectID!,
                     createIfNotExists: createIfNotExists,
                     request: request);
 

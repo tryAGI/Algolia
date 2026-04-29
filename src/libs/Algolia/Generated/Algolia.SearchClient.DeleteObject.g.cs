@@ -137,8 +137,8 @@ namespace Algolia
                 PrepareDeleteObjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectID: objectID);
+                    indexName: indexName!,
+                    objectID: objectID!);
 
                 return __httpRequest;
             }

@@ -141,7 +141,7 @@ namespace Algolia
                 PrepareSearchSynonymsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
+                    indexName: indexName!,
                     request: request);
 
                 return __httpRequest;

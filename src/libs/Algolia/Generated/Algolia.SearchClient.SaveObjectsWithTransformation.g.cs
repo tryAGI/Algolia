@@ -156,8 +156,8 @@ namespace Algolia
                 PrepareSaveObjectsWithTransformationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objects: objects,
+                    indexName: indexName!,
+                    objects: objects!,
                     waitForTasks: waitForTasks,
                     batchSize: batchSize,
                     requestOptions: requestOptions);

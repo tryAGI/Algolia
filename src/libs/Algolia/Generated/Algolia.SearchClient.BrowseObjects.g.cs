@@ -131,8 +131,8 @@ namespace Algolia
                 PrepareBrowseObjectsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    browseParams: browseParams);
+                    indexName: indexName!,
+                    browseParams: browseParams!);
 
                 return __httpRequest;
             }

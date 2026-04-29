@@ -127,7 +127,7 @@ namespace Algolia
                 PrepareDeleteSourceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    source: source);
+                    source: source!);
 
                 return __httpRequest;
             }

@@ -130,7 +130,7 @@ namespace Algolia
                 PrepareGetApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    key: key);
+                    key: key!);
 
                 return __httpRequest;
             }

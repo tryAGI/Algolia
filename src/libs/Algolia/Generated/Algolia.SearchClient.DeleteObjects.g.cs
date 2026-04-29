@@ -152,8 +152,8 @@ namespace Algolia
                 PrepareDeleteObjectsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName,
-                    objectIDs: objectIDs,
+                    indexName: indexName!,
+                    objectIDs: objectIDs!,
                     waitForTasks: waitForTasks,
                     batchSize: batchSize,
                     requestOptions: requestOptions);
