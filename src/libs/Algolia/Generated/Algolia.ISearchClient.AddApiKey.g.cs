@@ -21,6 +21,19 @@ namespace Algolia
         /// Create an API key<br/>
         /// Creates a new API key with specific permissions and restrictions.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.AddApiKeyResponse>> AddApiKeyAsResponseAsync(
+
+            global::Algolia.ApiKey request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an API key<br/>
+        /// Creates a new API key with specific permissions and restrictions.
+        /// </summary>
         /// <param name="acl">
         /// Permissions that determine the type of API requests this key can make.<br/>
         /// The required ACL is listed in each endpoint's reference.<br/>

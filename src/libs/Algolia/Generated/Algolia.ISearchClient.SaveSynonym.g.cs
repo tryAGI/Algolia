@@ -42,6 +42,31 @@ namespace Algolia
         /// Example: synonymID
         /// </param>
         /// <param name="forwardToReplicas"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.SaveSynonymResponse>> SaveSynonymAsResponseAsync(
+            string indexName,
+            string objectID,
+
+            global::Algolia.SynonymHit request,
+            bool? forwardToReplicas = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or replace a synonym<br/>
+        /// If a synonym with the specified object ID doesn't exist, Algolia adds a new one.<br/>
+        /// Otherwise, the existing synonym is replaced.<br/>
+        /// To add multiple synonyms in a single API request, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/save-synonyms).
+        /// </summary>
+        /// <param name="indexName">
+        /// Example: ALGOLIA_INDEX_NAME
+        /// </param>
+        /// <param name="objectID">
+        /// Example: synonymID
+        /// </param>
+        /// <param name="forwardToReplicas"></param>
         /// <param name="requestObjectID">
         /// Unique identifier of a synonym object.<br/>
         /// Example: synonymID
