@@ -77,7 +77,7 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public RecommendClient Recommend => new RecommendClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RecommendClient Recommend => new RecommendClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -116,10 +116,10 @@ namespace Algolia.Recommend
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public AlgoliaRecommendClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Algolia.Recommend.EndPointAuthorization>? authorizations = null,
-            global::Algolia.Recommend.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Algolia.Recommend.EndPointAuthorization>? authorizations,
+            global::Algolia.Recommend.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

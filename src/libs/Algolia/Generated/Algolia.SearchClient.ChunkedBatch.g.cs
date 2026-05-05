@@ -85,6 +85,54 @@ namespace Algolia
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ChunkedBatchAsResponseAsync(
+                indexName: indexName,
+                objects: objects,
+                action: action,
+                waitForTasks: waitForTasks,
+                batchSize: batchSize,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Replace all records in an index<br/>
+        /// Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
+        /// </summary>
+        /// <param name="indexName"></param>
+        /// <param name="objects"></param>
+        /// <param name="action">
+        /// Which indexing operation to perform:<br/>
+        /// - `addObject`: adds records to an index.<br/>
+        ///    Equivalent to the "Add a new record (with auto-generated object ID)" operation.<br/>
+        /// - `updateObject`: adds or replaces records in an index.<br/>
+        ///    Equivalent to the "Add or replace a record" operation.<br/>
+        /// - `partialUpdateObject`: adds or updates attributes within records.<br/>
+        ///    Equivalent to the "Add or update attributes" operation with the `createIfNoExists` parameter set to true.<br/>
+        ///    (If a record with the specified `objectID` doesn't exist in the specified index, this action creates adds the record to the index)<br/>
+        /// - `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.<br/>
+        ///    (A record isn't added to the index if its `objectID` doesn't exist)<br/>
+        /// - `deleteObject`: delete records from an index.<br/>
+        ///   Equivalent to the "Delete a record" operation.<br/>
+        /// - `delete`. Delete an index. Equivalent to the "Delete an index" operation.<br/>
+        /// - `clear`: delete all records from an index. Equivalent to the "Delete all records from an index operation".
+        /// </param>
+        /// <param name="waitForTasks"></param>
+        /// <param name="batchSize"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Algolia.BatchResponse>>> ChunkedBatchAsResponseAsync(
+            string indexName,
+            global::System.Collections.Generic.IList<object> objects,
+            global::Algolia.Action? action = default,
+            bool? waitForTasks = default,
+            int? batchSize = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareChunkedBatchArguments(
@@ -117,15 +165,16 @@ namespace Algolia
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Algolia.PathBuilder(
                                 path: "/chunkedBatch",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("indexName", indexName)
                                 .AddRequiredParameter("objects", objects, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("action", action?.ToValueString())
                                 .AddOptionalParameter("waitForTasks", waitForTasks?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("batchSize", batchSize?.ToString()) 
+                                .AddOptionalParameter("batchSize", batchSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -201,6 +250,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -211,6 +262,11 @@ namespace Algolia
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -228,6 +284,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -237,8 +295,7 @@ namespace Algolia
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -247,6 +304,11 @@ namespace Algolia
                         __attempt < __maxAttempts &&
                         global::Algolia.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -263,14 +325,15 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -310,6 +373,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -330,6 +395,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Index not found.
@@ -392,9 +459,13 @@ namespace Algolia
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        (global::System.Collections.Generic.IList<global::Algolia.BatchResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Algolia.BatchResponse>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Algolia.BatchResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Algolia.BatchResponse>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Algolia.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Algolia.BatchResponse>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -422,9 +493,13 @@ namespace Algolia
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        (global::System.Collections.Generic.IList<global::Algolia.BatchResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Algolia.BatchResponse>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Algolia.BatchResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Algolia.BatchResponse>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Algolia.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Algolia.BatchResponse>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

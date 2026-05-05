@@ -80,6 +80,50 @@ namespace Algolia
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ReplaceAllObjectsWithTransformationAsResponseAsync(
+                indexName: indexName,
+                objects: objects,
+                batchSize: batchSize,
+                scopes: scopes,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Replace all records in an index<br/>
+        /// Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).<br/>
+        /// This method replaces all records without downtime. It performs these operations:<br/>
+        ///   1. Copy settings, synonyms, and rules from your original index to a temporary index.<br/>
+        ///   2. Add your new records to the temporary index.<br/>
+        ///   3. Replace your original index with the temporary index.<br/>
+        /// Notes:<br/>
+        /// - Use the `safe` parameter to run these (asynchronous) operations in sequence.<br/>
+        /// - If there's an error during one of these steps, the temporary index isn't deleted.<br/>
+        /// - This operation is rate-limited.<br/>
+        /// - This method creates a temporary index, which temporarily doubles your record count.<br/>
+        /// - Algolia doesn't count the three days with the highest number of records toward your monthly usage.<br/>
+        /// - If you're on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): `copySettings` and `moveIndex`.<br/>
+        /// - The API key you use for this operation must have access to the index `YourIndex` and the temporary index `YourIndex_tmp`.
+        /// </summary>
+        /// <param name="indexName"></param>
+        /// <param name="objects"></param>
+        /// <param name="batchSize">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="scopes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.ReplaceAllObjectsWithTransformationResponse>> ReplaceAllObjectsWithTransformationAsResponseAsync(
+            string indexName,
+            global::System.Collections.Generic.IList<object> objects,
+            int? batchSize = default,
+            global::System.Collections.Generic.IList<global::Algolia.ScopeType>? scopes = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReplaceAllObjectsWithTransformationArguments(
@@ -111,14 +155,15 @@ namespace Algolia
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Algolia.PathBuilder(
                                 path: "/replaceAllObjectsWithTransformation",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("indexName", indexName)
                                 .AddRequiredParameter("objects", objects, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("batchSize", batchSize?.ToString())
-                                .AddOptionalParameter("scopes", scopes, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                                .AddOptionalParameter("scopes", scopes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -193,6 +238,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -203,6 +250,11 @@ namespace Algolia
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -220,6 +272,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -229,8 +283,7 @@ namespace Algolia
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -239,6 +292,11 @@ namespace Algolia
                         __attempt < __maxAttempts &&
                         global::Algolia.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -255,14 +313,15 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -302,6 +361,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -322,6 +383,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Index not found.
@@ -384,9 +447,13 @@ namespace Algolia
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Algolia.ReplaceAllObjectsWithTransformationResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Algolia.ReplaceAllObjectsWithTransformationResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Algolia.AutoSDKHttpResponse<global::Algolia.ReplaceAllObjectsWithTransformationResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -414,9 +481,13 @@ namespace Algolia
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Algolia.ReplaceAllObjectsWithTransformationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Algolia.ReplaceAllObjectsWithTransformationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Algolia.AutoSDKHttpResponse<global::Algolia.ReplaceAllObjectsWithTransformationResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

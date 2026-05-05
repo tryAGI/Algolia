@@ -38,6 +38,28 @@ namespace Algolia
         /// <param name="indexName">
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.UpdatedAtResponse>> DeleteByAsResponseAsync(
+            string indexName,
+
+            global::Algolia.DeleteByParams request,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete records matching a filter<br/>
+        /// This operation doesn't accept empty filters.<br/>
+        /// This operation is resource-intensive.<br/>
+        /// Use it only if you can't get the object IDs of the records you want to delete.<br/>
+        /// It's more efficient to get a list of object IDs with the [`browse` operation](https://www.algolia.com/doc/rest-api/search/browse),<br/>
+        /// and then delete the records using the [`batch` operation](https://www.algolia.com/doc/rest-api/search/batch).<br/>
+        /// This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
+        /// </summary>
+        /// <param name="indexName">
+        /// Example: ALGOLIA_INDEX_NAME
+        /// </param>
         /// <param name="facetFilters">
         /// Filter the search by facet values, so that only records with the same facet values are retrieved.<br/>
         /// **Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**<br/>

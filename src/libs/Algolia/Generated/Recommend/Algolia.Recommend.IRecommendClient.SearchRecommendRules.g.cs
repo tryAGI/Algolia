@@ -33,6 +33,26 @@ namespace Algolia.Recommend
         /// Example: ALGOLIA_INDEX_NAME
         /// </param>
         /// <param name="model"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.Recommend.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Algolia.Recommend.AutoSDKHttpResponse<global::Algolia.Recommend.SearchRecommendRulesResponse>> SearchRecommendRulesAsResponseAsync(
+            string indexName,
+            global::Algolia.Recommend.RecommendModels model,
+
+            global::Algolia.Recommend.SearchRecommendRulesRequest request,
+            global::Algolia.Recommend.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search for rules<br/>
+        /// Searches for Recommend rules.<br/>
+        /// Use an empty query to list all rules for this recommendation scenario.
+        /// </summary>
+        /// <param name="indexName">
+        /// Example: ALGOLIA_INDEX_NAME
+        /// </param>
+        /// <param name="model"></param>
         /// <param name="query">
         /// Search query.
         /// </param>

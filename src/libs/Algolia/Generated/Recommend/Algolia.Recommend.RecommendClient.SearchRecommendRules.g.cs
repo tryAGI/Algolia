@@ -66,6 +66,38 @@ namespace Algolia.Recommend
             global::Algolia.Recommend.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SearchRecommendRulesAsResponseAsync(
+                indexName: indexName,
+                model: model,
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Search for rules<br/>
+        /// Searches for Recommend rules.<br/>
+        /// Use an empty query to list all rules for this recommendation scenario.
+        /// </summary>
+        /// <param name="indexName">
+        /// Example: ALGOLIA_INDEX_NAME
+        /// </param>
+        /// <param name="model"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.Recommend.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Algolia.Recommend.AutoSDKHttpResponse<global::Algolia.Recommend.SearchRecommendRulesResponse>> SearchRecommendRulesAsResponseAsync(
+            string indexName,
+            global::Algolia.Recommend.RecommendModels model,
+
+            global::Algolia.Recommend.SearchRecommendRulesRequest request,
+            global::Algolia.Recommend.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -98,6 +130,7 @@ namespace Algolia.Recommend
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Algolia.Recommend.PathBuilder(
                                 path: $"/1/indexes/{indexName}/{model}/recommend/rules/search",
                                 baseUri: HttpClient.BaseAddress);
@@ -179,6 +212,8 @@ namespace Algolia.Recommend
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -189,6 +224,11 @@ namespace Algolia.Recommend
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Algolia.Recommend.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Algolia.Recommend.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -206,6 +246,8 @@ namespace Algolia.Recommend
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -215,8 +257,7 @@ namespace Algolia.Recommend
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.Recommend.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -225,6 +266,11 @@ namespace Algolia.Recommend
                         __attempt < __maxAttempts &&
                         global::Algolia.Recommend.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Algolia.Recommend.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Algolia.Recommend.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -241,14 +287,15 @@ namespace Algolia.Recommend
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.Recommend.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -288,6 +335,8 @@ namespace Algolia.Recommend
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -308,6 +357,8 @@ namespace Algolia.Recommend
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad request or request arguments.
@@ -484,9 +535,13 @@ namespace Algolia.Recommend
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Algolia.Recommend.SearchRecommendRulesResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Algolia.Recommend.SearchRecommendRulesResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Algolia.Recommend.AutoSDKHttpResponse<global::Algolia.Recommend.SearchRecommendRulesResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.Recommend.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -514,9 +569,13 @@ namespace Algolia.Recommend
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Algolia.Recommend.SearchRecommendRulesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Algolia.Recommend.SearchRecommendRulesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Algolia.Recommend.AutoSDKHttpResponse<global::Algolia.Recommend.SearchRecommendRulesResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.Recommend.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

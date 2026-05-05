@@ -67,6 +67,39 @@ namespace Algolia
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await AccountCopyIndexAsResponseAsync(
+                sourceIndexName: sourceIndexName,
+                destinationAppID: destinationAppID,
+                destinationApiKey: destinationApiKey,
+                destinationIndexName: destinationIndexName,
+                batchSize: batchSize,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`<br/>
+        /// Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`.
+        /// </summary>
+        /// <param name="sourceIndexName"></param>
+        /// <param name="destinationAppID"></param>
+        /// <param name="destinationApiKey"></param>
+        /// <param name="destinationIndexName"></param>
+        /// <param name="batchSize">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Algolia.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse> AccountCopyIndexAsResponseAsync(
+            string sourceIndexName,
+            string destinationAppID,
+            string destinationApiKey,
+            string destinationIndexName,
+            int? batchSize = default,
+            global::Algolia.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareAccountCopyIndexArguments(
@@ -99,15 +132,16 @@ namespace Algolia
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Algolia.PathBuilder(
                                 path: "/accountCopyIndex",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("sourceIndexName", sourceIndexName)
                                 .AddRequiredParameter("destinationAppID", destinationAppID)
                                 .AddRequiredParameter("destinationApiKey", destinationApiKey)
                                 .AddRequiredParameter("destinationIndexName", destinationIndexName)
-                                .AddOptionalParameter("batchSize", batchSize?.ToString()) 
+                                .AddOptionalParameter("batchSize", batchSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -183,6 +217,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -193,6 +229,11 @@ namespace Algolia
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -210,6 +251,8 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -219,8 +262,7 @@ namespace Algolia
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -229,6 +271,11 @@ namespace Algolia
                         __attempt < __maxAttempts &&
                         global::Algolia.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Algolia.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Algolia.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -245,14 +292,15 @@ namespace Algolia
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Algolia.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -292,6 +340,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -312,6 +362,8 @@ namespace Algolia
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Indices are in the same application. Use operationIndex instead.
@@ -446,6 +498,10 @@ namespace Algolia
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::Algolia.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -467,6 +523,10 @@ namespace Algolia
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::Algolia.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Algolia.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
