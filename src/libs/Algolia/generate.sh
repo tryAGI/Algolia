@@ -38,6 +38,9 @@ sed_inplace 's/browseParamsObject/browseParamsConfig/g' openapi.yaml
 sed_inplace 's/searchForFacetsOptions/searchForFacetsSettings/g' openapi.yaml
 sed_inplace 's/searchForHitsOptions/searchForHitsSettings/g' openapi.yaml
 
+# Fix operation parameters named requestOptions colliding with AutoSDKRequestOptions.
+sed_inplace 's/name: requestOptions/name: algoliaRequestOptions/g' openapi.yaml
+
 autosdk generate openapi.yaml \
   --namespace Algolia \
   --clientClassName AlgoliaClient \

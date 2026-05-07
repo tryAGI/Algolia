@@ -31,7 +31,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<object> objects,
             ref bool? waitForTasks,
             ref int? batchSize,
-            object? requestOptions);
+            object? algoliaRequestOptions);
         partial void PrepareSaveObjectsWithTransformationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -39,7 +39,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<object> objects,
             bool? waitForTasks,
             int? batchSize,
-            object? requestOptions);
+            object? algoliaRequestOptions);
         partial void ProcessSaveObjectsWithTransformationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,7 +61,7 @@ namespace Algolia
         /// <param name="batchSize">
         /// Default Value: 1000
         /// </param>
-        /// <param name="requestOptions"></param>
+        /// <param name="algoliaRequestOptions"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
@@ -70,7 +70,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<object> objects,
             bool? waitForTasks = default,
             int? batchSize = default,
-            object? requestOptions = default,
+            object? algoliaRequestOptions = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,7 +79,7 @@ namespace Algolia
                 objects: objects,
                 waitForTasks: waitForTasks,
                 batchSize: batchSize,
-                requestOptions: requestOptions,
+                algoliaRequestOptions: algoliaRequestOptions,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -98,7 +98,7 @@ namespace Algolia
         /// <param name="batchSize">
         /// Default Value: 1000
         /// </param>
-        /// <param name="requestOptions"></param>
+        /// <param name="algoliaRequestOptions"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
@@ -107,7 +107,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<object> objects,
             bool? waitForTasks = default,
             int? batchSize = default,
-            object? requestOptions = default,
+            object? algoliaRequestOptions = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -119,7 +119,7 @@ namespace Algolia
                 objects: objects,
                 waitForTasks: ref waitForTasks,
                 batchSize: ref batchSize,
-                requestOptions: requestOptions);
+                algoliaRequestOptions: algoliaRequestOptions);
 
 
             var __authorizations = global::Algolia.EndPointSecurityResolver.ResolveAuthorizations(
@@ -152,7 +152,7 @@ namespace Algolia
                                 .AddRequiredParameter("objects", objects, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("waitForTasks", waitForTasks?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("batchSize", batchSize?.ToString())
-                                .AddOptionalParameter("requestOptions", requestOptions?.ToString())
+                                .AddOptionalParameter("algoliaRequestOptions", algoliaRequestOptions?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -198,7 +198,7 @@ namespace Algolia
                     objects: objects!,
                     waitForTasks: waitForTasks,
                     batchSize: batchSize,
-                    requestOptions: requestOptions);
+                    algoliaRequestOptions: algoliaRequestOptions);
 
                 return __httpRequest;
             }

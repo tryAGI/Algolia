@@ -6,7 +6,7 @@ namespace Algolia
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class PartialUpdateObjectsWithTransformationRequestOptions
+    public sealed partial class DeleteObjectsAlgoliaRequestOptions
     {
 
         /// <summary>

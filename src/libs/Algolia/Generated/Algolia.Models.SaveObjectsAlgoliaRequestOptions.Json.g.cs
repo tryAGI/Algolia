@@ -2,7 +2,7 @@
 
 namespace Algolia
 {
-    public sealed partial class SaveObjectsWithTransformationRequestOptions
+    public sealed partial class SaveObjectsAlgoliaRequestOptions
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Algolia
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Algolia.SaveObjectsWithTransformationRequestOptions? FromJson(
+        public static global::Algolia.SaveObjectsAlgoliaRequestOptions? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Algolia.SaveObjectsWithTransformationRequestOptions),
-                jsonSerializerContext) as global::Algolia.SaveObjectsWithTransformationRequestOptions;
+                typeof(global::Algolia.SaveObjectsAlgoliaRequestOptions),
+                jsonSerializerContext) as global::Algolia.SaveObjectsAlgoliaRequestOptions;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Algolia.SaveObjectsWithTransformationRequestOptions? FromJson(
+        public static global::Algolia.SaveObjectsAlgoliaRequestOptions? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Algolia.SaveObjectsWithTransformationRequestOptions>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Algolia.SaveObjectsAlgoliaRequestOptions>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Algolia
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Algolia.SaveObjectsWithTransformationRequestOptions?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Algolia.SaveObjectsAlgoliaRequestOptions?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Algolia.SaveObjectsWithTransformationRequestOptions),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Algolia.SaveObjectsWithTransformationRequestOptions;
+                typeof(global::Algolia.SaveObjectsAlgoliaRequestOptions),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Algolia.SaveObjectsAlgoliaRequestOptions;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Algolia.SaveObjectsWithTransformationRequestOptions?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Algolia.SaveObjectsAlgoliaRequestOptions?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Algolia.SaveObjectsWithTransformationRequestOptions?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Algolia.SaveObjectsAlgoliaRequestOptions?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

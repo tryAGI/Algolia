@@ -120,13 +120,13 @@ public static class AlgoliaRecommendToolExtensions
             async (CancellationToken cancellationToken) =>
             {
                 var query = new TrendingItemsQuery(
-                    value1: new BaseRecommendRequest
+                    baseRecommendRequest: new BaseRecommendRequest
                     {
                         IndexName = indexName,
                         Threshold = threshold,
                         MaxRecommendations = maxRecommendations,
                     },
-                    value2: new TrendingItems
+                    trendingItems: new TrendingItems
                     {
                         Model = TrendingItemsModel.TrendingItems,
                     });
@@ -164,13 +164,13 @@ public static class AlgoliaRecommendToolExtensions
             async (string objectId, CancellationToken cancellationToken) =>
             {
                 var query = new LookingSimilarQuery(
-                    value1: new BaseRecommendRequest
+                    baseRecommendRequest: new BaseRecommendRequest
                     {
                         IndexName = indexName,
                         Threshold = threshold,
                         MaxRecommendations = maxRecommendations,
                     },
-                    value2: new LookingSimilar
+                    lookingSimilar: new LookingSimilar
                     {
                         ObjectID = objectId,
                         Model = LookingSimilarModel.LookingSimilar,

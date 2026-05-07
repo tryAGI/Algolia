@@ -12,7 +12,7 @@ namespace Algolia
         /// <param name="objectIDs"></param>
         /// <param name="waitForTasks"></param>
         /// <param name="batchSize"></param>
-        /// <param name="requestOptions"></param>
+        /// <param name="algoliaRequestOptions"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
@@ -21,7 +21,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<string> objectIDs,
             bool? waitForTasks = default,
             int? batchSize = default,
-            object? requestOptions = default,
+            object? algoliaRequestOptions = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -32,7 +32,7 @@ namespace Algolia
         /// <param name="objectIDs"></param>
         /// <param name="waitForTasks"></param>
         /// <param name="batchSize"></param>
-        /// <param name="requestOptions"></param>
+        /// <param name="algoliaRequestOptions"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
@@ -41,7 +41,7 @@ namespace Algolia
             global::System.Collections.Generic.IList<string> objectIDs,
             bool? waitForTasks = default,
             int? batchSize = default,
-            object? requestOptions = default,
+            object? algoliaRequestOptions = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -3692,7 +3692,7 @@ paths:
             type: integer
             default: 1000
         - in: query
-          name: requestOptions
+          name: algoliaRequestOptions
           description: The request options to pass to the `batch` method.
           required: false
           schema:
@@ -3762,7 +3762,7 @@ paths:
             type: integer
             default: 1000
         - in: query
-          name: requestOptions
+          name: algoliaRequestOptions
           description: The request options to pass to the `batch` method.
           required: false
           schema:
@@ -3831,7 +3831,7 @@ paths:
           schema:
             type: integer
         - in: query
-          name: requestOptions
+          name: algoliaRequestOptions
           description: The request options to pass to the `batch` method.
           required: false
           schema:
@@ -3911,7 +3911,7 @@ paths:
             type: integer
             default: 1000
         - in: query
-          name: requestOptions
+          name: algoliaRequestOptions
           description: The request options to pass to the `batch` method.
           required: false
           schema:
@@ -3989,7 +3989,7 @@ paths:
             type: integer
             default: 1000
         - in: query
-          name: requestOptions
+          name: algoliaRequestOptions
           description: The request options to pass to the `batch` method.
           required: false
           schema:

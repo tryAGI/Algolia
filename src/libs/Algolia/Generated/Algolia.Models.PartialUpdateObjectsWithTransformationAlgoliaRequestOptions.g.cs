@@ -6,7 +6,7 @@ namespace Algolia
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class SaveObjectsRequestOptions
+    public sealed partial class PartialUpdateObjectsWithTransformationAlgoliaRequestOptions
     {
 
         /// <summary>
