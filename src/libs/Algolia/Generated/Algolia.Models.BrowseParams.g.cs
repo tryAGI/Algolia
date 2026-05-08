@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsConfig => Config != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BrowseParamsConfig? value)
+        {
+            value = Config;
+            return IsConfig;
+        }
+
+        /// <summary>
         /// Search parameters as query string.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsQueryString))]
 #endif
         public bool IsSearchParametersAsQueryString => SearchParametersAsQueryString != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchParametersAsQueryString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsString? value)
+        {
+            value = SearchParametersAsQueryString;
+            return IsSearchParametersAsQueryString;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BrowseParamsConfig?, TResult>? config = null,
-            global::System.Func<global::Algolia.SearchParamsString?, TResult>? searchParametersAsQueryString = null,
+            global::System.Func<global::Algolia.SearchParamsString, TResult>? searchParametersAsQueryString = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BrowseParamsConfig?>? config = null,
-            global::System.Action<global::Algolia.SearchParamsString?>? searchParametersAsQueryString = null,
+
+            global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConfig)
+            {
+                config?.Invoke(Config!);
+            }
+            else if (IsSearchParametersAsQueryString)
+            {
+                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BrowseParamsConfig?>? config = null,
+            global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
             bool validate = true)
         {
             if (validate)

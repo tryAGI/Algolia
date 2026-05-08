@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsBuiltInOperationValueVariant1 => BuiltInOperationValueVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBuiltInOperationValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BuiltInOperationValueVariant1;
+            return IsBuiltInOperationValueVariant1;
+        }
+
+        /// <summary>
         /// A number to add, remove, or append, depending on the operation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperationValueVariant2))]
 #endif
         public bool IsBuiltInOperationValueVariant2 => BuiltInOperationValueVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBuiltInOperationValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = BuiltInOperationValueVariant2;
+            return IsBuiltInOperationValueVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? builtInOperationValueVariant1 = null,
+            global::System.Func<string, TResult>? builtInOperationValueVariant1 = null,
             global::System.Func<int?, TResult>? builtInOperationValueVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? builtInOperationValueVariant1 = null,
+            global::System.Action<string>? builtInOperationValueVariant1 = null,
+
+            global::System.Action<int?>? builtInOperationValueVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBuiltInOperationValueVariant1)
+            {
+                builtInOperationValueVariant1?.Invoke(BuiltInOperationValueVariant1!);
+            }
+            else if (IsBuiltInOperationValueVariant2)
+            {
+                builtInOperationValueVariant2?.Invoke(BuiltInOperationValueVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? builtInOperationValueVariant1 = null,
             global::System.Action<int?>? builtInOperationValueVariant2 = null,
             bool validate = true)
         {

@@ -30,6 +30,19 @@ namespace Algolia.Recommend
         public bool IsAroundRadiusVariant1 => AroundRadiusVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAroundRadiusVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = AroundRadiusVariant1;
+            return IsAroundRadiusVariant1;
+        }
+
+        /// <summary>
         /// Return all records with a valid `_geoloc` attribute. Don't filter by distance.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
 #endif
         public bool IsAll => All != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.AroundRadiusAll? value)
+        {
+            value = All;
+            return IsAll;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -146,6 +172,30 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<int?>? aroundRadiusVariant1 = null,
+
+            global::System.Action<global::Algolia.Recommend.AroundRadiusAll?>? all = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAroundRadiusVariant1)
+            {
+                aroundRadiusVariant1?.Invoke(AroundRadiusVariant1!);
+            }
+            else if (IsAll)
+            {
+                all?.Invoke(All!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<int?>? aroundRadiusVariant1 = null,
             global::System.Action<global::Algolia.Recommend.AroundRadiusAll?>? all = null,
             bool validate = true)

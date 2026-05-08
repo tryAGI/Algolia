@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAutoFilteringFilterEntryVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AutoFilteringFilterEntryVariant1;
+            return IsAutoFilteringFilterEntryVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AutoFilteringFilterEntryVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoFilteringFilterEntryVariant2))]
 #endif
         public bool IsAutoFilteringFilterEntryVariant2 => AutoFilteringFilterEntryVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAutoFilteringFilterEntryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = AutoFilteringFilterEntryVariant2;
+            return IsAutoFilteringFilterEntryVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? autoFilteringFilterEntryVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? autoFilteringFilterEntryVariant2 = null,
+            global::System.Func<string, TResult>? autoFilteringFilterEntryVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? autoFilteringFilterEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? autoFilteringFilterEntryVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? autoFilteringFilterEntryVariant2 = null,
+            global::System.Action<string>? autoFilteringFilterEntryVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? autoFilteringFilterEntryVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAutoFilteringFilterEntryVariant1)
+            {
+                autoFilteringFilterEntryVariant1?.Invoke(AutoFilteringFilterEntryVariant1!);
+            }
+            else if (IsAutoFilteringFilterEntryVariant2)
+            {
+                autoFilteringFilterEntryVariant2?.Invoke(AutoFilteringFilterEntryVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? autoFilteringFilterEntryVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? autoFilteringFilterEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)

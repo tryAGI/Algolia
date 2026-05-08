@@ -34,6 +34,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTagFiltersVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>? value)
+        {
+            value = TagFiltersVariant1;
+            return IsTagFiltersVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? TagFiltersVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagFiltersVariant2))]
 #endif
         public bool IsTagFiltersVariant2 => TagFiltersVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTagFiltersVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TagFiltersVariant2;
+            return IsTagFiltersVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -105,8 +131,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>?, TResult>? tagFiltersVariant1 = null,
-            global::System.Func<string?, TResult>? tagFiltersVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>, TResult>? tagFiltersVariant1 = null,
+            global::System.Func<string, TResult>? tagFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -130,8 +156,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>?>? tagFiltersVariant1 = null,
-            global::System.Action<string?>? tagFiltersVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>>? tagFiltersVariant1 = null,
+
+            global::System.Action<string>? tagFiltersVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTagFiltersVariant1)
+            {
+                tagFiltersVariant1?.Invoke(TagFiltersVariant1!);
+            }
+            else if (IsTagFiltersVariant2)
+            {
+                tagFiltersVariant2?.Invoke(TagFiltersVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>>? tagFiltersVariant1 = null,
+            global::System.Action<string>? tagFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)

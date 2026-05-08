@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParams? value)
+        {
+            value = Params;
+            return IsParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForHitsSettings? Settings { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Settings))]
 #endif
         public bool IsSettings => Settings != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSettings(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForHitsSettings? value)
+        {
+            value = Settings;
+            return IsSettings;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParams?, TResult>? @params = null,
-            global::System.Func<global::Algolia.SearchForHitsSettings?, TResult>? settings = null,
+            global::System.Func<global::Algolia.SearchForHitsSettings, TResult>? settings = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParams?>? @params = null,
-            global::System.Action<global::Algolia.SearchForHitsSettings?>? settings = null,
+
+            global::System.Action<global::Algolia.SearchForHitsSettings>? settings = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsParams)
+            {
+                @params?.Invoke(Params!);
+            }
+            else if (IsSettings)
+            {
+                settings?.Invoke(Settings!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParams?>? @params = null,
+            global::System.Action<global::Algolia.SearchForHitsSettings>? settings = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsHighlightResultOption => HighlightResultOption != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHighlightResultOption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.HighlightResultOption? value)
+        {
+            value = HighlightResultOption;
+            return IsHighlightResultOption;
+        }
+
+        /// <summary>
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace Algolia
         public bool IsHighlightResultMap => HighlightResultMap != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHighlightResultMap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.HighlightResultMap? value)
+        {
+            value = HighlightResultMap;
+            return IsHighlightResultMap;
+        }
+
+        /// <summary>
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HighlightResultArray))]
 #endif
         public bool IsHighlightResultArray => HighlightResultArray != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHighlightResultArray(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.HighlightResult>? value)
+        {
+            value = HighlightResultArray;
+            return IsHighlightResultArray;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -139,9 +178,9 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.HighlightResultOption?, TResult>? highlightResultOption = null,
-            global::System.Func<global::Algolia.HighlightResultMap?, TResult>? highlightResultMap = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>?, TResult>? highlightResultArray = null,
+            global::System.Func<global::Algolia.HighlightResultOption, TResult>? highlightResultOption = null,
+            global::System.Func<global::Algolia.HighlightResultMap, TResult>? highlightResultMap = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>, TResult>? highlightResultArray = null,
             bool validate = true)
         {
             if (validate)
@@ -169,9 +208,39 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.HighlightResultOption?>? highlightResultOption = null,
-            global::System.Action<global::Algolia.HighlightResultMap?>? highlightResultMap = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>?>? highlightResultArray = null,
+            global::System.Action<global::Algolia.HighlightResultOption>? highlightResultOption = null,
+
+            global::System.Action<global::Algolia.HighlightResultMap>? highlightResultMap = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>>? highlightResultArray = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsHighlightResultOption)
+            {
+                highlightResultOption?.Invoke(HighlightResultOption!);
+            }
+            else if (IsHighlightResultMap)
+            {
+                highlightResultMap?.Invoke(HighlightResultMap!);
+            }
+            else if (IsHighlightResultArray)
+            {
+                highlightResultArray?.Invoke(HighlightResultArray!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.HighlightResultOption>? highlightResultOption = null,
+            global::System.Action<global::Algolia.HighlightResultMap>? highlightResultMap = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>>? highlightResultArray = null,
             bool validate = true)
         {
             if (validate)

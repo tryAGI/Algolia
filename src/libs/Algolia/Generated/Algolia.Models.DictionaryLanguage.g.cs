@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDictionaryLanguageVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.DictionaryLanguageVariant1? value)
+        {
+            value = DictionaryLanguageVariant1;
+            return IsDictionaryLanguageVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? DictionaryLanguageVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DictionaryLanguageVariant2))]
 #endif
         public bool IsDictionaryLanguageVariant2 => DictionaryLanguageVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDictionaryLanguageVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = DictionaryLanguageVariant2;
+            return IsDictionaryLanguageVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.DictionaryLanguageVariant1?, TResult>? dictionaryLanguageVariant1 = null,
-            global::System.Func<object?, TResult>? dictionaryLanguageVariant2 = null,
+            global::System.Func<global::Algolia.DictionaryLanguageVariant1, TResult>? dictionaryLanguageVariant1 = null,
+            global::System.Func<object, TResult>? dictionaryLanguageVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.DictionaryLanguageVariant1?>? dictionaryLanguageVariant1 = null,
-            global::System.Action<object?>? dictionaryLanguageVariant2 = null,
+            global::System.Action<global::Algolia.DictionaryLanguageVariant1>? dictionaryLanguageVariant1 = null,
+
+            global::System.Action<object>? dictionaryLanguageVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDictionaryLanguageVariant1)
+            {
+                dictionaryLanguageVariant1?.Invoke(DictionaryLanguageVariant1!);
+            }
+            else if (IsDictionaryLanguageVariant2)
+            {
+                dictionaryLanguageVariant2?.Invoke(DictionaryLanguageVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.DictionaryLanguageVariant1>? dictionaryLanguageVariant1 = null,
+            global::System.Action<object>? dictionaryLanguageVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseRecommendRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendRequest? value)
+        {
+            value = BaseRecommendRequest;
+            return IsBaseRecommendRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilar? LookingSimilar { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LookingSimilar))]
 #endif
         public bool IsLookingSimilar => LookingSimilar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLookingSimilar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.LookingSimilar? value)
+        {
+            value = LookingSimilar;
+            return IsLookingSimilar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? baseRecommendRequest = null,
-            global::System.Func<global::Algolia.Recommend.LookingSimilar?, TResult>? lookingSimilar = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
+            global::System.Func<global::Algolia.Recommend.LookingSimilar, TResult>? lookingSimilar = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? baseRecommendRequest = null,
-            global::System.Action<global::Algolia.Recommend.LookingSimilar?>? lookingSimilar = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+
+            global::System.Action<global::Algolia.Recommend.LookingSimilar>? lookingSimilar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseRecommendRequest)
+            {
+                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+            }
+            else if (IsLookingSimilar)
+            {
+                lookingSimilar?.Invoke(LookingSimilar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+            global::System.Action<global::Algolia.Recommend.LookingSimilar>? lookingSimilar = null,
             bool validate = true)
         {
             if (validate)

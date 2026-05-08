@@ -25,6 +25,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingFacets))]
 #endif
         public bool IsTrendingFacets => TrendingFacets != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTrendingFacets(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TrendingFacets? value)
+        {
+            value = TrendingFacets;
+            return IsTrendingFacets;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +82,7 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.TrendingFacets?, TResult>? trendingFacets = null,
+            global::System.Func<global::Algolia.Recommend.TrendingFacets, TResult>? trendingFacets = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +102,25 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.TrendingFacets?>? trendingFacets = null,
+            global::System.Action<global::Algolia.Recommend.TrendingFacets>? trendingFacets = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTrendingFacets)
+            {
+                trendingFacets?.Invoke(TrendingFacets!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.TrendingFacets>? trendingFacets = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.EventStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? EventStatusVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EventStatusVariant2))]
 #endif
         public bool IsEventStatusVariant2 => EventStatusVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEventStatusVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = EventStatusVariant2;
+            return IsEventStatusVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,7 +127,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.EventStatusEnum?, TResult>? @enum = null,
-            global::System.Func<object?, TResult>? eventStatusVariant2 = null,
+            global::System.Func<object, TResult>? eventStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,7 +152,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.EventStatusEnum?>? @enum = null,
-            global::System.Action<object?>? eventStatusVariant2 = null,
+
+            global::System.Action<object>? eventStatusVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEventStatusVariant2)
+            {
+                eventStatusVariant2?.Invoke(EventStatusVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.EventStatusEnum?>? @enum = null,
+            global::System.Action<object>? eventStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)

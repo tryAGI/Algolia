@@ -36,6 +36,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacetFiltersVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.FacetFilters>? value)
+        {
+            value = FacetFiltersVariant1;
+            return IsFacetFiltersVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? FacetFiltersVariant2 { get; init; }
 #else
@@ -49,6 +62,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetFiltersVariant2))]
 #endif
         public bool IsFacetFiltersVariant2 => FacetFiltersVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFacetFiltersVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FacetFiltersVariant2;
+            return IsFacetFiltersVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -107,8 +133,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>?, TResult>? facetFiltersVariant1 = null,
-            global::System.Func<string?, TResult>? facetFiltersVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>, TResult>? facetFiltersVariant1 = null,
+            global::System.Func<string, TResult>? facetFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,8 +158,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>?>? facetFiltersVariant1 = null,
-            global::System.Action<string?>? facetFiltersVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>>? facetFiltersVariant1 = null,
+
+            global::System.Action<string>? facetFiltersVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFacetFiltersVariant1)
+            {
+                facetFiltersVariant1?.Invoke(FacetFiltersVariant1!);
+            }
+            else if (IsFacetFiltersVariant2)
+            {
+                facetFiltersVariant2?.Invoke(FacetFiltersVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>>? facetFiltersVariant1 = null,
+            global::System.Action<string>? facetFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsObjectIDs => ObjectIDs != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickObjectIDs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.PromoteObjectIDs? value)
+        {
+            value = ObjectIDs;
+            return IsObjectIDs;
+        }
+
+        /// <summary>
         /// Record to promote.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectID))]
 #endif
         public bool IsObjectID => ObjectID != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickObjectID(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.PromoteObjectID? value)
+        {
+            value = ObjectID;
+            return IsObjectID;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.PromoteObjectIDs?, TResult>? objectIDs = null,
-            global::System.Func<global::Algolia.PromoteObjectID?, TResult>? objectID = null,
+            global::System.Func<global::Algolia.PromoteObjectIDs, TResult>? objectIDs = null,
+            global::System.Func<global::Algolia.PromoteObjectID, TResult>? objectID = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.PromoteObjectIDs?>? objectIDs = null,
-            global::System.Action<global::Algolia.PromoteObjectID?>? objectID = null,
+            global::System.Action<global::Algolia.PromoteObjectIDs>? objectIDs = null,
+
+            global::System.Action<global::Algolia.PromoteObjectID>? objectID = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsObjectIDs)
+            {
+                objectIDs?.Invoke(ObjectIDs!);
+            }
+            else if (IsObjectID)
+            {
+                objectID?.Invoke(ObjectID!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.PromoteObjectIDs>? objectIDs = null,
+            global::System.Action<global::Algolia.PromoteObjectID>? objectID = null,
             bool validate = true)
         {
             if (validate)

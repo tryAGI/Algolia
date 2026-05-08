@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseSearchResponse? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchPagination? Pagination { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPagination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchPagination? value)
+        {
+            value = Pagination;
+            return IsPagination;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchHits? Hits { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Hits))]
 #endif
         public bool IsHits => Hits != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchHits? value)
+        {
+            value = Hits;
+            return IsHits;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseSearchResponse?, TResult>? @base = null,
-            global::System.Func<global::Algolia.SearchPagination?, TResult>? pagination = null,
-            global::System.Func<global::Algolia.SearchHits?, TResult>? hits = null,
+            global::System.Func<global::Algolia.BaseSearchResponse, TResult>? @base = null,
+            global::System.Func<global::Algolia.SearchPagination, TResult>? pagination = null,
+            global::System.Func<global::Algolia.SearchHits, TResult>? hits = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseSearchResponse?>? @base = null,
-            global::System.Action<global::Algolia.SearchPagination?>? pagination = null,
-            global::System.Action<global::Algolia.SearchHits?>? hits = null,
+            global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
+
+            global::System.Action<global::Algolia.SearchPagination>? pagination = null,
+
+            global::System.Action<global::Algolia.SearchHits>? hits = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsPagination)
+            {
+                pagination?.Invoke(Pagination!);
+            }
+            else if (IsHits)
+            {
+                hits?.Invoke(Hits!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
+            global::System.Action<global::Algolia.SearchPagination>? pagination = null,
+            global::System.Action<global::Algolia.SearchHits>? hits = null,
             bool validate = true)
         {
             if (validate)

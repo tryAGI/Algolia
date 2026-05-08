@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsQuery? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseSearchParamsWithoutQuery? WithoutQuery { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithoutQuery))]
 #endif
         public bool IsWithoutQuery => WithoutQuery != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithoutQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseSearchParamsWithoutQuery? value)
+        {
+            value = WithoutQuery;
+            return IsWithoutQuery;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.SearchParamsQuery?, TResult>? query = null,
-            global::System.Func<global::Algolia.BaseSearchParamsWithoutQuery?, TResult>? withoutQuery = null,
+            global::System.Func<global::Algolia.SearchParamsQuery, TResult>? query = null,
+            global::System.Func<global::Algolia.BaseSearchParamsWithoutQuery, TResult>? withoutQuery = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.SearchParamsQuery?>? query = null,
-            global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery?>? withoutQuery = null,
+            global::System.Action<global::Algolia.SearchParamsQuery>? query = null,
+
+            global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery>? withoutQuery = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+            else if (IsWithoutQuery)
+            {
+                withoutQuery?.Invoke(WithoutQuery!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParamsQuery>? query = null,
+            global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery>? withoutQuery = null,
             bool validate = true)
         {
             if (validate)

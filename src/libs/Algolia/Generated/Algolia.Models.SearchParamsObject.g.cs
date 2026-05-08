@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseSearchParams? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.IndexSettingsAsSearchParams? IndexSettingsAs { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexSettingsAs))]
 #endif
         public bool IsIndexSettingsAs => IndexSettingsAs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexSettingsAs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.IndexSettingsAsSearchParams? value)
+        {
+            value = IndexSettingsAs;
+            return IsIndexSettingsAs;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BaseSearchParams?, TResult>? @base = null,
-            global::System.Func<global::Algolia.IndexSettingsAsSearchParams?, TResult>? indexSettingsAs = null,
+            global::System.Func<global::Algolia.IndexSettingsAsSearchParams, TResult>? indexSettingsAs = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BaseSearchParams?>? @base = null,
-            global::System.Action<global::Algolia.IndexSettingsAsSearchParams?>? indexSettingsAs = null,
+
+            global::System.Action<global::Algolia.IndexSettingsAsSearchParams>? indexSettingsAs = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsIndexSettingsAs)
+            {
+                indexSettingsAs?.Invoke(IndexSettingsAs!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseSearchParams?>? @base = null,
+            global::System.Action<global::Algolia.IndexSettingsAsSearchParams>? indexSettingsAs = null,
             bool validate = true)
         {
             if (validate)

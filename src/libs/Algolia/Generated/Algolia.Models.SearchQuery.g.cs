@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickForHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForHits? value)
+        {
+            value = ForHits;
+            return IsForHits;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacets? ForFacets { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForFacets))]
 #endif
         public bool IsForFacets => ForFacets != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickForFacets(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForFacets? value)
+        {
+            value = ForFacets;
+            return IsForFacets;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
+
+            global::System.Action<global::Algolia.SearchForFacets?>? forFacets = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsForHits)
+            {
+                forHits?.Invoke(ForHits!);
+            }
+            else if (IsForFacets)
+            {
+                forFacets?.Invoke(ForFacets!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
             global::System.Action<global::Algolia.SearchForFacets?>? forFacets = null,
             bool validate = true)

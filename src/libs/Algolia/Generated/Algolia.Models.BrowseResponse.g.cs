@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseSearchResponse? value)
+        {
+            value = BaseSearch;
+            return IsBaseSearch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BrowsePagination? Pagination { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pagination))]
 #endif
         public bool IsPagination => Pagination != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPagination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BrowsePagination? value)
+        {
+            value = Pagination;
+            return IsPagination;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchHits? value)
+        {
+            value = SearchHits;
+            return IsSearchHits;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cursor))]
 #endif
         public bool IsCursor => Cursor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCursor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Cursor? value)
+        {
+            value = Cursor;
+            return IsCursor;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseSearchResponse?, TResult>? baseSearch = null,
-            global::System.Func<global::Algolia.BrowsePagination?, TResult>? pagination = null,
-            global::System.Func<global::Algolia.SearchHits?, TResult>? searchHits = null,
-            global::System.Func<global::Algolia.Cursor?, TResult>? cursor = null,
+            global::System.Func<global::Algolia.BaseSearchResponse, TResult>? baseSearch = null,
+            global::System.Func<global::Algolia.BrowsePagination, TResult>? pagination = null,
+            global::System.Func<global::Algolia.SearchHits, TResult>? searchHits = null,
+            global::System.Func<global::Algolia.Cursor, TResult>? cursor = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseSearchResponse?>? baseSearch = null,
-            global::System.Action<global::Algolia.BrowsePagination?>? pagination = null,
-            global::System.Action<global::Algolia.SearchHits?>? searchHits = null,
-            global::System.Action<global::Algolia.Cursor?>? cursor = null,
+            global::System.Action<global::Algolia.BaseSearchResponse>? baseSearch = null,
+
+            global::System.Action<global::Algolia.BrowsePagination>? pagination = null,
+
+            global::System.Action<global::Algolia.SearchHits>? searchHits = null,
+
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseSearch)
+            {
+                baseSearch?.Invoke(BaseSearch!);
+            }
+            else if (IsPagination)
+            {
+                pagination?.Invoke(Pagination!);
+            }
+            else if (IsSearchHits)
+            {
+                searchHits?.Invoke(SearchHits!);
+            }
+            else if (IsCursor)
+            {
+                cursor?.Invoke(Cursor!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseSearchResponse>? baseSearch = null,
+            global::System.Action<global::Algolia.BrowsePagination>? pagination = null,
+            global::System.Action<global::Algolia.SearchHits>? searchHits = null,
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
             bool validate = true)
         {
             if (validate)

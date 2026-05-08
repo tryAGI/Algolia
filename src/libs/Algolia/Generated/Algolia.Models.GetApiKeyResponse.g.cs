@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsBase => Base != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseGetApiKeyResponse? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
         /// API key object.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
 #endif
         public bool IsApiKey => ApiKey != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.ApiKey? value)
+        {
+            value = ApiKey;
+            return IsApiKey;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseGetApiKeyResponse?, TResult>? @base = null,
-            global::System.Func<global::Algolia.ApiKey?, TResult>? apiKey = null,
+            global::System.Func<global::Algolia.BaseGetApiKeyResponse, TResult>? @base = null,
+            global::System.Func<global::Algolia.ApiKey, TResult>? apiKey = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseGetApiKeyResponse?>? @base = null,
-            global::System.Action<global::Algolia.ApiKey?>? apiKey = null,
+            global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
+
+            global::System.Action<global::Algolia.ApiKey>? apiKey = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsApiKey)
+            {
+                apiKey?.Invoke(ApiKey!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
+            global::System.Action<global::Algolia.ApiKey>? apiKey = null,
             bool validate = true)
         {
             if (validate)

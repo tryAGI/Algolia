@@ -27,6 +27,19 @@ namespace Algolia
         public bool IsAttributeToUpdateVariant1 => AttributeToUpdateVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAttributeToUpdateVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AttributeToUpdateVariant1;
+            return IsAttributeToUpdateVariant1;
+        }
+
+        /// <summary>
         /// Update to perform on the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperation))]
 #endif
         public bool IsBuiltInOperation => BuiltInOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBuiltInOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BuiltInOperation? value)
+        {
+            value = BuiltInOperation;
+            return IsBuiltInOperation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? attributeToUpdateVariant1 = null,
-            global::System.Func<global::Algolia.BuiltInOperation?, TResult>? builtInOperation = null,
+            global::System.Func<string, TResult>? attributeToUpdateVariant1 = null,
+            global::System.Func<global::Algolia.BuiltInOperation, TResult>? builtInOperation = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? attributeToUpdateVariant1 = null,
-            global::System.Action<global::Algolia.BuiltInOperation?>? builtInOperation = null,
+            global::System.Action<string>? attributeToUpdateVariant1 = null,
+
+            global::System.Action<global::Algolia.BuiltInOperation>? builtInOperation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAttributeToUpdateVariant1)
+            {
+                attributeToUpdateVariant1?.Invoke(AttributeToUpdateVariant1!);
+            }
+            else if (IsBuiltInOperation)
+            {
+                builtInOperation?.Invoke(BuiltInOperation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? attributeToUpdateVariant1 = null,
+            global::System.Action<global::Algolia.BuiltInOperation>? builtInOperation = null,
             bool validate = true)
         {
             if (validate)

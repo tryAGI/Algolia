@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchResponse? value)
+        {
+            value = Response;
+            return IsResponse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacetValuesResponse? ForFacetValuesResponse { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForFacetValuesResponse))]
 #endif
         public bool IsForFacetValuesResponse => ForFacetValuesResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickForFacetValuesResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForFacetValuesResponse? value)
+        {
+            value = ForFacetValuesResponse;
+            return IsForFacetValuesResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchResponse?, TResult>? response = null,
-            global::System.Func<global::Algolia.SearchForFacetValuesResponse?, TResult>? forFacetValuesResponse = null,
+            global::System.Func<global::Algolia.SearchForFacetValuesResponse, TResult>? forFacetValuesResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchResponse?>? response = null,
-            global::System.Action<global::Algolia.SearchForFacetValuesResponse?>? forFacetValuesResponse = null,
+
+            global::System.Action<global::Algolia.SearchForFacetValuesResponse>? forFacetValuesResponse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponse)
+            {
+                response?.Invoke(Response!);
+            }
+            else if (IsForFacetValuesResponse)
+            {
+                forFacetValuesResponse?.Invoke(ForFacetValuesResponse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchResponse?>? response = null,
+            global::System.Action<global::Algolia.SearchForFacetValuesResponse>? forFacetValuesResponse = null,
             bool validate = true)
         {
             if (validate)
