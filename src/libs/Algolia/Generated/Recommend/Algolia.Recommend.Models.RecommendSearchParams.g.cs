@@ -29,6 +29,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendSearchParams? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchParamsQuery? Query { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
         public bool IsQuery => Query != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.SearchParamsQuery? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
 
         /// <summary>
         /// Index settings.
@@ -59,6 +85,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexSettings))]
 #endif
         public bool IsIndexSettings => IndexSettings != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexSettings(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendIndexSettings? value)
+        {
+            value = IndexSettings;
+            return IsIndexSettings;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,8 +196,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams?, TResult>? @base = null,
-            global::System.Func<global::Algolia.Recommend.SearchParamsQuery?, TResult>? query = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams, TResult>? @base = null,
+            global::System.Func<global::Algolia.Recommend.SearchParamsQuery, TResult>? query = null,
             global::System.Func<global::Algolia.Recommend.RecommendIndexSettings?, TResult>? indexSettings = null,
             bool validate = true)
         {
@@ -187,8 +226,38 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams?>? @base = null,
-            global::System.Action<global::Algolia.Recommend.SearchParamsQuery?>? query = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? @base = null,
+
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
+
+            global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+            else if (IsIndexSettings)
+            {
+                indexSettings?.Invoke(IndexSettings!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? @base = null,
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
             global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
             bool validate = true)
         {

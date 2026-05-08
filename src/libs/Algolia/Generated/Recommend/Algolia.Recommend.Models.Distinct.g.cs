@@ -32,6 +32,19 @@ namespace Algolia.Recommend
         public bool IsDistinctVariant1 => DistinctVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDistinctVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = DistinctVariant1;
+            return IsDistinctVariant1;
+        }
+
+        /// <summary>
         /// Number of members of a group of records to include in the search results.<br/>
         /// - Don't use `distinct &gt; 1` for records that might be [promoted by rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits).<br/>
         ///   The number of hits won't be correct and faceting won't work as expected.<br/>
@@ -53,6 +66,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DistinctVariant2))]
 #endif
         public bool IsDistinctVariant2 => DistinctVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDistinctVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = DistinctVariant2;
+            return IsDistinctVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -154,6 +180,30 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<bool?>? distinctVariant1 = null,
+
+            global::System.Action<int?>? distinctVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDistinctVariant1)
+            {
+                distinctVariant1?.Invoke(DistinctVariant1!);
+            }
+            else if (IsDistinctVariant2)
+            {
+                distinctVariant2?.Invoke(DistinctVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<bool?>? distinctVariant1 = null,
             global::System.Action<int?>? distinctVariant2 = null,
             bool validate = true)

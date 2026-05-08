@@ -31,6 +31,19 @@ namespace Algolia
         public bool IsRemoveStopWordsVariant1 => RemoveStopWordsVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRemoveStopWordsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? value)
+        {
+            value = RemoveStopWordsVariant1;
+            return IsRemoveStopWordsVariant1;
+        }
+
+        /// <summary>
         /// If true, stop words are removed for all languages you included in `queryLanguages`, or for all supported languages, if `queryLanguages` is empty.<br/>
         /// If false, stop words are not removed.<br/>
         /// Default Value: false
@@ -48,6 +61,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemoveStopWordsVariant2))]
 #endif
         public bool IsRemoveStopWordsVariant2 => RemoveStopWordsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRemoveStopWordsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = RemoveStopWordsVariant2;
+            return IsRemoveStopWordsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -106,7 +132,7 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>?, TResult>? removeStopWordsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>, TResult>? removeStopWordsVariant1 = null,
             global::System.Func<bool?, TResult>? removeStopWordsVariant2 = null,
             bool validate = true)
         {
@@ -131,7 +157,31 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>?>? removeStopWordsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>>? removeStopWordsVariant1 = null,
+
+            global::System.Action<bool?>? removeStopWordsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRemoveStopWordsVariant1)
+            {
+                removeStopWordsVariant1?.Invoke(RemoveStopWordsVariant1!);
+            }
+            else if (IsRemoveStopWordsVariant2)
+            {
+                removeStopWordsVariant2?.Invoke(RemoveStopWordsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>>? removeStopWordsVariant1 = null,
             global::System.Action<bool?>? removeStopWordsVariant2 = null,
             bool validate = true)
         {

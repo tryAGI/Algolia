@@ -29,6 +29,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseSearchResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseSearchResponse? value)
+        {
+            value = BaseSearchResponse;
+            return IsBaseSearchResponse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchPagination? SearchPagination { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchPagination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.SearchPagination? value)
+        {
+            value = SearchPagination;
+            return IsSearchPagination;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RecommendationsHits? Hits { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Hits))]
 #endif
         public bool IsHits => Hits != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendationsHits? value)
+        {
+            value = Hits;
+            return IsHits;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseSearchResponse?, TResult>? baseSearchResponse = null,
-            global::System.Func<global::Algolia.Recommend.SearchPagination?, TResult>? searchPagination = null,
-            global::System.Func<global::Algolia.Recommend.RecommendationsHits?, TResult>? hits = null,
+            global::System.Func<global::Algolia.Recommend.BaseSearchResponse, TResult>? baseSearchResponse = null,
+            global::System.Func<global::Algolia.Recommend.SearchPagination, TResult>? searchPagination = null,
+            global::System.Func<global::Algolia.Recommend.RecommendationsHits, TResult>? hits = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseSearchResponse?>? baseSearchResponse = null,
-            global::System.Action<global::Algolia.Recommend.SearchPagination?>? searchPagination = null,
-            global::System.Action<global::Algolia.Recommend.RecommendationsHits?>? hits = null,
+            global::System.Action<global::Algolia.Recommend.BaseSearchResponse>? baseSearchResponse = null,
+
+            global::System.Action<global::Algolia.Recommend.SearchPagination>? searchPagination = null,
+
+            global::System.Action<global::Algolia.Recommend.RecommendationsHits>? hits = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseSearchResponse)
+            {
+                baseSearchResponse?.Invoke(BaseSearchResponse!);
+            }
+            else if (IsSearchPagination)
+            {
+                searchPagination?.Invoke(SearchPagination!);
+            }
+            else if (IsHits)
+            {
+                hits?.Invoke(Hits!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseSearchResponse>? baseSearchResponse = null,
+            global::System.Action<global::Algolia.Recommend.SearchPagination>? searchPagination = null,
+            global::System.Action<global::Algolia.Recommend.RecommendationsHits>? hits = null,
             bool validate = true)
         {
             if (validate)

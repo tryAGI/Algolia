@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchParametersAsObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsObject? value)
+        {
+            value = SearchParametersAsObject;
+            return IsSearchParametersAsObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cursor))]
 #endif
         public bool IsCursor => Cursor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCursor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Cursor? value)
+        {
+            value = Cursor;
+            return IsCursor;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParamsObject?, TResult>? searchParametersAsObject = null,
-            global::System.Func<global::Algolia.Cursor?, TResult>? cursor = null,
+            global::System.Func<global::Algolia.Cursor, TResult>? cursor = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
-            global::System.Action<global::Algolia.Cursor?>? cursor = null,
+
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchParametersAsObject)
+            {
+                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+            }
+            else if (IsCursor)
+            {
+                cursor?.Invoke(Cursor!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
             bool validate = true)
         {
             if (validate)

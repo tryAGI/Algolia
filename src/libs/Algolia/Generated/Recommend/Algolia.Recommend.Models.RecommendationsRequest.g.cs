@@ -29,6 +29,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFrequentlyBoughtTogether(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BoughtTogetherQuery? value)
+        {
+            value = FrequentlyBoughtTogether;
+            return IsFrequentlyBoughtTogether;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedQuery? RelatedProducts { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RelatedProducts))]
 #endif
         public bool IsRelatedProducts => RelatedProducts != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRelatedProducts(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RelatedQuery? value)
+        {
+            value = RelatedProducts;
+            return IsRelatedProducts;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTrendingItems(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TrendingItemsQuery? value)
+        {
+            value = TrendingItems;
+            return IsTrendingItems;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingFacetsQuery? TrendingFacetValues { get; init; }
 #else
@@ -80,6 +119,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTrendingFacetValues(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TrendingFacetsQuery? value)
+        {
+            value = TrendingFacetValues;
+            return IsTrendingFacetValues;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilarQuery? LookingSimilar { get; init; }
 #else
@@ -93,6 +145,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LookingSimilar))]
 #endif
         public bool IsLookingSimilar => LookingSimilar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLookingSimilar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.LookingSimilarQuery? value)
+        {
+            value = LookingSimilar;
+            return IsLookingSimilar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,6 +340,48 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Algolia.Recommend.BoughtTogetherQuery?>? frequentlyBoughtTogether = null,
+
+            global::System.Action<global::Algolia.Recommend.RelatedQuery?>? relatedProducts = null,
+
+            global::System.Action<global::Algolia.Recommend.TrendingItemsQuery?>? trendingItems = null,
+
+            global::System.Action<global::Algolia.Recommend.TrendingFacetsQuery?>? trendingFacetValues = null,
+
+            global::System.Action<global::Algolia.Recommend.LookingSimilarQuery?>? lookingSimilar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFrequentlyBoughtTogether)
+            {
+                frequentlyBoughtTogether?.Invoke(FrequentlyBoughtTogether!);
+            }
+            else if (IsRelatedProducts)
+            {
+                relatedProducts?.Invoke(RelatedProducts!);
+            }
+            else if (IsTrendingItems)
+            {
+                trendingItems?.Invoke(TrendingItems!);
+            }
+            else if (IsTrendingFacetValues)
+            {
+                trendingFacetValues?.Invoke(TrendingFacetValues!);
+            }
+            else if (IsLookingSimilar)
+            {
+                lookingSimilar?.Invoke(LookingSimilar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Algolia.Recommend.BoughtTogetherQuery?>? frequentlyBoughtTogether = null,
             global::System.Action<global::Algolia.Recommend.RelatedQuery?>? relatedProducts = null,
             global::System.Action<global::Algolia.Recommend.TrendingItemsQuery?>? trendingItems = null,

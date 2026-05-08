@@ -29,6 +29,19 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.IndexSettings? value)
+        {
+            value = Index;
+            return IsIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.WithPrimary? WithPrimary { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPrimary))]
 #endif
         public bool IsWithPrimary => WithPrimary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithPrimary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.WithPrimary? value)
+        {
+            value = WithPrimary;
+            return IsWithPrimary;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.IndexSettings?, TResult>? index = null,
-            global::System.Func<global::Algolia.WithPrimary?, TResult>? withPrimary = null,
+            global::System.Func<global::Algolia.WithPrimary, TResult>? withPrimary = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.IndexSettings?>? index = null,
-            global::System.Action<global::Algolia.WithPrimary?>? withPrimary = null,
+
+            global::System.Action<global::Algolia.WithPrimary>? withPrimary = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIndex)
+            {
+                index?.Invoke(Index!);
+            }
+            else if (IsWithPrimary)
+            {
+                withPrimary?.Invoke(WithPrimary!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.IndexSettings?>? index = null,
+            global::System.Action<global::Algolia.WithPrimary>? withPrimary = null,
             bool validate = true)
         {
             if (validate)

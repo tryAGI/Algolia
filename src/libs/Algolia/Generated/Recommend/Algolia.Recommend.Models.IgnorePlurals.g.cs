@@ -32,6 +32,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIgnorePluralsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? value)
+        {
+            value = IgnorePluralsVariant1;
+            return IsIgnorePluralsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BooleanString? BooleanString { get; init; }
 #else
@@ -45,6 +58,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BooleanString))]
 #endif
         public bool IsBooleanString => BooleanString != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBooleanString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BooleanString? value)
+        {
+            value = BooleanString;
+            return IsBooleanString;
+        }
 
         /// <summary>
         /// If true, `ignorePlurals` is active for all languages included in `queryLanguages`, or for all supported languages, if `queryLanguges` is empty.<br/>
@@ -64,6 +90,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IgnorePluralsVariant3))]
 #endif
         public bool IsIgnorePluralsVariant3 => IgnorePluralsVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIgnorePluralsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = IgnorePluralsVariant3;
+            return IsIgnorePluralsVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,7 +183,7 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>?, TResult>? ignorePluralsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>, TResult>? ignorePluralsVariant1 = null,
             global::System.Func<global::Algolia.Recommend.BooleanString?, TResult>? booleanString = null,
             global::System.Func<bool?, TResult>? ignorePluralsVariant3 = null,
             bool validate = true)
@@ -174,7 +213,37 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>?>? ignorePluralsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>>? ignorePluralsVariant1 = null,
+
+            global::System.Action<global::Algolia.Recommend.BooleanString?>? booleanString = null,
+
+            global::System.Action<bool?>? ignorePluralsVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIgnorePluralsVariant1)
+            {
+                ignorePluralsVariant1?.Invoke(IgnorePluralsVariant1!);
+            }
+            else if (IsBooleanString)
+            {
+                booleanString?.Invoke(BooleanString!);
+            }
+            else if (IsIgnorePluralsVariant3)
+            {
+                ignorePluralsVariant3?.Invoke(IgnorePluralsVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>>? ignorePluralsVariant1 = null,
             global::System.Action<global::Algolia.Recommend.BooleanString?>? booleanString = null,
             global::System.Action<bool?>? ignorePluralsVariant3 = null,
             bool validate = true)

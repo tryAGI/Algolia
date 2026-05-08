@@ -29,6 +29,19 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReRankingApplyFilterVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>? value)
+        {
+            value = ReRankingApplyFilterVariant1;
+            return IsReRankingApplyFilterVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ReRankingApplyFilterVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReRankingApplyFilterVariant2))]
 #endif
         public bool IsReRankingApplyFilterVariant2 => ReRankingApplyFilterVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReRankingApplyFilterVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ReRankingApplyFilterVariant2;
+            return IsReRankingApplyFilterVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>?, TResult>? reRankingApplyFilterVariant1 = null,
-            global::System.Func<string?, TResult>? reRankingApplyFilterVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>, TResult>? reRankingApplyFilterVariant1 = null,
+            global::System.Func<string, TResult>? reRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>?>? reRankingApplyFilterVariant1 = null,
-            global::System.Action<string?>? reRankingApplyFilterVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
+
+            global::System.Action<string>? reRankingApplyFilterVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReRankingApplyFilterVariant1)
+            {
+                reRankingApplyFilterVariant1?.Invoke(ReRankingApplyFilterVariant1!);
+            }
+            else if (IsReRankingApplyFilterVariant2)
+            {
+                reRankingApplyFilterVariant2?.Invoke(ReRankingApplyFilterVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
+            global::System.Action<string>? reRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
