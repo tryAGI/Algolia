@@ -119,6 +119,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static HighlightResult FromHighlightResultOption(global::Algolia.Recommend.HighlightResultOption? value) => new HighlightResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator HighlightResult(global::Algolia.Recommend.HighlightResultMap value) => new HighlightResult((global::Algolia.Recommend.HighlightResultMap?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Algolia.Recommend
         {
             HighlightResultMap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static HighlightResult FromHighlightResultMap(global::Algolia.Recommend.HighlightResultMap? value) => new HighlightResult(value);
 
         /// <summary>
         /// 

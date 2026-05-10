@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static PropertiesReRankingApplyFilter FromReRankingApplyFilter(global::Algolia.Recommend.ReRankingApplyFilter? value) => new PropertiesReRankingApplyFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public PropertiesReRankingApplyFilter(
             global::Algolia.Recommend.ReRankingApplyFilter? reRankingApplyFilter,
             object? propertiesReRankingApplyFilterVariant2

@@ -95,6 +95,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static NumericFilters FromNumericFiltersVariant2(string? value) => new NumericFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public NumericFilters(
             global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>? numericFiltersVariant1,
             string? numericFiltersVariant2

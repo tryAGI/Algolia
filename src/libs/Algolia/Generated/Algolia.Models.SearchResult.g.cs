@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchResult FromResponse(global::Algolia.SearchResponse? value) => new SearchResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchResult(global::Algolia.SearchForFacetValuesResponse value) => new SearchResult((global::Algolia.SearchForFacetValuesResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             ForFacetValuesResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchResult FromForFacetValuesResponse(global::Algolia.SearchForFacetValuesResponse? value) => new SearchResult(value);
 
         /// <summary>
         /// 

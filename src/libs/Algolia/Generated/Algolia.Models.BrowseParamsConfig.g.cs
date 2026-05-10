@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BrowseParamsConfig FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new BrowseParamsConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BrowseParamsConfig(global::Algolia.Cursor value) => new BrowseParamsConfig((global::Algolia.Cursor?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             Cursor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BrowseParamsConfig FromCursor(global::Algolia.Cursor? value) => new BrowseParamsConfig(value);
 
         /// <summary>
         /// 

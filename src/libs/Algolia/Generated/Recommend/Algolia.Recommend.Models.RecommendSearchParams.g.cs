@@ -119,6 +119,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendSearchParams FromBase(global::Algolia.Recommend.BaseRecommendSearchParams? value) => new RecommendSearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendSearchParams(global::Algolia.Recommend.SearchParamsQuery value) => new RecommendSearchParams((global::Algolia.Recommend.SearchParamsQuery?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendSearchParams FromQuery(global::Algolia.Recommend.SearchParamsQuery? value) => new RecommendSearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendSearchParams(global::Algolia.Recommend.RecommendIndexSettings value) => new RecommendSearchParams((global::Algolia.Recommend.RecommendIndexSettings?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Algolia.Recommend
         {
             IndexSettings = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendSearchParams FromIndexSettings(global::Algolia.Recommend.RecommendIndexSettings? value) => new RecommendSearchParams(value);
 
         /// <summary>
         /// 

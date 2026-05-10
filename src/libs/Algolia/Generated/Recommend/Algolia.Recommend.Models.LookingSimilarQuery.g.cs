@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static LookingSimilarQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new LookingSimilarQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LookingSimilarQuery(global::Algolia.Recommend.LookingSimilar value) => new LookingSimilarQuery((global::Algolia.Recommend.LookingSimilar?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             LookingSimilar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LookingSimilarQuery FromLookingSimilar(global::Algolia.Recommend.LookingSimilar? value) => new LookingSimilarQuery(value);
 
         /// <summary>
         /// 

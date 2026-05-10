@@ -59,6 +59,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static TrendingFacetsQuery FromTrendingFacets(global::Algolia.Recommend.TrendingFacets? value) => new TrendingFacetsQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             TrendingFacets as object 
             ;

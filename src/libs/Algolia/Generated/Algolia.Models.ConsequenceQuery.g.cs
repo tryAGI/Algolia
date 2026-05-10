@@ -91,6 +91,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static ConsequenceQuery FromObjectValue(global::Algolia.ConsequenceQueryObject? value) => new ConsequenceQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsequenceQuery(string value) => new ConsequenceQuery((string?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace Algolia
         {
             ConsequenceQueryVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsequenceQuery FromConsequenceQueryVariant2(string? value) => new ConsequenceQuery(value);
 
         /// <summary>
         /// 

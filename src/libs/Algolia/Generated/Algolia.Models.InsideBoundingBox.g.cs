@@ -124,6 +124,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static InsideBoundingBox FromInsideBoundingBoxVariant1(string? value) => new InsideBoundingBox(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InsideBoundingBox(
             string? insideBoundingBoxVariant1,
             object? insideBoundingBoxVariant2,

@@ -100,6 +100,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static Distinct FromDistinctVariant1(bool? value) => new Distinct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Distinct(int value) => new Distinct((int?)value);
 
         /// <summary>
@@ -114,6 +119,11 @@ namespace Algolia
         {
             DistinctVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Distinct FromDistinctVariant2(int? value) => new Distinct(value);
 
         /// <summary>
         /// 

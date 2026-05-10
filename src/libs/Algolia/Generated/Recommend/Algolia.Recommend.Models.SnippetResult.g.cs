@@ -119,6 +119,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static SnippetResult FromSnippetResultOption(global::Algolia.Recommend.SnippetResultOption? value) => new SnippetResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SnippetResult(global::Algolia.Recommend.SnippetResultMap value) => new SnippetResult((global::Algolia.Recommend.SnippetResultMap?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Algolia.Recommend
         {
             SnippetResultMap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SnippetResult FromSnippetResultMap(global::Algolia.Recommend.SnippetResultMap? value) => new SnippetResult(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BuiltInOperationValue FromBuiltInOperationValueVariant1(string? value) => new BuiltInOperationValue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BuiltInOperationValue(int value) => new BuiltInOperationValue((int?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             BuiltInOperationValueVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BuiltInOperationValue FromBuiltInOperationValueVariant2(int? value) => new BuiltInOperationValue(value);
 
         /// <summary>
         /// 

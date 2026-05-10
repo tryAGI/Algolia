@@ -133,6 +133,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static OptionalWords FromOptionalWordsVariant1(string? value) => new OptionalWords(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OptionalWords(
             string? optionalWordsVariant1,
             object? optionalWordsVariant2,

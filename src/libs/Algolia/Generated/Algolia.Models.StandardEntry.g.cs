@@ -90,6 +90,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static StandardEntry FromStandardEntryVariant1(global::System.Collections.Generic.Dictionary<string, bool>? value) => new StandardEntry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public StandardEntry(
             global::System.Collections.Generic.Dictionary<string, bool>? standardEntryVariant1,
             object? standardEntryVariant2

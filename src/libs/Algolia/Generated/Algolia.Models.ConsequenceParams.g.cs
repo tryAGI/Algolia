@@ -120,6 +120,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static ConsequenceParams FromBaseSearchWithoutQuery(global::Algolia.BaseSearchParamsWithoutQuery? value) => new ConsequenceParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsequenceParams(global::Algolia.IndexSettingsAsSearchParams value) => new ConsequenceParams((global::Algolia.IndexSettingsAsSearchParams?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static ConsequenceParams FromIndexSettingsAsSearch(global::Algolia.IndexSettingsAsSearchParams? value) => new ConsequenceParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsequenceParams(global::Algolia.Params value) => new ConsequenceParams((global::Algolia.Params?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace Algolia
         {
             Params = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsequenceParams FromParams(global::Algolia.Params? value) => new ConsequenceParams(value);
 
         /// <summary>
         /// 

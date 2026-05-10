@@ -92,6 +92,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static AroundRadius FromAroundRadiusVariant1(int? value) => new AroundRadius(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AroundRadius(global::Algolia.AroundRadiusAll value) => new AroundRadius((global::Algolia.AroundRadiusAll?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace Algolia
         {
             All = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AroundRadius FromAll(global::Algolia.AroundRadiusAll? value) => new AroundRadius(value);
 
         /// <summary>
         /// 

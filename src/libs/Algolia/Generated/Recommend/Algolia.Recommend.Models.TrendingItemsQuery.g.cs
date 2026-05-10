@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static TrendingItemsQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new TrendingItemsQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrendingItemsQuery(global::Algolia.Recommend.TrendingItems value) => new TrendingItemsQuery((global::Algolia.Recommend.TrendingItems?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             TrendingItems = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrendingItemsQuery FromTrendingItems(global::Algolia.Recommend.TrendingItems? value) => new TrendingItemsQuery(value);
 
         /// <summary>
         /// 

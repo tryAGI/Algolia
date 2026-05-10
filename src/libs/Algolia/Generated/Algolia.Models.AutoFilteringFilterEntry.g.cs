@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static AutoFilteringFilterEntry FromAutoFilteringFilterEntryVariant1(string? value) => new AutoFilteringFilterEntry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AutoFilteringFilterEntry(
             string? autoFilteringFilterEntryVariant1,
             global::System.Collections.Generic.IList<string>? autoFilteringFilterEntryVariant2

@@ -179,6 +179,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsRequest FromFrequentlyBoughtTogether(global::Algolia.Recommend.BoughtTogetherQuery? value) => new RecommendationsRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.RelatedQuery value) => new RecommendationsRequest((global::Algolia.Recommend.RelatedQuery?)value);
 
         /// <summary>
@@ -193,6 +198,11 @@ namespace Algolia.Recommend
         {
             RelatedProducts = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendationsRequest FromRelatedProducts(global::Algolia.Recommend.RelatedQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
         /// 
@@ -215,6 +225,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsRequest FromTrendingItems(global::Algolia.Recommend.TrendingItemsQuery? value) => new RecommendationsRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.TrendingFacetsQuery value) => new RecommendationsRequest((global::Algolia.Recommend.TrendingFacetsQuery?)value);
 
         /// <summary>
@@ -233,6 +248,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsRequest FromTrendingFacetValues(global::Algolia.Recommend.TrendingFacetsQuery? value) => new RecommendationsRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.LookingSimilarQuery value) => new RecommendationsRequest((global::Algolia.Recommend.LookingSimilarQuery?)value);
 
         /// <summary>
@@ -247,6 +267,11 @@ namespace Algolia.Recommend
         {
             LookingSimilar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendationsRequest FromLookingSimilar(global::Algolia.Recommend.LookingSimilarQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
         /// 

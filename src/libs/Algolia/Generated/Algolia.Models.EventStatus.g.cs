@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static EventStatus FromEnum(global::Algolia.EventStatusEnum? value) => new EventStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EventStatus(
             global::Algolia.EventStatusEnum? @enum,
             object? eventStatusVariant2

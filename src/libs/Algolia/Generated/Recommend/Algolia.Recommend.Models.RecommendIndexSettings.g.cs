@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendIndexSettings FromBase1(global::Algolia.Recommend.BaseIndexSettings? value) => new RecommendIndexSettings(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendIndexSettings(global::Algolia.Recommend.BaseRecommendIndexSettings value) => new RecommendIndexSettings((global::Algolia.Recommend.BaseRecommendIndexSettings?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             Base2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendIndexSettings FromBase2(global::Algolia.Recommend.BaseRecommendIndexSettings? value) => new RecommendIndexSettings(value);
 
         /// <summary>
         /// 

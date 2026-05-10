@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static BoughtTogetherQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new BoughtTogetherQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BoughtTogetherQuery(global::Algolia.Recommend.FrequentlyBoughtTogether value) => new BoughtTogetherQuery((global::Algolia.Recommend.FrequentlyBoughtTogether?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             Frequently = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BoughtTogetherQuery FromFrequently(global::Algolia.Recommend.FrequentlyBoughtTogether? value) => new BoughtTogetherQuery(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static TypoTolerance FromTypoToleranceVariant1(bool? value) => new TypoTolerance(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TypoTolerance(global::Algolia.Recommend.TypoToleranceEnum value) => new TypoTolerance((global::Algolia.Recommend.TypoToleranceEnum?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace Algolia.Recommend
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TypoTolerance FromEnum(global::Algolia.Recommend.TypoToleranceEnum? value) => new TypoTolerance(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SettingsResponse FromIndex(global::Algolia.IndexSettings? value) => new SettingsResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SettingsResponse(global::Algolia.WithPrimary value) => new SettingsResponse((global::Algolia.WithPrimary?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             WithPrimary = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SettingsResponse FromWithPrimary(global::Algolia.WithPrimary? value) => new SettingsResponse(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchForFacets FromParams(global::Algolia.SearchParams? value) => new SearchForFacets(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchForFacets(global::Algolia.SearchForFacetsSettings value) => new SearchForFacets((global::Algolia.SearchForFacetsSettings?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             Settings = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchForFacets FromSettings(global::Algolia.SearchForFacetsSettings? value) => new SearchForFacets(value);
 
         /// <summary>
         /// 

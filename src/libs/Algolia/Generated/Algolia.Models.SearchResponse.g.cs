@@ -119,6 +119,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchResponse FromBase(global::Algolia.BaseSearchResponse? value) => new SearchResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchResponse(global::Algolia.SearchPagination value) => new SearchResponse((global::Algolia.SearchPagination?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchResponse FromPagination(global::Algolia.SearchPagination? value) => new SearchResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchResponse(global::Algolia.SearchHits value) => new SearchResponse((global::Algolia.SearchHits?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Algolia
         {
             Hits = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchResponse FromHits(global::Algolia.SearchHits? value) => new SearchResponse(value);
 
         /// <summary>
         /// 

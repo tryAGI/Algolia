@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static Promote FromObjectIDs(global::Algolia.PromoteObjectIDs? value) => new Promote(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Promote(global::Algolia.PromoteObjectID value) => new Promote((global::Algolia.PromoteObjectID?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             ObjectID = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Promote FromObjectID(global::Algolia.PromoteObjectID? value) => new Promote(value);
 
         /// <summary>
         /// 

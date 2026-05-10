@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsHit FromRecommend(global::Algolia.Recommend.RecommendHit? value) => new RecommendationsHit(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsHit(global::Algolia.Recommend.TrendingFacetHit value) => new RecommendationsHit((global::Algolia.Recommend.TrendingFacetHit?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             TrendingFacetHit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendationsHit FromTrendingFacetHit(global::Algolia.Recommend.TrendingFacetHit? value) => new RecommendationsHit(value);
 
         /// <summary>
         /// 
