@@ -119,6 +119,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SnippetResult FromSnippetResultOption(global::Algolia.SnippetResultOption? value) => new SnippetResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SnippetResult(global::Algolia.SnippetResultMap value) => new SnippetResult((global::Algolia.SnippetResultMap?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Algolia
         {
             SnippetResultMap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SnippetResult FromSnippetResultMap(global::Algolia.SnippetResultMap? value) => new SnippetResult(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static RemoveStopWords FromRemoveStopWordsVariant2(bool? value) => new RemoveStopWords(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RemoveStopWords(
             global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? removeStopWordsVariant1,
             bool? removeStopWordsVariant2

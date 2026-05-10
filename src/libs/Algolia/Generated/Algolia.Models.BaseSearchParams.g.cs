@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BaseSearchParams FromQuery(global::Algolia.SearchParamsQuery? value) => new BaseSearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseSearchParams(global::Algolia.BaseSearchParamsWithoutQuery value) => new BaseSearchParams((global::Algolia.BaseSearchParamsWithoutQuery?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             WithoutQuery = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseSearchParams FromWithoutQuery(global::Algolia.BaseSearchParamsWithoutQuery? value) => new BaseSearchParams(value);
 
         /// <summary>
         /// 

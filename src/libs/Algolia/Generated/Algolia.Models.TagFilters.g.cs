@@ -94,6 +94,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static TagFilters FromTagFiltersVariant2(string? value) => new TagFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TagFilters(
             global::System.Collections.Generic.IList<global::Algolia.TagFilters>? tagFiltersVariant1,
             string? tagFiltersVariant2

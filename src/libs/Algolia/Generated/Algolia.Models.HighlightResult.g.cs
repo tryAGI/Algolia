@@ -119,6 +119,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static HighlightResult FromHighlightResultOption(global::Algolia.HighlightResultOption? value) => new HighlightResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator HighlightResult(global::Algolia.HighlightResultMap value) => new HighlightResult((global::Algolia.HighlightResultMap?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Algolia
         {
             HighlightResultMap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static HighlightResult FromHighlightResultMap(global::Algolia.HighlightResultMap? value) => new HighlightResult(value);
 
         /// <summary>
         /// 

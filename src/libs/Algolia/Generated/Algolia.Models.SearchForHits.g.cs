@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchForHits FromParams(global::Algolia.SearchParams? value) => new SearchForHits(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchForHits(global::Algolia.SearchForHitsSettings value) => new SearchForHits((global::Algolia.SearchForHitsSettings?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             Settings = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchForHits FromSettings(global::Algolia.SearchForHitsSettings? value) => new SearchForHits(value);
 
         /// <summary>
         /// 

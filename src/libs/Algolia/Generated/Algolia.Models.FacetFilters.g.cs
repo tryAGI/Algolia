@@ -96,6 +96,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static FacetFilters FromFacetFiltersVariant2(string? value) => new FacetFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FacetFilters(
             global::System.Collections.Generic.IList<global::Algolia.FacetFilters>? facetFiltersVariant1,
             string? facetFiltersVariant2

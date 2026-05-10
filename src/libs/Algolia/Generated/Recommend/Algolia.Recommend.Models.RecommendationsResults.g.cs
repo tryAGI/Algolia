@@ -119,6 +119,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsResults FromBaseSearchResponse(global::Algolia.Recommend.BaseSearchResponse? value) => new RecommendationsResults(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsResults(global::Algolia.Recommend.SearchPagination value) => new RecommendationsResults((global::Algolia.Recommend.SearchPagination?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsResults FromSearchPagination(global::Algolia.Recommend.SearchPagination? value) => new RecommendationsResults(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsResults(global::Algolia.Recommend.RecommendationsHits value) => new RecommendationsResults((global::Algolia.Recommend.RecommendationsHits?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Algolia.Recommend
         {
             Hits = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendationsResults FromHits(global::Algolia.Recommend.RecommendationsHits? value) => new RecommendationsResults(value);
 
         /// <summary>
         /// 

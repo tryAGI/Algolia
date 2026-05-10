@@ -93,6 +93,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static AroundPrecision FromAroundPrecisionVariant1(int? value) => new AroundPrecision(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AroundPrecision(
             int? aroundPrecisionVariant1,
             global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? rangeObjects

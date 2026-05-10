@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static ReRankingApplyFilter FromReRankingApplyFilterVariant2(string? value) => new ReRankingApplyFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ReRankingApplyFilter(
             global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>? reRankingApplyFilterVariant1,
             string? reRankingApplyFilterVariant2

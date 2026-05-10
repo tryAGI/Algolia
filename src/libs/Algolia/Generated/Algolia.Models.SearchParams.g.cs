@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchParams FromSearchParametersAsQueryString(global::Algolia.SearchParamsString? value) => new SearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchParams(global::Algolia.SearchParamsObject value) => new SearchParams((global::Algolia.SearchParamsObject?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             SearchParametersAsObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchParams FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new SearchParams(value);
 
         /// <summary>
         /// 

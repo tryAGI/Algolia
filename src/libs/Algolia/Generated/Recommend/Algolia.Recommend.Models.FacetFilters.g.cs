@@ -96,6 +96,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static FacetFilters FromFacetFiltersVariant2(string? value) => new FacetFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FacetFilters(
             global::System.Collections.Generic.IList<global::Algolia.Recommend.FacetFilters>? facetFiltersVariant1,
             string? facetFiltersVariant2

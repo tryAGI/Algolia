@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static FallbackParams FromSearchParametersAsObject(global::Algolia.Recommend.RecommendSearchParams? value) => new FallbackParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FallbackParams(
             global::Algolia.Recommend.RecommendSearchParams? searchParametersAsObject,
             object? fallbackParamsVariant2

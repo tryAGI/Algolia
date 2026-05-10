@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static AttributeToUpdate FromAttributeToUpdateVariant1(string? value) => new AttributeToUpdate(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AttributeToUpdate(global::Algolia.BuiltInOperation value) => new AttributeToUpdate((global::Algolia.BuiltInOperation?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             BuiltInOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AttributeToUpdate FromBuiltInOperation(global::Algolia.BuiltInOperation? value) => new AttributeToUpdate(value);
 
         /// <summary>
         /// 

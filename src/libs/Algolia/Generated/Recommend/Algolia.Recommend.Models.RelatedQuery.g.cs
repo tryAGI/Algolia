@@ -89,6 +89,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RelatedQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new RelatedQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RelatedQuery(global::Algolia.Recommend.RelatedProducts value) => new RelatedQuery((global::Algolia.Recommend.RelatedProducts?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia.Recommend
         {
             Products = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RelatedQuery FromProducts(global::Algolia.Recommend.RelatedProducts? value) => new RelatedQuery(value);
 
         /// <summary>
         /// 

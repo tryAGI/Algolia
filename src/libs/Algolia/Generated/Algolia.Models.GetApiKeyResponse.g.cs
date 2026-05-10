@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static GetApiKeyResponse FromBase(global::Algolia.BaseGetApiKeyResponse? value) => new GetApiKeyResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetApiKeyResponse(global::Algolia.ApiKey value) => new GetApiKeyResponse((global::Algolia.ApiKey?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetApiKeyResponse FromApiKey(global::Algolia.ApiKey? value) => new GetApiKeyResponse(value);
 
         /// <summary>
         /// 

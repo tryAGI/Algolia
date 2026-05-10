@@ -124,6 +124,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static IgnorePlurals FromBooleanString(global::Algolia.BooleanString? value) => new IgnorePlurals(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IgnorePlurals(bool value) => new IgnorePlurals((bool?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace Algolia
         {
             IgnorePluralsVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IgnorePlurals FromIgnorePluralsVariant3(bool? value) => new IgnorePlurals(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static DictionaryLanguage FromDictionaryLanguageVariant1(global::Algolia.DictionaryLanguageVariant1? value) => new DictionaryLanguage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DictionaryLanguage(
             global::Algolia.DictionaryLanguageVariant1? dictionaryLanguageVariant1,
             object? dictionaryLanguageVariant2

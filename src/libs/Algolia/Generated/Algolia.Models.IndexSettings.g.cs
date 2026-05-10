@@ -89,6 +89,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static IndexSettings FromBase(global::Algolia.BaseIndexSettings? value) => new IndexSettings(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IndexSettings(global::Algolia.IndexSettingsAsSearchParams value) => new IndexSettings((global::Algolia.IndexSettingsAsSearchParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Algolia
         {
             AsSearchParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IndexSettings FromAsSearchParams(global::Algolia.IndexSettingsAsSearchParams? value) => new IndexSettings(value);
 
         /// <summary>
         /// 

@@ -97,6 +97,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static OptionalFilters FromOptionalFiltersVariant2(string? value) => new OptionalFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OptionalFilters(
             global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>? optionalFiltersVariant1,
             string? optionalFiltersVariant2

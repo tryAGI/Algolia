@@ -149,6 +149,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BrowseResponse FromBaseSearch(global::Algolia.BaseSearchResponse? value) => new BrowseResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.BrowsePagination value) => new BrowseResponse((global::Algolia.BrowsePagination?)value);
 
         /// <summary>
@@ -163,6 +168,11 @@ namespace Algolia
         {
             Pagination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BrowseResponse FromPagination(global::Algolia.BrowsePagination? value) => new BrowseResponse(value);
 
         /// <summary>
         /// 
@@ -185,6 +195,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BrowseResponse FromSearchHits(global::Algolia.SearchHits? value) => new BrowseResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.Cursor value) => new BrowseResponse((global::Algolia.Cursor?)value);
 
         /// <summary>
@@ -199,6 +214,11 @@ namespace Algolia
         {
             Cursor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BrowseResponse FromCursor(global::Algolia.Cursor? value) => new BrowseResponse(value);
 
         /// <summary>
         /// 
