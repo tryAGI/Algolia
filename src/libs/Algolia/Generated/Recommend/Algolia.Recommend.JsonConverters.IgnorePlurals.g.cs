@@ -138,7 +138,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (ignorePluralsVariant1 == null && booleanString == null && ignorePluralsVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (ignorePluralsVariant1 == null && booleanString == null && ignorePluralsVariant3 == null)
+            {
                 try
                 {
 

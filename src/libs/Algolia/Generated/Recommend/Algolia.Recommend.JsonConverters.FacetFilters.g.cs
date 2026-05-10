@@ -108,7 +108,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (facetFiltersVariant1 == null && facetFiltersVariant2 == null)
+            {
                 try
                 {
 

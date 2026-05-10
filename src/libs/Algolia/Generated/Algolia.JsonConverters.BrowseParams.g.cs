@@ -75,6 +75,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowseParamsConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowseParamsConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowseParamsConfig).Name}");
                     config = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -85,9 +86,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (config == null && searchParametersAsQueryString == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchParamsString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchParamsString> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchParamsString).Name}");
                     searchParametersAsQueryString = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

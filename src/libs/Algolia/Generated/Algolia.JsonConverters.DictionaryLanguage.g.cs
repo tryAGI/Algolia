@@ -75,6 +75,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.DictionaryLanguageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.DictionaryLanguageVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.DictionaryLanguageVariant1).Name}");
                     dictionaryLanguageVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -85,9 +86,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (dictionaryLanguageVariant1 == null && dictionaryLanguageVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     dictionaryLanguageVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

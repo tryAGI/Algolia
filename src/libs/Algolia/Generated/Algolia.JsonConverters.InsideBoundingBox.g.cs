@@ -138,7 +138,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (insideBoundingBoxVariant1 == null && insideBoundingBoxVariant2 == null && array == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (insideBoundingBoxVariant1 == null && insideBoundingBoxVariant2 == null && array == null)
+            {
                 try
                 {
 
