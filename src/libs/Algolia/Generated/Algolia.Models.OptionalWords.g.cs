@@ -54,6 +54,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public string PickOptionalWordsVariant1() => IsOptionalWordsVariant1
+            ? OptionalWordsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? OptionalWordsVariant2 { get; init; }
 #else
@@ -80,6 +87,13 @@ namespace Algolia
             value = OptionalWordsVariant2;
             return IsOptionalWordsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOptionalWordsVariant2() => IsOptionalWordsVariant2
+            ? OptionalWordsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).<br/>
@@ -112,6 +126,13 @@ namespace Algolia
             value = Array;
             return IsArray;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickArray() => IsArray
+            ? Array!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

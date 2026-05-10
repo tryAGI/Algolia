@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchParams PickParams() => IsParams
+            ? Params!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacetsSettings? Settings { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = Settings;
             return IsSettings;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForFacetsSettings PickSettings() => IsSettings
+            ? Settings!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Settings' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

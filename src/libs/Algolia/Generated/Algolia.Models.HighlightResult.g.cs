@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.HighlightResultOption PickHighlightResultOption() => IsHighlightResultOption
+            ? HighlightResultOption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultOption' but the value was {ToString()}.");
+
+        /// <summary>
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.HighlightResultMap PickHighlightResultMap() => IsHighlightResultMap
+            ? HighlightResultMap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultMap' but the value was {ToString()}.");
+
+        /// <summary>
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace Algolia
             value = HighlightResultArray;
             return IsHighlightResultArray;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.HighlightResult> PickHighlightResultArray() => IsHighlightResultArray
+            ? HighlightResultArray!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultArray' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

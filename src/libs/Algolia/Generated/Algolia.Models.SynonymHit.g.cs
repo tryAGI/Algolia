@@ -145,5 +145,6 @@ namespace Algolia
         public SynonymHit()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.FrequentlyBoughtTogether? Frequently { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = Frequently;
             return IsFrequently;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.FrequentlyBoughtTogether PickFrequently() => IsFrequently
+            ? Frequently!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Frequently' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

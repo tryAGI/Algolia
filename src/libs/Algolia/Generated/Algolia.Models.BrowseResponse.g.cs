@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.BaseSearchResponse PickBaseSearch() => IsBaseSearch
+            ? BaseSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BrowsePagination? Pagination { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = Pagination;
             return IsPagination;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BrowsePagination PickPagination() => IsPagination
+            ? Pagination!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchHits PickSearchHits() => IsSearchHits
+            ? SearchHits!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchHits' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Algolia
             value = Cursor;
             return IsCursor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Cursor PickCursor() => IsCursor
+            ? Cursor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

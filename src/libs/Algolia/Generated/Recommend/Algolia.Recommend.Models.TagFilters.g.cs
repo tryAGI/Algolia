@@ -47,6 +47,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters> PickTagFiltersVariant1() => IsTagFiltersVariant1
+            ? TagFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? TagFiltersVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Algolia.Recommend
             value = TagFiltersVariant2;
             return IsTagFiltersVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickTagFiltersVariant2() => IsTagFiltersVariant2
+            ? TagFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

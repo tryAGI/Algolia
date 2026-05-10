@@ -49,6 +49,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.FacetFilters> PickFacetFiltersVariant1() => IsFacetFiltersVariant1
+            ? FacetFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? FacetFiltersVariant2 { get; init; }
 #else
@@ -75,6 +82,13 @@ namespace Algolia
             value = FacetFiltersVariant2;
             return IsFacetFiltersVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickFacetFiltersVariant2() => IsFacetFiltersVariant2
+            ? FacetFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

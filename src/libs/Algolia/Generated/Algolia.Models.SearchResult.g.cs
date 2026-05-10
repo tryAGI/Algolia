@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchResponse PickResponse() => IsResponse
+            ? Response!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacetValuesResponse? ForFacetValuesResponse { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = ForFacetValuesResponse;
             return IsForFacetValuesResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForFacetValuesResponse PickForFacetValuesResponse() => IsForFacetValuesResponse
+            ? ForFacetValuesResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacetValuesResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

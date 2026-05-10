@@ -147,5 +147,6 @@ namespace Algolia.Recommend
         public SearchRecommendRulesRequest()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilar? LookingSimilar { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = LookingSimilar;
             return IsLookingSimilar;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.LookingSimilar PickLookingSimilar() => IsLookingSimilar
+            ? LookingSimilar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

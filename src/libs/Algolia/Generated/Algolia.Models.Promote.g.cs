@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.PromoteObjectIDs PickObjectIDs() => IsObjectIDs
+            ? ObjectIDs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectIDs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Record to promote.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia
             value = ObjectID;
             return IsObjectID;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.PromoteObjectID PickObjectID() => IsObjectID
+            ? ObjectID!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectID' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

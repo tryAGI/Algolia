@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchParamsQuery PickQuery() => IsQuery
+            ? Query!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseSearchParamsWithoutQuery? WithoutQuery { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = WithoutQuery;
             return IsWithoutQuery;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BaseSearchParamsWithoutQuery PickWithoutQuery() => IsWithoutQuery
+            ? WithoutQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithoutQuery' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

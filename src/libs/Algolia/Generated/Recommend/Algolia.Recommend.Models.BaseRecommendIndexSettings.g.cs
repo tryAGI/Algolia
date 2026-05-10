@@ -856,5 +856,6 @@ namespace Algolia.Recommend
         public BaseRecommendIndexSettings()
         {
         }
+
     }
 }

@@ -71,5 +71,6 @@ namespace Algolia.Recommend
         public RelatedProducts()
         {
         }
+
     }
 }

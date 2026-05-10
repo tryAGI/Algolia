@@ -44,6 +44,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickRemoveStopWordsVariant1() => IsRemoveStopWordsVariant1
+            ? RemoveStopWordsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RemoveStopWordsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// If true, stop words are removed for all languages you included in `queryLanguages`, or for all supported languages, if `queryLanguages` is empty.<br/>
         /// If false, stop words are not removed.<br/>
         /// Default Value: false
@@ -74,6 +81,13 @@ namespace Algolia.Recommend
             value = RemoveStopWordsVariant2;
             return IsRemoveStopWordsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickRemoveStopWordsVariant2() => IsRemoveStopWordsVariant2
+            ? RemoveStopWordsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RemoveStopWordsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

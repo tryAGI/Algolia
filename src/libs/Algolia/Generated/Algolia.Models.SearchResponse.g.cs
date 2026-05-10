@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.BaseSearchResponse PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchPagination? Pagination { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchPagination PickPagination() => IsPagination
+            ? Pagination!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchHits? Hits { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Algolia
             value = Hits;
             return IsHits;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchHits PickHits() => IsHits
+            ? Hits!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hits' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

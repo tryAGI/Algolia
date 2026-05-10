@@ -65,5 +65,6 @@ namespace Algolia.Recommend
         public RenderingContent()
         {
         }
+
     }
 }

@@ -191,5 +191,6 @@ namespace Algolia
         public ApiKey()
         {
         }
+
     }
 }

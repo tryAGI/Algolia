@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.ReRankingApplyFilter PickReRankingApplyFilter() => IsReRankingApplyFilter
+            ? ReRankingApplyFilter!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? PropertiesReRankingApplyFilterVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = PropertiesReRankingApplyFilterVariant2;
             return IsPropertiesReRankingApplyFilterVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickPropertiesReRankingApplyFilterVariant2() => IsPropertiesReRankingApplyFilterVariant2
+            ? PropertiesReRankingApplyFilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PropertiesReRankingApplyFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

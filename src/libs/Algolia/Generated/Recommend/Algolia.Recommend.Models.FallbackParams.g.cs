@@ -40,6 +40,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendSearchParams PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
+
+        /// <summary>
         /// Search parameters to use for a fallback request if there aren't enough recommendations.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = FallbackParamsVariant2;
             return IsFallbackParamsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickFallbackParamsVariant2() => IsFallbackParamsVariant2
+            ? FallbackParamsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

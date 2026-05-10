@@ -66,5 +66,6 @@ namespace Algolia.Recommend
         public RecommendUpdatedAtResponse()
         {
         }
+
     }
 }

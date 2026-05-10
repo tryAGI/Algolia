@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingItems? TrendingItems { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = TrendingItems;
             return IsTrendingItems;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TrendingItems PickTrendingItems() => IsTrendingItems
+            ? TrendingItems!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingItems' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

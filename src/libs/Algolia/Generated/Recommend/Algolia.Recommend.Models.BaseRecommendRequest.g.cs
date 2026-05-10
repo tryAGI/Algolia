@@ -88,5 +88,6 @@ namespace Algolia.Recommend
         public BaseRecommendRequest()
         {
         }
+
     }
 }

@@ -55,5 +55,6 @@ namespace Algolia.Recommend
         public PromoteConsequenceObject()
         {
         }
+
     }
 }

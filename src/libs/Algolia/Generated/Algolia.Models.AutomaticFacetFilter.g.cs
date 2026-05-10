@@ -76,5 +76,6 @@ namespace Algolia
         public AutomaticFacetFilter()
         {
         }
+
     }
 }

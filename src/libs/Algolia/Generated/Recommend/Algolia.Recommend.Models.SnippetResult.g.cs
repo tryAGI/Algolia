@@ -40,6 +40,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SnippetResultOption PickSnippetResultOption() => IsSnippetResultOption
+            ? SnippetResultOption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultOption' but the value was {ToString()}.");
+
+        /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SnippetResultMap PickSnippetResultMap() => IsSnippetResultMap
+            ? SnippetResultMap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultMap' but the value was {ToString()}.");
+
+        /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace Algolia.Recommend
             value = SnippetResultArray;
             return IsSnippetResultArray;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult> PickSnippetResultArray() => IsSnippetResultArray
+            ? SnippetResultArray!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultArray' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

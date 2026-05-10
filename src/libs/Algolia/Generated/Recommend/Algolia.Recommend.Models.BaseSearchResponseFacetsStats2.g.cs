@@ -74,5 +74,6 @@ namespace Algolia.Recommend
         public BaseSearchResponseFacetsStats2()
         {
         }
+
     }
 }

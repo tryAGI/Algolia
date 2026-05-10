@@ -39,5 +39,6 @@ namespace Algolia
         public BaseSearchResponseRedirect()
         {
         }
+
     }
 }

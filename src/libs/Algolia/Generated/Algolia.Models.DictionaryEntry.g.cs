@@ -125,5 +125,6 @@ namespace Algolia
         public DictionaryEntry()
         {
         }
+
     }
 }

@@ -84,5 +84,6 @@ namespace Algolia.Recommend
         public HighlightResultOption()
         {
         }
+
     }
 }

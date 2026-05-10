@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.IndexSettings PickIndex() => IsIndex
+            ? Index!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Index' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.WithPrimary? WithPrimary { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = WithPrimary;
             return IsWithPrimary;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.WithPrimary PickWithPrimary() => IsWithPrimary
+            ? WithPrimary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPrimary' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

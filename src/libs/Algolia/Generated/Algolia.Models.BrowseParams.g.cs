@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BrowseParamsConfig PickConfig() => IsConfig
+            ? Config!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
+
+        /// <summary>
         /// Search parameters as query string.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia
             value = SearchParametersAsQueryString;
             return IsSearchParametersAsQueryString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
+            ? SearchParametersAsQueryString!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsQueryString' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

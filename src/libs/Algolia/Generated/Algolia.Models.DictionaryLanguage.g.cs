@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.DictionaryLanguageVariant1 PickDictionaryLanguageVariant1() => IsDictionaryLanguageVariant1
+            ? DictionaryLanguageVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DictionaryLanguageVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? DictionaryLanguageVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = DictionaryLanguageVariant2;
             return IsDictionaryLanguageVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickDictionaryLanguageVariant2() => IsDictionaryLanguageVariant2
+            ? DictionaryLanguageVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DictionaryLanguageVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

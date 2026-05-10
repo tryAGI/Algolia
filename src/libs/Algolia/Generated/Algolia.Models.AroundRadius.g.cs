@@ -43,6 +43,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public int PickAroundRadiusVariant1() => IsAroundRadiusVariant1
+            ? AroundRadiusVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AroundRadiusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Return all records with a valid `_geoloc` attribute. Don't filter by distance.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace Algolia
             value = All;
             return IsAll;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.AroundRadiusAll PickAll() => IsAll
+            ? All!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

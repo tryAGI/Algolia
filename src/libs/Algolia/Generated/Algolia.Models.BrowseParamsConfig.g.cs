@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = Cursor;
             return IsCursor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Cursor PickCursor() => IsCursor
+            ? Cursor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

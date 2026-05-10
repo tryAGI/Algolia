@@ -53,5 +53,6 @@ namespace Algolia
         public CategoryPrediction()
         {
         }
+
     }
 }

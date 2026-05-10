@@ -48,6 +48,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.NumericFilters> PickNumericFiltersVariant1() => IsNumericFiltersVariant1
+            ? NumericFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? NumericFiltersVariant2 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace Algolia
             value = NumericFiltersVariant2;
             return IsNumericFiltersVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickNumericFiltersVariant2() => IsNumericFiltersVariant2
+            ? NumericFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

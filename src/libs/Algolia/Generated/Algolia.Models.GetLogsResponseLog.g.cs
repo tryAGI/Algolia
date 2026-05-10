@@ -249,5 +249,6 @@ namespace Algolia
         public GetLogsResponseLog()
         {
         }
+
     }
 }

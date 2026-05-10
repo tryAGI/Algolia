@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseIndexSettings PickBase1() => IsBase1
+            ? Base1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseRecommendIndexSettings? Base2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = Base2;
             return IsBase2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.BaseRecommendIndexSettings PickBase2() => IsBase2
+            ? Base2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

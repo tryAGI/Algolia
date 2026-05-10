@@ -46,6 +46,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public int PickAroundPrecisionVariant1() => IsAroundPrecisionVariant1
+            ? AroundPrecisionVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AroundPrecisionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? RangeObjects { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Algolia.Recommend
             value = RangeObjects;
             return IsRangeObjects;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem> PickRangeObjects() => IsRangeObjects
+            ? RangeObjects!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RangeObjects' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
