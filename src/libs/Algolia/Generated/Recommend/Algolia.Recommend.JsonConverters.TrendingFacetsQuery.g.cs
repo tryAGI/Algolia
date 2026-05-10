@@ -61,6 +61,7 @@ namespace Algolia.Recommend.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TrendingFacets), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TrendingFacets> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TrendingFacets).Name}");
                     trendingFacets = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

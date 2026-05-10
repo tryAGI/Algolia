@@ -75,6 +75,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettings> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettings).Name}");
                     index = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -85,9 +86,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (index == null && withPrimary == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.WithPrimary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.WithPrimary> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.WithPrimary).Name}");
                     withPrimary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

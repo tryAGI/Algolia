@@ -76,6 +76,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.ConsequenceQueryObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.ConsequenceQueryObject> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.ConsequenceQueryObject).Name}");
                     objectValue = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (objectValue == null && consequenceQueryVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     consequenceQueryVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
