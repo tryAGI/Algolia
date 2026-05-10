@@ -52,5 +52,6 @@ namespace Algolia.Recommend
         public TimeRange()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public string PickInsideBoundingBoxVariant1() => IsInsideBoundingBoxVariant1
+            ? InsideBoundingBoxVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? InsideBoundingBoxVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = InsideBoundingBoxVariant2;
             return IsInsideBoundingBoxVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickInsideBoundingBoxVariant2() => IsInsideBoundingBoxVariant2
+            ? InsideBoundingBoxVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Coordinates for a rectangular area in which to search.<br/>
@@ -103,6 +117,13 @@ namespace Algolia.Recommend
             value = Array;
             return IsArray;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickArray() => IsArray
+            ? Array!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

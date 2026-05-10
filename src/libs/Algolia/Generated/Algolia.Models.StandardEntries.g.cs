@@ -60,5 +60,6 @@ namespace Algolia
         public StandardEntries()
         {
         }
+
     }
 }

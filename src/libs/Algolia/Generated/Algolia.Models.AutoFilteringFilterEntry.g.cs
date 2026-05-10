@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public string PickAutoFilteringFilterEntryVariant1() => IsAutoFilteringFilterEntryVariant1
+            ? AutoFilteringFilterEntryVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AutoFilteringFilterEntryVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = AutoFilteringFilterEntryVariant2;
             return IsAutoFilteringFilterEntryVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickAutoFilteringFilterEntryVariant2() => IsAutoFilteringFilterEntryVariant2
+            ? AutoFilteringFilterEntryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

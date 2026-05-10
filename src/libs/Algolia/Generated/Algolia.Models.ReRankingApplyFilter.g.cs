@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter> PickReRankingApplyFilterVariant1() => IsReRankingApplyFilterVariant1
+            ? ReRankingApplyFilterVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ReRankingApplyFilterVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = ReRankingApplyFilterVariant2;
             return IsReRankingApplyFilterVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickReRankingApplyFilterVariant2() => IsReRankingApplyFilterVariant2
+            ? ReRankingApplyFilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

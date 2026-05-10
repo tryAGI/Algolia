@@ -38,6 +38,13 @@ namespace Algolia.Recommend
             value = TrendingFacets;
             return IsTrendingFacets;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TrendingFacets PickTrendingFacets() => IsTrendingFacets
+            ? TrendingFacets!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacets' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

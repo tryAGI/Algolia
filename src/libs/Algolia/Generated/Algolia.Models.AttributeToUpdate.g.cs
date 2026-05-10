@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickAttributeToUpdateVariant1() => IsAttributeToUpdateVariant1
+            ? AttributeToUpdateVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AttributeToUpdateVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Update to perform on the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia
             value = BuiltInOperation;
             return IsBuiltInOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BuiltInOperation PickBuiltInOperation() => IsBuiltInOperation
+            ? BuiltInOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

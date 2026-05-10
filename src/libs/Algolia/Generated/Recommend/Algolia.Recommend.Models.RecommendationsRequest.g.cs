@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BoughtTogetherQuery PickFrequentlyBoughtTogether() => IsFrequentlyBoughtTogether
+            ? FrequentlyBoughtTogether!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FrequentlyBoughtTogether' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedQuery? RelatedProducts { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = RelatedProducts;
             return IsRelatedProducts;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RelatedQuery PickRelatedProducts() => IsRelatedProducts
+            ? RelatedProducts!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RelatedProducts' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.TrendingItemsQuery PickTrendingItems() => IsTrendingItems
+            ? TrendingItems!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingItems' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingFacetsQuery? TrendingFacetValues { get; init; }
 #else
@@ -132,6 +153,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.TrendingFacetsQuery PickTrendingFacetValues() => IsTrendingFacetValues
+            ? TrendingFacetValues!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetValues' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilarQuery? LookingSimilar { get; init; }
 #else
@@ -158,6 +186,13 @@ namespace Algolia.Recommend
             value = LookingSimilar;
             return IsLookingSimilar;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.LookingSimilarQuery PickLookingSimilar() => IsLookingSimilar
+            ? LookingSimilar!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -118,5 +118,6 @@ namespace Algolia
         public Event()
         {
         }
+
     }
 }

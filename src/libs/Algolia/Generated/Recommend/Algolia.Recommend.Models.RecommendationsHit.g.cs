@@ -40,6 +40,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendHit PickRecommend() => IsRecommend
+            ? Recommend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
+
+        /// <summary>
         /// Trending facet hit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = TrendingFacetHit;
             return IsTrendingFacetHit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TrendingFacetHit PickTrendingFacetHit() => IsTrendingFacetHit
+            ? TrendingFacetHit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetHit' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

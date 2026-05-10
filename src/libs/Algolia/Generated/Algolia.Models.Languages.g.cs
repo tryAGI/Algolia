@@ -63,5 +63,6 @@ namespace Algolia
         public Languages()
         {
         }
+
     }
 }

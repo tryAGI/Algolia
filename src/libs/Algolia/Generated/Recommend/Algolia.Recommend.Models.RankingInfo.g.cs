@@ -174,5 +174,6 @@ namespace Algolia.Recommend
         public RankingInfo()
         {
         }
+
     }
 }

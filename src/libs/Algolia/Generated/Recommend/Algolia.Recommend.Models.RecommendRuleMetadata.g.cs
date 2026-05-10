@@ -44,5 +44,6 @@ namespace Algolia.Recommend
         public RecommendRuleMetadata()
         {
         }
+
     }
 }

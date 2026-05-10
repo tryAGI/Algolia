@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickTypoToleranceVariant1() => IsTypoToleranceVariant1
+            ? TypoToleranceVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TypoToleranceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// - `min`. Return matches with the lowest number of typos.<br/>
         ///   For example, if you have matches without typos, only include those.<br/>
         ///   But if there are no matches without typos (with 1 typo), include matches with 1 typo (2 typos).<br/>
@@ -74,6 +81,13 @@ namespace Algolia.Recommend
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TypoToleranceEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

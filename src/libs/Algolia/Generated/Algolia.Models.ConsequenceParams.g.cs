@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.BaseSearchParamsWithoutQuery PickBaseSearchWithoutQuery() => IsBaseSearchWithoutQuery
+            ? BaseSearchWithoutQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearchWithoutQuery' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.IndexSettingsAsSearchParams? IndexSettingsAsSearch { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = IndexSettingsAsSearch;
             return IsIndexSettingsAsSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAsSearch() => IsIndexSettingsAsSearch
+            ? IndexSettingsAsSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettingsAsSearch' but the value was {ToString()}.");
 
         /// <summary>
         /// Parameters to apply to this search.<br/>
@@ -99,6 +113,13 @@ namespace Algolia
             value = Params;
             return IsParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Params PickParams() => IsParams
+            ? Params!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -98,5 +98,6 @@ namespace Algolia
         public Params()
         {
         }
+
     }
 }

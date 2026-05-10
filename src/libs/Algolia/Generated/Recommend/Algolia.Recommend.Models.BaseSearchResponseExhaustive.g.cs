@@ -85,5 +85,6 @@ namespace Algolia.Recommend
         public BaseSearchResponseExhaustive()
         {
         }
+
     }
 }

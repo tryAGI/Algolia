@@ -50,6 +50,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.OptionalFilters> PickOptionalFiltersVariant1() => IsOptionalFiltersVariant1
+            ? OptionalFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? OptionalFiltersVariant2 { get; init; }
 #else
@@ -76,6 +83,13 @@ namespace Algolia
             value = OptionalFiltersVariant2;
             return IsOptionalFiltersVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickOptionalFiltersVariant2() => IsOptionalFiltersVariant2
+            ? OptionalFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

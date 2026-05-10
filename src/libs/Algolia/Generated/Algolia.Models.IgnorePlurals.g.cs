@@ -45,6 +45,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage> PickIgnorePluralsVariant1() => IsIgnorePluralsVariant1
+            ? IgnorePluralsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BooleanString? BooleanString { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace Algolia
             value = BooleanString;
             return IsBooleanString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BooleanString PickBooleanString() => IsBooleanString
+            ? BooleanString!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BooleanString' but the value was {ToString()}.");
 
         /// <summary>
         /// If true, `ignorePlurals` is active for all languages included in `queryLanguages`, or for all supported languages, if `queryLanguges` is empty.<br/>
@@ -103,6 +117,13 @@ namespace Algolia
             value = IgnorePluralsVariant3;
             return IsIgnorePluralsVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickIgnorePluralsVariant3() => IsIgnorePluralsVariant3
+            ? IgnorePluralsVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

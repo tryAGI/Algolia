@@ -40,5 +40,6 @@ namespace Algolia
         public RedirectRuleIndexMetadataData()
         {
         }
+
     }
 }

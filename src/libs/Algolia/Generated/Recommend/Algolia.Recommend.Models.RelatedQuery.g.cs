@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedProducts? Products { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = Products;
             return IsProducts;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RelatedProducts PickProducts() => IsProducts
+            ? Products!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Products' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

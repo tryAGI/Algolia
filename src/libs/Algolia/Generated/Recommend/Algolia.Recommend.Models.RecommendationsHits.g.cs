@@ -40,5 +40,6 @@ namespace Algolia.Recommend
         public RecommendationsHits()
         {
         }
+
     }
 }

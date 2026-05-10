@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.SearchForHits PickForHits() => IsForHits
+            ? ForHits!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ForHits' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacets? ForFacets { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = ForFacets;
             return IsForFacets;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForFacets PickForFacets() => IsForFacets
+            ? ForFacets!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacets' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

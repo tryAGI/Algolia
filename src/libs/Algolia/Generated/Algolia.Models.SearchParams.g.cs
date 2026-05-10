@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
+            ? SearchParametersAsQueryString!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsQueryString' but the value was {ToString()}.");
+
+        /// <summary>
         /// Each parameter value, including the `query` must not be larger than 512 bytes.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia
             value = SearchParametersAsObject;
             return IsSearchParametersAsObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

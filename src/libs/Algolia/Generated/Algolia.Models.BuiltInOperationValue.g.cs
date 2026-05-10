@@ -40,6 +40,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBuiltInOperationValueVariant1() => IsBuiltInOperationValueVariant1
+            ? BuiltInOperationValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperationValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// A number to add, remove, or append, depending on the operation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Algolia
             value = BuiltInOperationValueVariant2;
             return IsBuiltInOperationValueVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickBuiltInOperationValueVariant2() => IsBuiltInOperationValueVariant2
+            ? BuiltInOperationValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperationValueVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.EventStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? EventStatusVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = EventStatusVariant2;
             return IsEventStatusVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEventStatusVariant2() => IsEventStatusVariant2
+            ? EventStatusVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EventStatusVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

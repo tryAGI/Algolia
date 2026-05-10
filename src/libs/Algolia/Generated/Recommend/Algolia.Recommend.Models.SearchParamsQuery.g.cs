@@ -41,5 +41,6 @@ namespace Algolia.Recommend
         public SearchParamsQuery()
         {
         }
+
     }
 }

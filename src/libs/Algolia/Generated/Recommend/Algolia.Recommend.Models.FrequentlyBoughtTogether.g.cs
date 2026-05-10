@@ -69,5 +69,6 @@ namespace Algolia.Recommend
         public FrequentlyBoughtTogether()
         {
         }
+
     }
 }

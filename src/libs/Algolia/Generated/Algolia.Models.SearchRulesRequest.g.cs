@@ -129,5 +129,6 @@ namespace Algolia
         public SearchRulesRequest()
         {
         }
+
     }
 }

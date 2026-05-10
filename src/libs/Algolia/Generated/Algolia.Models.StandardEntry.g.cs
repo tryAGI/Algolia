@@ -43,6 +43,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, bool> PickStandardEntryVariant1() => IsStandardEntryVariant1
+            ? StandardEntryVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? StandardEntryVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace Algolia
             value = StandardEntryVariant2;
             return IsStandardEntryVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickStandardEntryVariant2() => IsStandardEntryVariant2
+            ? StandardEntryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

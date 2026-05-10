@@ -45,6 +45,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter> PickAutomaticFacetFiltersVariant1() => IsAutomaticFacetFiltersVariant1
+            ? AutomaticFacetFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AutomaticFacetFiltersVariant2 { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace Algolia
             value = AutomaticFacetFiltersVariant2;
             return IsAutomaticFacetFiltersVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickAutomaticFacetFiltersVariant2() => IsAutomaticFacetFiltersVariant2
+            ? AutomaticFacetFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 

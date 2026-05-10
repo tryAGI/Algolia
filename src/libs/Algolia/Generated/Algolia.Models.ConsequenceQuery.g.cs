@@ -44,6 +44,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.ConsequenceQueryObject PickObjectValue() => IsObjectValue
+            ? ObjectValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ConsequenceQueryVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace Algolia
             value = ConsequenceQueryVariant2;
             return IsConsequenceQueryVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickConsequenceQueryVariant2() => IsConsequenceQueryVariant2
+            ? ConsequenceQueryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsequenceQueryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

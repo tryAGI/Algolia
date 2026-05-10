@@ -114,5 +114,6 @@ namespace Algolia.Recommend
         public RecommendRule()
         {
         }
+
     }
 }

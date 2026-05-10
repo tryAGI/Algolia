@@ -54,5 +54,6 @@ namespace Algolia
         public BuiltInOperation()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseRecommendSearchParams PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchParamsQuery? Query { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia.Recommend
             value = Query;
             return IsQuery;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SearchParamsQuery PickQuery() => IsQuery
+            ? Query!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
 
         /// <summary>
         /// Index settings.
@@ -98,6 +112,13 @@ namespace Algolia.Recommend
             value = IndexSettings;
             return IsIndexSettings;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendIndexSettings PickIndexSettings() => IsIndexSettings
+            ? IndexSettings!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettings' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

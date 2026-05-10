@@ -80,5 +80,6 @@ namespace Algolia
         public SearchDictionaryEntriesRequest()
         {
         }
+
     }
 }

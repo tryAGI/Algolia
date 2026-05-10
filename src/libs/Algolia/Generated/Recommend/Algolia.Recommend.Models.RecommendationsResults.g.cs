@@ -42,6 +42,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.BaseSearchResponse PickBaseSearchResponse() => IsBaseSearchResponse
+            ? BaseSearchResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearchResponse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchPagination? SearchPagination { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.Recommend.SearchPagination PickSearchPagination() => IsSearchPagination
+            ? SearchPagination!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPagination' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RecommendationsHits? Hits { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Algolia.Recommend
             value = Hits;
             return IsHits;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendationsHits PickHits() => IsHits
+            ? Hits!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hits' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

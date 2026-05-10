@@ -95,5 +95,6 @@ namespace Algolia
         public MultipleBatchRequestRequest()
         {
         }
+
     }
 }

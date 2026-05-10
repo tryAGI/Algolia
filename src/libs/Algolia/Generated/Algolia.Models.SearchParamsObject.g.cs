@@ -42,6 +42,13 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public global::Algolia.BaseSearchParams PickBase() => IsBase
+            ? Base!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.IndexSettingsAsSearchParams? IndexSettingsAs { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Algolia
             value = IndexSettingsAs;
             return IsIndexSettingsAs;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAs() => IsIndexSettingsAs
+            ? IndexSettingsAs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettingsAs' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

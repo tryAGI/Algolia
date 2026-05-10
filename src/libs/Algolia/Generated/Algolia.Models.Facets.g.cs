@@ -43,5 +43,6 @@ namespace Algolia
         public Facets()
         {
         }
+
     }
 }

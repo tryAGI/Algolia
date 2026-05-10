@@ -45,6 +45,13 @@ namespace Algolia
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickDistinctVariant1() => IsDistinctVariant1
+            ? DistinctVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Number of members of a group of records to include in the search results.<br/>
         /// - Don't use `distinct &gt; 1` for records that might be [promoted by rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits).<br/>
         ///   The number of hits won't be correct and faceting won't work as expected.<br/>
@@ -79,6 +86,13 @@ namespace Algolia
             value = DistinctVariant2;
             return IsDistinctVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickDistinctVariant2() => IsDistinctVariant2
+            ? DistinctVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
