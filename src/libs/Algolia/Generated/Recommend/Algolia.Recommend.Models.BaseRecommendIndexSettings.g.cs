@@ -448,8 +448,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reRankingApplyFilter")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.PropertiesReRankingApplyFilterJsonConverter))]
-        public global::Algolia.Recommend.PropertiesReRankingApplyFilter? ReRankingApplyFilter { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.OneOfJsonConverter<global::Algolia.Recommend.ReRankingApplyFilter?, object>))]
+        public global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? ReRankingApplyFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -808,7 +808,7 @@ namespace Algolia.Recommend
             bool? attributeCriteriaComputedByMinProximity,
             global::Algolia.Recommend.RenderingContent? renderingContent,
             bool? enableReRanking,
-            global::Algolia.Recommend.PropertiesReRankingApplyFilter? reRankingApplyFilter)
+            global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? reRankingApplyFilter)
         {
             this.AttributesToRetrieve = attributesToRetrieve;
             this.Ranking = ranking;

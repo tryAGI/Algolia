@@ -111,8 +111,6 @@ namespace Algolia.Recommend
 
             typeof(global::Algolia.Recommend.JsonConverters.ReRankingApplyFilterJsonConverter),
 
-            typeof(global::Algolia.Recommend.JsonConverters.PropertiesReRankingApplyFilterJsonConverter),
-
             typeof(global::Algolia.Recommend.JsonConverters.RecommendIndexSettingsJsonConverter),
 
             typeof(global::Algolia.Recommend.JsonConverters.RecommendSearchParamsJsonConverter),
@@ -138,6 +136,8 @@ namespace Algolia.Recommend
             typeof(global::Algolia.Recommend.JsonConverters.RecommendationsHitJsonConverter),
 
             typeof(global::Algolia.Recommend.JsonConverters.RecommendationsResultsJsonConverter),
+
+            typeof(global::Algolia.Recommend.JsonConverters.OneOfJsonConverter<global::Algolia.Recommend.ReRankingApplyFilter?, object>),
 
             typeof(global::Algolia.Recommend.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -203,8 +203,8 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RenderingContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.ReRankingApplyFilter), TypeInfoPropertyName = "ReRankingApplyFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.PropertiesReRankingApplyFilter), TypeInfoPropertyName = "PropertiesReRankingApplyFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>), TypeInfoPropertyName = "OneOfReRankingApplyFilterObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendIndexSettings), TypeInfoPropertyName = "RecommendIndexSettings2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendSearchParams), TypeInfoPropertyName = "RecommendSearchParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BaseRecommendRequest))]
