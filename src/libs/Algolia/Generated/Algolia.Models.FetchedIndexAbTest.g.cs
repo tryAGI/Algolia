@@ -18,12 +18,6 @@ namespace Algolia
         public required int Id { get; set; }
 
         /// <summary>
-        /// Whether the A/B test is a dark test (server-side measured, not user-facing). Only present when true.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("isDark")]
-        public bool? IsDark { get; set; }
-
-        /// <summary>
         /// A/B test schema version. Only present for v2 and later tests.<br/>
         /// Example: 2
         /// </summary>
@@ -68,9 +62,6 @@ namespace Algolia
         /// <param name="variants">
         /// A/B test variants.
         /// </param>
-        /// <param name="isDark">
-        /// Whether the A/B test is a dark test (server-side measured, not user-facing). Only present when true.
-        /// </param>
         /// <param name="version">
         /// A/B test schema version. Only present for v2 and later tests.<br/>
         /// Example: 2
@@ -88,13 +79,11 @@ namespace Algolia
         public FetchedIndexAbTest(
             int id,
             global::System.Collections.Generic.IList<global::Algolia.FetchedIndexAbTestVariant> variants,
-            bool? isDark,
             int? version,
             string? type,
             global::Algolia.FetchedIndexAbTestTarget? target)
         {
             this.Id = id;
-            this.IsDark = isDark;
             this.Version = version;
             this.Type = type;
             this.Target = target;
