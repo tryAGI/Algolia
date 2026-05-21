@@ -198,7 +198,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (frequentlyBoughtTogether == null && relatedProducts == null && trendingItems == null && trendingFacetValues == null && lookingSimilar == null)
+            {
                 try
                 {
 
@@ -212,7 +215,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (frequentlyBoughtTogether == null && relatedProducts == null && trendingItems == null && trendingFacetValues == null && lookingSimilar == null)
+            {
                 try
                 {
 
@@ -226,7 +232,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (frequentlyBoughtTogether == null && relatedProducts == null && trendingItems == null && trendingFacetValues == null && lookingSimilar == null)
+            {
                 try
                 {
 
@@ -240,7 +249,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (frequentlyBoughtTogether == null && relatedProducts == null && trendingItems == null && trendingFacetValues == null && lookingSimilar == null)
+            {
                 try
                 {
 

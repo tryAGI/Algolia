@@ -32,6 +32,26 @@ namespace Algolia.Recommend
         public bool IsDistinctVariant1 => DistinctVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDistinctVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = DistinctVariant1;
+            return IsDistinctVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickDistinctVariant1() => IsDistinctVariant1
+            ? DistinctVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Number of members of a group of records to include in the search results.<br/>
         /// - Don't use `distinct &gt; 1` for records that might be [promoted by rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits).<br/>
         ///   The number of hits won't be correct and faceting won't work as expected.<br/>
@@ -53,6 +73,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DistinctVariant2))]
 #endif
         public bool IsDistinctVariant2 => DistinctVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDistinctVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = DistinctVariant2;
+            return IsDistinctVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickDistinctVariant2() => IsDistinctVariant2
+            ? DistinctVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -74,6 +114,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static Distinct FromDistinctVariant1(bool? value) => new Distinct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Distinct(int value) => new Distinct((int?)value);
 
         /// <summary>
@@ -88,6 +133,11 @@ namespace Algolia.Recommend
         {
             DistinctVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Distinct FromDistinctVariant2(int? value) => new Distinct(value);
 
         /// <summary>
         /// 
@@ -154,6 +204,30 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<bool?>? distinctVariant1 = null,
+
+            global::System.Action<int?>? distinctVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDistinctVariant1)
+            {
+                distinctVariant1?.Invoke(DistinctVariant1!);
+            }
+            else if (IsDistinctVariant2)
+            {
+                distinctVariant2?.Invoke(DistinctVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<bool?>? distinctVariant1 = null,
             global::System.Action<int?>? distinctVariant2 = null,
             bool validate = true)

@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReRankingApplyFilterVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>? value)
+        {
+            value = ReRankingApplyFilterVariant1;
+            return IsReRankingApplyFilterVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter> PickReRankingApplyFilterVariant1() => IsReRankingApplyFilterVariant1
+            ? ReRankingApplyFilterVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ReRankingApplyFilterVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReRankingApplyFilterVariant2))]
 #endif
         public bool IsReRankingApplyFilterVariant2 => ReRankingApplyFilterVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReRankingApplyFilterVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ReRankingApplyFilterVariant2;
+            return IsReRankingApplyFilterVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickReRankingApplyFilterVariant2() => IsReRankingApplyFilterVariant2
+            ? ReRankingApplyFilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace Algolia
         {
             ReRankingApplyFilterVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReRankingApplyFilter FromReRankingApplyFilterVariant2(string? value) => new ReRankingApplyFilter(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>?, TResult>? reRankingApplyFilterVariant1 = null,
-            global::System.Func<string?, TResult>? reRankingApplyFilterVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>, TResult>? reRankingApplyFilterVariant1 = null,
+            global::System.Func<string, TResult>? reRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>?>? reRankingApplyFilterVariant1 = null,
-            global::System.Action<string?>? reRankingApplyFilterVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
+
+            global::System.Action<string>? reRankingApplyFilterVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReRankingApplyFilterVariant1)
+            {
+                reRankingApplyFilterVariant1?.Invoke(ReRankingApplyFilterVariant1!);
+            }
+            else if (IsReRankingApplyFilterVariant2)
+            {
+                reRankingApplyFilterVariant2?.Invoke(ReRankingApplyFilterVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
+            global::System.Action<string>? reRankingApplyFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -85,5 +85,6 @@ namespace Algolia
         public BaseSearchResponseExhaustive()
         {
         }
+
     }
 }

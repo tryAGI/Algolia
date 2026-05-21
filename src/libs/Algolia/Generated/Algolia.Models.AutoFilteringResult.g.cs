@@ -74,5 +74,6 @@ namespace Algolia
         public AutoFilteringResult()
         {
         }
+
     }
 }

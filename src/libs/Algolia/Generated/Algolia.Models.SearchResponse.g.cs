@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseSearchResponse? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BaseSearchResponse PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchPagination? Pagination { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPagination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchPagination? value)
+        {
+            value = Pagination;
+            return IsPagination;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchPagination PickPagination() => IsPagination
+            ? Pagination!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchHits? Hits { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Hits))]
 #endif
         public bool IsHits => Hits != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchHits? value)
+        {
+            value = Hits;
+            return IsHits;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchHits PickHits() => IsHits
+            ? Hits!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hits' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Algolia
         {
             Base = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchResponse FromBase(global::Algolia.BaseSearchResponse? value) => new SearchResponse(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchResponse FromPagination(global::Algolia.SearchPagination? value) => new SearchResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchResponse(global::Algolia.SearchHits value) => new SearchResponse((global::Algolia.SearchHits?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Algolia
         {
             Hits = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchResponse FromHits(global::Algolia.SearchHits? value) => new SearchResponse(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseSearchResponse?, TResult>? @base = null,
-            global::System.Func<global::Algolia.SearchPagination?, TResult>? pagination = null,
-            global::System.Func<global::Algolia.SearchHits?, TResult>? hits = null,
+            global::System.Func<global::Algolia.BaseSearchResponse, TResult>? @base = null,
+            global::System.Func<global::Algolia.SearchPagination, TResult>? pagination = null,
+            global::System.Func<global::Algolia.SearchHits, TResult>? hits = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseSearchResponse?>? @base = null,
-            global::System.Action<global::Algolia.SearchPagination?>? pagination = null,
-            global::System.Action<global::Algolia.SearchHits?>? hits = null,
+            global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
+
+            global::System.Action<global::Algolia.SearchPagination>? pagination = null,
+
+            global::System.Action<global::Algolia.SearchHits>? hits = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsPagination)
+            {
+                pagination?.Invoke(Pagination!);
+            }
+            else if (IsHits)
+            {
+                hits?.Invoke(Hits!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
+            global::System.Action<global::Algolia.SearchPagination>? pagination = null,
+            global::System.Action<global::Algolia.SearchHits>? hits = null,
             bool validate = true)
         {
             if (validate)

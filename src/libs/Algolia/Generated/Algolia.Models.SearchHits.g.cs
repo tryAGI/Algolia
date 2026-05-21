@@ -82,5 +82,6 @@ namespace Algolia
         public SearchHits()
         {
         }
+
     }
 }

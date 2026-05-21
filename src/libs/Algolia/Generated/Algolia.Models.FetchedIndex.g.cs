@@ -202,5 +202,6 @@ namespace Algolia
         public FetchedIndex()
         {
         }
+
     }
 }

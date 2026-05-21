@@ -46,5 +46,6 @@ namespace Algolia
         public ResponseExtensions()
         {
         }
+
     }
 }

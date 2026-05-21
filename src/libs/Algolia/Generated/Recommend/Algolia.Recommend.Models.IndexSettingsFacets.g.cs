@@ -43,5 +43,6 @@ namespace Algolia.Recommend
         public IndexSettingsFacets()
         {
         }
+
     }
 }

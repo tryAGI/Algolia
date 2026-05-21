@@ -898,5 +898,6 @@ namespace Algolia
         public IndexSettingsAsSearchParams()
         {
         }
+
     }
 }

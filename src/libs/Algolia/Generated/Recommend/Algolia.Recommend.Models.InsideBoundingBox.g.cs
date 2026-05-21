@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInsideBoundingBoxVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = InsideBoundingBoxVariant1;
+            return IsInsideBoundingBoxVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickInsideBoundingBoxVariant1() => IsInsideBoundingBoxVariant1
+            ? InsideBoundingBoxVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? InsideBoundingBoxVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InsideBoundingBoxVariant2))]
 #endif
         public bool IsInsideBoundingBoxVariant2 => InsideBoundingBoxVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInsideBoundingBoxVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = InsideBoundingBoxVariant2;
+            return IsInsideBoundingBoxVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickInsideBoundingBoxVariant2() => IsInsideBoundingBoxVariant2
+            ? InsideBoundingBoxVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Coordinates for a rectangular area in which to search.<br/>
@@ -64,6 +104,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Array))]
 #endif
         public bool IsArray => Array != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickArray(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? value)
+        {
+            value = Array;
+            return IsArray;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickArray() => IsArray
+            ? Array!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Algolia.Recommend
         {
             InsideBoundingBoxVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsideBoundingBox FromInsideBoundingBoxVariant1(string? value) => new InsideBoundingBox(value);
 
         /// <summary>
         /// 
@@ -126,9 +191,9 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? insideBoundingBoxVariant1 = null,
-            global::System.Func<object?, TResult>? insideBoundingBoxVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?, TResult>? array = null,
+            global::System.Func<string, TResult>? insideBoundingBoxVariant1 = null,
+            global::System.Func<object, TResult>? insideBoundingBoxVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, TResult>? array = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +221,39 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? insideBoundingBoxVariant1 = null,
-            global::System.Action<object?>? insideBoundingBoxVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>? array = null,
+            global::System.Action<string>? insideBoundingBoxVariant1 = null,
+
+            global::System.Action<object>? insideBoundingBoxVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? array = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInsideBoundingBoxVariant1)
+            {
+                insideBoundingBoxVariant1?.Invoke(InsideBoundingBoxVariant1!);
+            }
+            else if (IsInsideBoundingBoxVariant2)
+            {
+                insideBoundingBoxVariant2?.Invoke(InsideBoundingBoxVariant2!);
+            }
+            else if (IsArray)
+            {
+                array?.Invoke(Array!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? insideBoundingBoxVariant1 = null,
+            global::System.Action<object>? insideBoundingBoxVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? array = null,
             bool validate = true)
         {
             if (validate)

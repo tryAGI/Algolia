@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (forHits == null && forFacets == null)
+            {
                 try
                 {
 

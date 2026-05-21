@@ -347,5 +347,6 @@ namespace Algolia
         public BaseSearchResponse()
         {
         }
+
     }
 }

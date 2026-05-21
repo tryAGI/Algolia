@@ -77,6 +77,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponse).Name}");
                     response = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (response == null && forFacetValuesResponse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchForFacetValuesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchForFacetValuesResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchForFacetValuesResponse).Name}");
                     forFacetValuesResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

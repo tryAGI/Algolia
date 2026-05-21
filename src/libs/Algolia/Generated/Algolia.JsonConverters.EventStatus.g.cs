@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && eventStatusVariant2 == null)
+            {
                 try
                 {
 

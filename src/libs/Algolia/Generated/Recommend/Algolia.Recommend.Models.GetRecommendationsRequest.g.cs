@@ -42,5 +42,6 @@ namespace Algolia.Recommend
         public GetRecommendationsRequest()
         {
         }
+
     }
 }

@@ -58,5 +58,6 @@ namespace Algolia
         public SnippetResultOption()
         {
         }
+
     }
 }

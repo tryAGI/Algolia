@@ -3504,6 +3504,8 @@ paths:
         - javascript
         - php
         - python
+        - ruby
+        - scala
       x-acl:
         - addObject
         - deleteIndex
@@ -3720,6 +3722,8 @@ paths:
         - javascript
         - php
         - python
+        - ruby
+        - scala
       x-acl:
         - addObject
         - deleteIndex
@@ -3937,6 +3941,8 @@ paths:
         - javascript
         - php
         - python
+        - ruby
+        - scala
       tags:
         - search
       x-acl:

@@ -520,5 +520,6 @@ namespace Algolia.Recommend
         public BaseIndexSettings()
         {
         }
+
     }
 }

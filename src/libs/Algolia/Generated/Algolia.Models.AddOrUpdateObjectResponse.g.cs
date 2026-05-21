@@ -78,5 +78,6 @@ namespace Algolia
         public AddOrUpdateObjectResponse()
         {
         }
+
     }
 }

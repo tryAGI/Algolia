@@ -520,5 +520,6 @@ namespace Algolia
         public BaseIndexSettings()
         {
         }
+
     }
 }

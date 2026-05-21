@@ -27,6 +27,26 @@ namespace Algolia.Recommend
         public bool IsSnippetResultOption => SnippetResultOption != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSnippetResultOption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.SnippetResultOption? value)
+        {
+            value = SnippetResultOption;
+            return IsSnippetResultOption;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SnippetResultOption PickSnippetResultOption() => IsSnippetResultOption
+            ? SnippetResultOption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultOption' but the value was {ToString()}.");
+
+        /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace Algolia.Recommend
         public bool IsSnippetResultMap => SnippetResultMap != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSnippetResultMap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.SnippetResultMap? value)
+        {
+            value = SnippetResultMap;
+            return IsSnippetResultMap;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SnippetResultMap PickSnippetResultMap() => IsSnippetResultMap
+            ? SnippetResultMap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultMap' but the value was {ToString()}.");
+
+        /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnippetResultArray))]
 #endif
         public bool IsSnippetResultArray => SnippetResultArray != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSnippetResultArray(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>? value)
+        {
+            value = SnippetResultArray;
+            return IsSnippetResultArray;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult> PickSnippetResultArray() => IsSnippetResultArray
+            ? SnippetResultArray!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultArray' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static SnippetResult FromSnippetResultOption(global::Algolia.Recommend.SnippetResultOption? value) => new SnippetResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SnippetResult(global::Algolia.Recommend.SnippetResultMap value) => new SnippetResult((global::Algolia.Recommend.SnippetResultMap?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace Algolia.Recommend
         {
             SnippetResultMap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SnippetResult FromSnippetResultMap(global::Algolia.Recommend.SnippetResultMap? value) => new SnippetResult(value);
 
         /// <summary>
         /// 
@@ -139,9 +209,9 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.SnippetResultOption?, TResult>? snippetResultOption = null,
-            global::System.Func<global::Algolia.Recommend.SnippetResultMap?, TResult>? snippetResultMap = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?, TResult>? snippetResultArray = null,
+            global::System.Func<global::Algolia.Recommend.SnippetResultOption, TResult>? snippetResultOption = null,
+            global::System.Func<global::Algolia.Recommend.SnippetResultMap, TResult>? snippetResultMap = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>, TResult>? snippetResultArray = null,
             bool validate = true)
         {
             if (validate)
@@ -169,9 +239,39 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.SnippetResultOption?>? snippetResultOption = null,
-            global::System.Action<global::Algolia.Recommend.SnippetResultMap?>? snippetResultMap = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?>? snippetResultArray = null,
+            global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
+
+            global::System.Action<global::Algolia.Recommend.SnippetResultMap>? snippetResultMap = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>>? snippetResultArray = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSnippetResultOption)
+            {
+                snippetResultOption?.Invoke(SnippetResultOption!);
+            }
+            else if (IsSnippetResultMap)
+            {
+                snippetResultMap?.Invoke(SnippetResultMap!);
+            }
+            else if (IsSnippetResultArray)
+            {
+                snippetResultArray?.Invoke(SnippetResultArray!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
+            global::System.Action<global::Algolia.Recommend.SnippetResultMap>? snippetResultMap = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>>? snippetResultArray = null,
             bool validate = true)
         {
             if (validate)

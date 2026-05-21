@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.IndexSettings? value)
+        {
+            value = Index;
+            return IsIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.IndexSettings PickIndex() => IsIndex
+            ? Index!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Index' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.WithPrimary? WithPrimary { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPrimary))]
 #endif
         public bool IsWithPrimary => WithPrimary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithPrimary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.WithPrimary? value)
+        {
+            value = WithPrimary;
+            return IsWithPrimary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.WithPrimary PickWithPrimary() => IsWithPrimary
+            ? WithPrimary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPrimary' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SettingsResponse FromIndex(global::Algolia.IndexSettings? value) => new SettingsResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SettingsResponse(global::Algolia.WithPrimary value) => new SettingsResponse((global::Algolia.WithPrimary?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             WithPrimary = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SettingsResponse FromWithPrimary(global::Algolia.WithPrimary? value) => new SettingsResponse(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.IndexSettings?, TResult>? index = null,
-            global::System.Func<global::Algolia.WithPrimary?, TResult>? withPrimary = null,
+            global::System.Func<global::Algolia.WithPrimary, TResult>? withPrimary = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.IndexSettings?>? index = null,
-            global::System.Action<global::Algolia.WithPrimary?>? withPrimary = null,
+
+            global::System.Action<global::Algolia.WithPrimary>? withPrimary = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIndex)
+            {
+                index?.Invoke(Index!);
+            }
+            else if (IsWithPrimary)
+            {
+                withPrimary?.Invoke(WithPrimary!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.IndexSettings?>? index = null,
+            global::System.Action<global::Algolia.WithPrimary>? withPrimary = null,
             bool validate = true)
         {
             if (validate)

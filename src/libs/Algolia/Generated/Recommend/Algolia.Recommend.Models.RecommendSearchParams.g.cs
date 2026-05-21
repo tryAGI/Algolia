@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendSearchParams? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.BaseRecommendSearchParams PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchParamsQuery? Query { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
         public bool IsQuery => Query != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.SearchParamsQuery? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.SearchParamsQuery PickQuery() => IsQuery
+            ? Query!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
 
         /// <summary>
         /// Index settings.
@@ -59,6 +99,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexSettings))]
 #endif
         public bool IsIndexSettings => IndexSettings != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexSettings(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendIndexSettings? value)
+        {
+            value = IndexSettings;
+            return IsIndexSettings;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendIndexSettings PickIndexSettings() => IsIndexSettings
+            ? IndexSettings!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettings' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Algolia.Recommend
         {
             Base = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendSearchParams FromBase(global::Algolia.Recommend.BaseRecommendSearchParams? value) => new RecommendSearchParams(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendSearchParams FromQuery(global::Algolia.Recommend.SearchParamsQuery? value) => new RecommendSearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendSearchParams(global::Algolia.Recommend.RecommendIndexSettings value) => new RecommendSearchParams((global::Algolia.Recommend.RecommendIndexSettings?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Algolia.Recommend
         {
             IndexSettings = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendSearchParams FromIndexSettings(global::Algolia.Recommend.RecommendIndexSettings? value) => new RecommendSearchParams(value);
 
         /// <summary>
         /// 
@@ -157,8 +232,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams?, TResult>? @base = null,
-            global::System.Func<global::Algolia.Recommend.SearchParamsQuery?, TResult>? query = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams, TResult>? @base = null,
+            global::System.Func<global::Algolia.Recommend.SearchParamsQuery, TResult>? query = null,
             global::System.Func<global::Algolia.Recommend.RecommendIndexSettings?, TResult>? indexSettings = null,
             bool validate = true)
         {
@@ -187,8 +262,38 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams?>? @base = null,
-            global::System.Action<global::Algolia.Recommend.SearchParamsQuery?>? query = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? @base = null,
+
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
+
+            global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+            else if (IsIndexSettings)
+            {
+                indexSettings?.Invoke(IndexSettings!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? @base = null,
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
             global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
             bool validate = true)
         {

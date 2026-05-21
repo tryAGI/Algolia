@@ -94,6 +94,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SnippetResultOption), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SnippetResultOption> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SnippetResultOption).Name}");
                     snippetResultOption = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -104,9 +105,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (snippetResultOption == null && snippetResultMap == null && snippetResultArray == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SnippetResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SnippetResultMap> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SnippetResultMap).Name}");
                     snippetResultMap = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -117,9 +122,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (snippetResultOption == null && snippetResultMap == null && snippetResultArray == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.SnippetResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.SnippetResult>).Name}");
                     snippetResultArray = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

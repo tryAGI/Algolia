@@ -70,5 +70,6 @@ namespace Algolia
         public SearchForFacetValuesResponse()
         {
         }
+
     }
 }

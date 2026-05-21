@@ -105,5 +105,6 @@ namespace Algolia
         public WatchResponse()
         {
         }
+
     }
 }

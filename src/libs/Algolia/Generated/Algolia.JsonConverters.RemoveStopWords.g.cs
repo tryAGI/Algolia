@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (removeStopWordsVariant1 == null && removeStopWordsVariant2 == null)
+            {
                 try
                 {
 

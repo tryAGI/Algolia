@@ -108,7 +108,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (searchParametersAsObject == null && fallbackParamsVariant2 == null)
+            {
                 try
                 {
 

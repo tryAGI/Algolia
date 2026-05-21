@@ -557,5 +557,6 @@ namespace Algolia.Recommend
         public BaseRecommendSearchParams()
         {
         }
+
     }
 }

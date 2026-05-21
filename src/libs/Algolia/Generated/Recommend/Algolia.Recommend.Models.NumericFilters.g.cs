@@ -35,6 +35,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNumericFiltersVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>? value)
+        {
+            value = NumericFiltersVariant1;
+            return IsNumericFiltersVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters> PickNumericFiltersVariant1() => IsNumericFiltersVariant1
+            ? NumericFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? NumericFiltersVariant2 { get; init; }
 #else
@@ -48,6 +68,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NumericFiltersVariant2))]
 #endif
         public bool IsNumericFiltersVariant2 => NumericFiltersVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNumericFiltersVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = NumericFiltersVariant2;
+            return IsNumericFiltersVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickNumericFiltersVariant2() => IsNumericFiltersVariant2
+            ? NumericFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -65,6 +105,11 @@ namespace Algolia.Recommend
         {
             NumericFiltersVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NumericFilters FromNumericFiltersVariant2(string? value) => new NumericFilters(value);
 
         /// <summary>
         /// 
@@ -106,8 +151,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>?, TResult>? numericFiltersVariant1 = null,
-            global::System.Func<string?, TResult>? numericFiltersVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>, TResult>? numericFiltersVariant1 = null,
+            global::System.Func<string, TResult>? numericFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,8 +176,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>?>? numericFiltersVariant1 = null,
-            global::System.Action<string?>? numericFiltersVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>>? numericFiltersVariant1 = null,
+
+            global::System.Action<string>? numericFiltersVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNumericFiltersVariant1)
+            {
+                numericFiltersVariant1?.Invoke(NumericFiltersVariant1!);
+            }
+            else if (IsNumericFiltersVariant2)
+            {
+                numericFiltersVariant2?.Invoke(NumericFiltersVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>>? numericFiltersVariant1 = null,
+            global::System.Action<string>? numericFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)

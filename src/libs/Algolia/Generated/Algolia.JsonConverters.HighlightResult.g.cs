@@ -96,6 +96,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.HighlightResultOption), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.HighlightResultOption> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.HighlightResultOption).Name}");
                     highlightResultOption = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -106,9 +107,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (highlightResultOption == null && highlightResultMap == null && highlightResultArray == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.HighlightResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.HighlightResultMap> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.HighlightResultMap).Name}");
                     highlightResultMap = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -119,9 +124,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (highlightResultOption == null && highlightResultMap == null && highlightResultArray == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.HighlightResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.HighlightResult>).Name}");
                     highlightResultArray = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

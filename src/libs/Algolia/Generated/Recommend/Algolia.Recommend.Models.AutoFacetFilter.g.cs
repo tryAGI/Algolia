@@ -56,5 +56,6 @@ namespace Algolia.Recommend
         public AutoFacetFilter()
         {
         }
+
     }
 }

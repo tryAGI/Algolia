@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (standardEntryVariant1 == null && standardEntryVariant2 == null)
+            {
                 try
                 {
 

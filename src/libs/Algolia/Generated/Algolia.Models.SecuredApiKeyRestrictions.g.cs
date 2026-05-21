@@ -124,5 +124,6 @@ namespace Algolia
         public SecuredApiKeyRestrictions()
         {
         }
+
     }
 }

@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         public bool IsTypoToleranceVariant1 => TypoToleranceVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTypoToleranceVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = TypoToleranceVariant1;
+            return IsTypoToleranceVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickTypoToleranceVariant1() => IsTypoToleranceVariant1
+            ? TypoToleranceVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TypoToleranceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// - `min`. Return matches with the lowest number of typos.<br/>
         ///   For example, if you have matches without typos, only include those.<br/>
         ///   But if there are no matches without typos (with 1 typo), include matches with 1 typo (2 typos).<br/>
@@ -48,6 +68,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TypoToleranceEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TypoToleranceEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -69,6 +109,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static TypoTolerance FromTypoToleranceVariant1(bool? value) => new TypoTolerance(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TypoTolerance(global::Algolia.Recommend.TypoToleranceEnum value) => new TypoTolerance((global::Algolia.Recommend.TypoToleranceEnum?)value);
 
         /// <summary>
@@ -83,6 +128,11 @@ namespace Algolia.Recommend
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TypoTolerance FromEnum(global::Algolia.Recommend.TypoToleranceEnum? value) => new TypoTolerance(value);
 
         /// <summary>
         /// 
@@ -149,6 +199,30 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<bool?>? typoToleranceVariant1 = null,
+
+            global::System.Action<global::Algolia.Recommend.TypoToleranceEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTypoToleranceVariant1)
+            {
+                typoToleranceVariant1?.Invoke(TypoToleranceVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<bool?>? typoToleranceVariant1 = null,
             global::System.Action<global::Algolia.Recommend.TypoToleranceEnum?>? @enum = null,
             bool validate = true)

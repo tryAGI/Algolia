@@ -37,6 +37,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOptionalFiltersVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>? value)
+        {
+            value = OptionalFiltersVariant1;
+            return IsOptionalFiltersVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters> PickOptionalFiltersVariant1() => IsOptionalFiltersVariant1
+            ? OptionalFiltersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? OptionalFiltersVariant2 { get; init; }
 #else
@@ -50,6 +70,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalFiltersVariant2))]
 #endif
         public bool IsOptionalFiltersVariant2 => OptionalFiltersVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOptionalFiltersVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = OptionalFiltersVariant2;
+            return IsOptionalFiltersVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickOptionalFiltersVariant2() => IsOptionalFiltersVariant2
+            ? OptionalFiltersVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +107,11 @@ namespace Algolia.Recommend
         {
             OptionalFiltersVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OptionalFilters FromOptionalFiltersVariant2(string? value) => new OptionalFilters(value);
 
         /// <summary>
         /// 
@@ -108,8 +153,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>?, TResult>? optionalFiltersVariant1 = null,
-            global::System.Func<string?, TResult>? optionalFiltersVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>, TResult>? optionalFiltersVariant1 = null,
+            global::System.Func<string, TResult>? optionalFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -133,8 +178,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>?>? optionalFiltersVariant1 = null,
-            global::System.Action<string?>? optionalFiltersVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>>? optionalFiltersVariant1 = null,
+
+            global::System.Action<string>? optionalFiltersVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOptionalFiltersVariant1)
+            {
+                optionalFiltersVariant1?.Invoke(OptionalFiltersVariant1!);
+            }
+            else if (IsOptionalFiltersVariant2)
+            {
+                optionalFiltersVariant2?.Invoke(OptionalFiltersVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>>? optionalFiltersVariant1 = null,
+            global::System.Action<string>? optionalFiltersVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -48,5 +48,6 @@ namespace Algolia.Recommend
         public BannerImage()
         {
         }
+
     }
 }

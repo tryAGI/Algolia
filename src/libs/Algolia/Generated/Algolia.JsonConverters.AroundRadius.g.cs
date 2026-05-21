@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (aroundRadiusVariant1 == null && all == null)
+            {
                 try
                 {
 

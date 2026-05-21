@@ -95,5 +95,6 @@ namespace Algolia.Recommend
         public Condition()
         {
         }
+
     }
 }

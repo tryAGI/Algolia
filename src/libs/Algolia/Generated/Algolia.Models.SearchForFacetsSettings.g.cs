@@ -101,5 +101,6 @@ namespace Algolia
         public SearchForFacetsSettings()
         {
         }
+
     }
 }

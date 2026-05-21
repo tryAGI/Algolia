@@ -108,7 +108,10 @@ namespace Algolia.Recommend.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (reRankingApplyFilterVariant1 == null && reRankingApplyFilterVariant2 == null)
+            {
                 try
                 {
 

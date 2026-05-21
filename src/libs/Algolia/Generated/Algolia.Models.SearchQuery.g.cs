@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickForHits(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForHits? value)
+        {
+            value = ForHits;
+            return IsForHits;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForHits PickForHits() => IsForHits
+            ? ForHits!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ForHits' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacets? ForFacets { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForFacets))]
 #endif
         public bool IsForFacets => ForFacets != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickForFacets(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForFacets? value)
+        {
+            value = ForFacets;
+            return IsForFacets;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForFacets PickForFacets() => IsForFacets
+            ? ForFacets!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacets' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchQuery FromForHits(global::Algolia.SearchForHits? value) => new SearchQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchQuery(global::Algolia.SearchForFacets value) => new SearchQuery((global::Algolia.SearchForFacets?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             ForFacets = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchQuery FromForFacets(global::Algolia.SearchForFacets? value) => new SearchQuery(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
+
+            global::System.Action<global::Algolia.SearchForFacets?>? forFacets = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsForHits)
+            {
+                forHits?.Invoke(ForHits!);
+            }
+            else if (IsForFacets)
+            {
+                forFacets?.Invoke(ForFacets!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
             global::System.Action<global::Algolia.SearchForFacets?>? forFacets = null,
             bool validate = true)

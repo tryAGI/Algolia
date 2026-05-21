@@ -78,6 +78,7 @@ namespace Algolia.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.PromoteObjectIDs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.PromoteObjectIDs> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.PromoteObjectIDs).Name}");
                     objectIDs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (objectIDs == null && objectID == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.PromoteObjectID), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.PromoteObjectID> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.PromoteObjectID).Name}");
                     objectID = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

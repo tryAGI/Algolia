@@ -27,6 +27,26 @@ namespace Algolia
         public bool IsBase => Base != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.BaseGetApiKeyResponse? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.BaseGetApiKeyResponse PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
         /// API key object.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
 #endif
         public bool IsApiKey => ApiKey != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.ApiKey? value)
+        {
+            value = ApiKey;
+            return IsApiKey;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.ApiKey PickApiKey() => IsApiKey
+            ? ApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static GetApiKeyResponse FromBase(global::Algolia.BaseGetApiKeyResponse? value) => new GetApiKeyResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetApiKeyResponse(global::Algolia.ApiKey value) => new GetApiKeyResponse((global::Algolia.ApiKey?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetApiKeyResponse FromApiKey(global::Algolia.ApiKey? value) => new GetApiKeyResponse(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.BaseGetApiKeyResponse?, TResult>? @base = null,
-            global::System.Func<global::Algolia.ApiKey?, TResult>? apiKey = null,
+            global::System.Func<global::Algolia.BaseGetApiKeyResponse, TResult>? @base = null,
+            global::System.Func<global::Algolia.ApiKey, TResult>? apiKey = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.BaseGetApiKeyResponse?>? @base = null,
-            global::System.Action<global::Algolia.ApiKey?>? apiKey = null,
+            global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
+
+            global::System.Action<global::Algolia.ApiKey>? apiKey = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsApiKey)
+            {
+                apiKey?.Invoke(ApiKey!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
+            global::System.Action<global::Algolia.ApiKey>? apiKey = null,
             bool validate = true)
         {
             if (validate)

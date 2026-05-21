@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParams? value)
+        {
+            value = Params;
+            return IsParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParams PickParams() => IsParams
+            ? Params!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForHitsSettings? Settings { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Settings))]
 #endif
         public bool IsSettings => Settings != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSettings(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchForHitsSettings? value)
+        {
+            value = Settings;
+            return IsSettings;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchForHitsSettings PickSettings() => IsSettings
+            ? Settings!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Settings' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchForHits FromParams(global::Algolia.SearchParams? value) => new SearchForHits(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchForHits(global::Algolia.SearchForHitsSettings value) => new SearchForHits((global::Algolia.SearchForHitsSettings?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             Settings = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchForHits FromSettings(global::Algolia.SearchForHitsSettings? value) => new SearchForHits(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParams?, TResult>? @params = null,
-            global::System.Func<global::Algolia.SearchForHitsSettings?, TResult>? settings = null,
+            global::System.Func<global::Algolia.SearchForHitsSettings, TResult>? settings = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParams?>? @params = null,
-            global::System.Action<global::Algolia.SearchForHitsSettings?>? settings = null,
+
+            global::System.Action<global::Algolia.SearchForHitsSettings>? settings = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsParams)
+            {
+                @params?.Invoke(Params!);
+            }
+            else if (IsSettings)
+            {
+                settings?.Invoke(Settings!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParams?>? @params = null,
+            global::System.Action<global::Algolia.SearchForHitsSettings>? settings = null,
             bool validate = true)
         {
             if (validate)

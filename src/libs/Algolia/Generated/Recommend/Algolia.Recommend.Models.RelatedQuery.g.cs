@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseRecommendRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendRequest? value)
+        {
+            value = BaseRecommendRequest;
+            return IsBaseRecommendRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedProducts? Products { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Products))]
 #endif
         public bool IsProducts => Products != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProducts(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RelatedProducts? value)
+        {
+            value = Products;
+            return IsProducts;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RelatedProducts PickProducts() => IsProducts
+            ? Products!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Products' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RelatedQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new RelatedQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RelatedQuery(global::Algolia.Recommend.RelatedProducts value) => new RelatedQuery((global::Algolia.Recommend.RelatedProducts?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia.Recommend
         {
             Products = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RelatedQuery FromProducts(global::Algolia.Recommend.RelatedProducts? value) => new RelatedQuery(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? baseRecommendRequest = null,
-            global::System.Func<global::Algolia.Recommend.RelatedProducts?, TResult>? products = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
+            global::System.Func<global::Algolia.Recommend.RelatedProducts, TResult>? products = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? baseRecommendRequest = null,
-            global::System.Action<global::Algolia.Recommend.RelatedProducts?>? products = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+
+            global::System.Action<global::Algolia.Recommend.RelatedProducts>? products = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseRecommendRequest)
+            {
+                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+            }
+            else if (IsProducts)
+            {
+                products?.Invoke(Products!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+            global::System.Action<global::Algolia.Recommend.RelatedProducts>? products = null,
             bool validate = true)
         {
             if (validate)

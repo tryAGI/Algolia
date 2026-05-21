@@ -98,5 +98,6 @@ namespace Algolia.Recommend
         public RecommendHit()
         {
         }
+
     }
 }

@@ -33,6 +33,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAroundPrecisionVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = AroundPrecisionVariant1;
+            return IsAroundPrecisionVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickAroundPrecisionVariant1() => IsAroundPrecisionVariant1
+            ? AroundPrecisionVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AroundPrecisionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? RangeObjects { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RangeObjects))]
 #endif
         public bool IsRangeObjects => RangeObjects != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRangeObjects(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? value)
+        {
+            value = RangeObjects;
+            return IsRangeObjects;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem> PickRangeObjects() => IsRangeObjects
+            ? RangeObjects!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RangeObjects' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia.Recommend
         {
             AroundPrecisionVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AroundPrecision FromAroundPrecisionVariant1(int? value) => new AroundPrecision(value);
 
         /// <summary>
         /// 
@@ -105,7 +150,7 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<int?, TResult>? aroundPrecisionVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>?, TResult>? rangeObjects = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>, TResult>? rangeObjects = null,
             bool validate = true)
         {
             if (validate)
@@ -130,7 +175,31 @@ namespace Algolia.Recommend
         /// </summary>
         public void Match(
             global::System.Action<int?>? aroundPrecisionVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>?>? rangeObjects = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>>? rangeObjects = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAroundPrecisionVariant1)
+            {
+                aroundPrecisionVariant1?.Invoke(AroundPrecisionVariant1!);
+            }
+            else if (IsRangeObjects)
+            {
+                rangeObjects?.Invoke(RangeObjects!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<int?>? aroundPrecisionVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>>? rangeObjects = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,26 @@ namespace Algolia.Recommend
         public bool IsRecommend => Recommend != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendHit? value)
+        {
+            value = Recommend;
+            return IsRecommend;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendHit PickRecommend() => IsRecommend
+            ? Recommend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
+
+        /// <summary>
         /// Trending facet hit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingFacetHit))]
 #endif
         public bool IsTrendingFacetHit => TrendingFacetHit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTrendingFacetHit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TrendingFacetHit? value)
+        {
+            value = TrendingFacetHit;
+            return IsTrendingFacetHit;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TrendingFacetHit PickTrendingFacetHit() => IsTrendingFacetHit
+            ? TrendingFacetHit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetHit' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendationsHit FromRecommend(global::Algolia.Recommend.RecommendHit? value) => new RecommendationsHit(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendationsHit(global::Algolia.Recommend.TrendingFacetHit value) => new RecommendationsHit((global::Algolia.Recommend.TrendingFacetHit?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia.Recommend
         {
             TrendingFacetHit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendationsHit FromTrendingFacetHit(global::Algolia.Recommend.TrendingFacetHit? value) => new RecommendationsHit(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.RecommendHit?, TResult>? recommend = null,
-            global::System.Func<global::Algolia.Recommend.TrendingFacetHit?, TResult>? trendingFacetHit = null,
+            global::System.Func<global::Algolia.Recommend.RecommendHit, TResult>? recommend = null,
+            global::System.Func<global::Algolia.Recommend.TrendingFacetHit, TResult>? trendingFacetHit = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.RecommendHit?>? recommend = null,
-            global::System.Action<global::Algolia.Recommend.TrendingFacetHit?>? trendingFacetHit = null,
+            global::System.Action<global::Algolia.Recommend.RecommendHit>? recommend = null,
+
+            global::System.Action<global::Algolia.Recommend.TrendingFacetHit>? trendingFacetHit = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRecommend)
+            {
+                recommend?.Invoke(Recommend!);
+            }
+            else if (IsTrendingFacetHit)
+            {
+                trendingFacetHit?.Invoke(TrendingFacetHit!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.RecommendHit>? recommend = null,
+            global::System.Action<global::Algolia.Recommend.TrendingFacetHit>? trendingFacetHit = null,
             bool validate = true)
         {
             if (validate)

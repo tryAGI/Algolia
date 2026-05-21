@@ -221,5 +221,6 @@ namespace Algolia
         public DeleteByParams()
         {
         }
+
     }
 }

@@ -88,5 +88,6 @@ namespace Algolia
         public Hit()
         {
         }
+
     }
 }

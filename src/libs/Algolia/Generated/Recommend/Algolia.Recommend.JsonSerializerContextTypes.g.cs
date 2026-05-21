@@ -272,11 +272,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.PropertiesReRankingApplyFilter? Type61 { get; set; }
+        public global::Algolia.Recommend.BaseRecommendIndexSettings? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendIndexSettings? Type62 { get; set; }
+        public global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>

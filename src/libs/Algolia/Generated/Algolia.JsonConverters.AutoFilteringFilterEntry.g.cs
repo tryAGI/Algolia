@@ -108,7 +108,10 @@ namespace Algolia.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (autoFilteringFilterEntryVariant1 == null && autoFilteringFilterEntryVariant2 == null)
+            {
                 try
                 {
 

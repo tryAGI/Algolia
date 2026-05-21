@@ -1,7 +1,7 @@
 
 #nullable enable
 
-namespace Algolia
+namespace Algolia.Recommend
 {
     /// <summary>
     /// 

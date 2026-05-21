@@ -136,5 +136,6 @@ namespace Algolia
         public Rule()
         {
         }
+
     }
 }

@@ -45,5 +45,6 @@ namespace Algolia
         public AppendSourceResponse()
         {
         }
+
     }
 }

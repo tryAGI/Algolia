@@ -109,5 +109,6 @@ namespace Algolia.Recommend
         public ParamsConsequence()
         {
         }
+
     }
 }

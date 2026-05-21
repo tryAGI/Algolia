@@ -30,6 +30,26 @@ namespace Algolia
         public bool IsAroundRadiusVariant1 => AroundRadiusVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAroundRadiusVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = AroundRadiusVariant1;
+            return IsAroundRadiusVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickAroundRadiusVariant1() => IsAroundRadiusVariant1
+            ? AroundRadiusVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AroundRadiusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Return all records with a valid `_geoloc` attribute. Don't filter by distance.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +65,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
 #endif
         public bool IsAll => All != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.AroundRadiusAll? value)
+        {
+            value = All;
+            return IsAll;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.AroundRadiusAll PickAll() => IsAll
+            ? All!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -66,6 +106,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static AroundRadius FromAroundRadiusVariant1(int? value) => new AroundRadius(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AroundRadius(global::Algolia.AroundRadiusAll value) => new AroundRadius((global::Algolia.AroundRadiusAll?)value);
 
         /// <summary>
@@ -80,6 +125,11 @@ namespace Algolia
         {
             All = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AroundRadius FromAll(global::Algolia.AroundRadiusAll? value) => new AroundRadius(value);
 
         /// <summary>
         /// 
@@ -146,6 +196,30 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<int?>? aroundRadiusVariant1 = null,
+
+            global::System.Action<global::Algolia.AroundRadiusAll?>? all = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAroundRadiusVariant1)
+            {
+                aroundRadiusVariant1?.Invoke(AroundRadiusVariant1!);
+            }
+            else if (IsAll)
+            {
+                all?.Invoke(All!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<int?>? aroundRadiusVariant1 = null,
             global::System.Action<global::Algolia.AroundRadiusAll?>? all = null,
             bool validate = true)

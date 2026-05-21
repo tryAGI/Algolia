@@ -81,5 +81,6 @@ namespace Algolia
         public SaveSynonymResponse()
         {
         }
+
     }
 }

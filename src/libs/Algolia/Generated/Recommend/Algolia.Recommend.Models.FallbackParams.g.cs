@@ -27,6 +27,26 @@ namespace Algolia.Recommend
         public bool IsSearchParametersAsObject => SearchParametersAsObject != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchParametersAsObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendSearchParams? value)
+        {
+            value = SearchParametersAsObject;
+            return IsSearchParametersAsObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendSearchParams PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
+
+        /// <summary>
         /// Search parameters to use for a fallback request if there aren't enough recommendations.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FallbackParamsVariant2))]
 #endif
         public bool IsFallbackParamsVariant2 => FallbackParamsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFallbackParamsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = FallbackParamsVariant2;
+            return IsFallbackParamsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickFallbackParamsVariant2() => IsFallbackParamsVariant2
+            ? FallbackParamsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace Algolia.Recommend
         {
             SearchParametersAsObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FallbackParams FromSearchParametersAsObject(global::Algolia.Recommend.RecommendSearchParams? value) => new FallbackParams(value);
 
         /// <summary>
         /// 
@@ -101,7 +146,7 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.RecommendSearchParams?, TResult>? searchParametersAsObject = null,
-            global::System.Func<object?, TResult>? fallbackParamsVariant2 = null,
+            global::System.Func<object, TResult>? fallbackParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,7 +171,31 @@ namespace Algolia.Recommend
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.RecommendSearchParams?>? searchParametersAsObject = null,
-            global::System.Action<object?>? fallbackParamsVariant2 = null,
+
+            global::System.Action<object>? fallbackParamsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchParametersAsObject)
+            {
+                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+            }
+            else if (IsFallbackParamsVariant2)
+            {
+                fallbackParamsVariant2?.Invoke(FallbackParamsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.RecommendSearchParams?>? searchParametersAsObject = null,
+            global::System.Action<object>? fallbackParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)

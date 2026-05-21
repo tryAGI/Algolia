@@ -30,6 +30,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStandardEntryVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, bool>? value)
+        {
+            value = StandardEntryVariant1;
+            return IsStandardEntryVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, bool> PickStandardEntryVariant1() => IsStandardEntryVariant1
+            ? StandardEntryVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? StandardEntryVariant2 { get; init; }
 #else
@@ -43,6 +63,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardEntryVariant2))]
 #endif
         public bool IsStandardEntryVariant2 => StandardEntryVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStandardEntryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = StandardEntryVariant2;
+            return IsStandardEntryVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickStandardEntryVariant2() => IsStandardEntryVariant2
+            ? StandardEntryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +100,11 @@ namespace Algolia
         {
             StandardEntryVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StandardEntry FromStandardEntryVariant1(global::System.Collections.Generic.Dictionary<string, bool>? value) => new StandardEntry(value);
 
         /// <summary>
         /// 
@@ -101,8 +146,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>?, TResult>? standardEntryVariant1 = null,
-            global::System.Func<object?, TResult>? standardEntryVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>, TResult>? standardEntryVariant1 = null,
+            global::System.Func<object, TResult>? standardEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +171,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>?>? standardEntryVariant1 = null,
-            global::System.Action<object?>? standardEntryVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? standardEntryVariant1 = null,
+
+            global::System.Action<object>? standardEntryVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStandardEntryVariant1)
+            {
+                standardEntryVariant1?.Invoke(StandardEntryVariant1!);
+            }
+            else if (IsStandardEntryVariant2)
+            {
+                standardEntryVariant2?.Invoke(StandardEntryVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? standardEntryVariant1 = null,
+            global::System.Action<object>? standardEntryVariant2 = null,
             bool validate = true)
         {
             if (validate)

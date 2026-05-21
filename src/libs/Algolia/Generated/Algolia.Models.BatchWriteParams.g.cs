@@ -41,5 +41,6 @@ namespace Algolia
         public BatchWriteParams()
         {
         }
+
     }
 }

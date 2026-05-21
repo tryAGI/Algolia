@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseRecommendRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendRequest? value)
+        {
+            value = BaseRecommendRequest;
+            return IsBaseRecommendRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingItems? TrendingItems { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingItems))]
 #endif
         public bool IsTrendingItems => TrendingItems != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTrendingItems(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.TrendingItems? value)
+        {
+            value = TrendingItems;
+            return IsTrendingItems;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.TrendingItems PickTrendingItems() => IsTrendingItems
+            ? TrendingItems!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingItems' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static TrendingItemsQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new TrendingItemsQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrendingItemsQuery(global::Algolia.Recommend.TrendingItems value) => new TrendingItemsQuery((global::Algolia.Recommend.TrendingItems?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia.Recommend
         {
             TrendingItems = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrendingItemsQuery FromTrendingItems(global::Algolia.Recommend.TrendingItems? value) => new TrendingItemsQuery(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? baseRecommendRequest = null,
-            global::System.Func<global::Algolia.Recommend.TrendingItems?, TResult>? trendingItems = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
+            global::System.Func<global::Algolia.Recommend.TrendingItems, TResult>? trendingItems = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? baseRecommendRequest = null,
-            global::System.Action<global::Algolia.Recommend.TrendingItems?>? trendingItems = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+
+            global::System.Action<global::Algolia.Recommend.TrendingItems>? trendingItems = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseRecommendRequest)
+            {
+                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+            }
+            else if (IsTrendingItems)
+            {
+                trendingItems?.Invoke(TrendingItems!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+            global::System.Action<global::Algolia.Recommend.TrendingItems>? trendingItems = null,
             bool validate = true)
         {
             if (validate)

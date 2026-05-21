@@ -29,6 +29,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchParametersAsObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsObject? value)
+        {
+            value = SearchParametersAsObject;
+            return IsSearchParametersAsObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cursor))]
 #endif
         public bool IsCursor => Cursor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCursor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Cursor? value)
+        {
+            value = Cursor;
+            return IsCursor;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Cursor PickCursor() => IsCursor
+            ? Cursor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static BrowseParamsConfig FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new BrowseParamsConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BrowseParamsConfig(global::Algolia.Cursor value) => new BrowseParamsConfig((global::Algolia.Cursor?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             Cursor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BrowseParamsConfig FromCursor(global::Algolia.Cursor? value) => new BrowseParamsConfig(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParamsObject?, TResult>? searchParametersAsObject = null,
-            global::System.Func<global::Algolia.Cursor?, TResult>? cursor = null,
+            global::System.Func<global::Algolia.Cursor, TResult>? cursor = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace Algolia
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
-            global::System.Action<global::Algolia.Cursor?>? cursor = null,
+
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchParametersAsObject)
+            {
+                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+            }
+            else if (IsCursor)
+            {
+                cursor?.Invoke(Cursor!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
+            global::System.Action<global::Algolia.Cursor>? cursor = null,
             bool validate = true)
         {
             if (validate)

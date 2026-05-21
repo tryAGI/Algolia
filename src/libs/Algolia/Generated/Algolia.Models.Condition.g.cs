@@ -123,5 +123,6 @@ namespace Algolia
         public Condition()
         {
         }
+
     }
 }

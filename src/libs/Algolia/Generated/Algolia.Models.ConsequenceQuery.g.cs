@@ -31,6 +31,26 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickObjectValue(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.ConsequenceQueryObject? value)
+        {
+            value = ObjectValue;
+            return IsObjectValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.ConsequenceQueryObject PickObjectValue() => IsObjectValue
+            ? ObjectValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ConsequenceQueryVariant2 { get; init; }
 #else
@@ -44,6 +64,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsequenceQueryVariant2))]
 #endif
         public bool IsConsequenceQueryVariant2 => ConsequenceQueryVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConsequenceQueryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ConsequenceQueryVariant2;
+            return IsConsequenceQueryVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickConsequenceQueryVariant2() => IsConsequenceQueryVariant2
+            ? ConsequenceQueryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsequenceQueryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -65,6 +105,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static ConsequenceQuery FromObjectValue(global::Algolia.ConsequenceQueryObject? value) => new ConsequenceQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsequenceQuery(string value) => new ConsequenceQuery((string?)value);
 
         /// <summary>
@@ -79,6 +124,11 @@ namespace Algolia
         {
             ConsequenceQueryVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsequenceQuery FromConsequenceQueryVariant2(string? value) => new ConsequenceQuery(value);
 
         /// <summary>
         /// 
@@ -120,8 +170,8 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.ConsequenceQueryObject?, TResult>? objectValue = null,
-            global::System.Func<string?, TResult>? consequenceQueryVariant2 = null,
+            global::System.Func<global::Algolia.ConsequenceQueryObject, TResult>? objectValue = null,
+            global::System.Func<string, TResult>? consequenceQueryVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +195,32 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.ConsequenceQueryObject?>? objectValue = null,
-            global::System.Action<string?>? consequenceQueryVariant2 = null,
+            global::System.Action<global::Algolia.ConsequenceQueryObject>? objectValue = null,
+
+            global::System.Action<string>? consequenceQueryVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsObjectValue)
+            {
+                objectValue?.Invoke(ObjectValue!);
+            }
+            else if (IsConsequenceQueryVariant2)
+            {
+                consequenceQueryVariant2?.Invoke(ConsequenceQueryVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.ConsequenceQueryObject>? objectValue = null,
+            global::System.Action<string>? consequenceQueryVariant2 = null,
             bool validate = true)
         {
             if (validate)

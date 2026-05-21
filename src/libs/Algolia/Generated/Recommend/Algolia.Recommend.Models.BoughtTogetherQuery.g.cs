@@ -29,6 +29,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseRecommendRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.BaseRecommendRequest? value)
+        {
+            value = BaseRecommendRequest;
+            return IsBaseRecommendRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
+            ? BaseRecommendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.FrequentlyBoughtTogether? Frequently { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Frequently))]
 #endif
         public bool IsFrequently => Frequently != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFrequently(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.FrequentlyBoughtTogether? value)
+        {
+            value = Frequently;
+            return IsFrequently;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.FrequentlyBoughtTogether PickFrequently() => IsFrequently
+            ? Frequently!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Frequently' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static BoughtTogetherQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new BoughtTogetherQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BoughtTogetherQuery(global::Algolia.Recommend.FrequentlyBoughtTogether value) => new BoughtTogetherQuery((global::Algolia.Recommend.FrequentlyBoughtTogether?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia.Recommend
         {
             Frequently = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BoughtTogetherQuery FromFrequently(global::Algolia.Recommend.FrequentlyBoughtTogether? value) => new BoughtTogetherQuery(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest?, TResult>? baseRecommendRequest = null,
-            global::System.Func<global::Algolia.Recommend.FrequentlyBoughtTogether?, TResult>? frequently = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
+            global::System.Func<global::Algolia.Recommend.FrequentlyBoughtTogether, TResult>? frequently = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest?>? baseRecommendRequest = null,
-            global::System.Action<global::Algolia.Recommend.FrequentlyBoughtTogether?>? frequently = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+
+            global::System.Action<global::Algolia.Recommend.FrequentlyBoughtTogether>? frequently = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseRecommendRequest)
+            {
+                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+            }
+            else if (IsFrequently)
+            {
+                frequently?.Invoke(Frequently!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
+            global::System.Action<global::Algolia.Recommend.FrequentlyBoughtTogether>? frequently = null,
             bool validate = true)
         {
             if (validate)

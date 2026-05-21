@@ -27,6 +27,26 @@ namespace Algolia
         public bool IsSearchParametersAsQueryString => SearchParametersAsQueryString != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchParametersAsQueryString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsString? value)
+        {
+            value = SearchParametersAsQueryString;
+            return IsSearchParametersAsQueryString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
+            ? SearchParametersAsQueryString!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsQueryString' but the value was {ToString()}.");
+
+        /// <summary>
         /// Each parameter value, including the `query` must not be larger than 512 bytes.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsObject))]
 #endif
         public bool IsSearchParametersAsObject => SearchParametersAsObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchParametersAsObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsObject? value)
+        {
+            value = SearchParametersAsObject;
+            return IsSearchParametersAsObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
+            ? SearchParametersAsObject!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Algolia
         /// <summary>
         /// 
         /// </summary>
+        public static SearchParams FromSearchParametersAsQueryString(global::Algolia.SearchParamsString? value) => new SearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchParams(global::Algolia.SearchParamsObject value) => new SearchParams((global::Algolia.SearchParamsObject?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Algolia
         {
             SearchParametersAsObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchParams FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new SearchParams(value);
 
         /// <summary>
         /// 
@@ -118,7 +168,7 @@ namespace Algolia
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.SearchParamsString?, TResult>? searchParametersAsQueryString = null,
+            global::System.Func<global::Algolia.SearchParamsString, TResult>? searchParametersAsQueryString = null,
             global::System.Func<global::Algolia.SearchParamsObject?, TResult>? searchParametersAsObject = null,
             bool validate = true)
         {
@@ -143,7 +193,31 @@ namespace Algolia
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.SearchParamsString?>? searchParametersAsQueryString = null,
+            global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
+
+            global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchParametersAsQueryString)
+            {
+                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+            }
+            else if (IsSearchParametersAsObject)
+            {
+                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
             global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
             bool validate = true)
         {

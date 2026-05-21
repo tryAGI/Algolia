@@ -102,5 +102,6 @@ namespace Algolia.Recommend
         public TrendingFacets()
         {
         }
+
     }
 }

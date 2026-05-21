@@ -59,5 +59,6 @@ namespace Algolia
         public Source()
         {
         }
+
     }
 }

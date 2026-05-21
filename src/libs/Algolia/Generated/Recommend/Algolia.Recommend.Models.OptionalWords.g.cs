@@ -41,6 +41,26 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOptionalWordsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = OptionalWordsVariant1;
+            return IsOptionalWordsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickOptionalWordsVariant1() => IsOptionalWordsVariant1
+            ? OptionalWordsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? OptionalWordsVariant2 { get; init; }
 #else
@@ -54,6 +74,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalWordsVariant2))]
 #endif
         public bool IsOptionalWordsVariant2 => OptionalWordsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOptionalWordsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = OptionalWordsVariant2;
+            return IsOptionalWordsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOptionalWordsVariant2() => IsOptionalWordsVariant2
+            ? OptionalWordsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).<br/>
@@ -73,6 +113,26 @@ namespace Algolia.Recommend
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Array))]
 #endif
         public bool IsArray => Array != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickArray(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = Array;
+            return IsArray;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickArray() => IsArray
+            ? Array!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -90,6 +150,11 @@ namespace Algolia.Recommend
         {
             OptionalWordsVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OptionalWords FromOptionalWordsVariant1(string? value) => new OptionalWords(value);
 
         /// <summary>
         /// 
@@ -135,9 +200,9 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? optionalWordsVariant1 = null,
-            global::System.Func<object?, TResult>? optionalWordsVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? array = null,
+            global::System.Func<string, TResult>? optionalWordsVariant1 = null,
+            global::System.Func<object, TResult>? optionalWordsVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? array = null,
             bool validate = true)
         {
             if (validate)
@@ -165,9 +230,39 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? optionalWordsVariant1 = null,
-            global::System.Action<object?>? optionalWordsVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? array = null,
+            global::System.Action<string>? optionalWordsVariant1 = null,
+
+            global::System.Action<object>? optionalWordsVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? array = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOptionalWordsVariant1)
+            {
+                optionalWordsVariant1?.Invoke(OptionalWordsVariant1!);
+            }
+            else if (IsOptionalWordsVariant2)
+            {
+                optionalWordsVariant2?.Invoke(OptionalWordsVariant2!);
+            }
+            else if (IsArray)
+            {
+                array?.Invoke(Array!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? optionalWordsVariant1 = null,
+            global::System.Action<object>? optionalWordsVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? array = null,
             bool validate = true)
         {
             if (validate)

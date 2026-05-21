@@ -80,5 +80,6 @@ namespace Algolia.Recommend
         public Value()
         {
         }
+
     }
 }
