@@ -110,6 +110,20 @@ namespace Algolia
         public bool? Virtual { get; set; }
 
         /// <summary>
+        /// A/B test metadata. Only present if the index is part of an active A/B test.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("abTest")]
+        public global::Algolia.FetchedIndexAbTest? AbTest { get; set; }
+
+        /// <summary>
+        /// Name of the index that owns the A/B test configuration. Only present when this index participates in an A/B test configured on another index.<br/>
+        /// Example: movies_dev_a
+        /// </summary>
+        /// <example>movies_dev_a</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sourceABTest")]
+        public string? SourceABTest { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -165,6 +179,13 @@ namespace Algolia
         /// <param name="virtual">
         /// Only present if the index is a [virtual replica](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-an-index-alphabetically/#virtual-replicas).
         /// </param>
+        /// <param name="abTest">
+        /// A/B test metadata. Only present if the index is part of an active A/B test.
+        /// </param>
+        /// <param name="sourceABTest">
+        /// Name of the index that owns the A/B test configuration. Only present when this index participates in an A/B test configured on another index.<br/>
+        /// Example: movies_dev_a
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -180,7 +201,9 @@ namespace Algolia
             bool pendingTask,
             string? primary,
             global::System.Collections.Generic.IList<string>? replicas,
-            bool? @virtual)
+            bool? @virtual,
+            global::Algolia.FetchedIndexAbTest? abTest,
+            string? sourceABTest)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
@@ -194,6 +217,8 @@ namespace Algolia
             this.Primary = primary;
             this.Replicas = replicas;
             this.Virtual = @virtual;
+            this.AbTest = abTest;
+            this.SourceABTest = sourceABTest;
         }
 
         /// <summary>
