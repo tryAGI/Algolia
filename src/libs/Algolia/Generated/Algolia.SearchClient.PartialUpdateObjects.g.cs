@@ -416,18 +416,17 @@ namespace Algolia
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::Algolia.ApiException<global::Algolia.ErrorBase>(
+
+                                throw global::Algolia.ApiException<global::Algolia.ErrorBase>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -461,17 +460,15 @@ namespace Algolia
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Algolia.ApiException(
+                                    throw global::Algolia.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -508,17 +505,15 @@ namespace Algolia
                                     {
                                     }
 
-                                    throw new global::Algolia.ApiException(
+                                    throw global::Algolia.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
