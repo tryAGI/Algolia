@@ -143,7 +143,7 @@ namespace Algolia.Recommend
             {
 
                             var __pathBuilder = new global::Algolia.Recommend.PathBuilder(
-                                path: $"/1/indexes/{indexName}/{model}/task/{taskID}",
+                                path: $"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.Recommend.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -206,7 +206,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRecommendStatus",
                                 methodName: "GetRecommendStatusAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/task/{taskID}\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -240,7 +240,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRecommendStatus",
                                 methodName: "GetRecommendStatusAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/task/{taskID}\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -281,7 +281,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRecommendStatus",
                                 methodName: "GetRecommendStatusAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/task/{taskID}\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -329,7 +329,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRecommendStatus",
                                 methodName: "GetRecommendStatusAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/task/{taskID}\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -351,7 +351,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRecommendStatus",
                                 methodName: "GetRecommendStatusAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/task/{taskID}\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/task/{taskID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
