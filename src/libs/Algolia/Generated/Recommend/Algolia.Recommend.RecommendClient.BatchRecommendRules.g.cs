@@ -146,7 +146,7 @@ namespace Algolia.Recommend
             {
 
                             var __pathBuilder = new global::Algolia.Recommend.PathBuilder(
-                                path: $"/1/indexes/{indexName}/{model}/recommend/rules/batch",
+                                path: $"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.Recommend.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -215,7 +215,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BatchRecommendRules",
                                 methodName: "BatchRecommendRulesAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/recommend/rules/batch\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -249,7 +249,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BatchRecommendRules",
                                 methodName: "BatchRecommendRulesAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/recommend/rules/batch\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -290,7 +290,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BatchRecommendRules",
                                 methodName: "BatchRecommendRulesAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/recommend/rules/batch\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -338,7 +338,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BatchRecommendRules",
                                 methodName: "BatchRecommendRulesAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/recommend/rules/batch\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -360,7 +360,7 @@ namespace Algolia.Recommend
                             context: global::Algolia.Recommend.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BatchRecommendRules",
                                 methodName: "BatchRecommendRulesAsync",
-                                pathTemplate: "$\"/1/indexes/{indexName}/{model}/recommend/rules/batch\"",
+                                pathTemplate: "$\"/1/indexes/{indexName}/{(global::System.Uri.EscapeDataString(model.ToValueString()))}/recommend/rules/batch\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

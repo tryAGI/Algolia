@@ -118,7 +118,7 @@ namespace Algolia
             {
 
                             var __pathBuilder = new global::Algolia.PathBuilder(
-                                path: $"/1/dictionaries/{dictionaryName}/search",
+                                path: $"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Algolia.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -186,7 +186,7 @@ namespace Algolia
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SearchDictionaryEntries",
                                 methodName: "SearchDictionaryEntriesAsync",
-                                pathTemplate: "$\"/1/dictionaries/{dictionaryName}/search\"",
+                                pathTemplate: "$\"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -220,7 +220,7 @@ namespace Algolia
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SearchDictionaryEntries",
                                 methodName: "SearchDictionaryEntriesAsync",
-                                pathTemplate: "$\"/1/dictionaries/{dictionaryName}/search\"",
+                                pathTemplate: "$\"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,7 +261,7 @@ namespace Algolia
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SearchDictionaryEntries",
                                 methodName: "SearchDictionaryEntriesAsync",
-                                pathTemplate: "$\"/1/dictionaries/{dictionaryName}/search\"",
+                                pathTemplate: "$\"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -309,7 +309,7 @@ namespace Algolia
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SearchDictionaryEntries",
                                 methodName: "SearchDictionaryEntriesAsync",
-                                pathTemplate: "$\"/1/dictionaries/{dictionaryName}/search\"",
+                                pathTemplate: "$\"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -331,7 +331,7 @@ namespace Algolia
                             context: global::Algolia.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SearchDictionaryEntries",
                                 methodName: "SearchDictionaryEntriesAsync",
-                                pathTemplate: "$\"/1/dictionaries/{dictionaryName}/search\"",
+                                pathTemplate: "$\"/1/dictionaries/{(global::System.Uri.EscapeDataString(dictionaryName.ToValueString()))}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
