@@ -197,6 +197,8 @@ namespace Algolia
 
             typeof(global::Algolia.JsonConverters.SearchQueryJsonConverter),
 
+            typeof(global::Algolia.JsonConverters.SearchResponsePartialJsonConverter),
+
             typeof(global::Algolia.JsonConverters.SearchResultJsonConverter),
 
             typeof(global::Algolia.JsonConverters.BrowseParamsConfigJsonConverter),
@@ -363,6 +365,8 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForFacetValuesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.SearchForFacetValuesResponseFacetHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchForFacetValuesResponseFacetHit))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponsePartial), TypeInfoPropertyName = "SearchResponsePartial2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponsePartialVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResult), TypeInfoPropertyName = "SearchResult2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Cursor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BrowseParamsConfig), TypeInfoPropertyName = "BrowseParamsConfig2")]
