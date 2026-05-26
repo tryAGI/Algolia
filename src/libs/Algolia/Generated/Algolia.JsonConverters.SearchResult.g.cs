@@ -32,13 +32,16 @@ namespace Algolia.JsonConverters
             if (__jsonProps.Contains("exhaustiveFacetsCount")) __score1++;
             if (__jsonProps.Contains("facetHits")) __score1++;
             if (__jsonProps.Contains("processingTimeMS")) __score1++;
+            var __score2 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::Algolia.SearchResponse? response = default;
             global::Algolia.SearchForFacetValuesResponse? forFacetValuesResponse = default;
+            global::Algolia.SearchResponsePartial? responsePartial = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -71,9 +74,24 @@ namespace Algolia.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponsePartial), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponsePartial> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponsePartial).Name}");
+                        responsePartial = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (response == null && forFacetValuesResponse == null)
+            if (response == null && forFacetValuesResponse == null && responsePartial == null)
             {
                 try
                 {
@@ -90,7 +108,7 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (response == null && forFacetValuesResponse == null)
+            if (response == null && forFacetValuesResponse == null && responsePartial == null)
             {
                 try
                 {
@@ -107,10 +125,29 @@ namespace Algolia.JsonConverters
                 }
             }
 
+            if (response == null && forFacetValuesResponse == null && responsePartial == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponsePartial), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponsePartial> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponsePartial).Name}");
+                    responsePartial = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
             var __value = new global::Algolia.SearchResult(
                 response,
 
-                forFacetValuesResponse
+                forFacetValuesResponse,
+
+                responsePartial
                 );
 
             return __value;
@@ -136,6 +173,12 @@ namespace Algolia.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchForFacetValuesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchForFacetValuesResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchForFacetValuesResponse).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForFacetValuesResponse!, typeInfo);
+            }
+            else if (value.IsResponsePartial)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponsePartial), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponsePartial> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponsePartial).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsePartial!.Value, typeInfo);
             }
         }
     }
