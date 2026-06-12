@@ -7,7 +7,7 @@ namespace Algolia
     /// ## Client libraries<br/>
     /// Use Algolia's API clients and libraries to reliably integrate Algolia's APIs with your apps.<br/>
     /// The official API clients are covered by Algolia's [Service Level Agreement](https://www.algolia.com/policies/sla).<br/>
-    /// For more information, see [Algolia's ecosystem](https://www.algolia.com/doc/guides/getting-started/how-algolia-works/in-depth/ecosystem).<br/>
+    /// For more information, see [Algolia's ecosystem](https://www.algolia.com/doc/libraries).<br/>
     /// ## Base URLs<br/>
     /// Base URLs for the Search API:<br/>
     /// - `https://{APPLICATION_ID}.algolia.net`<br/>
