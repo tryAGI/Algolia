@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
 
-dotnet tool install --global autosdk.cli --prerelease
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
+install_autosdk_cli
 
 rm -rf Generated
 
-curl -o openapi.yaml \
+fetch_spec -o openapi.yaml \
   https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/bundled/search.yml
 
 # Fix auth: Algolia uses dual apiKey headers (x-algolia-application-id + x-algolia-api-key).
@@ -50,7 +61,7 @@ autosdk generate openapi.yaml \
   --security-scheme Http:Header:Bearer
 
 # --- Recommend API ---
-curl -o recommend-openapi.yaml \
+fetch_spec -o recommend-openapi.yaml \
   https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/bundled/recommend.yml
 
 # Fix auth: same dual-header auth as Search API
