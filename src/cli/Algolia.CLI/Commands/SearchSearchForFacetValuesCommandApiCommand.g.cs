@@ -118,7 +118,7 @@ Searches for values of a specified facet attribute.
                             cancellationToken).ConfigureAwait(false);
                         var indexName = parseResult.GetRequiredValue(IndexName);
                         var facetName = parseResult.GetRequiredValue(FacetName);
-                        var @params = CliRuntime.WasSpecified(parseResult, Params) ? parseResult.GetValue(Params) : (__requestBase is { } __@paramsBaseValue ? __@paramsBaseValue.Params : default);
+                        var @params = CliRuntime.WasSpecified(parseResult, Params) ? parseResult.GetValue(Params) : (__requestBase is { } __ParamsBaseValue ? __ParamsBaseValue.Params : default);
                         var facetQuery = CliRuntime.WasSpecified(parseResult, FacetQuery) ? parseResult.GetValue(FacetQuery) : (__requestBase is { } __FacetQueryBaseValue ? __FacetQueryBaseValue.FacetQuery : default);
                         var maxFacetHits = CliRuntime.WasSpecified(parseResult, MaxFacetHits) ? parseResult.GetValue(MaxFacetHits) : (__requestBase is { } __MaxFacetHitsBaseValue ? __MaxFacetHitsBaseValue.MaxFacetHits : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
