@@ -76,3 +76,21 @@ autosdk generate recommend-openapi.yaml \
   --exclude-deprecated-operations \
   --security-scheme Http:Header:Bearer \
   --json-serializer-context RecommendSourceGenerationContext
+
+rm -rf ../../cli/Algolia.CLI
+
+autosdk cli-project openapi.yaml \
+  --output ../../cli/Algolia.CLI \
+  --sdk-project ../../libs/Algolia/Algolia.csproj \
+  --targetFramework net10.0 \
+  --namespace Algolia \
+  --clientClassName AlgoliaClient \
+  --package-id Algolia.CLI \
+  --tool-command-name algolia \
+  --user-secrets-id Algolia.CLI \
+  --api-key-env-var ALGOLIA_API_KEY \
+  --base-url-env-var ALGOLIA_BASE_URL \
+  --cli-credential-file \
+  --cli-keep-api-group \
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer

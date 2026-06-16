@@ -20,6 +20,13 @@ using var client = new AlgoliaClient(apiKey);
 client.WithApplicationId(applicationId);
 ```
 
+### CLI
+
+```bash
+dotnet tool install --global Algolia.CLI --prerelease
+algolia api --help
+```
+
 <!-- EXAMPLES:START -->
 <!-- EXAMPLES:END -->
 
