@@ -4,7 +4,8 @@
 namespace Algolia
 {
     /// <summary>
-    /// Retrieved record.
+    /// Retrieved record.<br/>
+    /// `null` if the requested `objectID` doesn't exist in the index.
     /// </summary>
     public sealed partial class GetObjectsResponseResult
     {
