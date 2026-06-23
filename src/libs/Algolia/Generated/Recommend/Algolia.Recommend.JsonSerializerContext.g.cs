@@ -85,8 +85,6 @@ namespace Algolia.Recommend
 
             typeof(global::Algolia.Recommend.JsonConverters.TaskStatusNullableJsonConverter),
 
-            typeof(global::Algolia.Recommend.JsonConverters.FacetFiltersJsonConverter),
-
             typeof(global::Algolia.Recommend.JsonConverters.OptionalFiltersJsonConverter),
 
             typeof(global::Algolia.Recommend.JsonConverters.NumericFiltersJsonConverter),
@@ -144,8 +142,6 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.ErrorBase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FacetFilters), TypeInfoPropertyName = "FacetFilters2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.FacetFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.OptionalFilters), TypeInfoPropertyName = "OptionalFilters2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.NumericFilters), TypeInfoPropertyName = "NumericFilters2")]
@@ -207,6 +203,7 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>), TypeInfoPropertyName = "OneOfReRankingApplyFilterObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendIndexSettings), TypeInfoPropertyName = "RecommendIndexSettings2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendSearchParams), TypeInfoPropertyName = "RecommendSearchParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendSearchParamsVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BaseRecommendRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FbtModel), TypeInfoPropertyName = "FbtModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FallbackParams), TypeInfoPropertyName = "FallbackParams2")]
@@ -281,7 +278,6 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.DeleteRecommendRuleResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.GetRecommendStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.SearchRecommendRulesResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.FacetFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.OptionalFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.NumericFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.TagFilters>))]

@@ -119,6 +119,43 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.RecommendIndexSettings PickIndexSettings() => IsIndexSettings
             ? IndexSettings!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettings' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Algolia.Recommend.RecommendSearchParamsVariant4? RecommendSearchParamsVariant4 { get; init; }
+#else
+        public global::Algolia.Recommend.RecommendSearchParamsVariant4? RecommendSearchParamsVariant4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendSearchParamsVariant4))]
+#endif
+        public bool IsRecommendSearchParamsVariant4 => RecommendSearchParamsVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommendSearchParamsVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendSearchParamsVariant4? value)
+        {
+            value = RecommendSearchParamsVariant4;
+            return IsRecommendSearchParamsVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Algolia.Recommend.RecommendSearchParamsVariant4 PickRecommendSearchParamsVariant4() => IsRecommendSearchParamsVariant4
+            ? RecommendSearchParamsVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendSearchParamsVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -191,21 +228,47 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator RecommendSearchParams(global::Algolia.Recommend.RecommendSearchParamsVariant4 value) => new RecommendSearchParams((global::Algolia.Recommend.RecommendSearchParamsVariant4?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Algolia.Recommend.RecommendSearchParamsVariant4?(RecommendSearchParams @this) => @this.RecommendSearchParamsVariant4;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RecommendSearchParams(global::Algolia.Recommend.RecommendSearchParamsVariant4? value)
+        {
+            RecommendSearchParamsVariant4 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendSearchParams FromRecommendSearchParamsVariant4(global::Algolia.Recommend.RecommendSearchParamsVariant4? value) => new RecommendSearchParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RecommendSearchParams(
             global::Algolia.Recommend.BaseRecommendSearchParams? @base,
             global::Algolia.Recommend.SearchParamsQuery? query,
-            global::Algolia.Recommend.RecommendIndexSettings? indexSettings
+            global::Algolia.Recommend.RecommendIndexSettings? indexSettings,
+            global::Algolia.Recommend.RecommendSearchParamsVariant4? recommendSearchParamsVariant4
             )
         {
             Base = @base;
             Query = query;
             IndexSettings = indexSettings;
+            RecommendSearchParamsVariant4 = recommendSearchParamsVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            RecommendSearchParamsVariant4 as object ??
             IndexSettings as object ??
             Query as object ??
             Base as object 
@@ -217,7 +280,8 @@ namespace Algolia.Recommend
         public override string? ToString() =>
             Base?.ToString() ??
             Query?.ToString() ??
-            IndexSettings?.ToString() 
+            IndexSettings?.ToString() ??
+            RecommendSearchParamsVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -225,7 +289,7 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsBase && IsQuery && IsIndexSettings;
+            return IsBase && IsQuery && IsIndexSettings && IsRecommendSearchParamsVariant4;
         }
 
         /// <summary>
@@ -235,6 +299,7 @@ namespace Algolia.Recommend
             global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams, TResult>? @base = null,
             global::System.Func<global::Algolia.Recommend.SearchParamsQuery, TResult>? query = null,
             global::System.Func<global::Algolia.Recommend.RecommendIndexSettings?, TResult>? indexSettings = null,
+            global::System.Func<global::Algolia.Recommend.RecommendSearchParamsVariant4, TResult>? recommendSearchParamsVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -254,6 +319,10 @@ namespace Algolia.Recommend
             {
                 return indexSettings(IndexSettings!);
             }
+            else if (IsRecommendSearchParamsVariant4 && recommendSearchParamsVariant4 != null)
+            {
+                return recommendSearchParamsVariant4(RecommendSearchParamsVariant4!);
+            }
 
             return default(TResult);
         }
@@ -267,6 +336,8 @@ namespace Algolia.Recommend
             global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
 
             global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
+
+            global::System.Action<global::Algolia.Recommend.RecommendSearchParamsVariant4>? recommendSearchParamsVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -285,6 +356,10 @@ namespace Algolia.Recommend
             else if (IsIndexSettings)
             {
                 indexSettings?.Invoke(IndexSettings!);
+            }
+            else if (IsRecommendSearchParamsVariant4)
+            {
+                recommendSearchParamsVariant4?.Invoke(RecommendSearchParamsVariant4!);
             }
         }
 
@@ -295,6 +370,7 @@ namespace Algolia.Recommend
             global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? @base = null,
             global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? query = null,
             global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? indexSettings = null,
+            global::System.Action<global::Algolia.Recommend.RecommendSearchParamsVariant4>? recommendSearchParamsVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -313,6 +389,10 @@ namespace Algolia.Recommend
             else if (IsIndexSettings)
             {
                 indexSettings?.Invoke(IndexSettings!);
+            }
+            else if (IsRecommendSearchParamsVariant4)
+            {
+                recommendSearchParamsVariant4?.Invoke(RecommendSearchParamsVariant4!);
             }
         }
 
@@ -329,6 +409,8 @@ namespace Algolia.Recommend
                 typeof(global::Algolia.Recommend.SearchParamsQuery),
                 IndexSettings,
                 typeof(global::Algolia.Recommend.RecommendIndexSettings),
+                RecommendSearchParamsVariant4,
+                typeof(global::Algolia.Recommend.RecommendSearchParamsVariant4),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -347,7 +429,8 @@ namespace Algolia.Recommend
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendSearchParams?>.Default.Equals(Base, other.Base) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SearchParamsQuery?>.Default.Equals(Query, other.Query) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendIndexSettings?>.Default.Equals(IndexSettings, other.IndexSettings) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendIndexSettings?>.Default.Equals(IndexSettings, other.IndexSettings) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendSearchParamsVariant4?>.Default.Equals(RecommendSearchParamsVariant4, other.RecommendSearchParamsVariant4) 
                 ;
         }
 

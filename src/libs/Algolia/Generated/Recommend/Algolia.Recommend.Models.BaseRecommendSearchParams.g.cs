@@ -48,21 +48,6 @@ namespace Algolia.Recommend
         public string? Filters { get; set; }
 
         /// <summary>
-        /// Filter the search by facet values, so that only records with the same facet values are retrieved.<br/>
-        /// **Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**<br/>
-        /// - `[filter1, filter2]` is interpreted as `filter1 AND filter2`.<br/>
-        /// - `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.<br/>
-        /// - `facet:-value` is interpreted as `NOT facet:value`.<br/>
-        /// While it's best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:<br/>
-        /// `facet:\-value`.<br/>
-        /// Example: [[category:Book, category:-Movie], author:John Doe]
-        /// </summary>
-        /// <example>[[category:Book, category:-Movie], author:John Doe]</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("facetFilters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.FacetFiltersJsonConverter))]
-        public global::Algolia.Recommend.FacetFilters? FacetFilters { get; set; }
-
-        /// <summary>
         /// Filters to promote or demote records in the search results.<br/>
         /// Optional filters work like facet filters, but they don't exclude records from the search results.<br/>
         /// Records that match the optional filter rank before records that don't match.<br/>
@@ -290,13 +275,6 @@ namespace Algolia.Recommend
         public bool? PercentileComputation { get; set; }
 
         /// <summary>
-        /// Whether to enable A/B testing for this search.<br/>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enableABTest")]
-        public bool? EnableABTest { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -335,16 +313,6 @@ namespace Algolia.Recommend
         /// If a facet attribute is an array, the filter matches if it matches at least one element of the array.<br/>
         /// For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).<br/>
         /// Example: (category:Book OR category:Ebook) AND _tags:published
-        /// </param>
-        /// <param name="facetFilters">
-        /// Filter the search by facet values, so that only records with the same facet values are retrieved.<br/>
-        /// **Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**<br/>
-        /// - `[filter1, filter2]` is interpreted as `filter1 AND filter2`.<br/>
-        /// - `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.<br/>
-        /// - `facet:-value` is interpreted as `NOT facet:value`.<br/>
-        /// While it's best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:<br/>
-        /// `facet:\-value`.<br/>
-        /// Example: [[category:Book, category:-Movie], author:John Doe]
         /// </param>
         /// <param name="optionalFilters">
         /// Filters to promote or demote records in the search results.<br/>
@@ -484,17 +452,12 @@ namespace Algolia.Recommend
         /// Whether to include this search when calculating processing-time percentiles.<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="enableABTest">
-        /// Whether to enable A/B testing for this search.<br/>
-        /// Default Value: true
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BaseRecommendSearchParams(
             string? similarQuery,
             string? filters,
-            global::Algolia.Recommend.FacetFilters? facetFilters,
             global::Algolia.Recommend.OptionalFilters? optionalFilters,
             global::Algolia.Recommend.NumericFilters? numericFilters,
             global::Algolia.Recommend.TagFilters? tagFilters,
@@ -518,12 +481,10 @@ namespace Algolia.Recommend
             bool? clickAnalytics,
             bool? analytics,
             global::System.Collections.Generic.IList<string>? analyticsTags,
-            bool? percentileComputation,
-            bool? enableABTest)
+            bool? percentileComputation)
         {
             this.SimilarQuery = similarQuery;
             this.Filters = filters;
-            this.FacetFilters = facetFilters;
             this.OptionalFilters = optionalFilters;
             this.NumericFilters = numericFilters;
             this.TagFilters = tagFilters;
@@ -548,7 +509,6 @@ namespace Algolia.Recommend
             this.Analytics = analytics;
             this.AnalyticsTags = analyticsTags;
             this.PercentileComputation = percentileComputation;
-            this.EnableABTest = enableABTest;
         }
 
         /// <summary>

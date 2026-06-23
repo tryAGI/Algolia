@@ -26,7 +26,7 @@ namespace Algolia.Recommend
         public required string ObjectID { get; set; }
 
         /// <summary>
-        /// 
+        /// Search parameters to use for a fallback request if there aren't enough recommendations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fallbackParameters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.FallbackParamsJsonConverter))]
@@ -49,7 +49,9 @@ namespace Algolia.Recommend
         /// Frequently bought together model.<br/>
         /// This model recommends items that have been purchased within 1 day with the item with the ID `objectID`.
         /// </param>
-        /// <param name="fallbackParameters"></param>
+        /// <param name="fallbackParameters">
+        /// Search parameters to use for a fallback request if there aren't enough recommendations.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

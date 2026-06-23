@@ -36,655 +36,647 @@ namespace Algolia.Recommend
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.FacetFilters? Type2 { get; set; }
+        public global::Algolia.Recommend.OptionalFilters? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.FacetFilters>? Type3 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.OptionalFilters? Type4 { get; set; }
+        public global::Algolia.Recommend.NumericFilters? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters>? Type5 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.NumericFilters? Type6 { get; set; }
+        public global::Algolia.Recommend.TagFilters? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters>? Type7 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TagFilters? Type8 { get; set; }
+        public bool? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>? Type9 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type10 { get; set; }
+        public global::Algolia.Recommend.AroundRadiusAll? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type11 { get; set; }
+        public global::Algolia.Recommend.AroundRadius? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AroundRadiusAll? Type12 { get; set; }
+        public int? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AroundRadius? Type13 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type14 { get; set; }
+        public global::Algolia.Recommend.AroundPrecisionFromValueItem? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem>? Type15 { get; set; }
+        public global::Algolia.Recommend.AroundPrecision? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AroundPrecisionFromValueItem? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AroundPrecision? Type17 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type18 { get; set; }
+        public double? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type19 { get; set; }
+        public global::Algolia.Recommend.InsideBoundingBox? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type20 { get; set; }
+        public object? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.InsideBoundingBox? Type21 { get; set; }
+        public global::Algolia.Recommend.SupportedLanguage? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type22 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SupportedLanguage? Type23 { get; set; }
+        public global::Algolia.Recommend.BaseRecommendSearchParams? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? Type24 { get; set; }
+        public global::Algolia.Recommend.SearchParamsQuery? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendSearchParams? Type25 { get; set; }
+        public global::Algolia.Recommend.UserData? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SearchParamsQuery? Type26 { get; set; }
+        public global::Algolia.Recommend.BaseIndexSettings? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.UserData? Type27 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, string>>? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseIndexSettings? Type28 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, string>>? Type29 { get; set; }
+        public global::Algolia.Recommend.TypoToleranceEnum? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type30 { get; set; }
+        public global::Algolia.Recommend.TypoTolerance? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TypoToleranceEnum? Type31 { get; set; }
+        public global::Algolia.Recommend.BooleanString? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TypoTolerance? Type32 { get; set; }
+        public global::Algolia.Recommend.IgnorePlurals? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BooleanString? Type33 { get; set; }
+        public global::Algolia.Recommend.RemoveStopWords? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.IgnorePlurals? Type34 { get; set; }
+        public global::Algolia.Recommend.QueryType? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RemoveStopWords? Type35 { get; set; }
+        public global::Algolia.Recommend.RemoveWordsIfNoResults? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.QueryType? Type36 { get; set; }
+        public global::Algolia.Recommend.OptionalWords? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RemoveWordsIfNoResults? Type37 { get; set; }
+        public global::Algolia.Recommend.ExactOnSingleWordQuery? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.OptionalWords? Type38 { get; set; }
+        public global::Algolia.Recommend.AlternativesAsExact? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.ExactOnSingleWordQuery? Type39 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AlternativesAsExact>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AlternativesAsExact? Type40 { get; set; }
+        public global::Algolia.Recommend.AdvancedSyntaxFeatures? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AlternativesAsExact>? Type41 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AdvancedSyntaxFeatures>? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AdvancedSyntaxFeatures? Type42 { get; set; }
+        public global::Algolia.Recommend.Distinct? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AdvancedSyntaxFeatures>? Type43 { get; set; }
+        public global::Algolia.Recommend.IndexSettingsFacets? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Distinct? Type44 { get; set; }
+        public global::Algolia.Recommend.SortRemainingBy? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.IndexSettingsFacets? Type45 { get; set; }
+        public global::Algolia.Recommend.Value? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SortRemainingBy? Type46 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.Value>? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Value? Type47 { get; set; }
+        public global::Algolia.Recommend.FacetOrdering? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.Value>? Type48 { get; set; }
+        public global::Algolia.Recommend.RedirectURL? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.FacetOrdering? Type49 { get; set; }
+        public global::Algolia.Recommend.BannerImageUrl? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RedirectURL? Type50 { get; set; }
+        public global::Algolia.Recommend.BannerImage? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BannerImageUrl? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.BannerImageUrl>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BannerImage? Type52 { get; set; }
+        public global::Algolia.Recommend.BannerLink? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.BannerImageUrl>? Type53 { get; set; }
+        public global::Algolia.Recommend.Banner? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BannerLink? Type54 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.Banner>? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Banner? Type55 { get; set; }
+        public global::Algolia.Recommend.Widgets? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.Banner>? Type56 { get; set; }
+        public global::Algolia.Recommend.RenderingContent? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Widgets? Type57 { get; set; }
+        public global::Algolia.Recommend.ReRankingApplyFilter? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RenderingContent? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.ReRankingApplyFilter? Type59 { get; set; }
+        public global::Algolia.Recommend.BaseRecommendIndexSettings? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>? Type60 { get; set; }
+        public global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendIndexSettings? Type61 { get; set; }
+        public global::Algolia.Recommend.RecommendIndexSettings? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? Type62 { get; set; }
+        public global::Algolia.Recommend.RecommendSearchParams? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendIndexSettings? Type63 { get; set; }
+        public global::Algolia.Recommend.RecommendSearchParamsVariant4? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendSearchParams? Type64 { get; set; }
+        public global::Algolia.Recommend.BaseRecommendRequest? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendRequest? Type65 { get; set; }
+        public global::Algolia.Recommend.FbtModel? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.FbtModel? Type66 { get; set; }
+        public global::Algolia.Recommend.FallbackParams? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.FallbackParams? Type67 { get; set; }
+        public global::Algolia.Recommend.FrequentlyBoughtTogether? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.FrequentlyBoughtTogether? Type68 { get; set; }
+        public global::Algolia.Recommend.BoughtTogetherQuery? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BoughtTogetherQuery? Type69 { get; set; }
+        public global::Algolia.Recommend.RelatedModel? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RelatedModel? Type70 { get; set; }
+        public global::Algolia.Recommend.RelatedProducts? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RelatedProducts? Type71 { get; set; }
+        public global::Algolia.Recommend.RelatedQuery? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RelatedQuery? Type72 { get; set; }
+        public global::Algolia.Recommend.TrendingItemsModel? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingItemsModel? Type73 { get; set; }
+        public global::Algolia.Recommend.TrendingItems? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingItems? Type74 { get; set; }
+        public global::Algolia.Recommend.TrendingItemsQuery? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingItemsQuery? Type75 { get; set; }
+        public global::Algolia.Recommend.TrendingFacetsModel? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacetsModel? Type76 { get; set; }
+        public global::Algolia.Recommend.TrendingFacets? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacets? Type77 { get; set; }
+        public global::Algolia.Recommend.TrendingFacetsQuery? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacetsQuery? Type78 { get; set; }
+        public global::Algolia.Recommend.LookingSimilarModel? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.LookingSimilarModel? Type79 { get; set; }
+        public global::Algolia.Recommend.LookingSimilar? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.LookingSimilar? Type80 { get; set; }
+        public global::Algolia.Recommend.LookingSimilarQuery? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.LookingSimilarQuery? Type81 { get; set; }
+        public global::Algolia.Recommend.RecommendationsRequest? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendationsRequest? Type82 { get; set; }
+        public global::Algolia.Recommend.RedirectRuleIndexMetadata? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RedirectRuleIndexMetadata? Type83 { get; set; }
+        public global::Algolia.Recommend.RedirectRuleIndexMetadataData? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RedirectRuleIndexMetadataData? Type84 { get; set; }
+        public global::Algolia.Recommend.BaseSearchResponse? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseSearchResponse? Type85 { get; set; }
+        public global::Algolia.Recommend.BaseSearchResponseExhaustive? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseSearchResponseExhaustive? Type86 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type87 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, int>>? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, int>>? Type88 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int>? Type89 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.BaseSearchResponseFacetsStats2>? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.BaseSearchResponseFacetsStats2>? Type90 { get; set; }
+        public global::Algolia.Recommend.BaseSearchResponseFacetsStats2? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseSearchResponseFacetsStats2? Type91 { get; set; }
+        public global::Algolia.Recommend.BaseSearchResponseRedirect? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.BaseSearchResponseRedirect? Type92 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RedirectRuleIndexMetadata>? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RedirectRuleIndexMetadata>? Type93 { get; set; }
+        public global::Algolia.Recommend.SearchPagination? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SearchPagination? Type94 { get; set; }
+        public global::Algolia.Recommend.MatchLevel? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.MatchLevel? Type95 { get; set; }
+        public global::Algolia.Recommend.HighlightResultOption? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.HighlightResultOption? Type96 { get; set; }
+        public global::Algolia.Recommend.HighlightResultMap? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.HighlightResultMap? Type97 { get; set; }
+        public global::Algolia.Recommend.HighlightResult? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.HighlightResult? Type98 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>? Type99 { get; set; }
+        public global::Algolia.Recommend.SnippetResultOption? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SnippetResultOption? Type100 { get; set; }
+        public global::Algolia.Recommend.SnippetResultMap? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SnippetResultMap? Type101 { get; set; }
+        public global::Algolia.Recommend.SnippetResult? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SnippetResult? Type102 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>? Type103 { get; set; }
+        public global::Algolia.Recommend.MatchedGeoLocation? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.MatchedGeoLocation? Type104 { get; set; }
+        public global::Algolia.Recommend.Personalization? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Personalization? Type105 { get; set; }
+        public global::Algolia.Recommend.RankingInfo? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RankingInfo? Type106 { get; set; }
+        public global::Algolia.Recommend.RecommendHit? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendHit? Type107 { get; set; }
+        public global::Algolia.Recommend.TrendingFacetHit? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacetHit? Type108 { get; set; }
+        public global::Algolia.Recommend.RecommendationsHit? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendationsHit? Type109 { get; set; }
+        public global::Algolia.Recommend.RecommendationsHits? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendationsHits? Type110 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsHit>? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsHit>? Type111 { get; set; }
+        public global::Algolia.Recommend.RecommendationsResults? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendationsResults? Type112 { get; set; }
+        public global::Algolia.Recommend.RecommendModels? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendModels? Type113 { get; set; }
+        public global::Algolia.Recommend.Condition? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Condition? Type114 { get; set; }
+        public global::Algolia.Recommend.HideConsequenceObject? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.HideConsequenceObject? Type115 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HideConsequenceObject>? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HideConsequenceObject>? Type116 { get; set; }
+        public global::Algolia.Recommend.PromoteConsequenceObject? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.PromoteConsequenceObject? Type117 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.PromoteConsequenceObject>? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.PromoteConsequenceObject>? Type118 { get; set; }
+        public global::Algolia.Recommend.AutoFacetFilter? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.AutoFacetFilter? Type119 { get; set; }
+        public global::Algolia.Recommend.ParamsConsequence? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.ParamsConsequence? Type120 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AutoFacetFilter>? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AutoFacetFilter>? Type121 { get; set; }
+        public global::Algolia.Recommend.Consequence? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.Consequence? Type122 { get; set; }
+        public global::Algolia.Recommend.TimeRange? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TimeRange? Type123 { get; set; }
+        public long? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type124 { get; set; }
+        public global::Algolia.Recommend.RecommendRule? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendRule? Type125 { get; set; }
+        public global::Algolia.Recommend.RecommendRuleMetadata? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendRuleMetadata? Type126 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TimeRange>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TimeRange>? Type127 { get; set; }
+        public global::Algolia.Recommend.TaskStatus? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.TaskStatus? Type128 { get; set; }
+        public global::Algolia.Recommend.RecommendUpdatedAtResponse? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendUpdatedAtResponse? Type129 { get; set; }
+        public global::Algolia.Recommend.GetRecommendationsRequest? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendationsRequest? Type130 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsRequest>? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsRequest>? Type131 { get; set; }
+        public global::Algolia.Recommend.SearchRecommendRulesRequest? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.SearchRecommendRulesRequest? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendRule>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendRule>? Type133 { get; set; }
+        public global::Algolia.Recommend.GetRecommendationsResponse? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendationsResponse? Type134 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsResults>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsResults>? Type135 { get; set; }
+        public global::Algolia.Recommend.DeleteRecommendRuleResponse? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.DeleteRecommendRuleResponse? Type136 { get; set; }
+        public global::Algolia.Recommend.GetRecommendStatusResponse? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendStatusResponse? Type137 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Algolia.Recommend.SearchRecommendRulesResponse? Type138 { get; set; }
+        public global::Algolia.Recommend.SearchRecommendRulesResponse? Type137 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.FacetFilters>? ListType0 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.OptionalFilters>? ListType0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.OptionalFilters>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.NumericFilters>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.NumericFilters>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.TagFilters>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.TagFilters>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<string>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<string>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.AroundPrecisionFromValueItem>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.AroundPrecisionFromValueItem>? ListType5 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType6 { get; set; }
+        public global::System.Collections.Generic.List<double>? ListType6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<double>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.SupportedLanguage>? ListType7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.SupportedLanguage>? ListType8 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.AlternativesAsExact>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.AlternativesAsExact>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.AdvancedSyntaxFeatures>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.AdvancedSyntaxFeatures>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.BannerImageUrl>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.BannerImageUrl>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.Banner>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.Banner>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.ReRankingApplyFilter>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.ReRankingApplyFilter>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<object>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<object>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.RedirectRuleIndexMetadata>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.RedirectRuleIndexMetadata>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.HighlightResult>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.HighlightResult>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.SnippetResult>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.SnippetResult>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsHit>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsHit>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.HideConsequenceObject>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.HideConsequenceObject>? ListType19 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.PromoteConsequenceObject>? ListType19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.PromoteConsequenceObject>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.AutoFacetFilter>? ListType20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.AutoFacetFilter>? ListType21 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.TimeRange>? ListType21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.TimeRange>? ListType22 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsRequest>? ListType22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsRequest>? ListType23 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendRule>? ListType23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendRule>? ListType24 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsResults>? ListType25 { get; set; }
+        public global::System.Collections.Generic.List<global::Algolia.Recommend.RecommendationsResults>? ListType24 { get; set; }
     }
 }
