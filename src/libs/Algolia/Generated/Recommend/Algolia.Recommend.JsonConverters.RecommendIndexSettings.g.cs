@@ -70,7 +70,6 @@ namespace Algolia.Recommend.JsonConverters
             if (__jsonProps.Contains("distinct")) __score1++;
             if (__jsonProps.Contains("enablePersonalization")) __score1++;
             if (__jsonProps.Contains("enableReRanking")) __score1++;
-            if (__jsonProps.Contains("enableRules")) __score1++;
             if (__jsonProps.Contains("exactOnSingleWordQuery")) __score1++;
             if (__jsonProps.Contains("highlightPostTag")) __score1++;
             if (__jsonProps.Contains("highlightPreTag")) __score1++;
@@ -82,7 +81,6 @@ namespace Algolia.Recommend.JsonConverters
             if (__jsonProps.Contains("optionalWords")) __score1++;
             if (__jsonProps.Contains("queryLanguages")) __score1++;
             if (__jsonProps.Contains("queryType")) __score1++;
-            if (__jsonProps.Contains("ranking")) __score1++;
             if (__jsonProps.Contains("reRankingApplyFilter")) __score1++;
             if (__jsonProps.Contains("relevancyStrictness")) __score1++;
             if (__jsonProps.Contains("removeStopWords")) __score1++;

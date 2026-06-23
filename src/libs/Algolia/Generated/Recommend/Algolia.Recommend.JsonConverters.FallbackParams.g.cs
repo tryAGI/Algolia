@@ -15,7 +15,6 @@ namespace Algolia.Recommend.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
             var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
@@ -24,48 +23,58 @@ namespace Algolia.Recommend.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+
                 }
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendSearchParams), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
+            if (__jsonProps.Contains("analytics")) __score0++;
+            if (__jsonProps.Contains("analyticsTags")) __score0++;
+            if (__jsonProps.Contains("aroundLatLng")) __score0++;
+            if (__jsonProps.Contains("aroundLatLngViaIP")) __score0++;
+            if (__jsonProps.Contains("aroundPrecision")) __score0++;
+            if (__jsonProps.Contains("aroundRadius")) __score0++;
+            if (__jsonProps.Contains("clickAnalytics")) __score0++;
+            if (__jsonProps.Contains("facetingAfterDistinct")) __score0++;
+            if (__jsonProps.Contains("facets")) __score0++;
+            if (__jsonProps.Contains("filters")) __score0++;
+            if (__jsonProps.Contains("getRankingInfo")) __score0++;
+            if (__jsonProps.Contains("insideBoundingBox")) __score0++;
+            if (__jsonProps.Contains("insidePolygon")) __score0++;
+            if (__jsonProps.Contains("minimumAroundRadius")) __score0++;
+            if (__jsonProps.Contains("naturalLanguages")) __score0++;
+            if (__jsonProps.Contains("numericFilters")) __score0++;
+            if (__jsonProps.Contains("optionalFilters")) __score0++;
+            if (__jsonProps.Contains("percentileComputation")) __score0++;
+            if (__jsonProps.Contains("personalizationImpact")) __score0++;
+            if (__jsonProps.Contains("restrictSearchableAttributes")) __score0++;
+            if (__jsonProps.Contains("ruleContexts")) __score0++;
+            if (__jsonProps.Contains("similarQuery")) __score0++;
+            if (__jsonProps.Contains("sumOrFiltersScores")) __score0++;
+            if (__jsonProps.Contains("synonyms")) __score0++;
+            if (__jsonProps.Contains("tagFilters")) __score0++;
+            if (__jsonProps.Contains("userToken")) __score0++;
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
+            if (__jsonProps.Contains("query")) __score1++;
+            var __score2 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::Algolia.Recommend.RecommendSearchParams? searchParametersAsObject = default;
-            object? fallbackParamsVariant2 = default;
+            global::Algolia.Recommend.BaseRecommendSearchParams? baseRecommendSearch = default;
+            global::Algolia.Recommend.SearchParamsQuery? searchQuery = default;
+            global::Algolia.Recommend.RecommendIndexSettings? recommendIndexSettings = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
                 {
                     try
                     {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendSearchParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendSearchParams).Name}");
-                        searchParametersAsObject = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendSearchParams> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendSearchParams).Name}");
+                        baseRecommendSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,15 +83,28 @@ namespace Algolia.Recommend.JsonConverters
                     {
                     }
                 }
-
                 else if (__bestIndex == 1)
                 {
                     try
                     {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        fallbackParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchParamsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchParamsQuery> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchParamsQuery).Name}");
+                        searchQuery = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
+                        recommendIndexSettings = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +115,14 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (searchParametersAsObject == null && fallbackParamsVariant2 == null)
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendSearchParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendSearchParams).Name}");
-                    searchParametersAsObject = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendSearchParams> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendSearchParams).Name}");
+                    baseRecommendSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,14 +132,31 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (searchParametersAsObject == null && fallbackParamsVariant2 == null)
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    fallbackParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchParamsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchParamsQuery> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchParamsQuery).Name}");
+                    searchQuery = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
+                    recommendIndexSettings = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,9 +167,11 @@ namespace Algolia.Recommend.JsonConverters
             }
 
             var __value = new global::Algolia.Recommend.FallbackParams(
-                searchParametersAsObject,
+                baseRecommendSearch,
 
-                fallbackParamsVariant2
+                searchQuery,
+
+                recommendIndexSettings
                 );
 
             return __value;
@@ -145,17 +186,23 @@ namespace Algolia.Recommend.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsSearchParametersAsObject)
+            if (value.IsBaseRecommendSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendSearchParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendSearchParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchParametersAsObject!.Value, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendSearchParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendSearchParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseRecommendSearch!, typeInfo);
             }
-            else if (value.IsFallbackParamsVariant2)
+            else if (value.IsSearchQuery)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FallbackParamsVariant2!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchParamsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchParamsQuery?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchParamsQuery).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchQuery!, typeInfo);
+            }
+            else if (value.IsRecommendIndexSettings)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RecommendIndexSettings!.Value, typeInfo);
             }
         }
     }

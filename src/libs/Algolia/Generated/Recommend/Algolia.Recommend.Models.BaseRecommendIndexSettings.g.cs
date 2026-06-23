@@ -23,25 +23,6 @@ namespace Algolia.Recommend
         public global::System.Collections.Generic.IList<string>? AttributesToRetrieve { get; set; }
 
         /// <summary>
-        /// Determines the order in which Algolia returns your results.<br/>
-        /// By default, each entry corresponds to a [ranking criteria](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria).<br/>
-        /// The tie-breaking algorithm sequentially applies each criterion in the order they're specified.<br/>
-        /// If you configure a replica index for [sorting by an attribute](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-by-attribute),<br/>
-        /// you put the sorting attribute at the top of the list.<br/>
-        /// **Modifiers**<br/>
-        /// - `asc("ATTRIBUTE")`.<br/>
-        ///   Sort the index by the values of an attribute, in ascending order.<br/>
-        /// - `desc("ATTRIBUTE")`.<br/>
-        ///   Sort the index by the values of an attribute, in descending order.<br/>
-        /// Before you modify the default setting,<br/>
-        /// test your changes in the dashboard,<br/>
-        /// and by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).<br/>
-        /// Default Value: [typo, geo, words, filters, proximity, attribute, exact, custom]
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ranking")]
-        public global::System.Collections.Generic.IList<string>? Ranking { get; set; }
-
-        /// <summary>
         /// Relevancy threshold below which less relevant results aren't included in the results<br/>
         /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
         /// Use this setting to strike a balance between the relevance and number of returned results.<br/>
@@ -205,13 +186,6 @@ namespace Algolia.Recommend
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("decompoundQuery")]
         public bool? DecompoundQuery { get; set; }
-
-        /// <summary>
-        /// Whether to enable rules.<br/>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enableRules")]
-        public bool? EnableRules { get; set; }
 
         /// <summary>
         /// Whether to enable Personalization.<br/>
@@ -470,22 +444,6 @@ namespace Algolia.Recommend
         /// Default Value: [*]<br/>
         /// Example: [author, title, content]
         /// </param>
-        /// <param name="ranking">
-        /// Determines the order in which Algolia returns your results.<br/>
-        /// By default, each entry corresponds to a [ranking criteria](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria).<br/>
-        /// The tie-breaking algorithm sequentially applies each criterion in the order they're specified.<br/>
-        /// If you configure a replica index for [sorting by an attribute](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-by-attribute),<br/>
-        /// you put the sorting attribute at the top of the list.<br/>
-        /// **Modifiers**<br/>
-        /// - `asc("ATTRIBUTE")`.<br/>
-        ///   Sort the index by the values of an attribute, in ascending order.<br/>
-        /// - `desc("ATTRIBUTE")`.<br/>
-        ///   Sort the index by the values of an attribute, in descending order.<br/>
-        /// Before you modify the default setting,<br/>
-        /// test your changes in the dashboard,<br/>
-        /// and by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).<br/>
-        /// Default Value: [typo, geo, words, filters, proximity, attribute, exact, custom]
-        /// </param>
         /// <param name="relevancyStrictness">
         /// Relevancy threshold below which less relevant results aren't included in the results<br/>
         /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
@@ -591,10 +549,6 @@ namespace Algolia.Recommend
         /// Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.<br/>
         /// Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).<br/>
         /// For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="enableRules">
-        /// Whether to enable rules.<br/>
         /// Default Value: true
         /// </param>
         /// <param name="enablePersonalization">
@@ -772,7 +726,6 @@ namespace Algolia.Recommend
 #endif
         public BaseRecommendIndexSettings(
             global::System.Collections.Generic.IList<string>? attributesToRetrieve,
-            global::System.Collections.Generic.IList<string>? ranking,
             int? relevancyStrictness,
             global::System.Collections.Generic.IList<string>? attributesToHighlight,
             global::System.Collections.Generic.IList<string>? attributesToSnippet,
@@ -789,7 +742,6 @@ namespace Algolia.Recommend
             global::Algolia.Recommend.RemoveStopWords? removeStopWords,
             global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? queryLanguages,
             bool? decompoundQuery,
-            bool? enableRules,
             bool? enablePersonalization,
             global::Algolia.Recommend.QueryType? queryType,
             global::Algolia.Recommend.RemoveWordsIfNoResults? removeWordsIfNoResults,
@@ -811,7 +763,6 @@ namespace Algolia.Recommend
             global::Algolia.Recommend.OneOf<global::Algolia.Recommend.ReRankingApplyFilter?, object>? reRankingApplyFilter)
         {
             this.AttributesToRetrieve = attributesToRetrieve;
-            this.Ranking = ranking;
             this.RelevancyStrictness = relevancyStrictness;
             this.AttributesToHighlight = attributesToHighlight;
             this.AttributesToSnippet = attributesToSnippet;
@@ -828,7 +779,6 @@ namespace Algolia.Recommend
             this.RemoveStopWords = removeStopWords;
             this.QueryLanguages = queryLanguages;
             this.DecompoundQuery = decompoundQuery;
-            this.EnableRules = enableRules;
             this.EnablePersonalization = enablePersonalization;
             this.QueryType = queryType;
             this.RemoveWordsIfNoResults = removeWordsIfNoResults;

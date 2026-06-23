@@ -5,132 +5,219 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    /// Search parameters to use for a fallback request if there aren't enough recommendations.
     /// </summary>
     public readonly partial struct FallbackParams : global::System.IEquatable<FallbackParams>
     {
         /// <summary>
-        /// Search parameters for filtering the recommendations.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.RecommendSearchParams? SearchParametersAsObject { get; init; }
+        public global::Algolia.Recommend.BaseRecommendSearchParams? BaseRecommendSearch { get; init; }
 #else
-        public global::Algolia.Recommend.RecommendSearchParams? SearchParametersAsObject { get; }
+        public global::Algolia.Recommend.BaseRecommendSearchParams? BaseRecommendSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseRecommendSearch))]
 #endif
-        public bool IsSearchParametersAsObject => SearchParametersAsObject != null;
+        public bool IsBaseRecommendSearch => BaseRecommendSearch != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickSearchParametersAsObject(
+        public bool TryPickBaseRecommendSearch(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Algolia.Recommend.RecommendSearchParams? value)
+            out global::Algolia.Recommend.BaseRecommendSearchParams? value)
         {
-            value = SearchParametersAsObject;
-            return IsSearchParametersAsObject;
+            value = BaseRecommendSearch;
+            return IsBaseRecommendSearch;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::Algolia.Recommend.RecommendSearchParams PickSearchParametersAsObject() => IsSearchParametersAsObject
-            ? SearchParametersAsObject!.Value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
+        public global::Algolia.Recommend.BaseRecommendSearchParams PickBaseRecommendSearch() => IsBaseRecommendSearch
+            ? BaseRecommendSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// Search parameters to use for a fallback request if there aren't enough recommendations.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? FallbackParamsVariant2 { get; init; }
+        public global::Algolia.Recommend.SearchParamsQuery? SearchQuery { get; init; }
 #else
-        public object? FallbackParamsVariant2 { get; }
+        public global::Algolia.Recommend.SearchParamsQuery? SearchQuery { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FallbackParamsVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQuery))]
 #endif
-        public bool IsFallbackParamsVariant2 => FallbackParamsVariant2 != null;
+        public bool IsSearchQuery => SearchQuery != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickFallbackParamsVariant2(
+        public bool TryPickSearchQuery(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out object? value)
+            out global::Algolia.Recommend.SearchParamsQuery? value)
         {
-            value = FallbackParamsVariant2;
-            return IsFallbackParamsVariant2;
+            value = SearchQuery;
+            return IsSearchQuery;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public object PickFallbackParamsVariant2() => IsFallbackParamsVariant2
-            ? FallbackParamsVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackParamsVariant2' but the value was {ToString()}.");
+        public global::Algolia.Recommend.SearchParamsQuery PickSearchQuery() => IsSearchQuery
+            ? SearchQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchQuery' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// Index settings.
         /// </summary>
-        public static implicit operator FallbackParams(global::Algolia.Recommend.RecommendSearchParams value) => new FallbackParams((global::Algolia.Recommend.RecommendSearchParams?)value);
+#if NET6_0_OR_GREATER
+        public global::Algolia.Recommend.RecommendIndexSettings? RecommendIndexSettings { get; init; }
+#else
+        public global::Algolia.Recommend.RecommendIndexSettings? RecommendIndexSettings { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.RecommendSearchParams?(FallbackParams @this) => @this.SearchParametersAsObject;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendIndexSettings))]
+#endif
+        public bool IsRecommendIndexSettings => RecommendIndexSettings != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public FallbackParams(global::Algolia.Recommend.RecommendSearchParams? value)
+        public bool TryPickRecommendIndexSettings(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.Recommend.RecommendIndexSettings? value)
         {
-            SearchParametersAsObject = value;
+            value = RecommendIndexSettings;
+            return IsRecommendIndexSettings;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static FallbackParams FromSearchParametersAsObject(global::Algolia.Recommend.RecommendSearchParams? value) => new FallbackParams(value);
+        public global::Algolia.Recommend.RecommendIndexSettings PickRecommendIndexSettings() => IsRecommendIndexSettings
+            ? RecommendIndexSettings!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendIndexSettings' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator FallbackParams(global::Algolia.Recommend.BaseRecommendSearchParams value) => new FallbackParams((global::Algolia.Recommend.BaseRecommendSearchParams?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Algolia.Recommend.BaseRecommendSearchParams?(FallbackParams @this) => @this.BaseRecommendSearch;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FallbackParams(global::Algolia.Recommend.BaseRecommendSearchParams? value)
+        {
+            BaseRecommendSearch = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FallbackParams FromBaseRecommendSearch(global::Algolia.Recommend.BaseRecommendSearchParams? value) => new FallbackParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator FallbackParams(global::Algolia.Recommend.SearchParamsQuery value) => new FallbackParams((global::Algolia.Recommend.SearchParamsQuery?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Algolia.Recommend.SearchParamsQuery?(FallbackParams @this) => @this.SearchQuery;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FallbackParams(global::Algolia.Recommend.SearchParamsQuery? value)
+        {
+            SearchQuery = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FallbackParams FromSearchQuery(global::Algolia.Recommend.SearchParamsQuery? value) => new FallbackParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator FallbackParams(global::Algolia.Recommend.RecommendIndexSettings value) => new FallbackParams((global::Algolia.Recommend.RecommendIndexSettings?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Algolia.Recommend.RecommendIndexSettings?(FallbackParams @this) => @this.RecommendIndexSettings;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FallbackParams(global::Algolia.Recommend.RecommendIndexSettings? value)
+        {
+            RecommendIndexSettings = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FallbackParams FromRecommendIndexSettings(global::Algolia.Recommend.RecommendIndexSettings? value) => new FallbackParams(value);
 
         /// <summary>
         /// 
         /// </summary>
         public FallbackParams(
-            global::Algolia.Recommend.RecommendSearchParams? searchParametersAsObject,
-            object? fallbackParamsVariant2
+            global::Algolia.Recommend.BaseRecommendSearchParams? baseRecommendSearch,
+            global::Algolia.Recommend.SearchParamsQuery? searchQuery,
+            global::Algolia.Recommend.RecommendIndexSettings? recommendIndexSettings
             )
         {
-            SearchParametersAsObject = searchParametersAsObject;
-            FallbackParamsVariant2 = fallbackParamsVariant2;
+            BaseRecommendSearch = baseRecommendSearch;
+            SearchQuery = searchQuery;
+            RecommendIndexSettings = recommendIndexSettings;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            FallbackParamsVariant2 as object ??
-            SearchParametersAsObject as object 
+            RecommendIndexSettings as object ??
+            SearchQuery as object ??
+            BaseRecommendSearch as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            SearchParametersAsObject?.ToString() ??
-            FallbackParamsVariant2?.ToString() 
+            BaseRecommendSearch?.ToString() ??
+            SearchQuery?.ToString() ??
+            RecommendIndexSettings?.ToString() 
             ;
 
         /// <summary>
@@ -138,15 +225,16 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsSearchParametersAsObject && IsFallbackParamsVariant2;
+            return IsBaseRecommendSearch && IsSearchQuery && IsRecommendIndexSettings;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Algolia.Recommend.RecommendSearchParams?, TResult>? searchParametersAsObject = null,
-            global::System.Func<object, TResult>? fallbackParamsVariant2 = null,
+            global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams, TResult>? baseRecommendSearch = null,
+            global::System.Func<global::Algolia.Recommend.SearchParamsQuery, TResult>? searchQuery = null,
+            global::System.Func<global::Algolia.Recommend.RecommendIndexSettings?, TResult>? recommendIndexSettings = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +242,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSearchParametersAsObject && searchParametersAsObject != null)
+            if (IsBaseRecommendSearch && baseRecommendSearch != null)
             {
-                return searchParametersAsObject(SearchParametersAsObject!);
+                return baseRecommendSearch(BaseRecommendSearch!);
             }
-            else if (IsFallbackParamsVariant2 && fallbackParamsVariant2 != null)
+            else if (IsSearchQuery && searchQuery != null)
             {
-                return fallbackParamsVariant2(FallbackParamsVariant2!);
+                return searchQuery(SearchQuery!);
+            }
+            else if (IsRecommendIndexSettings && recommendIndexSettings != null)
+            {
+                return recommendIndexSettings(RecommendIndexSettings!);
             }
 
             return default(TResult);
@@ -170,9 +262,11 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Algolia.Recommend.RecommendSearchParams?>? searchParametersAsObject = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? baseRecommendSearch = null,
 
-            global::System.Action<object>? fallbackParamsVariant2 = null,
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? searchQuery = null,
+
+            global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? recommendIndexSettings = null,
             bool validate = true)
         {
             if (validate)
@@ -180,13 +274,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSearchParametersAsObject)
+            if (IsBaseRecommendSearch)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                baseRecommendSearch?.Invoke(BaseRecommendSearch!);
             }
-            else if (IsFallbackParamsVariant2)
+            else if (IsSearchQuery)
             {
-                fallbackParamsVariant2?.Invoke(FallbackParamsVariant2!);
+                searchQuery?.Invoke(SearchQuery!);
+            }
+            else if (IsRecommendIndexSettings)
+            {
+                recommendIndexSettings?.Invoke(RecommendIndexSettings!);
             }
         }
 
@@ -194,8 +292,9 @@ namespace Algolia.Recommend
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::Algolia.Recommend.RecommendSearchParams?>? searchParametersAsObject = null,
-            global::System.Action<object>? fallbackParamsVariant2 = null,
+            global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? baseRecommendSearch = null,
+            global::System.Action<global::Algolia.Recommend.SearchParamsQuery>? searchQuery = null,
+            global::System.Action<global::Algolia.Recommend.RecommendIndexSettings?>? recommendIndexSettings = null,
             bool validate = true)
         {
             if (validate)
@@ -203,13 +302,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSearchParametersAsObject)
+            if (IsBaseRecommendSearch)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                baseRecommendSearch?.Invoke(BaseRecommendSearch!);
             }
-            else if (IsFallbackParamsVariant2)
+            else if (IsSearchQuery)
             {
-                fallbackParamsVariant2?.Invoke(FallbackParamsVariant2!);
+                searchQuery?.Invoke(SearchQuery!);
+            }
+            else if (IsRecommendIndexSettings)
+            {
+                recommendIndexSettings?.Invoke(RecommendIndexSettings!);
             }
         }
 
@@ -220,10 +323,12 @@ namespace Algolia.Recommend
         {
             var fields = new object?[]
             {
-                SearchParametersAsObject,
-                typeof(global::Algolia.Recommend.RecommendSearchParams),
-                FallbackParamsVariant2,
-                typeof(object),
+                BaseRecommendSearch,
+                typeof(global::Algolia.Recommend.BaseRecommendSearchParams),
+                SearchQuery,
+                typeof(global::Algolia.Recommend.SearchParamsQuery),
+                RecommendIndexSettings,
+                typeof(global::Algolia.Recommend.RecommendIndexSettings),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -240,8 +345,9 @@ namespace Algolia.Recommend
         public bool Equals(FallbackParams other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendSearchParams?>.Default.Equals(SearchParametersAsObject, other.SearchParametersAsObject) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FallbackParamsVariant2, other.FallbackParamsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendSearchParams?>.Default.Equals(BaseRecommendSearch, other.BaseRecommendSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SearchParamsQuery?>.Default.Equals(SearchQuery, other.SearchQuery) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendIndexSettings?>.Default.Equals(RecommendIndexSettings, other.RecommendIndexSettings) 
                 ;
         }
 
