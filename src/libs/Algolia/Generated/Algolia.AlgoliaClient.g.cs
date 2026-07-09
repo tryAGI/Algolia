@@ -46,6 +46,14 @@ namespace Algolia
     /// Since JSON doesn't guarantee any specific ordering, don't rely on the order of attributes in the API response.<br/>
     /// Successful responses return `2xx` statuses. Client errors return `4xx` statuses. Server errors return `5xx` statuses.<br/>
     /// Error responses have a `message` property with more information.<br/>
+    /// ## Request identifiers<br/>
+    /// Every response includes a `Correlation-ID` header that identifies the request in Algolia's logs.<br/>
+    /// When contacting the Algolia support team about a specific request, include this identifier in your ticket.<br/>
+    /// To tag requests with your own identifier, send a `Request-ID` header with exactly 11 alphanumeric characters.<br/>
+    /// Clusters that support it embed the identifier at the end of the `Correlation-ID`,<br/>
+    /// so all attempts of a retried operation can be found by searching for those characters.<br/>
+    /// Headers that don't match the expected format are ignored.<br/>
+    /// Don't use the `Correlation-ID` as a unique key: retried requests may receive the same identifier.<br/>
     /// ## Version<br/>
     /// The current version of the Search API is version 1, indicated by the `/1/` in each endpoint's URL.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
