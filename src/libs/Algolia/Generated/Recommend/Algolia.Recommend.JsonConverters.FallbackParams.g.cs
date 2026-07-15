@@ -57,15 +57,19 @@ namespace Algolia.Recommend.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("query")) __score1++;
             var __score2 = 0;
+            var __score3 = 0;
+            if (__jsonProps.Contains("facetFilters")) __score3++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
+            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::Algolia.Recommend.BaseRecommendSearchParams? baseRecommendSearch = default;
             global::Algolia.Recommend.SearchParamsQuery? searchQuery = default;
             global::Algolia.Recommend.RecommendIndexSettings? recommendIndexSettings = default;
+            global::Algolia.Recommend.FallbackParamsVariant4? fallbackParamsVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -113,9 +117,24 @@ namespace Algolia.Recommend.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 3)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.FallbackParamsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.FallbackParamsVariant4> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.FallbackParamsVariant4).Name}");
+                        fallbackParamsVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null && fallbackParamsVariant4 == null)
             {
                 try
                 {
@@ -132,7 +151,7 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null && fallbackParamsVariant4 == null)
             {
                 try
                 {
@@ -149,7 +168,7 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null)
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null && fallbackParamsVariant4 == null)
             {
                 try
                 {
@@ -166,12 +185,31 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
+            if (baseRecommendSearch == null && searchQuery == null && recommendIndexSettings == null && fallbackParamsVariant4 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.FallbackParamsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.FallbackParamsVariant4> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.FallbackParamsVariant4).Name}");
+                    fallbackParamsVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
             var __value = new global::Algolia.Recommend.FallbackParams(
                 baseRecommendSearch,
 
                 searchQuery,
 
-                recommendIndexSettings
+                recommendIndexSettings,
+
+                fallbackParamsVariant4
                 );
 
             return __value;
@@ -203,6 +241,12 @@ namespace Algolia.Recommend.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RecommendIndexSettings!.Value, typeInfo);
+            }
+            else if (value.IsFallbackParamsVariant4)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.FallbackParamsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.FallbackParamsVariant4?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.FallbackParamsVariant4).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FallbackParamsVariant4!, typeInfo);
             }
         }
     }
