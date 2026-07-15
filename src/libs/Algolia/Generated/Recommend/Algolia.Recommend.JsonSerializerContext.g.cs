@@ -113,6 +113,8 @@ namespace Algolia.Recommend
 
             typeof(global::Algolia.Recommend.JsonConverters.RecommendSearchParamsJsonConverter),
 
+            typeof(global::Algolia.Recommend.JsonConverters.FacetFiltersJsonConverter),
+
             typeof(global::Algolia.Recommend.JsonConverters.FallbackParamsJsonConverter),
 
             typeof(global::Algolia.Recommend.JsonConverters.BoughtTogetherQueryJsonConverter),
@@ -206,7 +208,10 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendSearchParamsVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BaseRecommendRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FbtModel), TypeInfoPropertyName = "FbtModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FacetFilters), TypeInfoPropertyName = "FacetFilters2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.FacetFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FallbackParams), TypeInfoPropertyName = "FallbackParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FallbackParamsVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FrequentlyBoughtTogether))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BoughtTogetherQuery), TypeInfoPropertyName = "BoughtTogetherQuery2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RelatedModel), TypeInfoPropertyName = "RelatedModel2")]
@@ -291,6 +296,7 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.BannerImageUrl>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.Banner>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.ReRankingApplyFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.FacetFilters>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.RedirectRuleIndexMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Recommend.HighlightResult>))]
