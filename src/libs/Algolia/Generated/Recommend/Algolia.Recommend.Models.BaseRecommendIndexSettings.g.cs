@@ -4,7 +4,7 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BaseRecommendIndexSettings
     {
@@ -419,7 +419,7 @@ namespace Algolia.Recommend
         public bool? EnableReRanking { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reRankingApplyFilter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.OneOfJsonConverter<global::Algolia.Recommend.ReRankingApplyFilter?, object>))]

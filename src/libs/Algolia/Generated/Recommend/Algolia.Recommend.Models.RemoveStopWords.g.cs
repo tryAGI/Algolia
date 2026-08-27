@@ -23,7 +23,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemoveStopWordsVariant1))]
@@ -31,7 +31,7 @@ namespace Algolia.Recommend
         public bool IsRemoveStopWordsVariant1 => RemoveStopWordsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRemoveStopWordsVariant1(
 #if NET6_0_OR_GREATER
@@ -44,7 +44,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickRemoveStopWordsVariant1() => IsRemoveStopWordsVariant1
             ? RemoveStopWordsVariant1!
@@ -62,7 +62,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemoveStopWordsVariant2))]
@@ -70,7 +70,7 @@ namespace Algolia.Recommend
         public bool IsRemoveStopWordsVariant2 => RemoveStopWordsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRemoveStopWordsVariant2(
 #if NET6_0_OR_GREATER
@@ -83,23 +83,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickRemoveStopWordsVariant2() => IsRemoveStopWordsVariant2
             ? RemoveStopWordsVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RemoveStopWordsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RemoveStopWords(bool value) => new RemoveStopWords((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(RemoveStopWords @this) => @this.RemoveStopWordsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RemoveStopWords(bool? value)
         {
@@ -107,12 +107,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RemoveStopWords FromRemoveStopWordsVariant2(bool? value) => new RemoveStopWords(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RemoveStopWords(
             global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? removeStopWordsVariant1,
@@ -124,23 +124,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RemoveStopWordsVariant2 as object ??
-            RemoveStopWordsVariant1 as object 
+            RemoveStopWordsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             RemoveStopWordsVariant1?.ToString() ??
-            RemoveStopWordsVariant2?.ToString().ToLowerInvariant() 
+            RemoveStopWordsVariant2?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -148,7 +148,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>, TResult>? removeStopWordsVariant1 = null,
@@ -173,7 +173,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>>? removeStopWordsVariant1 = null,
@@ -197,7 +197,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>>? removeStopWordsVariant1 = null,
@@ -220,7 +220,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -241,18 +241,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RemoveStopWords other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>?>.Default.Equals(RemoveStopWordsVariant1, other.RemoveStopWordsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(RemoveStopWordsVariant2, other.RemoveStopWordsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(RemoveStopWordsVariant2, other.RemoveStopWordsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RemoveStopWords obj1, RemoveStopWords obj2)
         {
@@ -260,7 +260,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RemoveStopWords obj1, RemoveStopWords obj2)
         {
@@ -268,7 +268,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -13,7 +13,7 @@ namespace Algolia
     public readonly partial struct AutomaticFacetFilters : global::System.IEquatable<AutomaticFacetFilters>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? AutomaticFacetFiltersVariant1 { get; init; }
@@ -22,7 +22,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutomaticFacetFiltersVariant1))]
@@ -30,7 +30,7 @@ namespace Algolia
         public bool IsAutomaticFacetFiltersVariant1 => AutomaticFacetFiltersVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutomaticFacetFiltersVariant1(
 #if NET6_0_OR_GREATER
@@ -43,14 +43,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter> PickAutomaticFacetFiltersVariant1() => IsAutomaticFacetFiltersVariant1
             ? AutomaticFacetFiltersVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AutomaticFacetFiltersVariant2 { get; init; }
@@ -59,7 +59,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutomaticFacetFiltersVariant2))]
@@ -67,7 +67,7 @@ namespace Algolia
         public bool IsAutomaticFacetFiltersVariant2 => AutomaticFacetFiltersVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutomaticFacetFiltersVariant2(
 #if NET6_0_OR_GREATER
@@ -80,14 +80,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickAutomaticFacetFiltersVariant2() => IsAutomaticFacetFiltersVariant2
             ? AutomaticFacetFiltersVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AutomaticFacetFilters(
             global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? automaticFacetFiltersVariant1,
@@ -99,23 +99,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AutomaticFacetFiltersVariant2 as object ??
-            AutomaticFacetFiltersVariant1 as object 
+            AutomaticFacetFiltersVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AutomaticFacetFiltersVariant1?.ToString() ??
-            AutomaticFacetFiltersVariant2?.ToString() 
+            AutomaticFacetFiltersVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -123,7 +123,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>, TResult>? automaticFacetFiltersVariant1 = null,
@@ -148,7 +148,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>>? automaticFacetFiltersVariant1 = null,
@@ -172,7 +172,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>>? automaticFacetFiltersVariant1 = null,
@@ -195,7 +195,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -216,18 +216,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AutomaticFacetFilters other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>?>.Default.Equals(AutomaticFacetFiltersVariant1, other.AutomaticFacetFiltersVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AutomaticFacetFiltersVariant2, other.AutomaticFacetFiltersVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AutomaticFacetFiltersVariant2, other.AutomaticFacetFiltersVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AutomaticFacetFilters obj1, AutomaticFacetFilters obj2)
         {
@@ -235,7 +235,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AutomaticFacetFilters obj1, AutomaticFacetFilters obj2)
         {
@@ -243,7 +243,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

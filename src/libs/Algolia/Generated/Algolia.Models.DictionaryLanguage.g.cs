@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DictionaryLanguage : global::System.IEquatable<DictionaryLanguage>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DictionaryLanguageVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsDictionaryLanguageVariant1 => DictionaryLanguageVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDictionaryLanguageVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.DictionaryLanguageVariant1 PickDictionaryLanguageVariant1() => IsDictionaryLanguageVariant1
             ? DictionaryLanguageVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DictionaryLanguageVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? DictionaryLanguageVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DictionaryLanguageVariant2))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsDictionaryLanguageVariant2 => DictionaryLanguageVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDictionaryLanguageVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickDictionaryLanguageVariant2() => IsDictionaryLanguageVariant2
             ? DictionaryLanguageVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DictionaryLanguageVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DictionaryLanguage(global::Algolia.DictionaryLanguageVariant1 value) => new DictionaryLanguage((global::Algolia.DictionaryLanguageVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.DictionaryLanguageVariant1?(DictionaryLanguage @this) => @this.DictionaryLanguageVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DictionaryLanguage(global::Algolia.DictionaryLanguageVariant1? value)
         {
@@ -101,12 +101,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DictionaryLanguage FromDictionaryLanguageVariant1(global::Algolia.DictionaryLanguageVariant1? value) => new DictionaryLanguage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DictionaryLanguage(
             global::Algolia.DictionaryLanguageVariant1? dictionaryLanguageVariant1,
@@ -118,23 +118,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DictionaryLanguageVariant2 as object ??
-            DictionaryLanguageVariant1 as object 
+            DictionaryLanguageVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             DictionaryLanguageVariant1?.ToString() ??
-            DictionaryLanguageVariant2?.ToString() 
+            DictionaryLanguageVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.DictionaryLanguageVariant1, TResult>? dictionaryLanguageVariant1 = null,
@@ -167,7 +167,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.DictionaryLanguageVariant1>? dictionaryLanguageVariant1 = null,
@@ -191,7 +191,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.DictionaryLanguageVariant1>? dictionaryLanguageVariant1 = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DictionaryLanguage other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.DictionaryLanguageVariant1?>.Default.Equals(DictionaryLanguageVariant1, other.DictionaryLanguageVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(DictionaryLanguageVariant2, other.DictionaryLanguageVariant2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(DictionaryLanguageVariant2, other.DictionaryLanguageVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DictionaryLanguage obj1, DictionaryLanguage obj2)
         {
@@ -254,7 +254,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DictionaryLanguage obj1, DictionaryLanguage obj2)
         {
@@ -262,7 +262,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

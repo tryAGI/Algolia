@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct HighlightResult : global::System.IEquatable<HighlightResult>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HighlightResultOption))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsHighlightResultOption => HighlightResultOption != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHighlightResultOption(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.HighlightResultOption PickHighlightResultOption() => IsHighlightResultOption
             ? HighlightResultOption!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HighlightResultMap))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsHighlightResultMap => HighlightResultMap != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHighlightResultMap(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.HighlightResultMap PickHighlightResultMap() => IsHighlightResultMap
             ? HighlightResultMap!
@@ -93,7 +93,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HighlightResultArray))]
@@ -101,7 +101,7 @@ namespace Algolia
         public bool IsHighlightResultArray => HighlightResultArray != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHighlightResultArray(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.HighlightResult> PickHighlightResultArray() => IsHighlightResultArray
             ? HighlightResultArray!
             : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultArray' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator HighlightResult(global::Algolia.HighlightResultOption value) => new HighlightResult((global::Algolia.HighlightResultOption?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.HighlightResultOption?(HighlightResult @this) => @this.HighlightResultOption;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HighlightResult(global::Algolia.HighlightResultOption? value)
         {
@@ -138,22 +138,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static HighlightResult FromHighlightResultOption(global::Algolia.HighlightResultOption? value) => new HighlightResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator HighlightResult(global::Algolia.HighlightResultMap value) => new HighlightResult((global::Algolia.HighlightResultMap?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.HighlightResultMap?(HighlightResult @this) => @this.HighlightResultMap;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HighlightResult(global::Algolia.HighlightResultMap? value)
         {
@@ -161,12 +161,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static HighlightResult FromHighlightResultMap(global::Algolia.HighlightResultMap? value) => new HighlightResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HighlightResult(
             global::Algolia.HighlightResultOption? highlightResultOption,
@@ -180,25 +180,25 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             HighlightResultArray as object ??
             HighlightResultMap as object ??
-            HighlightResultOption as object 
+            HighlightResultOption as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             HighlightResultOption?.ToString() ??
             HighlightResultMap?.ToString() ??
-            HighlightResultArray?.ToString() 
+            HighlightResultArray?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.HighlightResultOption, TResult>? highlightResultOption = null,
@@ -236,7 +236,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.HighlightResultOption>? highlightResultOption = null,
@@ -266,7 +266,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.HighlightResultOption>? highlightResultOption = null,
@@ -294,7 +294,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(HighlightResult other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.HighlightResultOption?>.Default.Equals(HighlightResultOption, other.HighlightResultOption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.HighlightResultMap?>.Default.Equals(HighlightResultMap, other.HighlightResultMap) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>?>.Default.Equals(HighlightResultArray, other.HighlightResultArray) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.HighlightResult>?>.Default.Equals(HighlightResultArray, other.HighlightResultArray)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(HighlightResult obj1, HighlightResult obj2)
         {
@@ -337,7 +337,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(HighlightResult obj1, HighlightResult obj2)
         {
@@ -345,7 +345,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

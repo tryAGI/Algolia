@@ -5,12 +5,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct InsideBoundingBox : global::System.IEquatable<InsideBoundingBox>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? InsideBoundingBoxVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InsideBoundingBoxVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsInsideBoundingBoxVariant1 => InsideBoundingBoxVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInsideBoundingBoxVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickInsideBoundingBoxVariant1() => IsInsideBoundingBoxVariant1
             ? InsideBoundingBoxVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? InsideBoundingBoxVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InsideBoundingBoxVariant2))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsInsideBoundingBoxVariant2 => InsideBoundingBoxVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInsideBoundingBoxVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickInsideBoundingBoxVariant2() => IsInsideBoundingBoxVariant2
             ? InsideBoundingBoxVariant2!
@@ -98,7 +98,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Array))]
@@ -106,7 +106,7 @@ namespace Algolia.Recommend
         public bool IsArray => Array != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickArray(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickArray() => IsArray
             ? Array!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InsideBoundingBox(string value) => new InsideBoundingBox((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(InsideBoundingBox @this) => @this.InsideBoundingBoxVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InsideBoundingBox(string? value)
         {
@@ -143,12 +143,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InsideBoundingBox FromInsideBoundingBoxVariant1(string? value) => new InsideBoundingBox(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InsideBoundingBox(
             string? insideBoundingBoxVariant1,
@@ -162,25 +162,25 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Array as object ??
             InsideBoundingBoxVariant2 as object ??
-            InsideBoundingBoxVariant1 as object 
+            InsideBoundingBoxVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InsideBoundingBoxVariant1?.ToString() ??
             InsideBoundingBoxVariant2?.ToString() ??
-            Array?.ToString() 
+            Array?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -188,7 +188,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? insideBoundingBoxVariant1 = null,
@@ -218,7 +218,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? insideBoundingBoxVariant1 = null,
@@ -248,7 +248,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? insideBoundingBoxVariant1 = null,
@@ -276,7 +276,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -299,19 +299,19 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InsideBoundingBox other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InsideBoundingBoxVariant1, other.InsideBoundingBoxVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(InsideBoundingBoxVariant2, other.InsideBoundingBoxVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(Array, other.Array) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(Array, other.Array)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InsideBoundingBox obj1, InsideBoundingBox obj2)
         {
@@ -319,7 +319,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InsideBoundingBox obj1, InsideBoundingBox obj2)
         {
@@ -327,7 +327,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,11 +9,11 @@ namespace Algolia
     public enum DictionaryEntryType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

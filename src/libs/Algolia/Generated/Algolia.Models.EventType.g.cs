@@ -4,24 +4,24 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fetch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Log,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Record,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transform,
     }

@@ -24,7 +24,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DistinctVariant1))]
@@ -32,7 +32,7 @@ namespace Algolia
         public bool IsDistinctVariant1 => DistinctVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDistinctVariant1(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickDistinctVariant1() => IsDistinctVariant1
             ? DistinctVariant1!.Value
@@ -67,7 +67,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DistinctVariant2))]
@@ -75,7 +75,7 @@ namespace Algolia
         public bool IsDistinctVariant2 => DistinctVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDistinctVariant2(
 #if NET6_0_OR_GREATER
@@ -88,23 +88,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickDistinctVariant2() => IsDistinctVariant2
             ? DistinctVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Distinct(bool value) => new Distinct((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(Distinct @this) => @this.DistinctVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Distinct(bool? value)
         {
@@ -112,22 +112,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Distinct FromDistinctVariant1(bool? value) => new Distinct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Distinct(int value) => new Distinct((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(Distinct @this) => @this.DistinctVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Distinct(int? value)
         {
@@ -135,12 +135,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Distinct FromDistinctVariant2(int? value) => new Distinct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Distinct(
             bool? distinctVariant1,
@@ -152,23 +152,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DistinctVariant2 as object ??
-            DistinctVariant1 as object 
+            DistinctVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             DistinctVariant1?.ToString().ToLowerInvariant() ??
-            DistinctVariant2?.ToString() 
+            DistinctVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -176,7 +176,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? distinctVariant1 = null,
@@ -201,7 +201,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<bool?>? distinctVariant1 = null,
@@ -225,7 +225,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<bool?>? distinctVariant1 = null,
@@ -248,7 +248,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -269,18 +269,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Distinct other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(DistinctVariant1, other.DistinctVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(DistinctVariant2, other.DistinctVariant2) 
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(DistinctVariant2, other.DistinctVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Distinct obj1, Distinct obj2)
         {
@@ -288,7 +288,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Distinct obj1, Distinct obj2)
         {
@@ -296,7 +296,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

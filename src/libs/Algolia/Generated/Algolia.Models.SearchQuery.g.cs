@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SearchQuery : global::System.IEquatable<SearchQuery>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForHits? ForHits { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForHits))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsForHits => ForHits != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickForHits(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchForHits PickForHits() => IsForHits
             ? ForHits!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ForHits' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacets? ForFacets { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForFacets))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsForFacets => ForFacets != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickForFacets(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchForFacets PickForFacets() => IsForFacets
             ? ForFacets!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacets' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchQuery(global::Algolia.SearchForHits value) => new SearchQuery((global::Algolia.SearchForHits?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchForHits?(SearchQuery @this) => @this.ForHits;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchQuery(global::Algolia.SearchForHits? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchQuery FromForHits(global::Algolia.SearchForHits? value) => new SearchQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchQuery(global::Algolia.SearchForFacets value) => new SearchQuery((global::Algolia.SearchForFacets?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchForFacets?(SearchQuery @this) => @this.ForFacets;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchQuery(global::Algolia.SearchForFacets? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchQuery FromForFacets(global::Algolia.SearchForFacets? value) => new SearchQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchQuery(
             global::Algolia.SearchForHits? forHits,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ForFacets as object ??
-            ForHits as object 
+            ForHits as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ForHits?.ToString() ??
-            ForFacets?.ToString() 
+            ForFacets?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchForHits?, TResult>? forHits = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchForHits?>? forHits = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchQuery other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForHits?>.Default.Equals(ForHits, other.ForHits) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForFacets?>.Default.Equals(ForFacets, other.ForFacets) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForFacets?>.Default.Equals(ForFacets, other.ForFacets)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchQuery obj1, SearchQuery obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchQuery obj1, SearchQuery obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

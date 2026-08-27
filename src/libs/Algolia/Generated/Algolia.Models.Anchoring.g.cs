@@ -14,11 +14,11 @@ namespace Algolia
     public enum Anchoring
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndsWith,
         /// <summary>
@@ -26,7 +26,7 @@ namespace Algolia
         /// </summary>
         Is,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartsWith,
     }

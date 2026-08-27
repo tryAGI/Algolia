@@ -4,24 +4,24 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AlternativesAsExact
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IgnoreConjugations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IgnorePlurals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiWordsSynonym,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleWordSynonym,
     }

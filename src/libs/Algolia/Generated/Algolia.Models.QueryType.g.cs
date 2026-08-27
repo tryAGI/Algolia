@@ -15,15 +15,15 @@ namespace Algolia
     public enum QueryType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PrefixAll,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PrefixLast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PrefixNone,
     }

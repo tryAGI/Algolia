@@ -10,7 +10,7 @@ namespace Algolia.Recommend
     public readonly partial struct ReRankingApplyFilter : global::System.IEquatable<ReRankingApplyFilter>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>? ReRankingApplyFilterVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReRankingApplyFilterVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsReRankingApplyFilterVariant1 => ReRankingApplyFilterVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReRankingApplyFilterVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter> PickReRankingApplyFilterVariant1() => IsReRankingApplyFilterVariant1
             ? ReRankingApplyFilterVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ReRankingApplyFilterVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReRankingApplyFilterVariant2))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsReRankingApplyFilterVariant2 => ReRankingApplyFilterVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReRankingApplyFilterVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickReRankingApplyFilterVariant2() => IsReRankingApplyFilterVariant2
             ? ReRankingApplyFilterVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReRankingApplyFilter(string value) => new ReRankingApplyFilter((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ReRankingApplyFilter @this) => @this.ReRankingApplyFilterVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReRankingApplyFilter(string? value)
         {
@@ -101,12 +101,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReRankingApplyFilter FromReRankingApplyFilterVariant2(string? value) => new ReRankingApplyFilter(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReRankingApplyFilter(
             global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>? reRankingApplyFilterVariant1,
@@ -118,23 +118,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ReRankingApplyFilterVariant2 as object ??
-            ReRankingApplyFilterVariant1 as object 
+            ReRankingApplyFilterVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ReRankingApplyFilterVariant1?.ToString() ??
-            ReRankingApplyFilterVariant2?.ToString() 
+            ReRankingApplyFilterVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>, TResult>? reRankingApplyFilterVariant1 = null,
@@ -167,7 +167,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
@@ -191,7 +191,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>>? reRankingApplyFilterVariant1 = null,
@@ -214,7 +214,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ReRankingApplyFilter other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter>?>.Default.Equals(ReRankingApplyFilterVariant1, other.ReRankingApplyFilterVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ReRankingApplyFilterVariant2, other.ReRankingApplyFilterVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ReRankingApplyFilterVariant2, other.ReRankingApplyFilterVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ReRankingApplyFilter obj1, ReRankingApplyFilter obj2)
         {
@@ -254,7 +254,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ReRankingApplyFilter obj1, ReRankingApplyFilter obj2)
         {
@@ -262,7 +262,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

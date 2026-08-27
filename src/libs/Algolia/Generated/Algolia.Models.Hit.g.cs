@@ -37,7 +37,7 @@ namespace Algolia
         public global::Algolia.RankingInfo? RankingInfo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_distinctSeqID")]
         public int? DistinctSeqID { get; set; }

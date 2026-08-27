@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SearchUserIdsResponseHit
     {
@@ -52,7 +52,7 @@ namespace Algolia
         public required string ObjectID { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_highlightResult")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -35,13 +35,13 @@ namespace Algolia.Recommend
         public int? GeoPrecision { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("matchedGeoLocation")]
         public global::Algolia.Recommend.MatchedGeoLocation? MatchedGeoLocation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("personalization")]
         public global::Algolia.Recommend.Personalization? Personalization { get; set; }

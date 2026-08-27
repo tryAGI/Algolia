@@ -24,7 +24,7 @@ namespace Algolia.Recommend
         /// </summary>
         Attribute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>

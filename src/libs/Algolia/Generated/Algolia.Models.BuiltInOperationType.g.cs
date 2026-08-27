@@ -9,31 +9,31 @@ namespace Algolia
     public enum BuiltInOperationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Add,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddUnique,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Decrement,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Increment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncrementFrom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncrementSet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Remove,
     }

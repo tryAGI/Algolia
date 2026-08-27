@@ -10,7 +10,7 @@ namespace Algolia
     public sealed partial class BatchWriteParams
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         [global::System.Text.Json.Serialization.JsonRequired]

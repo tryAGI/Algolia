@@ -13,19 +13,19 @@ namespace Algolia
     public enum TypoToleranceEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         False,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Min,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Strict,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

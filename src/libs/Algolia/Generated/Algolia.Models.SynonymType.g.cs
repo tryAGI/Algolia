@@ -10,35 +10,35 @@ namespace Algolia
     public enum SynonymType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AltCorrection12,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AltCorrection22,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Altcorrection1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Altcorrection2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneWaySynonym2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Onewaysynonym,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Placeholder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Synonym,
     }

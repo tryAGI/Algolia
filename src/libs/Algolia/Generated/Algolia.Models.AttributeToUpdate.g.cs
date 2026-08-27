@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AttributeToUpdate : global::System.IEquatable<AttributeToUpdate>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? AttributeToUpdateVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AttributeToUpdateVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsAttributeToUpdateVariant1 => AttributeToUpdateVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAttributeToUpdateVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickAttributeToUpdateVariant1() => IsAttributeToUpdateVariant1
             ? AttributeToUpdateVariant1!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperation))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsBuiltInOperation => BuiltInOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBuiltInOperation(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BuiltInOperation PickBuiltInOperation() => IsBuiltInOperation
             ? BuiltInOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AttributeToUpdate(string value) => new AttributeToUpdate((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(AttributeToUpdate @this) => @this.AttributeToUpdateVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AttributeToUpdate(string? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AttributeToUpdate FromAttributeToUpdateVariant1(string? value) => new AttributeToUpdate(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AttributeToUpdate(global::Algolia.BuiltInOperation value) => new AttributeToUpdate((global::Algolia.BuiltInOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BuiltInOperation?(AttributeToUpdate @this) => @this.BuiltInOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AttributeToUpdate(global::Algolia.BuiltInOperation? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AttributeToUpdate FromBuiltInOperation(global::Algolia.BuiltInOperation? value) => new AttributeToUpdate(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AttributeToUpdate(
             string? attributeToUpdateVariant1,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BuiltInOperation as object ??
-            AttributeToUpdateVariant1 as object 
+            AttributeToUpdateVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AttributeToUpdateVariant1?.ToString() ??
-            BuiltInOperation?.ToString() 
+            BuiltInOperation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? attributeToUpdateVariant1 = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? attributeToUpdateVariant1 = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? attributeToUpdateVariant1 = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AttributeToUpdate other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AttributeToUpdateVariant1, other.AttributeToUpdateVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.BuiltInOperation?>.Default.Equals(BuiltInOperation, other.BuiltInOperation) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.BuiltInOperation?>.Default.Equals(BuiltInOperation, other.BuiltInOperation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AttributeToUpdate obj1, AttributeToUpdate obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AttributeToUpdate obj1, AttributeToUpdate obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -11,11 +11,11 @@ namespace Algolia
     public enum SearchStrategy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopIfEnoughMatches,
     }

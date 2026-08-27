@@ -5,7 +5,7 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SnippetResult : global::System.IEquatable<SnippetResult>
     {
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnippetResultOption))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsSnippetResultOption => SnippetResultOption != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSnippetResultOption(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.SnippetResultOption PickSnippetResultOption() => IsSnippetResultOption
             ? SnippetResultOption!
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnippetResultMap))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsSnippetResultMap => SnippetResultMap != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSnippetResultMap(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.SnippetResultMap PickSnippetResultMap() => IsSnippetResultMap
             ? SnippetResultMap!
@@ -93,7 +93,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnippetResultArray))]
@@ -101,7 +101,7 @@ namespace Algolia.Recommend
         public bool IsSnippetResultArray => SnippetResultArray != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSnippetResultArray(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult> PickSnippetResultArray() => IsSnippetResultArray
             ? SnippetResultArray!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultArray' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SnippetResult(global::Algolia.Recommend.SnippetResultOption value) => new SnippetResult((global::Algolia.Recommend.SnippetResultOption?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.SnippetResultOption?(SnippetResult @this) => @this.SnippetResultOption;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SnippetResult(global::Algolia.Recommend.SnippetResultOption? value)
         {
@@ -138,22 +138,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SnippetResult FromSnippetResultOption(global::Algolia.Recommend.SnippetResultOption? value) => new SnippetResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SnippetResult(global::Algolia.Recommend.SnippetResultMap value) => new SnippetResult((global::Algolia.Recommend.SnippetResultMap?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.SnippetResultMap?(SnippetResult @this) => @this.SnippetResultMap;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SnippetResult(global::Algolia.Recommend.SnippetResultMap? value)
         {
@@ -161,12 +161,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SnippetResult FromSnippetResultMap(global::Algolia.Recommend.SnippetResultMap? value) => new SnippetResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SnippetResult(
             global::Algolia.Recommend.SnippetResultOption? snippetResultOption,
@@ -180,25 +180,25 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SnippetResultArray as object ??
             SnippetResultMap as object ??
-            SnippetResultOption as object 
+            SnippetResultOption as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SnippetResultOption?.ToString() ??
             SnippetResultMap?.ToString() ??
-            SnippetResultArray?.ToString() 
+            SnippetResultArray?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.SnippetResultOption, TResult>? snippetResultOption = null,
@@ -236,7 +236,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
@@ -266,7 +266,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
@@ -294,7 +294,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SnippetResult other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SnippetResultOption?>.Default.Equals(SnippetResultOption, other.SnippetResultOption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SnippetResultMap?>.Default.Equals(SnippetResultMap, other.SnippetResultMap) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?>.Default.Equals(SnippetResultArray, other.SnippetResultArray) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?>.Default.Equals(SnippetResultArray, other.SnippetResultArray)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SnippetResult obj1, SnippetResult obj2)
         {
@@ -337,7 +337,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SnippetResult obj1, SnippetResult obj2)
         {
@@ -345,7 +345,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

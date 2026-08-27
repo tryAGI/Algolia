@@ -9,95 +9,95 @@ namespace Algolia
     public enum Acl
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Analytics,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Browse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteIndex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EditSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListIndexes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Logs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluPrediction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluReadAnswers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluReadEntity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluReadIntent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluReadProject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluWriteEntity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluWriteIntent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NluWriteProject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Personalization,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recommendation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Search,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeeUnretrievableAttributes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Settings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Usage,
     }

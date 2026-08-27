@@ -4,16 +4,16 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AdvancedSyntaxFeatures
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExactPhrase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExcludeWords,
     }

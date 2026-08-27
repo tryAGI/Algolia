@@ -10,7 +10,7 @@ namespace Algolia
     public readonly partial struct IndexSettings : global::System.IEquatable<IndexSettings>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseIndexSettings? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BaseIndexSettings PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.IndexSettingsAsSearchParams? AsSearchParams { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AsSearchParams))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsAsSearchParams => AsSearchParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAsSearchParams(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.IndexSettingsAsSearchParams PickAsSearchParams() => IsAsSearchParams
             ? AsSearchParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AsSearchParams' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IndexSettings(global::Algolia.BaseIndexSettings value) => new IndexSettings((global::Algolia.BaseIndexSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BaseIndexSettings?(IndexSettings @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IndexSettings(global::Algolia.BaseIndexSettings? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IndexSettings FromBase(global::Algolia.BaseIndexSettings? value) => new IndexSettings(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IndexSettings(global::Algolia.IndexSettingsAsSearchParams value) => new IndexSettings((global::Algolia.IndexSettingsAsSearchParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.IndexSettingsAsSearchParams?(IndexSettings @this) => @this.AsSearchParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IndexSettings(global::Algolia.IndexSettingsAsSearchParams? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IndexSettings FromAsSearchParams(global::Algolia.IndexSettingsAsSearchParams? value) => new IndexSettings(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IndexSettings(
             global::Algolia.BaseIndexSettings? @base,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AsSearchParams as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            AsSearchParams?.ToString() 
+            AsSearchParams?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BaseIndexSettings, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BaseIndexSettings>? @base = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.BaseIndexSettings>? @base = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(IndexSettings other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseIndexSettings?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettingsAsSearchParams?>.Default.Equals(AsSearchParams, other.AsSearchParams) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettingsAsSearchParams?>.Default.Equals(AsSearchParams, other.AsSearchParams)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(IndexSettings obj1, IndexSettings obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(IndexSettings obj1, IndexSettings obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

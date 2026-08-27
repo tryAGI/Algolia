@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IndexSettingsAsSearchParams
     {
@@ -468,7 +468,7 @@ namespace Algolia
         public bool? EnableReRanking { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reRankingApplyFilter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::Algolia.ReRankingApplyFilter?, object>))]

@@ -22,7 +22,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IgnorePluralsVariant1))]
@@ -30,7 +30,7 @@ namespace Algolia
         public bool IsIgnorePluralsVariant1 => IgnorePluralsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIgnorePluralsVariant1(
 #if NET6_0_OR_GREATER
@@ -43,14 +43,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage> PickIgnorePluralsVariant1() => IsIgnorePluralsVariant1
             ? IgnorePluralsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BooleanString? BooleanString { get; init; }
@@ -59,7 +59,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BooleanString))]
@@ -67,7 +67,7 @@ namespace Algolia
         public bool IsBooleanString => BooleanString != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBooleanString(
 #if NET6_0_OR_GREATER
@@ -80,7 +80,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BooleanString PickBooleanString() => IsBooleanString
             ? BooleanString!.Value
@@ -98,7 +98,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IgnorePluralsVariant3))]
@@ -106,7 +106,7 @@ namespace Algolia
         public bool IsIgnorePluralsVariant3 => IgnorePluralsVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIgnorePluralsVariant3(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickIgnorePluralsVariant3() => IsIgnorePluralsVariant3
             ? IgnorePluralsVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IgnorePlurals(global::Algolia.BooleanString value) => new IgnorePlurals((global::Algolia.BooleanString?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BooleanString?(IgnorePlurals @this) => @this.BooleanString;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IgnorePlurals(global::Algolia.BooleanString? value)
         {
@@ -143,22 +143,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IgnorePlurals FromBooleanString(global::Algolia.BooleanString? value) => new IgnorePlurals(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IgnorePlurals(bool value) => new IgnorePlurals((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(IgnorePlurals @this) => @this.IgnorePluralsVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IgnorePlurals(bool? value)
         {
@@ -166,12 +166,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IgnorePlurals FromIgnorePluralsVariant3(bool? value) => new IgnorePlurals(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IgnorePlurals(
             global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? ignorePluralsVariant1,
@@ -185,25 +185,25 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             IgnorePluralsVariant3 as object ??
             BooleanString as object ??
-            IgnorePluralsVariant1 as object 
+            IgnorePluralsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             IgnorePluralsVariant1?.ToString() ??
             BooleanString?.ToValueString() ??
-            IgnorePluralsVariant3?.ToString().ToLowerInvariant() 
+            IgnorePluralsVariant3?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -211,7 +211,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>, TResult>? ignorePluralsVariant1 = null,
@@ -241,7 +241,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>>? ignorePluralsVariant1 = null,
@@ -271,7 +271,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>>? ignorePluralsVariant1 = null,
@@ -299,7 +299,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -322,19 +322,19 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(IgnorePlurals other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>?>.Default.Equals(IgnorePluralsVariant1, other.IgnorePluralsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BooleanString?>.Default.Equals(BooleanString, other.BooleanString) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(IgnorePluralsVariant3, other.IgnorePluralsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(IgnorePluralsVariant3, other.IgnorePluralsVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(IgnorePlurals obj1, IgnorePlurals obj2)
         {
@@ -342,7 +342,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(IgnorePlurals obj1, IgnorePlurals obj2)
         {
@@ -350,7 +350,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

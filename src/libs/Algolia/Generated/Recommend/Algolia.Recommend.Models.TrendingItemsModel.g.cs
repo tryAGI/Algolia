@@ -10,7 +10,7 @@ namespace Algolia.Recommend
     public enum TrendingItemsModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrendingItems,
     }

@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BaseSearchParamsWithoutQuery
     {
@@ -208,7 +208,7 @@ namespace Algolia
         public int? MinimumAroundRadius { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insideBoundingBox")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.InsideBoundingBoxJsonConverter))]

@@ -4,20 +4,20 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ScopeType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rules,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Settings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Synonyms,
     }

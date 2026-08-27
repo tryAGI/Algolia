@@ -4,7 +4,7 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BaseRecommendSearchParams
     {
@@ -174,7 +174,7 @@ namespace Algolia.Recommend
         public int? MinimumAroundRadius { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insideBoundingBox")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.InsideBoundingBoxJsonConverter))]

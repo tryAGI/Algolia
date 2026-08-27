@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SettingsResponse : global::System.IEquatable<SettingsResponse>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Index))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsIndex => Index != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIndex(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.IndexSettings PickIndex() => IsIndex
             ? Index!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Index' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.WithPrimary? WithPrimary { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPrimary))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsWithPrimary => WithPrimary != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithPrimary(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.WithPrimary PickWithPrimary() => IsWithPrimary
             ? WithPrimary!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithPrimary' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SettingsResponse(global::Algolia.IndexSettings value) => new SettingsResponse((global::Algolia.IndexSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.IndexSettings?(SettingsResponse @this) => @this.Index;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SettingsResponse(global::Algolia.IndexSettings? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SettingsResponse FromIndex(global::Algolia.IndexSettings? value) => new SettingsResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SettingsResponse(global::Algolia.WithPrimary value) => new SettingsResponse((global::Algolia.WithPrimary?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.WithPrimary?(SettingsResponse @this) => @this.WithPrimary;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SettingsResponse(global::Algolia.WithPrimary? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SettingsResponse FromWithPrimary(global::Algolia.WithPrimary? value) => new SettingsResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SettingsResponse(
             global::Algolia.IndexSettings? index,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WithPrimary as object ??
-            Index as object 
+            Index as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Index?.ToString() ??
-            WithPrimary?.ToString() 
+            WithPrimary?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.IndexSettings?, TResult>? index = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.IndexSettings?>? index = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.IndexSettings?>? index = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SettingsResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettings?>.Default.Equals(Index, other.Index) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.WithPrimary?>.Default.Equals(WithPrimary, other.WithPrimary) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.WithPrimary?>.Default.Equals(WithPrimary, other.WithPrimary)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SettingsResponse obj1, SettingsResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SettingsResponse obj1, SettingsResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

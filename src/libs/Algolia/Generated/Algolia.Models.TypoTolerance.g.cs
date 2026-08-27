@@ -21,7 +21,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TypoToleranceVariant1))]
@@ -29,7 +29,7 @@ namespace Algolia
         public bool IsTypoToleranceVariant1 => TypoToleranceVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTypoToleranceVariant1(
 #if NET6_0_OR_GREATER
@@ -42,7 +42,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickTypoToleranceVariant1() => IsTypoToleranceVariant1
             ? TypoToleranceVariant1!.Value
@@ -62,7 +62,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -70,7 +70,7 @@ namespace Algolia
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -83,23 +83,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.TypoToleranceEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TypoTolerance(bool value) => new TypoTolerance((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(TypoTolerance @this) => @this.TypoToleranceVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TypoTolerance(bool? value)
         {
@@ -107,22 +107,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TypoTolerance FromTypoToleranceVariant1(bool? value) => new TypoTolerance(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TypoTolerance(global::Algolia.TypoToleranceEnum value) => new TypoTolerance((global::Algolia.TypoToleranceEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.TypoToleranceEnum?(TypoTolerance @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TypoTolerance(global::Algolia.TypoToleranceEnum? value)
         {
@@ -130,12 +130,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TypoTolerance FromEnum(global::Algolia.TypoToleranceEnum? value) => new TypoTolerance(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TypoTolerance(
             bool? typoToleranceVariant1,
@@ -147,23 +147,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            TypoToleranceVariant1 as object 
+            TypoToleranceVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TypoToleranceVariant1?.ToString().ToLowerInvariant() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -171,7 +171,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? typoToleranceVariant1 = null,
@@ -196,7 +196,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<bool?>? typoToleranceVariant1 = null,
@@ -220,7 +220,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<bool?>? typoToleranceVariant1 = null,
@@ -243,7 +243,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -264,18 +264,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TypoTolerance other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(TypoToleranceVariant1, other.TypoToleranceVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.TypoToleranceEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.TypoToleranceEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TypoTolerance obj1, TypoTolerance obj2)
         {
@@ -283,7 +283,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TypoTolerance obj1, TypoTolerance obj2)
         {
@@ -291,7 +291,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

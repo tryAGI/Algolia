@@ -4,12 +4,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RecommendationsHits
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hits")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,11 +9,11 @@ namespace Algolia
     public enum DictionaryAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddEntry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteEntry,
     }

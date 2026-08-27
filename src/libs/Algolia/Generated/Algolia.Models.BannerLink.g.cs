@@ -9,7 +9,7 @@ namespace Algolia
     public sealed partial class BannerLink
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }

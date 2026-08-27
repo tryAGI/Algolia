@@ -4,10 +4,18 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetLogsResponseLog
     {
+        /// <summary>
+        /// Correlation ID of the logged API request, also returned in that request's `Correlation-ID` response header.<br/>
+        /// Example: MyAppl-1tMcE-a7BqLm2Pd0Z
+        /// </summary>
+        /// <example>MyAppl-1tMcE-a7BqLm2Pd0Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cid")]
+        public string? Cid { get; set; }
+
         /// <summary>
         /// Date and time of the API request, in RFC 3339 format.<br/>
         /// Example: 2023-03-08T12:34:56Z
@@ -187,6 +195,10 @@ namespace Algolia
         /// This doesn't include latency due to the network.<br/>
         /// Example: 2
         /// </param>
+        /// <param name="cid">
+        /// Correlation ID of the logged API request, also returned in that request's `Correlation-ID` response header.<br/>
+        /// Example: MyAppl-1tMcE-a7BqLm2Pd0Z
+        /// </param>
         /// <param name="nbApiCalls">
         /// Number of API requests.<br/>
         /// Example: 1
@@ -220,12 +232,14 @@ namespace Algolia
             string queryHeaders,
             string sha1,
             string processingTimeMs,
+            string? cid,
             string? nbApiCalls,
             string? index,
             string? queryParams,
             string? queryNbHits,
             global::System.Collections.Generic.IList<global::Algolia.GetLogsResponseLogInnerQuerie>? innerQueries)
         {
+            this.Cid = cid;
             this.Timestamp = timestamp ?? throw new global::System.ArgumentNullException(nameof(timestamp));
             this.Method = method ?? throw new global::System.ArgumentNullException(nameof(method));
             this.AnswerCode = answerCode ?? throw new global::System.ArgumentNullException(nameof(answerCode));

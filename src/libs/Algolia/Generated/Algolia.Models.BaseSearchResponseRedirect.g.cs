@@ -9,7 +9,7 @@ namespace Algolia
     public sealed partial class BaseSearchResponseRedirect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public global::System.Collections.Generic.IList<global::Algolia.RedirectRuleIndexMetadata>? Index { get; set; }

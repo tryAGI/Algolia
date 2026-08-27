@@ -9,11 +9,11 @@ namespace Algolia
     public enum TaskStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotPublished,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Published,
     }

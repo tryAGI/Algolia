@@ -10,7 +10,7 @@ namespace Algolia.Recommend
     public readonly partial struct RecommendIndexSettings : global::System.IEquatable<RecommendIndexSettings>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseIndexSettings? Base1 { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base1))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsBase1 => Base1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseIndexSettings PickBase1() => IsBase1
             ? Base1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseRecommendIndexSettings? Base2 { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base2))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsBase2 => Base2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseRecommendIndexSettings PickBase2() => IsBase2
             ? Base2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendIndexSettings(global::Algolia.Recommend.BaseIndexSettings value) => new RecommendIndexSettings((global::Algolia.Recommend.BaseIndexSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseIndexSettings?(RecommendIndexSettings @this) => @this.Base1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendIndexSettings(global::Algolia.Recommend.BaseIndexSettings? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendIndexSettings FromBase1(global::Algolia.Recommend.BaseIndexSettings? value) => new RecommendIndexSettings(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendIndexSettings(global::Algolia.Recommend.BaseRecommendIndexSettings value) => new RecommendIndexSettings((global::Algolia.Recommend.BaseRecommendIndexSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseRecommendIndexSettings?(RecommendIndexSettings @this) => @this.Base2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendIndexSettings(global::Algolia.Recommend.BaseRecommendIndexSettings? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendIndexSettings FromBase2(global::Algolia.Recommend.BaseRecommendIndexSettings? value) => new RecommendIndexSettings(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendIndexSettings(
             global::Algolia.Recommend.BaseIndexSettings? base1,
@@ -141,23 +141,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Base2 as object ??
-            Base1 as object 
+            Base1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base1?.ToString() ??
-            Base2?.ToString() 
+            Base2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BaseIndexSettings, TResult>? base1 = null,
@@ -190,7 +190,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BaseIndexSettings>? base1 = null,
@@ -214,7 +214,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BaseIndexSettings>? base1 = null,
@@ -237,7 +237,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RecommendIndexSettings other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseIndexSettings?>.Default.Equals(Base1, other.Base1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendIndexSettings?>.Default.Equals(Base2, other.Base2) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendIndexSettings?>.Default.Equals(Base2, other.Base2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RecommendIndexSettings obj1, RecommendIndexSettings obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RecommendIndexSettings obj1, RecommendIndexSettings obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

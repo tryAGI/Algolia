@@ -12,7 +12,7 @@ namespace Algolia
     public readonly partial struct ConsequenceQuery : global::System.IEquatable<ConsequenceQuery>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.ConsequenceQueryObject? ObjectValue { get; init; }
@@ -21,7 +21,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectValue))]
@@ -29,7 +29,7 @@ namespace Algolia
         public bool IsObjectValue => ObjectValue != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectValue(
 #if NET6_0_OR_GREATER
@@ -42,14 +42,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.ConsequenceQueryObject PickObjectValue() => IsObjectValue
             ? ObjectValue!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ConsequenceQueryVariant2 { get; init; }
@@ -58,7 +58,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsequenceQueryVariant2))]
@@ -66,7 +66,7 @@ namespace Algolia
         public bool IsConsequenceQueryVariant2 => ConsequenceQueryVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConsequenceQueryVariant2(
 #if NET6_0_OR_GREATER
@@ -79,23 +79,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickConsequenceQueryVariant2() => IsConsequenceQueryVariant2
             ? ConsequenceQueryVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConsequenceQueryVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConsequenceQuery(global::Algolia.ConsequenceQueryObject value) => new ConsequenceQuery((global::Algolia.ConsequenceQueryObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.ConsequenceQueryObject?(ConsequenceQuery @this) => @this.ObjectValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConsequenceQuery(global::Algolia.ConsequenceQueryObject? value)
         {
@@ -103,22 +103,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConsequenceQuery FromObjectValue(global::Algolia.ConsequenceQueryObject? value) => new ConsequenceQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConsequenceQuery(string value) => new ConsequenceQuery((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ConsequenceQuery @this) => @this.ConsequenceQueryVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConsequenceQuery(string? value)
         {
@@ -126,12 +126,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConsequenceQuery FromConsequenceQueryVariant2(string? value) => new ConsequenceQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConsequenceQuery(
             global::Algolia.ConsequenceQueryObject? objectValue,
@@ -143,23 +143,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ConsequenceQueryVariant2 as object ??
-            ObjectValue as object 
+            ObjectValue as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ObjectValue?.ToString() ??
-            ConsequenceQueryVariant2?.ToString() 
+            ConsequenceQueryVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -167,7 +167,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.ConsequenceQueryObject, TResult>? objectValue = null,
@@ -192,7 +192,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.ConsequenceQueryObject>? objectValue = null,
@@ -216,7 +216,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.ConsequenceQueryObject>? objectValue = null,
@@ -239,7 +239,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -260,18 +260,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ConsequenceQuery other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.ConsequenceQueryObject?>.Default.Equals(ObjectValue, other.ObjectValue) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ConsequenceQueryVariant2, other.ConsequenceQueryVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ConsequenceQueryVariant2, other.ConsequenceQueryVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ConsequenceQuery obj1, ConsequenceQuery obj2)
         {
@@ -279,7 +279,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ConsequenceQuery obj1, ConsequenceQuery obj2)
         {
@@ -287,7 +287,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

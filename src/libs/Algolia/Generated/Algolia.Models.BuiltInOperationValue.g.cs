@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BuiltInOperationValue : global::System.IEquatable<BuiltInOperationValue>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperationValueVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsBuiltInOperationValueVariant1 => BuiltInOperationValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBuiltInOperationValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickBuiltInOperationValueVariant1() => IsBuiltInOperationValueVariant1
             ? BuiltInOperationValueVariant1!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BuiltInOperationValueVariant2))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsBuiltInOperationValueVariant2 => BuiltInOperationValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBuiltInOperationValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickBuiltInOperationValueVariant2() => IsBuiltInOperationValueVariant2
             ? BuiltInOperationValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperationValueVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BuiltInOperationValue(string value) => new BuiltInOperationValue((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BuiltInOperationValue @this) => @this.BuiltInOperationValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BuiltInOperationValue(string? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BuiltInOperationValue FromBuiltInOperationValueVariant1(string? value) => new BuiltInOperationValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BuiltInOperationValue(int value) => new BuiltInOperationValue((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(BuiltInOperationValue @this) => @this.BuiltInOperationValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BuiltInOperationValue(int? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BuiltInOperationValue FromBuiltInOperationValueVariant2(int? value) => new BuiltInOperationValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BuiltInOperationValue(
             string? builtInOperationValueVariant1,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BuiltInOperationValueVariant2 as object ??
-            BuiltInOperationValueVariant1 as object 
+            BuiltInOperationValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BuiltInOperationValueVariant1?.ToString() ??
-            BuiltInOperationValueVariant2?.ToString() 
+            BuiltInOperationValueVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? builtInOperationValueVariant1 = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? builtInOperationValueVariant1 = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? builtInOperationValueVariant1 = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BuiltInOperationValue other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BuiltInOperationValueVariant1, other.BuiltInOperationValueVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(BuiltInOperationValueVariant2, other.BuiltInOperationValueVariant2) 
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(BuiltInOperationValueVariant2, other.BuiltInOperationValueVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BuiltInOperationValue obj1, BuiltInOperationValue obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BuiltInOperationValue obj1, BuiltInOperationValue obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
