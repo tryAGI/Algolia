@@ -10,7 +10,7 @@ namespace Algolia.Recommend
     public sealed partial class RecommendClient : global::Algolia.Recommend.IRecommendClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://algolia_application_id.algolia.net/";
 
@@ -37,7 +37,7 @@ namespace Algolia.Recommend
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Algolia.Recommend.RecommendSourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

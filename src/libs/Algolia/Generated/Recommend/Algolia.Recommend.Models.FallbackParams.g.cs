@@ -10,7 +10,7 @@ namespace Algolia.Recommend
     public readonly partial struct FallbackParams : global::System.IEquatable<FallbackParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseRecommendSearchParams? BaseRecommendSearch { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseRecommendSearch))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsBaseRecommendSearch => BaseRecommendSearch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseRecommendSearch(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseRecommendSearchParams PickBaseRecommendSearch() => IsBaseRecommendSearch
             ? BaseRecommendSearch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchParamsQuery? SearchQuery { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQuery))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsSearchQuery => SearchQuery != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchQuery(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.SearchParamsQuery PickSearchQuery() => IsSearchQuery
             ? SearchQuery!
@@ -93,7 +93,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendIndexSettings))]
@@ -101,7 +101,7 @@ namespace Algolia.Recommend
         public bool IsRecommendIndexSettings => RecommendIndexSettings != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRecommendIndexSettings(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.RecommendIndexSettings PickRecommendIndexSettings() => IsRecommendIndexSettings
             ? RecommendIndexSettings!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendIndexSettings' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.FallbackParamsVariant4? FallbackParamsVariant4 { get; init; }
@@ -130,7 +130,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FallbackParamsVariant4))]
@@ -138,7 +138,7 @@ namespace Algolia.Recommend
         public bool IsFallbackParamsVariant4 => FallbackParamsVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFallbackParamsVariant4(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.FallbackParamsVariant4 PickFallbackParamsVariant4() => IsFallbackParamsVariant4
             ? FallbackParamsVariant4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackParamsVariant4' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FallbackParams(global::Algolia.Recommend.BaseRecommendSearchParams value) => new FallbackParams((global::Algolia.Recommend.BaseRecommendSearchParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseRecommendSearchParams?(FallbackParams @this) => @this.BaseRecommendSearch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FallbackParams(global::Algolia.Recommend.BaseRecommendSearchParams? value)
         {
@@ -175,22 +175,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FallbackParams FromBaseRecommendSearch(global::Algolia.Recommend.BaseRecommendSearchParams? value) => new FallbackParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FallbackParams(global::Algolia.Recommend.SearchParamsQuery value) => new FallbackParams((global::Algolia.Recommend.SearchParamsQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.SearchParamsQuery?(FallbackParams @this) => @this.SearchQuery;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FallbackParams(global::Algolia.Recommend.SearchParamsQuery? value)
         {
@@ -198,22 +198,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FallbackParams FromSearchQuery(global::Algolia.Recommend.SearchParamsQuery? value) => new FallbackParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FallbackParams(global::Algolia.Recommend.RecommendIndexSettings value) => new FallbackParams((global::Algolia.Recommend.RecommendIndexSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.RecommendIndexSettings?(FallbackParams @this) => @this.RecommendIndexSettings;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FallbackParams(global::Algolia.Recommend.RecommendIndexSettings? value)
         {
@@ -221,22 +221,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FallbackParams FromRecommendIndexSettings(global::Algolia.Recommend.RecommendIndexSettings? value) => new FallbackParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FallbackParams(global::Algolia.Recommend.FallbackParamsVariant4 value) => new FallbackParams((global::Algolia.Recommend.FallbackParamsVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.FallbackParamsVariant4?(FallbackParams @this) => @this.FallbackParamsVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FallbackParams(global::Algolia.Recommend.FallbackParamsVariant4? value)
         {
@@ -244,12 +244,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FallbackParams FromFallbackParamsVariant4(global::Algolia.Recommend.FallbackParamsVariant4? value) => new FallbackParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FallbackParams(
             global::Algolia.Recommend.BaseRecommendSearchParams? baseRecommendSearch,
@@ -265,27 +265,27 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FallbackParamsVariant4 as object ??
             RecommendIndexSettings as object ??
             SearchQuery as object ??
-            BaseRecommendSearch as object 
+            BaseRecommendSearch as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseRecommendSearch?.ToString() ??
             SearchQuery?.ToString() ??
             RecommendIndexSettings?.ToString() ??
-            FallbackParamsVariant4?.ToString() 
+            FallbackParamsVariant4?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -293,7 +293,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BaseRecommendSearchParams, TResult>? baseRecommendSearch = null,
@@ -328,7 +328,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? baseRecommendSearch = null,
@@ -364,7 +364,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BaseRecommendSearchParams>? baseRecommendSearch = null,
@@ -397,7 +397,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -422,7 +422,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FallbackParams other)
         {
@@ -430,12 +430,12 @@ namespace Algolia.Recommend
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendSearchParams?>.Default.Equals(BaseRecommendSearch, other.BaseRecommendSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SearchParamsQuery?>.Default.Equals(SearchQuery, other.SearchQuery) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendIndexSettings?>.Default.Equals(RecommendIndexSettings, other.RecommendIndexSettings) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.FallbackParamsVariant4?>.Default.Equals(FallbackParamsVariant4, other.FallbackParamsVariant4) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.FallbackParamsVariant4?>.Default.Equals(FallbackParamsVariant4, other.FallbackParamsVariant4)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FallbackParams obj1, FallbackParams obj2)
         {
@@ -443,7 +443,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FallbackParams obj1, FallbackParams obj2)
         {
@@ -451,7 +451,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

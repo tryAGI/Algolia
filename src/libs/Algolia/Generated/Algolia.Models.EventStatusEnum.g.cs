@@ -4,32 +4,32 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EventStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Critical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Retried,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Started,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Succeeded,
     }

@@ -11,7 +11,7 @@ namespace Algolia.Recommend
     public enum RelatedModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RelatedProducts,
     }

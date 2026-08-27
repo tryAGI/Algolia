@@ -74,13 +74,13 @@ namespace Algolia.Recommend
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendClient Recommend { get; }
 

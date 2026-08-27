@@ -10,7 +10,7 @@ namespace Algolia
     public sealed partial class Consequence
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.ConsequenceParamsJsonConverter))]

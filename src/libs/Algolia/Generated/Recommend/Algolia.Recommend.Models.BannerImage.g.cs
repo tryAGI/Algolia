@@ -9,13 +9,13 @@ namespace Algolia.Recommend
     public sealed partial class BannerImage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("urls")]
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.BannerImageUrl>? Urls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }

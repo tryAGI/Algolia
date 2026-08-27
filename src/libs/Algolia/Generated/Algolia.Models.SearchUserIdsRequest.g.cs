@@ -9,7 +9,7 @@ namespace Algolia
     public sealed partial class SearchUserIdsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]

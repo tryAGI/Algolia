@@ -18,7 +18,7 @@ namespace Algolia
     public readonly partial struct OptionalFilters : global::System.IEquatable<OptionalFilters>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>? OptionalFiltersVariant1 { get; init; }
@@ -27,7 +27,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalFiltersVariant1))]
@@ -35,7 +35,7 @@ namespace Algolia
         public bool IsOptionalFiltersVariant1 => OptionalFiltersVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOptionalFiltersVariant1(
 #if NET6_0_OR_GREATER
@@ -48,14 +48,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.OptionalFilters> PickOptionalFiltersVariant1() => IsOptionalFiltersVariant1
             ? OptionalFiltersVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? OptionalFiltersVariant2 { get; init; }
@@ -64,7 +64,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalFiltersVariant2))]
@@ -72,7 +72,7 @@ namespace Algolia
         public bool IsOptionalFiltersVariant2 => OptionalFiltersVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOptionalFiltersVariant2(
 #if NET6_0_OR_GREATER
@@ -85,23 +85,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickOptionalFiltersVariant2() => IsOptionalFiltersVariant2
             ? OptionalFiltersVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OptionalFilters(string value) => new OptionalFilters((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(OptionalFilters @this) => @this.OptionalFiltersVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OptionalFilters(string? value)
         {
@@ -109,12 +109,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OptionalFilters FromOptionalFiltersVariant2(string? value) => new OptionalFilters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OptionalFilters(
             global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>? optionalFiltersVariant1,
@@ -126,23 +126,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OptionalFiltersVariant2 as object ??
-            OptionalFiltersVariant1 as object 
+            OptionalFiltersVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OptionalFiltersVariant1?.ToString() ??
-            OptionalFiltersVariant2?.ToString() 
+            OptionalFiltersVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -150,7 +150,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>, TResult>? optionalFiltersVariant1 = null,
@@ -175,7 +175,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>>? optionalFiltersVariant1 = null,
@@ -199,7 +199,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>>? optionalFiltersVariant1 = null,
@@ -222,7 +222,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -243,18 +243,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OptionalFilters other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.OptionalFilters>?>.Default.Equals(OptionalFiltersVariant1, other.OptionalFiltersVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OptionalFiltersVariant2, other.OptionalFiltersVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OptionalFiltersVariant2, other.OptionalFiltersVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OptionalFilters obj1, OptionalFilters obj2)
         {
@@ -262,7 +262,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OptionalFilters obj1, OptionalFilters obj2)
         {
@@ -270,7 +270,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

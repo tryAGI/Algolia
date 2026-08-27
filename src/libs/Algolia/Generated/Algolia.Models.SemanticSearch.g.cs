@@ -10,7 +10,7 @@ namespace Algolia
     public sealed partial class SemanticSearch
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eventSources")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]

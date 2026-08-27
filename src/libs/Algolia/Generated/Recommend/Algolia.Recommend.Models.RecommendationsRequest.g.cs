@@ -5,12 +5,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RecommendationsRequest : global::System.IEquatable<RecommendationsRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BoughtTogetherQuery? FrequentlyBoughtTogether { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FrequentlyBoughtTogether))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsFrequentlyBoughtTogether => FrequentlyBoughtTogether != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFrequentlyBoughtTogether(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BoughtTogetherQuery PickFrequentlyBoughtTogether() => IsFrequentlyBoughtTogether
             ? FrequentlyBoughtTogether!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FrequentlyBoughtTogether' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedQuery? RelatedProducts { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RelatedProducts))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsRelatedProducts => RelatedProducts != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRelatedProducts(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.RelatedQuery PickRelatedProducts() => IsRelatedProducts
             ? RelatedProducts!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RelatedProducts' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingItemsQuery? TrendingItems { get; init; }
@@ -93,7 +93,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingItems))]
@@ -101,7 +101,7 @@ namespace Algolia.Recommend
         public bool IsTrendingItems => TrendingItems != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTrendingItems(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.TrendingItemsQuery PickTrendingItems() => IsTrendingItems
             ? TrendingItems!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingItems' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.TrendingFacetsQuery? TrendingFacetValues { get; init; }
@@ -130,7 +130,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingFacetValues))]
@@ -138,7 +138,7 @@ namespace Algolia.Recommend
         public bool IsTrendingFacetValues => TrendingFacetValues != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTrendingFacetValues(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.TrendingFacetsQuery PickTrendingFacetValues() => IsTrendingFacetValues
             ? TrendingFacetValues!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetValues' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilarQuery? LookingSimilar { get; init; }
@@ -167,7 +167,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LookingSimilar))]
@@ -175,7 +175,7 @@ namespace Algolia.Recommend
         public bool IsLookingSimilar => LookingSimilar != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLookingSimilar(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.LookingSimilarQuery PickLookingSimilar() => IsLookingSimilar
             ? LookingSimilar!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.BoughtTogetherQuery value) => new RecommendationsRequest((global::Algolia.Recommend.BoughtTogetherQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BoughtTogetherQuery?(RecommendationsRequest @this) => @this.FrequentlyBoughtTogether;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(global::Algolia.Recommend.BoughtTogetherQuery? value)
         {
@@ -212,22 +212,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsRequest FromFrequentlyBoughtTogether(global::Algolia.Recommend.BoughtTogetherQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.RelatedQuery value) => new RecommendationsRequest((global::Algolia.Recommend.RelatedQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.RelatedQuery?(RecommendationsRequest @this) => @this.RelatedProducts;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(global::Algolia.Recommend.RelatedQuery? value)
         {
@@ -235,22 +235,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsRequest FromRelatedProducts(global::Algolia.Recommend.RelatedQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.TrendingItemsQuery value) => new RecommendationsRequest((global::Algolia.Recommend.TrendingItemsQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.TrendingItemsQuery?(RecommendationsRequest @this) => @this.TrendingItems;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(global::Algolia.Recommend.TrendingItemsQuery? value)
         {
@@ -258,22 +258,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsRequest FromTrendingItems(global::Algolia.Recommend.TrendingItemsQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.TrendingFacetsQuery value) => new RecommendationsRequest((global::Algolia.Recommend.TrendingFacetsQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.TrendingFacetsQuery?(RecommendationsRequest @this) => @this.TrendingFacetValues;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(global::Algolia.Recommend.TrendingFacetsQuery? value)
         {
@@ -281,22 +281,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsRequest FromTrendingFacetValues(global::Algolia.Recommend.TrendingFacetsQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsRequest(global::Algolia.Recommend.LookingSimilarQuery value) => new RecommendationsRequest((global::Algolia.Recommend.LookingSimilarQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.LookingSimilarQuery?(RecommendationsRequest @this) => @this.LookingSimilar;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(global::Algolia.Recommend.LookingSimilarQuery? value)
         {
@@ -304,12 +304,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsRequest FromLookingSimilar(global::Algolia.Recommend.LookingSimilarQuery? value) => new RecommendationsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsRequest(
             global::Algolia.Recommend.BoughtTogetherQuery? frequentlyBoughtTogether,
@@ -327,29 +327,29 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             LookingSimilar as object ??
             TrendingFacetValues as object ??
             TrendingItems as object ??
             RelatedProducts as object ??
-            FrequentlyBoughtTogether as object 
+            FrequentlyBoughtTogether as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FrequentlyBoughtTogether?.ToString() ??
             RelatedProducts?.ToString() ??
             TrendingItems?.ToString() ??
             TrendingFacetValues?.ToString() ??
-            LookingSimilar?.ToString() 
+            LookingSimilar?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BoughtTogetherQuery?, TResult>? frequentlyBoughtTogether = null,
@@ -397,7 +397,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BoughtTogetherQuery?>? frequentlyBoughtTogether = null,
@@ -439,7 +439,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BoughtTogetherQuery?>? frequentlyBoughtTogether = null,
@@ -477,7 +477,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RecommendationsRequest other)
         {
@@ -513,12 +513,12 @@ namespace Algolia.Recommend
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RelatedQuery?>.Default.Equals(RelatedProducts, other.RelatedProducts) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingItemsQuery?>.Default.Equals(TrendingItems, other.TrendingItems) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingFacetsQuery?>.Default.Equals(TrendingFacetValues, other.TrendingFacetValues) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.LookingSimilarQuery?>.Default.Equals(LookingSimilar, other.LookingSimilar) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.LookingSimilarQuery?>.Default.Equals(LookingSimilar, other.LookingSimilar)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RecommendationsRequest obj1, RecommendationsRequest obj2)
         {
@@ -526,7 +526,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RecommendationsRequest obj1, RecommendationsRequest obj2)
         {
@@ -534,7 +534,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

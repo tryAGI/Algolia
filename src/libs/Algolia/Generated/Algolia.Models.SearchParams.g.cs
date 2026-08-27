@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SearchParams : global::System.IEquatable<SearchParams>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsQueryString))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsSearchParametersAsQueryString => SearchParametersAsQueryString != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchParametersAsQueryString(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
             ? SearchParametersAsQueryString!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsObject))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsSearchParametersAsObject => SearchParametersAsObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchParametersAsObject(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
             ? SearchParametersAsObject!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchParams(global::Algolia.SearchParamsString value) => new SearchParams((global::Algolia.SearchParamsString?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchParamsString?(SearchParams @this) => @this.SearchParametersAsQueryString;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchParams(global::Algolia.SearchParamsString? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchParams FromSearchParametersAsQueryString(global::Algolia.SearchParamsString? value) => new SearchParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchParams(global::Algolia.SearchParamsObject value) => new SearchParams((global::Algolia.SearchParamsObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchParamsObject?(SearchParams @this) => @this.SearchParametersAsObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchParams(global::Algolia.SearchParamsObject? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchParams FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new SearchParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchParams(
             global::Algolia.SearchParamsString? searchParametersAsQueryString,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SearchParametersAsObject as object ??
-            SearchParametersAsQueryString as object 
+            SearchParametersAsQueryString as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SearchParametersAsQueryString?.ToString() ??
-            SearchParametersAsObject?.ToString() 
+            SearchParametersAsObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParamsString, TResult>? searchParametersAsQueryString = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchParamsString>? searchParametersAsQueryString = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsString?>.Default.Equals(SearchParametersAsQueryString, other.SearchParametersAsQueryString) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsObject?>.Default.Equals(SearchParametersAsObject, other.SearchParametersAsObject) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsObject?>.Default.Equals(SearchParametersAsObject, other.SearchParametersAsObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchParams obj1, SearchParams obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchParams obj1, SearchParams obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

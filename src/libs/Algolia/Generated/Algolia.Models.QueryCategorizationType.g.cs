@@ -9,19 +9,19 @@ namespace Algolia
     public enum QueryCategorizationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ambiguous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Broad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Narrow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

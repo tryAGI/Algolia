@@ -5,12 +5,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RecommendationsResults : global::System.IEquatable<RecommendationsResults>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseSearchResponse? BaseSearchResponse { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseSearchResponse))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsBaseSearchResponse => BaseSearchResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseSearchResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseSearchResponse PickBaseSearchResponse() => IsBaseSearchResponse
             ? BaseSearchResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearchResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.SearchPagination? SearchPagination { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchPagination))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsSearchPagination => SearchPagination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchPagination(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.SearchPagination PickSearchPagination() => IsSearchPagination
             ? SearchPagination!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPagination' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RecommendationsHits? Hits { get; init; }
@@ -93,7 +93,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Hits))]
@@ -101,7 +101,7 @@ namespace Algolia.Recommend
         public bool IsHits => Hits != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHits(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.RecommendationsHits PickHits() => IsHits
             ? Hits!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hits' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsResults(global::Algolia.Recommend.BaseSearchResponse value) => new RecommendationsResults((global::Algolia.Recommend.BaseSearchResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseSearchResponse?(RecommendationsResults @this) => @this.BaseSearchResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsResults(global::Algolia.Recommend.BaseSearchResponse? value)
         {
@@ -138,22 +138,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsResults FromBaseSearchResponse(global::Algolia.Recommend.BaseSearchResponse? value) => new RecommendationsResults(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsResults(global::Algolia.Recommend.SearchPagination value) => new RecommendationsResults((global::Algolia.Recommend.SearchPagination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.SearchPagination?(RecommendationsResults @this) => @this.SearchPagination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsResults(global::Algolia.Recommend.SearchPagination? value)
         {
@@ -161,22 +161,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsResults FromSearchPagination(global::Algolia.Recommend.SearchPagination? value) => new RecommendationsResults(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsResults(global::Algolia.Recommend.RecommendationsHits value) => new RecommendationsResults((global::Algolia.Recommend.RecommendationsHits?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.RecommendationsHits?(RecommendationsResults @this) => @this.Hits;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsResults(global::Algolia.Recommend.RecommendationsHits? value)
         {
@@ -184,12 +184,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsResults FromHits(global::Algolia.Recommend.RecommendationsHits? value) => new RecommendationsResults(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsResults(
             global::Algolia.Recommend.BaseSearchResponse? baseSearchResponse,
@@ -203,25 +203,25 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Hits as object ??
             SearchPagination as object ??
-            BaseSearchResponse as object 
+            BaseSearchResponse as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseSearchResponse?.ToString() ??
             SearchPagination?.ToString() ??
-            Hits?.ToString() 
+            Hits?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BaseSearchResponse, TResult>? baseSearchResponse = null,
@@ -259,7 +259,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BaseSearchResponse>? baseSearchResponse = null,
@@ -289,7 +289,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BaseSearchResponse>? baseSearchResponse = null,
@@ -317,7 +317,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RecommendationsResults other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseSearchResponse?>.Default.Equals(BaseSearchResponse, other.BaseSearchResponse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SearchPagination?>.Default.Equals(SearchPagination, other.SearchPagination) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendationsHits?>.Default.Equals(Hits, other.Hits) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendationsHits?>.Default.Equals(Hits, other.Hits)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RecommendationsResults obj1, RecommendationsResults obj2)
         {
@@ -360,7 +360,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RecommendationsResults obj1, RecommendationsResults obj2)
         {
@@ -368,7 +368,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

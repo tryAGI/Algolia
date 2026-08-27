@@ -15,7 +15,7 @@ namespace Algolia.Recommend
     public readonly partial struct TagFilters : global::System.IEquatable<TagFilters>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>? TagFiltersVariant1 { get; init; }
@@ -24,7 +24,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagFiltersVariant1))]
@@ -32,7 +32,7 @@ namespace Algolia.Recommend
         public bool IsTagFiltersVariant1 => TagFiltersVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTagFiltersVariant1(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters> PickTagFiltersVariant1() => IsTagFiltersVariant1
             ? TagFiltersVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? TagFiltersVariant2 { get; init; }
@@ -61,7 +61,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagFiltersVariant2))]
@@ -69,7 +69,7 @@ namespace Algolia.Recommend
         public bool IsTagFiltersVariant2 => TagFiltersVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTagFiltersVariant2(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickTagFiltersVariant2() => IsTagFiltersVariant2
             ? TagFiltersVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TagFilters(string value) => new TagFilters((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(TagFilters @this) => @this.TagFiltersVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TagFilters(string? value)
         {
@@ -106,12 +106,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TagFilters FromTagFiltersVariant2(string? value) => new TagFilters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TagFilters(
             global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>? tagFiltersVariant1,
@@ -123,23 +123,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TagFiltersVariant2 as object ??
-            TagFiltersVariant1 as object 
+            TagFiltersVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TagFiltersVariant1?.ToString() ??
-            TagFiltersVariant2?.ToString() 
+            TagFiltersVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -147,7 +147,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>, TResult>? tagFiltersVariant1 = null,
@@ -172,7 +172,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>>? tagFiltersVariant1 = null,
@@ -196,7 +196,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>>? tagFiltersVariant1 = null,
@@ -219,7 +219,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -240,18 +240,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TagFilters other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters>?>.Default.Equals(TagFiltersVariant1, other.TagFiltersVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TagFiltersVariant2, other.TagFiltersVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TagFiltersVariant2, other.TagFiltersVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TagFilters obj1, TagFilters obj2)
         {
@@ -259,7 +259,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TagFilters obj1, TagFilters obj2)
         {
@@ -267,7 +267,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

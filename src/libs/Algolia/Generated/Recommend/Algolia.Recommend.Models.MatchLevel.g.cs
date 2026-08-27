@@ -9,15 +9,15 @@ namespace Algolia.Recommend
     public enum MatchLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Full,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Partial,
     }

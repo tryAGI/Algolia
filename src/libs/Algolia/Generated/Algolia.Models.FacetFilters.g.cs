@@ -17,7 +17,7 @@ namespace Algolia
     public readonly partial struct FacetFilters : global::System.IEquatable<FacetFilters>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.FacetFilters>? FacetFiltersVariant1 { get; init; }
@@ -26,7 +26,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetFiltersVariant1))]
@@ -34,7 +34,7 @@ namespace Algolia
         public bool IsFacetFiltersVariant1 => FacetFiltersVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFacetFiltersVariant1(
 #if NET6_0_OR_GREATER
@@ -47,14 +47,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.FacetFilters> PickFacetFiltersVariant1() => IsFacetFiltersVariant1
             ? FacetFiltersVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? FacetFiltersVariant2 { get; init; }
@@ -63,7 +63,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetFiltersVariant2))]
@@ -71,7 +71,7 @@ namespace Algolia
         public bool IsFacetFiltersVariant2 => FacetFiltersVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFacetFiltersVariant2(
 #if NET6_0_OR_GREATER
@@ -84,23 +84,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickFacetFiltersVariant2() => IsFacetFiltersVariant2
             ? FacetFiltersVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FacetFilters(string value) => new FacetFilters((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(FacetFilters @this) => @this.FacetFiltersVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetFilters(string? value)
         {
@@ -108,12 +108,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FacetFilters FromFacetFiltersVariant2(string? value) => new FacetFilters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetFilters(
             global::System.Collections.Generic.IList<global::Algolia.FacetFilters>? facetFiltersVariant1,
@@ -125,23 +125,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FacetFiltersVariant2 as object ??
-            FacetFiltersVariant1 as object 
+            FacetFiltersVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FacetFiltersVariant1?.ToString() ??
-            FacetFiltersVariant2?.ToString() 
+            FacetFiltersVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -149,7 +149,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>, TResult>? facetFiltersVariant1 = null,
@@ -174,7 +174,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>>? facetFiltersVariant1 = null,
@@ -198,7 +198,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>>? facetFiltersVariant1 = null,
@@ -221,7 +221,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -242,18 +242,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FacetFilters other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.FacetFilters>?>.Default.Equals(FacetFiltersVariant1, other.FacetFiltersVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FacetFiltersVariant2, other.FacetFiltersVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FacetFiltersVariant2, other.FacetFiltersVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FacetFilters obj1, FacetFilters obj2)
         {
@@ -261,7 +261,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FacetFilters obj1, FacetFilters obj2)
         {
@@ -269,7 +269,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

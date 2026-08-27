@@ -9,7 +9,7 @@ namespace Algolia
     public enum AroundRadiusAll
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
     }

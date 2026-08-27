@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MatchedGeoLocation
     {

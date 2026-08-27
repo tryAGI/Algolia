@@ -9,7 +9,7 @@ namespace Algolia
     public sealed partial class Languages
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plurals")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]
@@ -17,7 +17,7 @@ namespace Algolia
         public required global::Algolia.DictionaryLanguage Plurals { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stopwords")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]
@@ -25,7 +25,7 @@ namespace Algolia
         public required global::Algolia.DictionaryLanguage Stopwords { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compounds")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]

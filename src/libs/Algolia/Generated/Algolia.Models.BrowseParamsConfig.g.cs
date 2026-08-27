@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BrowseParamsConfig : global::System.IEquatable<BrowseParamsConfig>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParametersAsObject))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsSearchParametersAsObject => SearchParametersAsObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchParametersAsObject(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
             ? SearchParametersAsObject!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cursor))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsCursor => Cursor != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCursor(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Cursor PickCursor() => IsCursor
             ? Cursor!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseParamsConfig(global::Algolia.SearchParamsObject value) => new BrowseParamsConfig((global::Algolia.SearchParamsObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchParamsObject?(BrowseParamsConfig @this) => @this.SearchParametersAsObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseParamsConfig(global::Algolia.SearchParamsObject? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseParamsConfig FromSearchParametersAsObject(global::Algolia.SearchParamsObject? value) => new BrowseParamsConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseParamsConfig(global::Algolia.Cursor value) => new BrowseParamsConfig((global::Algolia.Cursor?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Cursor?(BrowseParamsConfig @this) => @this.Cursor;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseParamsConfig(global::Algolia.Cursor? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseParamsConfig FromCursor(global::Algolia.Cursor? value) => new BrowseParamsConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseParamsConfig(
             global::Algolia.SearchParamsObject? searchParametersAsObject,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Cursor as object ??
-            SearchParametersAsObject as object 
+            SearchParametersAsObject as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SearchParametersAsObject?.ToString() ??
-            Cursor?.ToString() 
+            Cursor?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParamsObject?, TResult>? searchParametersAsObject = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchParamsObject?>? searchParametersAsObject = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BrowseParamsConfig other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsObject?>.Default.Equals(SearchParametersAsObject, other.SearchParametersAsObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Cursor?>.Default.Equals(Cursor, other.Cursor) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Cursor?>.Default.Equals(Cursor, other.Cursor)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BrowseParamsConfig obj1, BrowseParamsConfig obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BrowseParamsConfig obj1, BrowseParamsConfig obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

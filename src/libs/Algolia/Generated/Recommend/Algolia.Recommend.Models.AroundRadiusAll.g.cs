@@ -9,7 +9,7 @@ namespace Algolia.Recommend
     public enum AroundRadiusAll
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
     }

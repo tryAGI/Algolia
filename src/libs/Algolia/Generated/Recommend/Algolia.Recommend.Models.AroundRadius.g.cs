@@ -22,7 +22,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AroundRadiusVariant1))]
@@ -30,7 +30,7 @@ namespace Algolia.Recommend
         public bool IsAroundRadiusVariant1 => AroundRadiusVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAroundRadiusVariant1(
 #if NET6_0_OR_GREATER
@@ -43,7 +43,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickAroundRadiusVariant1() => IsAroundRadiusVariant1
             ? AroundRadiusVariant1!.Value
@@ -59,7 +59,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
@@ -67,7 +67,7 @@ namespace Algolia.Recommend
         public bool IsAll => All != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAll(
 #if NET6_0_OR_GREATER
@@ -80,23 +80,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.AroundRadiusAll PickAll() => IsAll
             ? All!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AroundRadius(int value) => new AroundRadius((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(AroundRadius @this) => @this.AroundRadiusVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AroundRadius(int? value)
         {
@@ -104,22 +104,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AroundRadius FromAroundRadiusVariant1(int? value) => new AroundRadius(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AroundRadius(global::Algolia.Recommend.AroundRadiusAll value) => new AroundRadius((global::Algolia.Recommend.AroundRadiusAll?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.AroundRadiusAll?(AroundRadius @this) => @this.All;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AroundRadius(global::Algolia.Recommend.AroundRadiusAll? value)
         {
@@ -127,12 +127,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AroundRadius FromAll(global::Algolia.Recommend.AroundRadiusAll? value) => new AroundRadius(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AroundRadius(
             int? aroundRadiusVariant1,
@@ -144,23 +144,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             All as object ??
-            AroundRadiusVariant1 as object 
+            AroundRadiusVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AroundRadiusVariant1?.ToString() ??
-            All?.ToValueString() 
+            All?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -168,7 +168,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<int?, TResult>? aroundRadiusVariant1 = null,
@@ -193,7 +193,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<int?>? aroundRadiusVariant1 = null,
@@ -217,7 +217,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<int?>? aroundRadiusVariant1 = null,
@@ -240,7 +240,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -261,18 +261,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AroundRadius other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(AroundRadiusVariant1, other.AroundRadiusVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.AroundRadiusAll?>.Default.Equals(All, other.All) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.AroundRadiusAll?>.Default.Equals(All, other.All)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AroundRadius obj1, AroundRadius obj2)
         {
@@ -280,7 +280,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AroundRadius obj1, AroundRadius obj2)
         {
@@ -288,7 +288,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

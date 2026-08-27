@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DeleteByParams
     {
@@ -96,7 +96,7 @@ namespace Algolia
         public global::Algolia.AroundRadius? AroundRadius { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insideBoundingBox")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.InsideBoundingBoxJsonConverter))]

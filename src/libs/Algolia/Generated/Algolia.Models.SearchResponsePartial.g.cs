@@ -13,7 +13,7 @@ namespace Algolia
     public readonly partial struct SearchResponsePartial : global::System.IEquatable<SearchResponsePartial>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseSearchResponse? Base { get; init; }
@@ -22,7 +22,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -30,7 +30,7 @@ namespace Algolia
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -43,14 +43,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BaseSearchResponse PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchPagination? Pagination { get; init; }
@@ -59,7 +59,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pagination))]
@@ -67,7 +67,7 @@ namespace Algolia
         public bool IsPagination => Pagination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPagination(
 #if NET6_0_OR_GREATER
@@ -80,14 +80,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchPagination PickPagination() => IsPagination
             ? Pagination!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchResponsePartialVariant3? SearchResponsePartialVariant3 { get; init; }
@@ -96,7 +96,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResponsePartialVariant3))]
@@ -104,7 +104,7 @@ namespace Algolia
         public bool IsSearchResponsePartialVariant3 => SearchResponsePartialVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchResponsePartialVariant3(
 #if NET6_0_OR_GREATER
@@ -117,23 +117,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchResponsePartialVariant3 PickSearchResponsePartialVariant3() => IsSearchResponsePartialVariant3
             ? SearchResponsePartialVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResponsePartialVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResponsePartial(global::Algolia.BaseSearchResponse value) => new SearchResponsePartial((global::Algolia.BaseSearchResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BaseSearchResponse?(SearchResponsePartial @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResponsePartial(global::Algolia.BaseSearchResponse? value)
         {
@@ -141,22 +141,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResponsePartial FromBase(global::Algolia.BaseSearchResponse? value) => new SearchResponsePartial(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResponsePartial(global::Algolia.SearchPagination value) => new SearchResponsePartial((global::Algolia.SearchPagination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchPagination?(SearchResponsePartial @this) => @this.Pagination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResponsePartial(global::Algolia.SearchPagination? value)
         {
@@ -164,22 +164,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResponsePartial FromPagination(global::Algolia.SearchPagination? value) => new SearchResponsePartial(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResponsePartial(global::Algolia.SearchResponsePartialVariant3 value) => new SearchResponsePartial((global::Algolia.SearchResponsePartialVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchResponsePartialVariant3?(SearchResponsePartial @this) => @this.SearchResponsePartialVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResponsePartial(global::Algolia.SearchResponsePartialVariant3? value)
         {
@@ -187,12 +187,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResponsePartial FromSearchResponsePartialVariant3(global::Algolia.SearchResponsePartialVariant3? value) => new SearchResponsePartial(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResponsePartial(
             global::Algolia.BaseSearchResponse? @base,
@@ -206,25 +206,25 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SearchResponsePartialVariant3 as object ??
             Pagination as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
             Pagination?.ToString() ??
-            SearchResponsePartialVariant3?.ToString() 
+            SearchResponsePartialVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -232,7 +232,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BaseSearchResponse, TResult>? @base = null,
@@ -262,7 +262,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
@@ -292,7 +292,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.BaseSearchResponse>? @base = null,
@@ -320,7 +320,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -343,19 +343,19 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchResponsePartial other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchResponse?>.Default.Equals(Base, other.Base) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchPagination?>.Default.Equals(Pagination, other.Pagination) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchResponsePartialVariant3?>.Default.Equals(SearchResponsePartialVariant3, other.SearchResponsePartialVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchResponsePartialVariant3?>.Default.Equals(SearchResponsePartialVariant3, other.SearchResponsePartialVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchResponsePartial obj1, SearchResponsePartial obj2)
         {
@@ -363,7 +363,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchResponsePartial obj1, SearchResponsePartial obj2)
         {
@@ -371,7 +371,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

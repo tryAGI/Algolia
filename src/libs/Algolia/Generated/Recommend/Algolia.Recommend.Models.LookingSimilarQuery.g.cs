@@ -5,12 +5,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct LookingSimilarQuery : global::System.IEquatable<LookingSimilarQuery>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseRecommendRequest? BaseRecommendRequest { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseRecommendRequest))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsBaseRecommendRequest => BaseRecommendRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseRecommendRequest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
             ? BaseRecommendRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.LookingSimilar? LookingSimilar { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LookingSimilar))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsLookingSimilar => LookingSimilar != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLookingSimilar(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.LookingSimilar PickLookingSimilar() => IsLookingSimilar
             ? LookingSimilar!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LookingSimilarQuery(global::Algolia.Recommend.BaseRecommendRequest value) => new LookingSimilarQuery((global::Algolia.Recommend.BaseRecommendRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseRecommendRequest?(LookingSimilarQuery @this) => @this.BaseRecommendRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LookingSimilarQuery(global::Algolia.Recommend.BaseRecommendRequest? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LookingSimilarQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new LookingSimilarQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LookingSimilarQuery(global::Algolia.Recommend.LookingSimilar value) => new LookingSimilarQuery((global::Algolia.Recommend.LookingSimilar?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.LookingSimilar?(LookingSimilarQuery @this) => @this.LookingSimilar;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LookingSimilarQuery(global::Algolia.Recommend.LookingSimilar? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LookingSimilarQuery FromLookingSimilar(global::Algolia.Recommend.LookingSimilar? value) => new LookingSimilarQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LookingSimilarQuery(
             global::Algolia.Recommend.BaseRecommendRequest? baseRecommendRequest,
@@ -141,23 +141,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             LookingSimilar as object ??
-            BaseRecommendRequest as object 
+            BaseRecommendRequest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseRecommendRequest?.ToString() ??
-            LookingSimilar?.ToString() 
+            LookingSimilar?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
@@ -190,7 +190,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
@@ -214,7 +214,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
@@ -237,7 +237,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(LookingSimilarQuery other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendRequest?>.Default.Equals(BaseRecommendRequest, other.BaseRecommendRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.LookingSimilar?>.Default.Equals(LookingSimilar, other.LookingSimilar) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.LookingSimilar?>.Default.Equals(LookingSimilar, other.LookingSimilar)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(LookingSimilarQuery obj1, LookingSimilarQuery obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(LookingSimilarQuery obj1, LookingSimilarQuery obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

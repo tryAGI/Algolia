@@ -10,7 +10,7 @@ namespace Algolia
     public sealed partial class SearchClient : global::Algolia.ISearchClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://algolia_application_id.algolia.net/";
 
@@ -37,7 +37,7 @@ namespace Algolia
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Algolia.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

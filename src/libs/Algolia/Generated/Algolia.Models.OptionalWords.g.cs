@@ -22,7 +22,7 @@ namespace Algolia
     public readonly partial struct OptionalWords : global::System.IEquatable<OptionalWords>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? OptionalWordsVariant1 { get; init; }
@@ -31,7 +31,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalWordsVariant1))]
@@ -39,7 +39,7 @@ namespace Algolia
         public bool IsOptionalWordsVariant1 => OptionalWordsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOptionalWordsVariant1(
 #if NET6_0_OR_GREATER
@@ -52,14 +52,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickOptionalWordsVariant1() => IsOptionalWordsVariant1
             ? OptionalWordsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? OptionalWordsVariant2 { get; init; }
@@ -68,7 +68,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalWordsVariant2))]
@@ -76,7 +76,7 @@ namespace Algolia
         public bool IsOptionalWordsVariant2 => OptionalWordsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOptionalWordsVariant2(
 #if NET6_0_OR_GREATER
@@ -89,7 +89,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickOptionalWordsVariant2() => IsOptionalWordsVariant2
             ? OptionalWordsVariant2!
@@ -107,7 +107,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Array))]
@@ -115,7 +115,7 @@ namespace Algolia
         public bool IsArray => Array != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickArray(
 #if NET6_0_OR_GREATER
@@ -128,23 +128,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickArray() => IsArray
             ? Array!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OptionalWords(string value) => new OptionalWords((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(OptionalWords @this) => @this.OptionalWordsVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OptionalWords(string? value)
         {
@@ -152,12 +152,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OptionalWords FromOptionalWordsVariant1(string? value) => new OptionalWords(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OptionalWords(
             string? optionalWordsVariant1,
@@ -171,25 +171,25 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Array as object ??
             OptionalWordsVariant2 as object ??
-            OptionalWordsVariant1 as object 
+            OptionalWordsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OptionalWordsVariant1?.ToString() ??
             OptionalWordsVariant2?.ToString() ??
-            Array?.ToString() 
+            Array?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -197,7 +197,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? optionalWordsVariant1 = null,
@@ -227,7 +227,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? optionalWordsVariant1 = null,
@@ -257,7 +257,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? optionalWordsVariant1 = null,
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -308,19 +308,19 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OptionalWords other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OptionalWordsVariant1, other.OptionalWordsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OptionalWordsVariant2, other.OptionalWordsVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Array, other.Array) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Array, other.Array)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OptionalWords obj1, OptionalWords obj2)
         {
@@ -328,7 +328,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OptionalWords obj1, OptionalWords obj2)
         {
@@ -336,7 +336,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -23,19 +23,19 @@ namespace Algolia
     public enum RemoveWordsIfNoResults
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllOptional,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstWords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastWords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

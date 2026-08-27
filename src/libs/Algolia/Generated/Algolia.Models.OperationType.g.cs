@@ -10,11 +10,11 @@ namespace Algolia
     public enum OperationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Copy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Move,
     }

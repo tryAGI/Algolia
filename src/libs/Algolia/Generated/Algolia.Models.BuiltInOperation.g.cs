@@ -17,7 +17,7 @@ namespace Algolia
         public required global::Algolia.BuiltInOperationType Operation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.BuiltInOperationValueJsonConverter))]

@@ -5,7 +5,7 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RecommendationsHit : global::System.IEquatable<RecommendationsHit>
     {
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Recommend))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsRecommend => Recommend != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRecommend(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.RecommendHit PickRecommend() => IsRecommend
             ? Recommend!
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TrendingFacetHit))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsTrendingFacetHit => TrendingFacetHit != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTrendingFacetHit(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.TrendingFacetHit PickTrendingFacetHit() => IsTrendingFacetHit
             ? TrendingFacetHit!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetHit' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsHit(global::Algolia.Recommend.RecommendHit value) => new RecommendationsHit((global::Algolia.Recommend.RecommendHit?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.RecommendHit?(RecommendationsHit @this) => @this.Recommend;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsHit(global::Algolia.Recommend.RecommendHit? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsHit FromRecommend(global::Algolia.Recommend.RecommendHit? value) => new RecommendationsHit(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RecommendationsHit(global::Algolia.Recommend.TrendingFacetHit value) => new RecommendationsHit((global::Algolia.Recommend.TrendingFacetHit?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.TrendingFacetHit?(RecommendationsHit @this) => @this.TrendingFacetHit;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsHit(global::Algolia.Recommend.TrendingFacetHit? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RecommendationsHit FromTrendingFacetHit(global::Algolia.Recommend.TrendingFacetHit? value) => new RecommendationsHit(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsHit(
             global::Algolia.Recommend.RecommendHit? recommend,
@@ -141,23 +141,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TrendingFacetHit as object ??
-            Recommend as object 
+            Recommend as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Recommend?.ToString() ??
-            TrendingFacetHit?.ToString() 
+            TrendingFacetHit?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.RecommendHit, TResult>? recommend = null,
@@ -190,7 +190,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.RecommendHit>? recommend = null,
@@ -214,7 +214,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.RecommendHit>? recommend = null,
@@ -237,7 +237,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RecommendationsHit other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RecommendHit?>.Default.Equals(Recommend, other.Recommend) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingFacetHit?>.Default.Equals(TrendingFacetHit, other.TrendingFacetHit) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.TrendingFacetHit?>.Default.Equals(TrendingFacetHit, other.TrendingFacetHit)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RecommendationsHit obj1, RecommendationsHit obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RecommendationsHit obj1, RecommendationsHit obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

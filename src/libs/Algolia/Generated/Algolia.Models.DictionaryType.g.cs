@@ -4,20 +4,20 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DictionaryType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compounds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plurals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stopwords,
     }

@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SearchResult : global::System.IEquatable<SearchResult>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchResponse? Response { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsResponse => Response != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchResponse PickResponse() => IsResponse
             ? Response!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacetValuesResponse? ForFacetValuesResponse { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ForFacetValuesResponse))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsForFacetValuesResponse => ForFacetValuesResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickForFacetValuesResponse(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchForFacetValuesResponse PickForFacetValuesResponse() => IsForFacetValuesResponse
             ? ForFacetValuesResponse!
@@ -96,7 +96,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsePartial))]
@@ -104,7 +104,7 @@ namespace Algolia
         public bool IsResponsePartial => ResponsePartial != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsePartial(
 #if NET6_0_OR_GREATER
@@ -117,23 +117,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchResponsePartial PickResponsePartial() => IsResponsePartial
             ? ResponsePartial!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsePartial' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResult(global::Algolia.SearchResponse value) => new SearchResult((global::Algolia.SearchResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchResponse?(SearchResult @this) => @this.Response;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResult(global::Algolia.SearchResponse? value)
         {
@@ -141,22 +141,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResult FromResponse(global::Algolia.SearchResponse? value) => new SearchResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResult(global::Algolia.SearchForFacetValuesResponse value) => new SearchResult((global::Algolia.SearchForFacetValuesResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchForFacetValuesResponse?(SearchResult @this) => @this.ForFacetValuesResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResult(global::Algolia.SearchForFacetValuesResponse? value)
         {
@@ -164,22 +164,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResult FromForFacetValuesResponse(global::Algolia.SearchForFacetValuesResponse? value) => new SearchResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchResult(global::Algolia.SearchResponsePartial value) => new SearchResult((global::Algolia.SearchResponsePartial?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchResponsePartial?(SearchResult @this) => @this.ResponsePartial;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResult(global::Algolia.SearchResponsePartial? value)
         {
@@ -187,12 +187,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchResult FromResponsePartial(global::Algolia.SearchResponsePartial? value) => new SearchResult(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchResult(
             global::Algolia.SearchResponse? response,
@@ -206,25 +206,25 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ResponsePartial as object ??
             ForFacetValuesResponse as object ??
-            Response as object 
+            Response as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Response?.ToString() ??
             ForFacetValuesResponse?.ToString() ??
-            ResponsePartial?.ToString() 
+            ResponsePartial?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -232,7 +232,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchResponse?, TResult>? response = null,
@@ -262,7 +262,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchResponse?>? response = null,
@@ -292,7 +292,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchResponse?>? response = null,
@@ -320,7 +320,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -343,19 +343,19 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchResult other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchResponse?>.Default.Equals(Response, other.Response) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForFacetValuesResponse?>.Default.Equals(ForFacetValuesResponse, other.ForFacetValuesResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchResponsePartial?>.Default.Equals(ResponsePartial, other.ResponsePartial) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchResponsePartial?>.Default.Equals(ResponsePartial, other.ResponsePartial)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchResult obj1, SearchResult obj2)
         {
@@ -363,7 +363,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchResult obj1, SearchResult obj2)
         {
@@ -371,7 +371,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

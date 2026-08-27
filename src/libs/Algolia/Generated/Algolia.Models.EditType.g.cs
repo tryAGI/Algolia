@@ -9,11 +9,11 @@ namespace Algolia
     public enum EditType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Remove,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Replace,
     }

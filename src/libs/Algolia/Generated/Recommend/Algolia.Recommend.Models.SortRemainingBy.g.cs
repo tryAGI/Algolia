@@ -16,15 +16,15 @@ namespace Algolia.Recommend
     public enum SortRemainingBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alpha,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Count,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hidden,
     }

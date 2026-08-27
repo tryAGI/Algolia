@@ -172,7 +172,7 @@ namespace Algolia.Recommend
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Algolia.Recommend.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

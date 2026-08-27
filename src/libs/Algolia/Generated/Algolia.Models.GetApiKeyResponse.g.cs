@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GetApiKeyResponse : global::System.IEquatable<GetApiKeyResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseGetApiKeyResponse? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BaseGetApiKeyResponse PickBase() => IsBase
             ? Base!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsApiKey => ApiKey != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApiKey(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.ApiKey PickApiKey() => IsApiKey
             ? ApiKey!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetApiKeyResponse(global::Algolia.BaseGetApiKeyResponse value) => new GetApiKeyResponse((global::Algolia.BaseGetApiKeyResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BaseGetApiKeyResponse?(GetApiKeyResponse @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetApiKeyResponse(global::Algolia.BaseGetApiKeyResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetApiKeyResponse FromBase(global::Algolia.BaseGetApiKeyResponse? value) => new GetApiKeyResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetApiKeyResponse(global::Algolia.ApiKey value) => new GetApiKeyResponse((global::Algolia.ApiKey?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.ApiKey?(GetApiKeyResponse @this) => @this.ApiKey;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetApiKeyResponse(global::Algolia.ApiKey? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetApiKeyResponse FromApiKey(global::Algolia.ApiKey? value) => new GetApiKeyResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetApiKeyResponse(
             global::Algolia.BaseGetApiKeyResponse? @base,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ApiKey as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            ApiKey?.ToString() 
+            ApiKey?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BaseGetApiKeyResponse, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.BaseGetApiKeyResponse>? @base = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GetApiKeyResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseGetApiKeyResponse?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.ApiKey?>.Default.Equals(ApiKey, other.ApiKey) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.ApiKey?>.Default.Equals(ApiKey, other.ApiKey)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GetApiKeyResponse obj1, GetApiKeyResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GetApiKeyResponse obj1, GetApiKeyResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -11,11 +11,11 @@ namespace Algolia
     public enum Mode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeywordSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeuralSearch,
     }

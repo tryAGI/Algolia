@@ -9,7 +9,7 @@ namespace Algolia
     public sealed partial class MultipleBatchRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         [global::System.Text.Json.Serialization.JsonRequired]

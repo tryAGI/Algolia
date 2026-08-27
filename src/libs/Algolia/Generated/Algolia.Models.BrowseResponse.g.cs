@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BrowseResponse : global::System.IEquatable<BrowseResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseSearchResponse? BaseSearch { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseSearch))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsBaseSearch => BaseSearch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseSearch(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BaseSearchResponse PickBaseSearch() => IsBaseSearch
             ? BaseSearch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BrowsePagination? Pagination { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pagination))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsPagination => Pagination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPagination(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BrowsePagination PickPagination() => IsPagination
             ? Pagination!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchHits? SearchHits { get; init; }
@@ -93,7 +93,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchHits))]
@@ -101,7 +101,7 @@ namespace Algolia
         public bool IsSearchHits => SearchHits != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchHits(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchHits PickSearchHits() => IsSearchHits
             ? SearchHits!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchHits' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Cursor? Cursor { get; init; }
@@ -130,7 +130,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cursor))]
@@ -138,7 +138,7 @@ namespace Algolia
         public bool IsCursor => Cursor != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCursor(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Cursor PickCursor() => IsCursor
             ? Cursor!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.BaseSearchResponse value) => new BrowseResponse((global::Algolia.BaseSearchResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BaseSearchResponse?(BrowseResponse @this) => @this.BaseSearch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseResponse(global::Algolia.BaseSearchResponse? value)
         {
@@ -175,22 +175,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseResponse FromBaseSearch(global::Algolia.BaseSearchResponse? value) => new BrowseResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.BrowsePagination value) => new BrowseResponse((global::Algolia.BrowsePagination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BrowsePagination?(BrowseResponse @this) => @this.Pagination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseResponse(global::Algolia.BrowsePagination? value)
         {
@@ -198,22 +198,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseResponse FromPagination(global::Algolia.BrowsePagination? value) => new BrowseResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.SearchHits value) => new BrowseResponse((global::Algolia.SearchHits?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchHits?(BrowseResponse @this) => @this.SearchHits;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseResponse(global::Algolia.SearchHits? value)
         {
@@ -221,22 +221,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseResponse FromSearchHits(global::Algolia.SearchHits? value) => new BrowseResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BrowseResponse(global::Algolia.Cursor value) => new BrowseResponse((global::Algolia.Cursor?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Cursor?(BrowseResponse @this) => @this.Cursor;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseResponse(global::Algolia.Cursor? value)
         {
@@ -244,12 +244,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BrowseResponse FromCursor(global::Algolia.Cursor? value) => new BrowseResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BrowseResponse(
             global::Algolia.BaseSearchResponse? baseSearch,
@@ -265,27 +265,27 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Cursor as object ??
             SearchHits as object ??
             Pagination as object ??
-            BaseSearch as object 
+            BaseSearch as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseSearch?.ToString() ??
             Pagination?.ToString() ??
             SearchHits?.ToString() ??
-            Cursor?.ToString() 
+            Cursor?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -293,7 +293,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.BaseSearchResponse, TResult>? baseSearch = null,
@@ -328,7 +328,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.BaseSearchResponse>? baseSearch = null,
@@ -364,7 +364,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.BaseSearchResponse>? baseSearch = null,
@@ -397,7 +397,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -422,7 +422,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BrowseResponse other)
         {
@@ -430,12 +430,12 @@ namespace Algolia
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchResponse?>.Default.Equals(BaseSearch, other.BaseSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BrowsePagination?>.Default.Equals(Pagination, other.Pagination) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchHits?>.Default.Equals(SearchHits, other.SearchHits) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Cursor?>.Default.Equals(Cursor, other.Cursor) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Cursor?>.Default.Equals(Cursor, other.Cursor)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BrowseResponse obj1, BrowseResponse obj2)
         {
@@ -443,7 +443,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BrowseResponse obj1, BrowseResponse obj2)
         {
@@ -451,7 +451,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

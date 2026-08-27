@@ -9,7 +9,7 @@ namespace Algolia.Recommend
     public sealed partial class RedirectRuleIndexMetadataData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ruleObjectID")]
         [global::System.Text.Json.Serialization.JsonRequired]

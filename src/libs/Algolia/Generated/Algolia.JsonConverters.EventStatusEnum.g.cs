@@ -20,7 +20,7 @@ namespace Algolia.JsonConverters
                     {
                         return global::Algolia.EventStatusEnumExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

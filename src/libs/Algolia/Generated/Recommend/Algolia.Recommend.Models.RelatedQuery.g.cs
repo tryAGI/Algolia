@@ -5,12 +5,12 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RelatedQuery : global::System.IEquatable<RelatedQuery>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.BaseRecommendRequest? BaseRecommendRequest { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseRecommendRequest))]
@@ -27,7 +27,7 @@ namespace Algolia.Recommend
         public bool IsBaseRecommendRequest => BaseRecommendRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseRecommendRequest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
             ? BaseRecommendRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.Recommend.RelatedProducts? Products { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia.Recommend
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Products))]
@@ -64,7 +64,7 @@ namespace Algolia.Recommend
         public bool IsProducts => Products != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProducts(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.Recommend.RelatedProducts PickProducts() => IsProducts
             ? Products!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Products' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RelatedQuery(global::Algolia.Recommend.BaseRecommendRequest value) => new RelatedQuery((global::Algolia.Recommend.BaseRecommendRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.BaseRecommendRequest?(RelatedQuery @this) => @this.BaseRecommendRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RelatedQuery(global::Algolia.Recommend.BaseRecommendRequest? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RelatedQuery FromBaseRecommendRequest(global::Algolia.Recommend.BaseRecommendRequest? value) => new RelatedQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RelatedQuery(global::Algolia.Recommend.RelatedProducts value) => new RelatedQuery((global::Algolia.Recommend.RelatedProducts?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.Recommend.RelatedProducts?(RelatedQuery @this) => @this.Products;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RelatedQuery(global::Algolia.Recommend.RelatedProducts? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RelatedQuery FromProducts(global::Algolia.Recommend.RelatedProducts? value) => new RelatedQuery(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RelatedQuery(
             global::Algolia.Recommend.BaseRecommendRequest? baseRecommendRequest,
@@ -141,23 +141,23 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Products as object ??
-            BaseRecommendRequest as object 
+            BaseRecommendRequest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseRecommendRequest?.ToString() ??
-            Products?.ToString() 
+            Products?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.BaseRecommendRequest, TResult>? baseRecommendRequest = null,
@@ -190,7 +190,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
@@ -214,7 +214,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.BaseRecommendRequest>? baseRecommendRequest = null,
@@ -237,7 +237,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RelatedQuery other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.BaseRecommendRequest?>.Default.Equals(BaseRecommendRequest, other.BaseRecommendRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RelatedProducts?>.Default.Equals(Products, other.Products) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.RelatedProducts?>.Default.Equals(Products, other.Products)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RelatedQuery obj1, RelatedQuery obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RelatedQuery obj1, RelatedQuery obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia.Recommend
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AutoFilteringFilterEntry : global::System.IEquatable<AutoFilteringFilterEntry>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? AutoFilteringFilterEntryVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoFilteringFilterEntryVariant1))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsAutoFilteringFilterEntryVariant1 => AutoFilteringFilterEntryVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutoFilteringFilterEntryVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickAutoFilteringFilterEntryVariant1() => IsAutoFilteringFilterEntryVariant1
             ? AutoFilteringFilterEntryVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AutoFilteringFilterEntryVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoFilteringFilterEntryVariant2))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsAutoFilteringFilterEntryVariant2 => AutoFilteringFilterEntryVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutoFilteringFilterEntryVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickAutoFilteringFilterEntryVariant2() => IsAutoFilteringFilterEntryVariant2
             ? AutoFilteringFilterEntryVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AutoFilteringFilterEntry(string value) => new AutoFilteringFilterEntry((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(AutoFilteringFilterEntry @this) => @this.AutoFilteringFilterEntryVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AutoFilteringFilterEntry(string? value)
         {
@@ -101,12 +101,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AutoFilteringFilterEntry FromAutoFilteringFilterEntryVariant1(string? value) => new AutoFilteringFilterEntry(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AutoFilteringFilterEntry(
             string? autoFilteringFilterEntryVariant1,
@@ -118,23 +118,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AutoFilteringFilterEntryVariant2 as object ??
-            AutoFilteringFilterEntryVariant1 as object 
+            AutoFilteringFilterEntryVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AutoFilteringFilterEntryVariant1?.ToString() ??
-            AutoFilteringFilterEntryVariant2?.ToString() 
+            AutoFilteringFilterEntryVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? autoFilteringFilterEntryVariant1 = null,
@@ -167,7 +167,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? autoFilteringFilterEntryVariant1 = null,
@@ -191,7 +191,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? autoFilteringFilterEntryVariant1 = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AutoFilteringFilterEntry other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AutoFilteringFilterEntryVariant1, other.AutoFilteringFilterEntryVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AutoFilteringFilterEntryVariant2, other.AutoFilteringFilterEntryVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AutoFilteringFilterEntryVariant2, other.AutoFilteringFilterEntryVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AutoFilteringFilterEntry obj1, AutoFilteringFilterEntry obj2)
         {
@@ -254,7 +254,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AutoFilteringFilterEntry obj1, AutoFilteringFilterEntry obj2)
         {
@@ -262,7 +262,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

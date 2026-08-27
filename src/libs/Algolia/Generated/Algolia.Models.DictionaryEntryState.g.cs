@@ -10,11 +10,11 @@ namespace Algolia
     public enum DictionaryEntryState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
     }

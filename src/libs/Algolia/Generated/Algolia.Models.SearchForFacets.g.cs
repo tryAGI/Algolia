@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SearchForFacets : global::System.IEquatable<SearchForFacets>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchParams? Params { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsParams => Params != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickParams(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchParams PickParams() => IsParams
             ? Params!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchForFacetsSettings? Settings { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Settings))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsSettings => Settings != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSettings(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchForFacetsSettings PickSettings() => IsSettings
             ? Settings!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Settings' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchForFacets(global::Algolia.SearchParams value) => new SearchForFacets((global::Algolia.SearchParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchParams?(SearchForFacets @this) => @this.Params;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchForFacets(global::Algolia.SearchParams? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchForFacets FromParams(global::Algolia.SearchParams? value) => new SearchForFacets(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchForFacets(global::Algolia.SearchForFacetsSettings value) => new SearchForFacets((global::Algolia.SearchForFacetsSettings?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchForFacetsSettings?(SearchForFacets @this) => @this.Settings;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchForFacets(global::Algolia.SearchForFacetsSettings? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchForFacets FromSettings(global::Algolia.SearchForFacetsSettings? value) => new SearchForFacets(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchForFacets(
             global::Algolia.SearchParams? @params,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Settings as object ??
-            Params as object 
+            Params as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Params?.ToString() ??
-            Settings?.ToString() 
+            Settings?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParams?, TResult>? @params = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParams?>? @params = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchParams?>? @params = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchForFacets other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParams?>.Default.Equals(Params, other.Params) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForFacetsSettings?>.Default.Equals(Settings, other.Settings) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchForFacetsSettings?>.Default.Equals(Settings, other.Settings)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchForFacets obj1, SearchForFacets obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchForFacets obj1, SearchForFacets obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

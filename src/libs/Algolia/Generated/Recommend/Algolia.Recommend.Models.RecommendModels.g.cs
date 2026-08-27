@@ -4,24 +4,24 @@
 namespace Algolia.Recommend
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RecommendModels
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BoughtTogether,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RelatedProducts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrendingFacets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrendingItems,
     }

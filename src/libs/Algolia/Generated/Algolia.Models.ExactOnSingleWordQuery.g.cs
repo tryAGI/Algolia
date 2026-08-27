@@ -24,7 +24,7 @@ namespace Algolia
         /// </summary>
         Attribute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>

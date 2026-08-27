@@ -5,12 +5,12 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BaseSearchParams : global::System.IEquatable<BaseSearchParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.SearchParamsQuery? Query { get; init; }
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsQuery => Query != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQuery(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.SearchParamsQuery PickQuery() => IsQuery
             ? Query!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Algolia.BaseSearchParamsWithoutQuery? WithoutQuery { get; init; }
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithoutQuery))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsWithoutQuery => WithoutQuery != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithoutQuery(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.BaseSearchParamsWithoutQuery PickWithoutQuery() => IsWithoutQuery
             ? WithoutQuery!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithoutQuery' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseSearchParams(global::Algolia.SearchParamsQuery value) => new BaseSearchParams((global::Algolia.SearchParamsQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.SearchParamsQuery?(BaseSearchParams @this) => @this.Query;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseSearchParams(global::Algolia.SearchParamsQuery? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseSearchParams FromQuery(global::Algolia.SearchParamsQuery? value) => new BaseSearchParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseSearchParams(global::Algolia.BaseSearchParamsWithoutQuery value) => new BaseSearchParams((global::Algolia.BaseSearchParamsWithoutQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.BaseSearchParamsWithoutQuery?(BaseSearchParams @this) => @this.WithoutQuery;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseSearchParams(global::Algolia.BaseSearchParamsWithoutQuery? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseSearchParams FromWithoutQuery(global::Algolia.BaseSearchParamsWithoutQuery? value) => new BaseSearchParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseSearchParams(
             global::Algolia.SearchParamsQuery? query,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WithoutQuery as object ??
-            Query as object 
+            Query as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Query?.ToString() ??
-            WithoutQuery?.ToString() 
+            WithoutQuery?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SearchParamsQuery, TResult>? query = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.SearchParamsQuery>? query = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SearchParamsQuery>? query = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BaseSearchParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsQuery?>.Default.Equals(Query, other.Query) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchParamsWithoutQuery?>.Default.Equals(WithoutQuery, other.WithoutQuery) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchParamsWithoutQuery?>.Default.Equals(WithoutQuery, other.WithoutQuery)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BaseSearchParams obj1, BaseSearchParams obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BaseSearchParams obj1, BaseSearchParams obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

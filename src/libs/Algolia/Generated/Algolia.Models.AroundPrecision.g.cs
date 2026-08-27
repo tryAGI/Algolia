@@ -23,7 +23,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AroundPrecisionVariant1))]
@@ -31,7 +31,7 @@ namespace Algolia
         public bool IsAroundPrecisionVariant1 => AroundPrecisionVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAroundPrecisionVariant1(
 #if NET6_0_OR_GREATER
@@ -44,14 +44,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickAroundPrecisionVariant1() => IsAroundPrecisionVariant1
             ? AroundPrecisionVariant1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AroundPrecisionVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>? RangeObjects { get; init; }
@@ -60,7 +60,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RangeObjects))]
@@ -68,7 +68,7 @@ namespace Algolia
         public bool IsRangeObjects => RangeObjects != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRangeObjects(
 #if NET6_0_OR_GREATER
@@ -81,23 +81,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem> PickRangeObjects() => IsRangeObjects
             ? RangeObjects!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RangeObjects' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AroundPrecision(int value) => new AroundPrecision((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(AroundPrecision @this) => @this.AroundPrecisionVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AroundPrecision(int? value)
         {
@@ -105,12 +105,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AroundPrecision FromAroundPrecisionVariant1(int? value) => new AroundPrecision(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AroundPrecision(
             int? aroundPrecisionVariant1,
@@ -122,23 +122,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RangeObjects as object ??
-            AroundPrecisionVariant1 as object 
+            AroundPrecisionVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AroundPrecisionVariant1?.ToString() ??
-            RangeObjects?.ToString() 
+            RangeObjects?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -146,7 +146,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<int?, TResult>? aroundPrecisionVariant1 = null,
@@ -171,7 +171,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<int?>? aroundPrecisionVariant1 = null,
@@ -195,7 +195,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<int?>? aroundPrecisionVariant1 = null,
@@ -218,7 +218,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -239,18 +239,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AroundPrecision other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(AroundPrecisionVariant1, other.AroundPrecisionVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>?>.Default.Equals(RangeObjects, other.RangeObjects) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>?>.Default.Equals(RangeObjects, other.RangeObjects)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AroundPrecision obj1, AroundPrecision obj2)
         {
@@ -258,7 +258,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AroundPrecision obj1, AroundPrecision obj2)
         {
@@ -266,7 +266,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

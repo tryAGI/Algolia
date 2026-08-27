@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct StandardEntry : global::System.IEquatable<StandardEntry>
     {
@@ -20,7 +20,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardEntryVariant1))]
@@ -28,7 +28,7 @@ namespace Algolia
         public bool IsStandardEntryVariant1 => StandardEntryVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStandardEntryVariant1(
 #if NET6_0_OR_GREATER
@@ -41,14 +41,14 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, bool> PickStandardEntryVariant1() => IsStandardEntryVariant1
             ? StandardEntryVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? StandardEntryVariant2 { get; init; }
@@ -57,7 +57,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardEntryVariant2))]
@@ -65,7 +65,7 @@ namespace Algolia
         public bool IsStandardEntryVariant2 => StandardEntryVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStandardEntryVariant2(
 #if NET6_0_OR_GREATER
@@ -78,23 +78,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickStandardEntryVariant2() => IsStandardEntryVariant2
             ? StandardEntryVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StandardEntryVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StandardEntry(global::System.Collections.Generic.Dictionary<string, bool> value) => new StandardEntry((global::System.Collections.Generic.Dictionary<string, bool>?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::System.Collections.Generic.Dictionary<string, bool>?(StandardEntry @this) => @this.StandardEntryVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StandardEntry(global::System.Collections.Generic.Dictionary<string, bool>? value)
         {
@@ -102,12 +102,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StandardEntry FromStandardEntryVariant1(global::System.Collections.Generic.Dictionary<string, bool>? value) => new StandardEntry(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StandardEntry(
             global::System.Collections.Generic.Dictionary<string, bool>? standardEntryVariant1,
@@ -119,23 +119,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             StandardEntryVariant2 as object ??
-            StandardEntryVariant1 as object 
+            StandardEntryVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StandardEntryVariant1?.ToString() ??
-            StandardEntryVariant2?.ToString() 
+            StandardEntryVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -143,7 +143,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>, TResult>? standardEntryVariant1 = null,
@@ -168,7 +168,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? standardEntryVariant1 = null,
@@ -192,7 +192,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? standardEntryVariant1 = null,
@@ -215,7 +215,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -236,18 +236,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StandardEntry other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, bool>?>.Default.Equals(StandardEntryVariant1, other.StandardEntryVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(StandardEntryVariant2, other.StandardEntryVariant2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(StandardEntryVariant2, other.StandardEntryVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StandardEntry obj1, StandardEntry obj2)
         {
@@ -255,7 +255,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StandardEntry obj1, StandardEntry obj2)
         {
@@ -263,7 +263,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

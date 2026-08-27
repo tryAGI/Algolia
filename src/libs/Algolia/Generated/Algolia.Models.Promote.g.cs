@@ -5,7 +5,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Promote : global::System.IEquatable<Promote>
     {
@@ -19,7 +19,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectIDs))]
@@ -27,7 +27,7 @@ namespace Algolia
         public bool IsObjectIDs => ObjectIDs != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectIDs(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.PromoteObjectIDs PickObjectIDs() => IsObjectIDs
             ? ObjectIDs!
@@ -56,7 +56,7 @@ namespace Algolia
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectID))]
@@ -64,7 +64,7 @@ namespace Algolia
         public bool IsObjectID => ObjectID != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectID(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Algolia.PromoteObjectID PickObjectID() => IsObjectID
             ? ObjectID!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectID' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Promote(global::Algolia.PromoteObjectIDs value) => new Promote((global::Algolia.PromoteObjectIDs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.PromoteObjectIDs?(Promote @this) => @this.ObjectIDs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Promote(global::Algolia.PromoteObjectIDs? value)
         {
@@ -101,22 +101,22 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Promote FromObjectIDs(global::Algolia.PromoteObjectIDs? value) => new Promote(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Promote(global::Algolia.PromoteObjectID value) => new Promote((global::Algolia.PromoteObjectID?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Algolia.PromoteObjectID?(Promote @this) => @this.ObjectID;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Promote(global::Algolia.PromoteObjectID? value)
         {
@@ -124,12 +124,12 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Promote FromObjectID(global::Algolia.PromoteObjectID? value) => new Promote(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Promote(
             global::Algolia.PromoteObjectIDs? objectIDs,
@@ -141,23 +141,23 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ObjectID as object ??
-            ObjectIDs as object 
+            ObjectIDs as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ObjectIDs?.ToString() ??
-            ObjectID?.ToString() 
+            ObjectID?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.PromoteObjectIDs, TResult>? objectIDs = null,
@@ -190,7 +190,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Algolia.PromoteObjectIDs>? objectIDs = null,
@@ -214,7 +214,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.PromoteObjectIDs>? objectIDs = null,
@@ -237,7 +237,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Promote other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.PromoteObjectIDs?>.Default.Equals(ObjectIDs, other.ObjectIDs) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.PromoteObjectID?>.Default.Equals(ObjectID, other.ObjectID) 
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.PromoteObjectID?>.Default.Equals(ObjectID, other.ObjectID)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Promote obj1, Promote obj2)
         {
@@ -277,7 +277,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Promote obj1, Promote obj2)
         {
@@ -285,7 +285,7 @@ namespace Algolia
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

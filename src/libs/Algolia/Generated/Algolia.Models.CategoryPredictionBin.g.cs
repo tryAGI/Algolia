@@ -9,23 +9,23 @@ namespace Algolia
     public enum CategoryPredictionBin
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Certain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VeryHigh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VeryLow,
     }
