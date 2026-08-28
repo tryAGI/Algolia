@@ -27,7 +27,7 @@ namespace Algolia
         global::System.Threading.Tasks.Task<global::Algolia.GetLogsResponse> GetLogsAsync(
             int? offset = default,
             int? length = default,
-            global::Algolia.OneOf<string, object>? indexName = default,
+            string? indexName = default,
             global::Algolia.LogType? type = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -54,7 +54,7 @@ namespace Algolia
         global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.GetLogsResponse>> GetLogsAsResponseAsync(
             int? offset = default,
             int? length = default,
-            global::Algolia.OneOf<string, object>? indexName = default,
+            string? indexName = default,
             global::Algolia.LogType? type = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

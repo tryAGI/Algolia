@@ -221,25 +221,7 @@ namespace Algolia
 
             typeof(global::Algolia.JsonConverters.PromoteJsonConverter),
 
-            typeof(global::Algolia.JsonConverters.StandardEntryJsonConverter),
-
-            typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter),
-
-            typeof(global::Algolia.JsonConverters.EventStatusJsonConverter),
-
             typeof(global::Algolia.JsonConverters.BuiltInOperationValueJsonConverter),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::Algolia.ReRankingApplyFilter?, object>),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<bool?, object>),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<int?, object>),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<string, object>),
-
-            typeof(global::Algolia.JsonConverters.OneOfJsonConverter<int?, object>),
 
             typeof(global::Algolia.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -284,7 +266,6 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.RemoveWordsIfNoResults), TypeInfoPropertyName = "RemoveWordsIfNoResults2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Mode), TypeInfoPropertyName = "Mode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SemanticSearch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "OneOfIListStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OptionalWords), TypeInfoPropertyName = "OptionalWords2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ExactOnSingleWordQuery), TypeInfoPropertyName = "ExactOnSingleWordQuery2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AlternativesAsExact), TypeInfoPropertyName = "AlternativesAsExact2")]
@@ -309,7 +290,6 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ReRankingApplyFilter), TypeInfoPropertyName = "ReRankingApplyFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.IndexSettingsAsSearchParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<global::Algolia.ReRankingApplyFilter?, object>), TypeInfoPropertyName = "OneOfReRankingApplyFilterObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchParamsObject), TypeInfoPropertyName = "SearchParamsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchParams), TypeInfoPropertyName = "SearchParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.RedirectRuleIndexMetadata))]
@@ -317,7 +297,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.UserData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BaseSearchResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BaseSearchResponseExhaustive))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>), TypeInfoPropertyName = "IListObject_System_Collections_Generic_IList_object")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, int>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.BaseSearchResponseFacetsStats2>))]
@@ -428,10 +408,8 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.DictionaryEntry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchDictionaryEntriesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.DictionaryEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.StandardEntry), TypeInfoPropertyName = "StandardEntry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, bool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.StandardEntries))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.DictionaryLanguage), TypeInfoPropertyName = "DictionaryLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.DictionaryLanguageVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Languages))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.UserId))]
@@ -453,7 +431,6 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SecuredApiKeyRestrictions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ReplaceAllObjectsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.BatchResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.EventStatus), TypeInfoPropertyName = "EventStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.EventStatusEnum), TypeInfoPropertyName = "EventStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.EventType), TypeInfoPropertyName = "EventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Event))]
@@ -475,7 +452,6 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchSynonymsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Rule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchRulesRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<bool?, object>), TypeInfoPropertyName = "OneOfBooleanObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BatchDictionaryEntriesRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.BatchDictionaryEntriesRequestRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BatchDictionaryEntriesRequestRequest))]
@@ -486,8 +462,6 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchUserIdsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OperationIndexRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.ScopeType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<int?, object>), TypeInfoPropertyName = "OneOfInt32Object2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<string, object>), TypeInfoPropertyName = "OneOfStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.SearchResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SaveObjectResponse))]
@@ -498,6 +472,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.MultipleBatchResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.GetObjectsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object?>), TypeInfoPropertyName = "IListObject_System_Collections_Generic_IList_object_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SaveSynonymResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.DeleteSynonymResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ListApiKeysResponse))]
@@ -539,13 +514,12 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.SupportedLanguage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.OneOf<global::System.Collections.Generic.List<string>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.AlternativesAsExact>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.AdvancedSyntaxFeatures>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.BannerImageUrl>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.Banner>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.ReRankingApplyFilter>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "ListObject_System_Collections_Generic_List_object")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.RedirectRuleIndexMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.HighlightResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.SnippetResult>))]
@@ -577,6 +551,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.BatchDictionaryEntriesRequestRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.ScopeType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.SearchResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object?>), TypeInfoPropertyName = "ListObject_System_Collections_Generic_List_object_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.GetApiKeyResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Algolia.UserId>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::Algolia.UserId>>>))]

@@ -6,7 +6,7 @@ namespace Algolia
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class EventData
+    public sealed partial class EventData2
     {
 
         /// <summary>

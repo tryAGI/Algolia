@@ -13,8 +13,7 @@ namespace Algolia
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eventSources")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]
-        public global::Algolia.OneOf<global::System.Collections.Generic.IList<string>, object>? EventSources { get; set; }
+        public global::System.Collections.Generic.IList<string>? EventSources { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SemanticSearch(
-            global::Algolia.OneOf<global::System.Collections.Generic.IList<string>, object>? eventSources)
+            global::System.Collections.Generic.IList<string>? eventSources)
         {
             this.EventSources = eventSources;
         }

@@ -644,7 +644,7 @@ namespace Algolia
             string? context = default,
             int? page = default,
             int? hitsPerPage = default,
-            global::Algolia.OneOf<bool?, object>? enabled = default,
+            bool? enabled = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

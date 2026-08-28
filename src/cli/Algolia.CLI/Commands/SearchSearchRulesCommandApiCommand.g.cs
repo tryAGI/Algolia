@@ -67,11 +67,9 @@ For example, to display 10 results per page starting from the third page, set `h
 ",
     };
 
-    private static Option<global::Algolia.OneOf<bool?, object>?> Enabled { get; } = new(
-        name: @"--enabled")
-    {
-        Description = @"",
-    };
+    private static Option<bool?> Enabled { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--enabled",
+        description: @"");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",

@@ -29,14 +29,14 @@ namespace Algolia
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
             ref int? length,
-            ref global::Algolia.OneOf<string, object>? indexName,
+            ref string? indexName,
             ref global::Algolia.LogType? type);
         partial void PrepareGetLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
             int? length,
-            global::Algolia.OneOf<string, object>? indexName,
+            string? indexName,
             global::Algolia.LogType? type);
         partial void ProcessGetLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -70,7 +70,7 @@ namespace Algolia
         public async global::System.Threading.Tasks.Task<global::Algolia.GetLogsResponse> GetLogsAsync(
             int? offset = default,
             int? length = default,
-            global::Algolia.OneOf<string, object>? indexName = default,
+            string? indexName = default,
             global::Algolia.LogType? type = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -109,7 +109,7 @@ namespace Algolia
         public async global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.GetLogsResponse>> GetLogsAsResponseAsync(
             int? offset = default,
             int? length = default,
-            global::Algolia.OneOf<string, object>? indexName = default,
+            string? indexName = default,
             global::Algolia.LogType? type = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -152,7 +152,7 @@ namespace Algolia
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("length", length?.ToString())
-                                .AddOptionalParameter("indexName", indexName?.ToString())
+                                .AddOptionalParameter("indexName", indexName)
                                 .AddOptionalParameter("type", type?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

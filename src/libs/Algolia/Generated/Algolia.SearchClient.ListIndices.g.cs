@@ -27,12 +27,12 @@ namespace Algolia
             };
         partial void PrepareListIndicesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Algolia.OneOf<int?, object>? page,
+            int? page,
             ref int? hitsPerPage);
         partial void PrepareListIndicesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Algolia.OneOf<int?, object>? page,
+            int? page,
             int? hitsPerPage);
         partial void ProcessListIndicesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,7 +58,7 @@ namespace Algolia
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Algolia.ListIndicesResponse> ListIndicesAsync(
-            global::Algolia.OneOf<int?, object>? page = default,
+            int? page = default,
             int? hitsPerPage = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -87,7 +87,7 @@ namespace Algolia
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Algolia.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Algolia.AutoSDKHttpResponse<global::Algolia.ListIndicesResponse>> ListIndicesAsResponseAsync(
-            global::Algolia.OneOf<int?, object>? page = default,
+            int? page = default,
             int? hitsPerPage = default,
             global::Algolia.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Algolia
                 client: HttpClient);
             PrepareListIndicesArguments(
                 httpClient: HttpClient,
-                page: ref page,
+                page: page,
                 hitsPerPage: ref hitsPerPage);
 
 

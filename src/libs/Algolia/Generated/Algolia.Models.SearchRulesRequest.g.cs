@@ -59,8 +59,7 @@ namespace Algolia
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OneOfJsonConverter<bool?, object>))]
-        public global::Algolia.OneOf<bool?, object>? Enabled { get; set; }
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -113,7 +112,7 @@ namespace Algolia
             string? context,
             int? page,
             int? hitsPerPage,
-            global::Algolia.OneOf<bool?, object>? enabled)
+            bool? enabled)
         {
             this.Query = query;
             this.Anchoring = anchoring;
