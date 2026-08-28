@@ -21,7 +21,7 @@ namespace Algolia
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Results { get; set; }
+        public required global::System.Collections.Generic.IList<object?> Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetObjectsResponse(
-            global::System.Collections.Generic.IList<object> results,
+            global::System.Collections.Generic.IList<object?> results,
             string? message)
         {
             this.Message = message;

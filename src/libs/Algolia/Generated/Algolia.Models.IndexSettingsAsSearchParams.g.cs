@@ -471,8 +471,7 @@ namespace Algolia
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reRankingApplyFilter")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OneOfJsonConverter<global::Algolia.ReRankingApplyFilter?, object>))]
-        public global::Algolia.OneOf<global::Algolia.ReRankingApplyFilter?, object>? ReRankingApplyFilter { get; set; }
+        public global::Algolia.ReRankingApplyFilter? ReRankingApplyFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -847,7 +846,7 @@ namespace Algolia
             bool? attributeCriteriaComputedByMinProximity,
             global::Algolia.RenderingContent? renderingContent,
             bool? enableReRanking,
-            global::Algolia.OneOf<global::Algolia.ReRankingApplyFilter?, object>? reRankingApplyFilter)
+            global::Algolia.ReRankingApplyFilter? reRankingApplyFilter)
         {
             this.AttributesToRetrieve = attributesToRetrieve;
             this.Ranking = ranking;

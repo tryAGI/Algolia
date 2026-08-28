@@ -7,7 +7,7 @@ namespace Algolia.CLI.Commands;
 
 internal static partial class SearchListIndicesCommandApiCommand
 {
-    private static Option<global::Algolia.OneOf<int?, object>?> Page { get; } = new(
+    private static Option<int?> Page { get; } = new(
         name: @"--page")
     {
         Description = @"Requested page of the API response.

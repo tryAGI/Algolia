@@ -12,25 +12,19 @@ namespace Algolia
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plurals")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Algolia.DictionaryLanguage Plurals { get; set; }
+        public global::Algolia.DictionaryLanguageVariant1? Plurals { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stopwords")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Algolia.DictionaryLanguage Stopwords { get; set; }
+        public global::Algolia.DictionaryLanguageVariant1? Stopwords { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compounds")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.DictionaryLanguageJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Algolia.DictionaryLanguage Compounds { get; set; }
+        public global::Algolia.DictionaryLanguageVariant1? Compounds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,9 +42,9 @@ namespace Algolia
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Languages(
-            global::Algolia.DictionaryLanguage plurals,
-            global::Algolia.DictionaryLanguage stopwords,
-            global::Algolia.DictionaryLanguage compounds)
+            global::Algolia.DictionaryLanguageVariant1? plurals,
+            global::Algolia.DictionaryLanguageVariant1? stopwords,
+            global::Algolia.DictionaryLanguageVariant1? compounds)
         {
             this.Plurals = plurals;
             this.Stopwords = stopwords;

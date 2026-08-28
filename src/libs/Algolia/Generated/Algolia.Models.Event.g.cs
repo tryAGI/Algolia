@@ -30,9 +30,7 @@ namespace Algolia
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.EventStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Algolia.EventStatus Status { get; set; }
+        public global::Algolia.EventStatusEnum? Status { get; set; }
 
         /// <summary>
         ///
@@ -81,7 +79,6 @@ namespace Algolia
         /// Universally unique identifier (UUID) of a task run.<br/>
         /// Example: 6c02aeb1-775e-418e-870b-1faccd4b2c0f
         /// </param>
-        /// <param name="status"></param>
         /// <param name="type"></param>
         /// <param name="batchSize">
         /// The extracted record batch size.<br/>
@@ -90,6 +87,7 @@ namespace Algolia
         /// <param name="publishedAt">
         /// Date and time when the resource was published, in RFC 3339 format.
         /// </param>
+        /// <param name="status"></param>
         /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -97,10 +95,10 @@ namespace Algolia
         public Event(
             string eventID,
             string runID,
-            global::Algolia.EventStatus status,
             global::Algolia.EventType type,
             int batchSize,
             string publishedAt,
+            global::Algolia.EventStatusEnum? status,
             object? data)
         {
             this.EventID = eventID ?? throw new global::System.ArgumentNullException(nameof(eventID));

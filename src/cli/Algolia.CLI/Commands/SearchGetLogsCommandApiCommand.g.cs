@@ -19,7 +19,7 @@ internal static partial class SearchGetLogsCommandApiCommand
         Description = @"Maximum number of entries to retrieve.",
     };
 
-    private static Option<global::Algolia.OneOf<string, object>?> IndexName { get; } = new(
+    private static Option<string?> IndexName { get; } = new(
         name: @"--index-name")
     {
         Description = @"Index for which to retrieve log entries.
