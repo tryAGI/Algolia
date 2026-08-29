@@ -17,159 +17,34 @@ namespace Algolia.Recommend.JsonConverters
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-                    {
-                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
-                        {
-                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
-                        }
-                    }
-
-                }
-            }
-
-            var __score0 = 0;
-            if (__jsonProps.Contains("allowCompressionOfIntegerArray")) __score0++;
-            if (__jsonProps.Contains("attributeForDistinct")) __score0++;
-            if (__jsonProps.Contains("attributesForFaceting")) __score0++;
-            if (__jsonProps.Contains("attributesToTransliterate")) __score0++;
-            if (__jsonProps.Contains("camelCaseAttributes")) __score0++;
-            if (__jsonProps.Contains("customNormalization")) __score0++;
-            if (__jsonProps.Contains("customRanking")) __score0++;
-            if (__jsonProps.Contains("decompoundedAttributes")) __score0++;
-            if (__jsonProps.Contains("disablePrefixOnAttributes")) __score0++;
-            if (__jsonProps.Contains("disableTypoToleranceOnWords")) __score0++;
-            if (__jsonProps.Contains("indexLanguages")) __score0++;
-            if (__jsonProps.Contains("keepDiacriticsOnCharacters")) __score0++;
-            if (__jsonProps.Contains("maxFacetHits")) __score0++;
-            if (__jsonProps.Contains("numericAttributesForFiltering")) __score0++;
-            if (__jsonProps.Contains("paginationLimitedTo")) __score0++;
-            if (__jsonProps.Contains("replicas")) __score0++;
-            if (__jsonProps.Contains("searchableAttributes")) __score0++;
-            if (__jsonProps.Contains("separatorsToIndex")) __score0++;
-            if (__jsonProps.Contains("unretrievableAttributes")) __score0++;
-            if (__jsonProps.Contains("userData")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("advancedSyntax")) __score1++;
-            if (__jsonProps.Contains("advancedSyntaxFeatures")) __score1++;
-            if (__jsonProps.Contains("allowTyposOnNumericTokens")) __score1++;
-            if (__jsonProps.Contains("alternativesAsExact")) __score1++;
-            if (__jsonProps.Contains("attributeCriteriaComputedByMinProximity")) __score1++;
-            if (__jsonProps.Contains("attributesToHighlight")) __score1++;
-            if (__jsonProps.Contains("attributesToRetrieve")) __score1++;
-            if (__jsonProps.Contains("attributesToSnippet")) __score1++;
-            if (__jsonProps.Contains("decompoundQuery")) __score1++;
-            if (__jsonProps.Contains("disableExactOnAttributes")) __score1++;
-            if (__jsonProps.Contains("disableTypoToleranceOnAttributes")) __score1++;
-            if (__jsonProps.Contains("distinct")) __score1++;
-            if (__jsonProps.Contains("enablePersonalization")) __score1++;
-            if (__jsonProps.Contains("enableReRanking")) __score1++;
-            if (__jsonProps.Contains("exactOnSingleWordQuery")) __score1++;
-            if (__jsonProps.Contains("highlightPostTag")) __score1++;
-            if (__jsonProps.Contains("highlightPreTag")) __score1++;
-            if (__jsonProps.Contains("ignorePlurals")) __score1++;
-            if (__jsonProps.Contains("maxValuesPerFacet")) __score1++;
-            if (__jsonProps.Contains("minProximity")) __score1++;
-            if (__jsonProps.Contains("minWordSizefor1Typo")) __score1++;
-            if (__jsonProps.Contains("minWordSizefor2Typos")) __score1++;
-            if (__jsonProps.Contains("optionalWords")) __score1++;
-            if (__jsonProps.Contains("queryLanguages")) __score1++;
-            if (__jsonProps.Contains("queryType")) __score1++;
-            if (__jsonProps.Contains("reRankingApplyFilter")) __score1++;
-            if (__jsonProps.Contains("relevancyStrictness")) __score1++;
-            if (__jsonProps.Contains("removeStopWords")) __score1++;
-            if (__jsonProps.Contains("removeWordsIfNoResults")) __score1++;
-            if (__jsonProps.Contains("renderingContent")) __score1++;
-            if (__jsonProps.Contains("renderingContent.facetOrdering")) __score1++;
-            if (__jsonProps.Contains("renderingContent.redirect")) __score1++;
-            if (__jsonProps.Contains("renderingContent.widgets")) __score1++;
-            if (__jsonProps.Contains("replaceSynonymsInHighlight")) __score1++;
-            if (__jsonProps.Contains("responseFields")) __score1++;
-            if (__jsonProps.Contains("restrictHighlightAndSnippetArrays")) __score1++;
-            if (__jsonProps.Contains("snippetEllipsisText")) __score1++;
-            if (__jsonProps.Contains("sortFacetValuesBy")) __score1++;
-            if (__jsonProps.Contains("typoTolerance")) __score1++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Algolia.Recommend.BaseIndexSettings? base1 = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseIndexSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseIndexSettings).Name}");
+                base1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::Algolia.Recommend.BaseRecommendIndexSettings? base2 = default;
-            if (__bestIndex >= 0)
+            try
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseIndexSettings> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseIndexSettings).Name}");
-                        base1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendIndexSettings> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendIndexSettings).Name}");
-                        base2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendIndexSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendIndexSettings).Name}");
+                base2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
-
-            if (base1 == null && base2 == null)
+            catch (global::System.Text.Json.JsonException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseIndexSettings> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseIndexSettings).Name}");
-                    base1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (base1 == null && base2 == null)
+            catch (global::System.InvalidOperationException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendIndexSettings> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendIndexSettings).Name}");
-                    base2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
             var __value = new global::Algolia.Recommend.RecommendIndexSettings(
                 base1,
 
@@ -188,18 +63,46 @@ namespace Algolia.Recommend.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
+
+            writer.WriteStartObject();
+            var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsBase1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseIndexSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base1!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Base1!, typeInfo);
+                if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element0.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsBase2)
+            if (value.IsBase2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendIndexSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendIndexSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Base2!, typeInfo);
+                if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
+            writer.WriteEndObject();
         }
     }
 }

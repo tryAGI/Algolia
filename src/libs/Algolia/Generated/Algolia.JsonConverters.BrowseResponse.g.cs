@@ -17,215 +17,62 @@ namespace Algolia.JsonConverters
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-                    {
-                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
-                        {
-                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
-                        }
-                    }
-
-                }
-            }
-
-            var __score0 = 0;
-            if (__jsonProps.Contains("_automaticInsights")) __score0++;
-            if (__jsonProps.Contains("abTestID")) __score0++;
-            if (__jsonProps.Contains("abTestVariantID")) __score0++;
-            if (__jsonProps.Contains("appliedRules")) __score0++;
-            if (__jsonProps.Contains("aroundLatLng")) __score0++;
-            if (__jsonProps.Contains("automaticRadius")) __score0++;
-            if (__jsonProps.Contains("exhaustive")) __score0++;
-            if (__jsonProps.Contains("exhaustive.facetValues")) __score0++;
-            if (__jsonProps.Contains("exhaustive.facetsCount")) __score0++;
-            if (__jsonProps.Contains("exhaustive.nbHits")) __score0++;
-            if (__jsonProps.Contains("exhaustive.rulesMatch")) __score0++;
-            if (__jsonProps.Contains("exhaustive.typo")) __score0++;
-            if (__jsonProps.Contains("exhaustiveFacetsCount")) __score0++;
-            if (__jsonProps.Contains("exhaustiveNbHits")) __score0++;
-            if (__jsonProps.Contains("exhaustiveTypo")) __score0++;
-            if (__jsonProps.Contains("facets")) __score0++;
-            if (__jsonProps.Contains("facets_stats")) __score0++;
-            if (__jsonProps.Contains("index")) __score0++;
-            if (__jsonProps.Contains("indexUsed")) __score0++;
-            if (__jsonProps.Contains("message")) __score0++;
-            if (__jsonProps.Contains("nbSortedHits")) __score0++;
-            if (__jsonProps.Contains("parsedQuery")) __score0++;
-            if (__jsonProps.Contains("processingTimeMS")) __score0++;
-            if (__jsonProps.Contains("processingTimingsMS")) __score0++;
-            if (__jsonProps.Contains("queryAfterRemoval")) __score0++;
-            if (__jsonProps.Contains("queryID")) __score0++;
-            if (__jsonProps.Contains("redirect")) __score0++;
-            if (__jsonProps.Contains("redirect.index")) __score0++;
-            if (__jsonProps.Contains("renderingContent")) __score0++;
-            if (__jsonProps.Contains("renderingContent.facetOrdering")) __score0++;
-            if (__jsonProps.Contains("renderingContent.redirect")) __score0++;
-            if (__jsonProps.Contains("renderingContent.widgets")) __score0++;
-            if (__jsonProps.Contains("serverTimeMS")) __score0++;
-            if (__jsonProps.Contains("serverUsed")) __score0++;
-            if (__jsonProps.Contains("userData")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("hitsPerPage")) __score1++;
-            if (__jsonProps.Contains("nbHits")) __score1++;
-            if (__jsonProps.Contains("nbPages")) __score1++;
-            if (__jsonProps.Contains("page")) __score1++;
-            var __score2 = 0;
-            if (__jsonProps.Contains("extensions")) __score2++;
-            if (__jsonProps.Contains("extensions.queryCategorization")) __score2++;
-            if (__jsonProps.Contains("hits")) __score2++;
-            if (__jsonProps.Contains("params")) __score2++;
-            if (__jsonProps.Contains("query")) __score2++;
-            var __score3 = 0;
-            if (__jsonProps.Contains("cursor")) __score3++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
-            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::Algolia.BaseSearchResponse? baseSearch = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
+                baseSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::Algolia.BrowsePagination? pagination = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
+                pagination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::Algolia.SearchHits? searchHits = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
+                searchHits = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::Algolia.Cursor? cursor = default;
-            if (__bestIndex >= 0)
+            try
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                        baseSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
-                        pagination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                        searchHits = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 3)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                        cursor = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
+                cursor = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
-
-            if (baseSearch == null && pagination == null && searchHits == null && cursor == null)
+            catch (global::System.Text.Json.JsonException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                    baseSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (baseSearch == null && pagination == null && searchHits == null && cursor == null)
+            catch (global::System.InvalidOperationException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
-                    pagination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (baseSearch == null && pagination == null && searchHits == null && cursor == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                    searchHits = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (baseSearch == null && pagination == null && searchHits == null && cursor == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                    cursor = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::Algolia.BrowseResponse(
                 baseSearch,
 
@@ -248,30 +95,82 @@ namespace Algolia.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
+
+            writer.WriteStartObject();
+            var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsBaseSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseSearch!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BaseSearch!, typeInfo);
+                if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element0.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsPagination)
+            if (value.IsPagination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pagination!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Pagination!, typeInfo);
+                if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsSearchHits)
+            if (value.IsSearchHits)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchHits!, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.SearchHits!, typeInfo);
+                if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element2.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsCursor)
+            if (value.IsCursor)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cursor!, typeInfo);
+                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Cursor!, typeInfo);
+                if (__element3.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element3.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
+            writer.WriteEndObject();
         }
     }
 }
