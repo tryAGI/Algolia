@@ -53,6 +53,10 @@ namespace Algolia
 
             typeof(global::Algolia.JsonConverters.AdvancedSyntaxFeaturesNullableJsonConverter),
 
+            typeof(global::Algolia.JsonConverters.AttributeCriteriaComputedByJsonConverter),
+
+            typeof(global::Algolia.JsonConverters.AttributeCriteriaComputedByNullableJsonConverter),
+
             typeof(global::Algolia.JsonConverters.SortRemainingByJsonConverter),
 
             typeof(global::Algolia.JsonConverters.SortRemainingByNullableJsonConverter),
@@ -274,6 +278,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AdvancedSyntaxFeatures), TypeInfoPropertyName = "AdvancedSyntaxFeatures2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.AdvancedSyntaxFeatures>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Distinct), TypeInfoPropertyName = "Distinct2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AttributeCriteriaComputedBy), TypeInfoPropertyName = "AttributeCriteriaComputedBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Facets))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SortRemainingBy), TypeInfoPropertyName = "SortRemainingBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Value))]

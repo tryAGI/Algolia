@@ -16,9 +16,9 @@ namespace Algolia
         ///    Equivalent to the "Add or replace a record" operation.<br/>
         /// - `partialUpdateObject`: adds or updates attributes within records.<br/>
         ///    Equivalent to the "Add or update attributes" operation with the `createIfNoExists` parameter set to true.<br/>
-        ///    (If a record with the specified `objectID` doesn't exist in the specified index, this action creates adds the record to the index)<br/>
+        ///    (If a record with the specified `objectID` doesn't exist in the specified index, this action adds the record to the index).<br/>
         /// - `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.<br/>
-        ///    (A record isn't added to the index if its `objectID` doesn't exist)<br/>
+        ///    (A record isn't added to the index if its `objectID` doesn't exist).<br/>
         /// - `deleteObject`: delete records from an index.<br/>
         ///   Equivalent to the "Delete a record" operation.<br/>
         /// - `delete`. Delete an index. Equivalent to the "Delete an index" operation.<br/>
@@ -61,9 +61,9 @@ namespace Algolia
         ///    Equivalent to the "Add or replace a record" operation.<br/>
         /// - `partialUpdateObject`: adds or updates attributes within records.<br/>
         ///    Equivalent to the "Add or update attributes" operation with the `createIfNoExists` parameter set to true.<br/>
-        ///    (If a record with the specified `objectID` doesn't exist in the specified index, this action creates adds the record to the index)<br/>
+        ///    (If a record with the specified `objectID` doesn't exist in the specified index, this action adds the record to the index).<br/>
         /// - `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.<br/>
-        ///    (A record isn't added to the index if its `objectID` doesn't exist)<br/>
+        ///    (A record isn't added to the index if its `objectID` doesn't exist).<br/>
         /// - `deleteObject`: delete records from an index.<br/>
         ///   Equivalent to the "Delete a record" operation.<br/>
         /// - `delete`. Delete an index. Equivalent to the "Delete an index" operation.<br/>

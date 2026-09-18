@@ -34,8 +34,8 @@ namespace Algolia
         /// Index names or patterns that this API key can access.<br/>
         /// By default, an API key can access all indices in the same application.<br/>
         /// You can use leading and trailing wildcard characters (`*`):<br/>
-        /// - `dev_*` matches all indices starting with "dev_"<br/>
-        /// - `*_dev` matches all indices ending with "_dev"<br/>
+        /// - `dev_*` matches all indices starting with "dev_".<br/>
+        /// - `*_dev` matches all indices ending with "_dev".<br/>
         /// - `*_products_*` matches all indices containing "_products_".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrictIndices")]
@@ -84,8 +84,8 @@ namespace Algolia
         /// Index names or patterns that this API key can access.<br/>
         /// By default, an API key can access all indices in the same application.<br/>
         /// You can use leading and trailing wildcard characters (`*`):<br/>
-        /// - `dev_*` matches all indices starting with "dev_"<br/>
-        /// - `*_dev` matches all indices ending with "_dev"<br/>
+        /// - `dev_*` matches all indices starting with "dev_".<br/>
+        /// - `*_dev` matches all indices ending with "_dev".<br/>
         /// - `*_products_*` matches all indices containing "_products_".
         /// </param>
         /// <param name="restrictSources">

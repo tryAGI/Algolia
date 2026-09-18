@@ -18,7 +18,7 @@ namespace Algolia
         public required string IndexName { get; set; }
 
         /// <summary>
-        /// - `default`: perform a search query<br/>
+        /// - `default`: perform a search query.<br/>
         /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: default
         /// </summary>
@@ -47,7 +47,7 @@ namespace Algolia
         /// Example: products
         /// </param>
         /// <param name="type">
-        /// - `default`: perform a search query<br/>
+        /// - `default`: perform a search query.<br/>
         /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: default
         /// </param>

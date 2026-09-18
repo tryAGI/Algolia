@@ -600,8 +600,8 @@ namespace Algolia
         /// Index names or patterns that this API key can access.<br/>
         /// By default, an API key can access all indices in the same application.<br/>
         /// You can use leading and trailing wildcard characters (`*`):<br/>
-        /// - `dev_*` matches all indices starting with "dev_"<br/>
-        /// - `*_dev` matches all indices ending with "_dev"<br/>
+        /// - `dev_*` matches all indices starting with "dev_".<br/>
+        /// - `*_dev` matches all indices ending with "_dev".<br/>
         /// - `*_products_*` matches all indices containing "_products_".<br/>
         /// Default Value: []<br/>
         /// Example: [dev_*, prod_en_products]
@@ -628,8 +628,8 @@ namespace Algolia
         /// Allowed HTTP referrers for this API key.<br/>
         /// By default, all referrers are allowed.<br/>
         /// You can use leading and trailing wildcard characters (`*`):<br/>
-        /// - `https://algolia.com/*` allows all referrers starting with "https://algolia.com/"<br/>
-        /// - `*.algolia.com` allows all referrers ending with ".algolia.com"<br/>
+        /// - `https://algolia.com/*` allows all referrers starting with "https://algolia.com/".<br/>
+        /// - `*.algolia.com` allows all referrers ending with ".algolia.com".<br/>
         /// - `*algolia.com*` allows all referrers in the domain "algolia.com".<br/>
         /// Like all HTTP headers, referrers can be spoofed. Don't rely on them to secure your data.<br/>
         /// For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions).<br/>

@@ -4,7 +4,7 @@
 namespace Algolia
 {
     /// <summary>
-    /// - `default`: perform a search query<br/>
+    /// - `default`: perform a search query.<br/>
     /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
     /// Default Value: facet
     /// </summary>

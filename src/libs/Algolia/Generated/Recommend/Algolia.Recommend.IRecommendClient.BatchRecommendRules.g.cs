@@ -6,7 +6,7 @@ namespace Algolia.Recommend
     {
         /// <summary>
         /// Create or update a batch of Recommend Rules<br/>
-        /// Create or update a batch of Recommend Rules<br/>
+        /// Create or update a batch of Recommend Rules.<br/>
         /// Each Recommend Rule is created or updated, depending on whether a Recommend Rule with the same `objectID` already exists.<br/>
         /// You may also specify `true` for `clearExistingRules`, in which case the batch will atomically replace all the existing Recommend Rules.<br/>
         /// Recommend Rules are similar to Search Rules, except that the conditions and consequences apply to a [source item](/doc/guides/algolia-recommend/overview/#recommend-models) instead of a query. The main differences are the following:<br/>
@@ -33,7 +33,7 @@ namespace Algolia.Recommend
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update a batch of Recommend Rules<br/>
-        /// Create or update a batch of Recommend Rules<br/>
+        /// Create or update a batch of Recommend Rules.<br/>
         /// Each Recommend Rule is created or updated, depending on whether a Recommend Rule with the same `objectID` already exists.<br/>
         /// You may also specify `true` for `clearExistingRules`, in which case the batch will atomically replace all the existing Recommend Rules.<br/>
         /// Recommend Rules are similar to Search Rules, except that the conditions and consequences apply to a [source item](/doc/guides/algolia-recommend/overview/#recommend-models) instead of a query. The main differences are the following:<br/>
