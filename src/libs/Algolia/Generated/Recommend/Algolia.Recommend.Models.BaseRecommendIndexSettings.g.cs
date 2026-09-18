@@ -9,7 +9,7 @@ namespace Algolia.Recommend
     public sealed partial class BaseRecommendIndexSettings
     {
         /// <summary>
-        /// Attributes to include in the API response<br/>
+        /// Attributes to include in the API response.<br/>
         /// To reduce the size of your response, you can retrieve only some of the attributes.<br/>
         /// Attribute names are case-sensitive<br/>
         /// - `*` retrieves all attributes, except attributes included in the `customRanking` and `unretrievableAttributes` settings.<br/>
@@ -23,7 +23,7 @@ namespace Algolia.Recommend
         public global::System.Collections.Generic.IList<string>? AttributesToRetrieve { get; set; }
 
         /// <summary>
-        /// Relevancy threshold below which less relevant results aren't included in the results<br/>
+        /// Relevancy threshold below which less relevant results aren't included in the results.<br/>
         /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
         /// Use this setting to strike a balance between the relevance and number of returned results.<br/>
         /// Default Value: 100<br/>
@@ -34,7 +34,7 @@ namespace Algolia.Recommend
         public int? RelevancyStrictness { get; set; }
 
         /// <summary>
-        /// Attributes to highlight<br/>
+        /// Attributes to highlight.<br/>
         /// By default, all searchable attributes are highlighted.<br/>
         /// Use `*` to highlight all attributes or use an empty array `[]` to turn off highlighting.<br/>
         /// Attribute names are case-sensitive<br/>
@@ -114,7 +114,7 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.TypoTolerance? TypoTolerance { get; set; }
 
         /// <summary>
-        /// Whether to allow typos on numbers in the search query<br/>
+        /// Whether to allow typos on numbers in the search query.<br/>
         /// Turn off this setting to reduce the number of irrelevant matches<br/>
         /// when searching in large sets of similar numbers.<br/>
         /// Default Value: true
@@ -128,7 +128,7 @@ namespace Algolia.Recommend
         /// Returning only exact matches can help when<br/>
         /// - [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).<br/>
         /// - Reducing the number of matches when you have too many.<br/>
-        ///   This can happen with attributes that are long blocks of text, such as product descriptions<br/>
+        ///   This can happen with attributes that are long blocks of text, such as product descriptions.<br/>
         /// Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.<br/>
         /// Default Value: []<br/>
         /// Example: [sku]
@@ -177,7 +177,7 @@ namespace Algolia.Recommend
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? QueryLanguages { get; set; }
 
         /// <summary>
-        /// Whether to split compound words in the query into their building blocks<br/>
+        /// Whether to split compound words in the query into their building blocks.<br/>
         /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).<br/>
         /// Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.<br/>
         /// Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).<br/>
@@ -230,7 +230,7 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.RemoveWordsIfNoResults? RemoveWordsIfNoResults { get; set; }
 
         /// <summary>
-        /// Whether to support phrase matching and excluding words from search queries<br/>
+        /// Whether to support phrase matching and excluding words from search queries.<br/>
         /// Use the `advancedSyntaxFeatures` parameter to control which feature is supported.<br/>
         /// Default Value: false
         /// </summary>
@@ -289,15 +289,15 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.ExactOnSingleWordQuery? ExactOnSingleWordQuery { get; set; }
 
         /// <summary>
-        /// Determine which plurals and synonyms should be considered an exact matches<br/>
+        /// Determine which plurals and synonyms should be considered an exact matches.<br/>
         /// By default, Algolia treats singular and plural forms of a word, and single-word synonyms, as [exact](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#exact) matches when searching.<br/>
-        /// For example<br/>
-        /// - "swimsuit" and "swimsuits" are treated the same<br/>
-        /// - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms))<br/>
+        /// For example:<br/>
+        /// - "swimsuit" and "swimsuits" are treated the same.<br/>
+        /// - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).<br/>
         /// - `ignorePlurals`.<br/>
-        ///   Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches<br/>
+        ///   Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.<br/>
         /// - `singleWordSynonym`.<br/>
-        ///   Single-word synonyms, such as "NY" = "NYC", are considered exact matches<br/>
+        ///   Single-word synonyms, such as "NY" = "NYC", are considered exact matches.<br/>
         /// - `multiWordsSynonym`.<br/>
         ///   Multi-word synonyms, such as "NY" = "New York", are considered exact matches.<br/>
         /// Default Value: [ignorePlurals, singleWordSynonym]
@@ -306,13 +306,13 @@ namespace Algolia.Recommend
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.AlternativesAsExact>? AlternativesAsExact { get; set; }
 
         /// <summary>
-        /// Advanced search syntax features you want to support<br/>
+        /// Advanced search syntax features you want to support.<br/>
         /// - `exactPhrase`.<br/>
         ///   Phrases in quotes must match exactly.<br/>
-        ///   For example, `sparkly blue "iPhone case"` only returns records with the exact string "iPhone case"<br/>
+        ///   For example, `sparkly blue "iPhone case"` only returns records with the exact string "iPhone case".<br/>
         /// - `excludeWords`.<br/>
         ///   Query words prefixed with a `-` must not occur in a record.<br/>
-        ///   For example, `search -engine` matches records that contain "search" but not "engine"<br/>
+        ///   For example, `search -engine` matches records that contain "search" but not "engine".<br/>
         /// This setting only has an effect if `advancedSyntax` is true.<br/>
         /// Default Value: [exactPhrase, excludeWords]
         /// </summary>
@@ -333,7 +333,7 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.Distinct? Distinct { get; set; }
 
         /// <summary>
-        /// Whether to replace a highlighted word with the matched synonym<br/>
+        /// Whether to replace a highlighted word with the matched synonym.<br/>
         /// By default, the original words are highlighted even if a synonym matches.<br/>
         /// For example, with `home` as a synonym for `house` and a search for `home`,<br/>
         /// records matching either "home" or "house" are included in the search results,<br/>
@@ -346,7 +346,7 @@ namespace Algolia.Recommend
         public bool? ReplaceSynonymsInHighlight { get; set; }
 
         /// <summary>
-        /// Minimum proximity score for two matching words<br/>
+        /// Minimum proximity score for two matching words.<br/>
         /// This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)<br/>
         /// by equally scoring matches that are farther apart<br/>
         /// For example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.<br/>
@@ -356,7 +356,7 @@ namespace Algolia.Recommend
         public int? MinProximity { get; set; }
 
         /// <summary>
-        /// Properties to include in the API response of search and browse requests<br/>
+        /// Properties to include in the API response of search and browse requests.<br/>
         /// By default, all response properties are included.<br/>
         /// To reduce the response size, you can select which properties should be included<br/>
         /// An empty list may lead to an empty API response (except properties you can't exclude)<br/>
@@ -379,12 +379,12 @@ namespace Algolia.Recommend
         public int? MaxValuesPerFacet { get; set; }
 
         /// <summary>
-        /// Order in which to retrieve facet values<br/>
+        /// Order in which to retrieve facet values.<br/>
         /// - `count`.<br/>
         ///   Facet values are retrieved by decreasing count.<br/>
-        ///   The count is the number of matching records containing this facet value<br/>
+        ///   The count is the number of matching records containing this facet value.<br/>
         /// - `alpha`.<br/>
-        ///   Retrieve facet values alphabetically<br/>
+        ///   Retrieve facet values alphabetically.<br/>
         /// This setting doesn't influence how facet values are displayed in your UI (see `renderingContent`).<br/>
         /// For more information, see [facet value display](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/facet-display/js).<br/>
         /// Default Value: count
@@ -393,10 +393,12 @@ namespace Algolia.Recommend
         public string? SortFacetValuesBy { get; set; }
 
         /// <summary>
-        /// Whether the best matching attribute should be determined by minimum proximity<br/>
+        /// Whether the best matching attribute should be determined by minimum proximity.<br/>
         /// This setting only affects ranking if the Attribute ranking criterion comes before Proximity in the `ranking` setting.<br/>
         /// If true, the best matching attribute is selected based on the minimum proximity of multiple matches.<br/>
         /// Otherwise, the best matching attribute is determined by the order in the `searchableAttributes` setting.<br/>
+        /// Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.<br/>
+        /// If you set both, `attributeCriteriaComputedBy` takes precedence.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributeCriteriaComputedByMinProximity")]
@@ -411,7 +413,7 @@ namespace Algolia.Recommend
         public global::Algolia.Recommend.RenderingContent? RenderingContent { get; set; }
 
         /// <summary>
-        /// Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking)<br/>
+        /// Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).<br/>
         /// This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.<br/>
         /// Default Value: true
         /// </summary>
@@ -434,7 +436,7 @@ namespace Algolia.Recommend
         /// Initializes a new instance of the <see cref="BaseRecommendIndexSettings" /> class.
         /// </summary>
         /// <param name="attributesToRetrieve">
-        /// Attributes to include in the API response<br/>
+        /// Attributes to include in the API response.<br/>
         /// To reduce the size of your response, you can retrieve only some of the attributes.<br/>
         /// Attribute names are case-sensitive<br/>
         /// - `*` retrieves all attributes, except attributes included in the `customRanking` and `unretrievableAttributes` settings.<br/>
@@ -444,14 +446,14 @@ namespace Algolia.Recommend
         /// Example: [author, title, content]
         /// </param>
         /// <param name="relevancyStrictness">
-        /// Relevancy threshold below which less relevant results aren't included in the results<br/>
+        /// Relevancy threshold below which less relevant results aren't included in the results.<br/>
         /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
         /// Use this setting to strike a balance between the relevance and number of returned results.<br/>
         /// Default Value: 100<br/>
         /// Example: 90
         /// </param>
         /// <param name="attributesToHighlight">
-        /// Attributes to highlight<br/>
+        /// Attributes to highlight.<br/>
         /// By default, all searchable attributes are highlighted.<br/>
         /// Use `*` to highlight all attributes or use an empty array `[]` to turn off highlighting.<br/>
         /// Attribute names are case-sensitive<br/>
@@ -501,7 +503,7 @@ namespace Algolia.Recommend
         /// If typo tolerance is true, `min`, or `strict`, [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) are also active.
         /// </param>
         /// <param name="allowTyposOnNumericTokens">
-        /// Whether to allow typos on numbers in the search query<br/>
+        /// Whether to allow typos on numbers in the search query.<br/>
         /// Turn off this setting to reduce the number of irrelevant matches<br/>
         /// when searching in large sets of similar numbers.<br/>
         /// Default Value: true
@@ -512,7 +514,7 @@ namespace Algolia.Recommend
         /// Returning only exact matches can help when<br/>
         /// - [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).<br/>
         /// - Reducing the number of matches when you have too many.<br/>
-        ///   This can happen with attributes that are long blocks of text, such as product descriptions<br/>
+        ///   This can happen with attributes that are long blocks of text, such as product descriptions.<br/>
         /// Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.<br/>
         /// Default Value: []<br/>
         /// Example: [sku]
@@ -543,7 +545,7 @@ namespace Algolia.Recommend
         /// Example: [es]
         /// </param>
         /// <param name="decompoundQuery">
-        /// Whether to split compound words in the query into their building blocks<br/>
+        /// Whether to split compound words in the query into their building blocks.<br/>
         /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).<br/>
         /// Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.<br/>
         /// Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).<br/>
@@ -581,7 +583,7 @@ namespace Algolia.Recommend
         /// Example: firstWords
         /// </param>
         /// <param name="advancedSyntax">
-        /// Whether to support phrase matching and excluding words from search queries<br/>
+        /// Whether to support phrase matching and excluding words from search queries.<br/>
         /// Use the `advancedSyntaxFeatures` parameter to control which feature is supported.<br/>
         /// Default Value: false
         /// </param>
@@ -625,27 +627,27 @@ namespace Algolia.Recommend
         /// Default Value: attribute
         /// </param>
         /// <param name="alternativesAsExact">
-        /// Determine which plurals and synonyms should be considered an exact matches<br/>
+        /// Determine which plurals and synonyms should be considered an exact matches.<br/>
         /// By default, Algolia treats singular and plural forms of a word, and single-word synonyms, as [exact](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#exact) matches when searching.<br/>
-        /// For example<br/>
-        /// - "swimsuit" and "swimsuits" are treated the same<br/>
-        /// - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms))<br/>
+        /// For example:<br/>
+        /// - "swimsuit" and "swimsuits" are treated the same.<br/>
+        /// - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).<br/>
         /// - `ignorePlurals`.<br/>
-        ///   Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches<br/>
+        ///   Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.<br/>
         /// - `singleWordSynonym`.<br/>
-        ///   Single-word synonyms, such as "NY" = "NYC", are considered exact matches<br/>
+        ///   Single-word synonyms, such as "NY" = "NYC", are considered exact matches.<br/>
         /// - `multiWordsSynonym`.<br/>
         ///   Multi-word synonyms, such as "NY" = "New York", are considered exact matches.<br/>
         /// Default Value: [ignorePlurals, singleWordSynonym]
         /// </param>
         /// <param name="advancedSyntaxFeatures">
-        /// Advanced search syntax features you want to support<br/>
+        /// Advanced search syntax features you want to support.<br/>
         /// - `exactPhrase`.<br/>
         ///   Phrases in quotes must match exactly.<br/>
-        ///   For example, `sparkly blue "iPhone case"` only returns records with the exact string "iPhone case"<br/>
+        ///   For example, `sparkly blue "iPhone case"` only returns records with the exact string "iPhone case".<br/>
         /// - `excludeWords`.<br/>
         ///   Query words prefixed with a `-` must not occur in a record.<br/>
-        ///   For example, `search -engine` matches records that contain "search" but not "engine"<br/>
+        ///   For example, `search -engine` matches records that contain "search" but not "engine".<br/>
         /// This setting only has an effect if `advancedSyntax` is true.<br/>
         /// Default Value: [exactPhrase, excludeWords]
         /// </param>
@@ -658,7 +660,7 @@ namespace Algolia.Recommend
         /// Example: 1
         /// </param>
         /// <param name="replaceSynonymsInHighlight">
-        /// Whether to replace a highlighted word with the matched synonym<br/>
+        /// Whether to replace a highlighted word with the matched synonym.<br/>
         /// By default, the original words are highlighted even if a synonym matches.<br/>
         /// For example, with `home` as a synonym for `house` and a search for `home`,<br/>
         /// records matching either "home" or "house" are included in the search results,<br/>
@@ -668,14 +670,14 @@ namespace Algolia.Recommend
         /// Default Value: false
         /// </param>
         /// <param name="minProximity">
-        /// Minimum proximity score for two matching words<br/>
+        /// Minimum proximity score for two matching words.<br/>
         /// This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)<br/>
         /// by equally scoring matches that are farther apart<br/>
         /// For example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.<br/>
         /// Default Value: 1
         /// </param>
         /// <param name="responseFields">
-        /// Properties to include in the API response of search and browse requests<br/>
+        /// Properties to include in the API response of search and browse requests.<br/>
         /// By default, all response properties are included.<br/>
         /// To reduce the response size, you can select which properties should be included<br/>
         /// An empty list may lead to an empty API response (except properties you can't exclude)<br/>
@@ -692,21 +694,23 @@ namespace Algolia.Recommend
         /// Default Value: 100
         /// </param>
         /// <param name="sortFacetValuesBy">
-        /// Order in which to retrieve facet values<br/>
+        /// Order in which to retrieve facet values.<br/>
         /// - `count`.<br/>
         ///   Facet values are retrieved by decreasing count.<br/>
-        ///   The count is the number of matching records containing this facet value<br/>
+        ///   The count is the number of matching records containing this facet value.<br/>
         /// - `alpha`.<br/>
-        ///   Retrieve facet values alphabetically<br/>
+        ///   Retrieve facet values alphabetically.<br/>
         /// This setting doesn't influence how facet values are displayed in your UI (see `renderingContent`).<br/>
         /// For more information, see [facet value display](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/facet-display/js).<br/>
         /// Default Value: count
         /// </param>
         /// <param name="attributeCriteriaComputedByMinProximity">
-        /// Whether the best matching attribute should be determined by minimum proximity<br/>
+        /// Whether the best matching attribute should be determined by minimum proximity.<br/>
         /// This setting only affects ranking if the Attribute ranking criterion comes before Proximity in the `ranking` setting.<br/>
         /// If true, the best matching attribute is selected based on the minimum proximity of multiple matches.<br/>
         /// Otherwise, the best matching attribute is determined by the order in the `searchableAttributes` setting.<br/>
+        /// Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.<br/>
+        /// If you set both, `attributeCriteriaComputedBy` takes precedence.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="renderingContent">
@@ -715,7 +719,7 @@ namespace Algolia.Recommend
         /// without changing your frontend code.
         /// </param>
         /// <param name="enableReRanking">
-        /// Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking)<br/>
+        /// Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).<br/>
         /// This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.<br/>
         /// Default Value: true
         /// </param>

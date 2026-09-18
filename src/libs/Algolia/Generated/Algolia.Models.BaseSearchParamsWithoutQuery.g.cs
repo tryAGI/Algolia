@@ -9,12 +9,12 @@ namespace Algolia
     public sealed partial class BaseSearchParamsWithoutQuery
     {
         /// <summary>
-        /// Keywords to be used instead of the search query to conduct a more broader search<br/>
+        /// Keywords to be used instead of the search query to conduct a more broader search.<br/>
         /// Using the `similarQuery` parameter changes other settings<br/>
         /// - `queryType` is set to `prefixNone`.<br/>
         /// - `removeStopWords` is set to true.<br/>
         /// - `words` is set as the first ranking criterion.<br/>
-        /// - All remaining words are treated as `optionalWords`<br/>
+        /// - All remaining words are treated as `optionalWords`.<br/>
         /// Since the `similarQuery` is supposed to do a broad search, they usually return many results.<br/>
         /// Combine it with `filters` to narrow down the list of results.<br/>
         /// Example: comedy drama crime Macy Buscemi
@@ -106,7 +106,7 @@ namespace Algolia
         public global::Algolia.TagFilters? TagFilters { get; set; }
 
         /// <summary>
-        /// Whether to sum all filter scores<br/>
+        /// Whether to sum all filter scores.<br/>
         /// If true, all filter scores are summed.<br/>
         /// Otherwise, the maximum filter score is kept.<br/>
         /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).<br/>
@@ -126,7 +126,7 @@ namespace Algolia
         public global::System.Collections.Generic.IList<string>? RestrictSearchableAttributes { get; set; }
 
         /// <summary>
-        /// Facets for which to retrieve facet values that match the search criteria and the number of matching facet values<br/>
+        /// Facets for which to retrieve facet values that match the search criteria and the number of matching facet values.<br/>
         /// To retrieve all facets, use the wildcard character `*`.<br/>
         /// For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).<br/>
         /// Default Value: []<br/>
@@ -137,7 +137,7 @@ namespace Algolia
         public global::System.Collections.Generic.IList<string>? Facets { get; set; }
 
         /// <summary>
-        /// Whether faceting should be applied after deduplication with `distinct`<br/>
+        /// Whether faceting should be applied after deduplication with `distinct`.<br/>
         /// This leads to accurate facet counts when using faceting in combination with `distinct`.<br/>
         /// It's usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,<br/>
         /// as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.<br/>
@@ -227,7 +227,7 @@ namespace Algolia
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? InsidePolygon { get; set; }
 
         /// <summary>
-        /// ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches)<br/>
+        /// ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).<br/>
         /// - Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.<br/>
         /// - Sets `removeWordsIfNoResults` to `allOptional`.<br/>
         /// - Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.<br/>
@@ -237,7 +237,7 @@ namespace Algolia
         public global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? NaturalLanguages { get; set; }
 
         /// <summary>
-        /// Assigns a rule context to the search query<br/>
+        /// Assigns a rule context to the search query.<br/>
         /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.<br/>
         /// Default Value: []<br/>
         /// Example: [mobile]
@@ -247,7 +247,7 @@ namespace Algolia
         public global::System.Collections.Generic.IList<string>? RuleContexts { get; set; }
 
         /// <summary>
-        /// Impact that Personalization should have on this search<br/>
+        /// Impact that Personalization should have on this search.<br/>
         /// The higher this value is, the more Personalization determines the ranking compared to other factors.<br/>
         /// For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).<br/>
         /// Default Value: 100
@@ -280,7 +280,7 @@ namespace Algolia
         public bool? Synonyms { get; set; }
 
         /// <summary>
-        /// Whether to include a `queryID` attribute in the response<br/>
+        /// Whether to include a `queryID` attribute in the response.<br/>
         /// The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).<br/>
         /// Default Value: false
         /// </summary>
@@ -325,12 +325,12 @@ namespace Algolia
         /// Initializes a new instance of the <see cref="BaseSearchParamsWithoutQuery" /> class.
         /// </summary>
         /// <param name="similarQuery">
-        /// Keywords to be used instead of the search query to conduct a more broader search<br/>
+        /// Keywords to be used instead of the search query to conduct a more broader search.<br/>
         /// Using the `similarQuery` parameter changes other settings<br/>
         /// - `queryType` is set to `prefixNone`.<br/>
         /// - `removeStopWords` is set to true.<br/>
         /// - `words` is set as the first ranking criterion.<br/>
-        /// - All remaining words are treated as `optionalWords`<br/>
+        /// - All remaining words are treated as `optionalWords`.<br/>
         /// Since the `similarQuery` is supposed to do a broad search, they usually return many results.<br/>
         /// Combine it with `filters` to narrow down the list of results.<br/>
         /// Example: comedy drama crime Macy Buscemi
@@ -394,7 +394,7 @@ namespace Algolia
         /// Example: [[Book, Movie], SciFi]
         /// </param>
         /// <param name="sumOrFiltersScores">
-        /// Whether to sum all filter scores<br/>
+        /// Whether to sum all filter scores.<br/>
         /// If true, all filter scores are summed.<br/>
         /// Otherwise, the maximum filter score is kept.<br/>
         /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).<br/>
@@ -407,14 +407,14 @@ namespace Algolia
         /// Example: [title, author]
         /// </param>
         /// <param name="facets">
-        /// Facets for which to retrieve facet values that match the search criteria and the number of matching facet values<br/>
+        /// Facets for which to retrieve facet values that match the search criteria and the number of matching facet values.<br/>
         /// To retrieve all facets, use the wildcard character `*`.<br/>
         /// For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).<br/>
         /// Default Value: []<br/>
         /// Example: [*]
         /// </param>
         /// <param name="facetingAfterDistinct">
-        /// Whether faceting should be applied after deduplication with `distinct`<br/>
+        /// Whether faceting should be applied after deduplication with `distinct`.<br/>
         /// This leads to accurate facet counts when using faceting in combination with `distinct`.<br/>
         /// It's usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,<br/>
         /// as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.<br/>
@@ -464,20 +464,20 @@ namespace Algolia
         /// Example: [[47.3165, 4.9665, 47.3424, 5.0201, 47.32, 4.9], [40.9234, 2.1185, 38.643, 1.9916, 39.2587, 2.0104]]
         /// </param>
         /// <param name="naturalLanguages">
-        /// ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches)<br/>
+        /// ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).<br/>
         /// - Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.<br/>
         /// - Sets `removeWordsIfNoResults` to `allOptional`.<br/>
         /// - Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.<br/>
         /// Default Value: []
         /// </param>
         /// <param name="ruleContexts">
-        /// Assigns a rule context to the search query<br/>
+        /// Assigns a rule context to the search query.<br/>
         /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.<br/>
         /// Default Value: []<br/>
         /// Example: [mobile]
         /// </param>
         /// <param name="personalizationImpact">
-        /// Impact that Personalization should have on this search<br/>
+        /// Impact that Personalization should have on this search.<br/>
         /// The higher this value is, the more Personalization determines the ranking compared to other factors.<br/>
         /// For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).<br/>
         /// Default Value: 100
@@ -497,7 +497,7 @@ namespace Algolia
         /// Default Value: true
         /// </param>
         /// <param name="clickAnalytics">
-        /// Whether to include a `queryID` attribute in the response<br/>
+        /// Whether to include a `queryID` attribute in the response.<br/>
         /// The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).<br/>
         /// Default Value: false
         /// </param>

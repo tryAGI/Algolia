@@ -40,7 +40,7 @@ namespace Algolia
         public int? MaxFacetHits { get; set; }
 
         /// <summary>
-        /// - `default`: perform a search query<br/>
+        /// - `default`: perform a search query.<br/>
         /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: facet
         /// </summary>
@@ -74,7 +74,7 @@ namespace Algolia
         /// Default Value: 10
         /// </param>
         /// <param name="type">
-        /// - `default`: perform a search query<br/>
+        /// - `default`: perform a search query.<br/>
         /// - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).<br/>
         /// Default Value: facet
         /// </param>

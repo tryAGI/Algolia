@@ -57,7 +57,7 @@ namespace Algolia
         /// </summary>
         /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("paginationLimitedTo")]
-        public int? PaginationLimitedTo { get; set; }
+        public long? PaginationLimitedTo { get; set; }
 
         /// <summary>
         /// Attributes that can't be retrieved at query time.<br/>
@@ -473,7 +473,7 @@ namespace Algolia
         public BaseIndexSettings(
             global::System.Collections.Generic.IList<string>? attributesForFaceting,
             global::System.Collections.Generic.IList<string>? replicas,
-            int? paginationLimitedTo,
+            long? paginationLimitedTo,
             global::System.Collections.Generic.IList<string>? unretrievableAttributes,
             global::System.Collections.Generic.IList<string>? disableTypoToleranceOnWords,
             global::System.Collections.Generic.IList<string>? attributesToTransliterate,
