@@ -357,7 +357,7 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HighlightResultMap? Type81 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult>? Type81 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -373,7 +373,7 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SnippetResultMap? Type85 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? Type85 { get; set; }
         /// <summary>
         ///
         /// </summary>

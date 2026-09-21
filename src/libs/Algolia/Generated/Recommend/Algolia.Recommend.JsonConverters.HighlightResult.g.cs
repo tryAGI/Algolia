@@ -41,7 +41,7 @@ namespace Algolia.Recommend.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::Algolia.Recommend.HighlightResultOption? highlightResultOption = default;
-            global::Algolia.Recommend.HighlightResultMap? highlightResultMap = default;
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? highlightResultMap = default;
             global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>? highlightResultArray = default;
             if (__bestIndex >= 0)
             {
@@ -64,8 +64,8 @@ namespace Algolia.Recommend.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.HighlightResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.HighlightResultMap> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.HighlightResultMap).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>).Name}");
                         highlightResultMap = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -114,8 +114,8 @@ namespace Algolia.Recommend.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.HighlightResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.HighlightResultMap> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.HighlightResultMap).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>).Name}");
                     highlightResultMap = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -171,8 +171,8 @@ namespace Algolia.Recommend.JsonConverters
             }
             else if (value.IsHighlightResultMap)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.HighlightResultMap), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.HighlightResultMap?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.HighlightResultMap).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.HighlightResultMap!, typeInfo);
             }
             else if (value.IsHighlightResultArray)

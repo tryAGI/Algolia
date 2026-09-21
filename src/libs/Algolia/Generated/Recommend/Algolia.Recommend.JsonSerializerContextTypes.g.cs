@@ -429,7 +429,7 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.HighlightResultMap? Type99 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -445,7 +445,7 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SnippetResultMap? Type103 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
