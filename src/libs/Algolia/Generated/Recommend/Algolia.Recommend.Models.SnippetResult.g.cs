@@ -50,9 +50,9 @@ namespace Algolia.Recommend
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.SnippetResultMap? SnippetResultMap { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? SnippetResultMap { get; init; }
 #else
-        public global::Algolia.Recommend.SnippetResultMap? SnippetResultMap { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? SnippetResultMap { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Algolia.Recommend
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Algolia.Recommend.SnippetResultMap? value)
+            out global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? value)
         {
             value = SnippetResultMap;
             return IsSnippetResultMap;
@@ -79,7 +79,7 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SnippetResultMap PickSnippetResultMap() => IsSnippetResultMap
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult> PickSnippetResultMap() => IsSnippetResultMap
             ? SnippetResultMap!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultMap' but the value was {ToString()}.");
 
@@ -145,17 +145,17 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator SnippetResult(global::Algolia.Recommend.SnippetResultMap value) => new SnippetResult((global::Algolia.Recommend.SnippetResultMap?)value);
+        public static implicit operator SnippetResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult> value) => new SnippetResult((global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.SnippetResultMap?(SnippetResult @this) => @this.SnippetResultMap;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>?(SnippetResult @this) => @this.SnippetResultMap;
 
         /// <summary>
         ///
         /// </summary>
-        public SnippetResult(global::Algolia.Recommend.SnippetResultMap? value)
+        public SnippetResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? value)
         {
             SnippetResultMap = value;
         }
@@ -163,14 +163,14 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public static SnippetResult FromSnippetResultMap(global::Algolia.Recommend.SnippetResultMap? value) => new SnippetResult(value);
+        public static SnippetResult FromSnippetResultMap(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? value) => new SnippetResult(value);
 
         /// <summary>
         ///
         /// </summary>
         public SnippetResult(
             global::Algolia.Recommend.SnippetResultOption? snippetResultOption,
-            global::Algolia.Recommend.SnippetResultMap? snippetResultMap,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? snippetResultMap,
             global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>? snippetResultArray
             )
         {
@@ -210,7 +210,7 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.SnippetResultOption, TResult>? snippetResultOption = null,
-            global::System.Func<global::Algolia.Recommend.SnippetResultMap, TResult>? snippetResultMap = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>, TResult>? snippetResultMap = null,
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>, TResult>? snippetResultArray = null,
             bool validate = true)
         {
@@ -241,7 +241,7 @@ namespace Algolia.Recommend
         public void Match(
             global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
 
-            global::System.Action<global::Algolia.Recommend.SnippetResultMap>? snippetResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>>? snippetResultMap = null,
 
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>>? snippetResultArray = null,
             bool validate = true)
@@ -270,7 +270,7 @@ namespace Algolia.Recommend
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.SnippetResultOption>? snippetResultOption = null,
-            global::System.Action<global::Algolia.Recommend.SnippetResultMap>? snippetResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>>? snippetResultMap = null,
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>>? snippetResultArray = null,
             bool validate = true)
         {
@@ -303,7 +303,7 @@ namespace Algolia.Recommend
                 SnippetResultOption,
                 typeof(global::Algolia.Recommend.SnippetResultOption),
                 SnippetResultMap,
-                typeof(global::Algolia.Recommend.SnippetResultMap),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>),
                 SnippetResultArray,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>),
             };
@@ -323,7 +323,7 @@ namespace Algolia.Recommend
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SnippetResultOption?>.Default.Equals(SnippetResultOption, other.SnippetResultOption) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.SnippetResultMap?>.Default.Equals(SnippetResultMap, other.SnippetResultMap) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>?>.Default.Equals(SnippetResultMap, other.SnippetResultMap) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult>?>.Default.Equals(SnippetResultArray, other.SnippetResultArray)
                 ;
         }

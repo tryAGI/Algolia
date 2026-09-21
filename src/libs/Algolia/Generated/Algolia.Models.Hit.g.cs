@@ -22,13 +22,13 @@ namespace Algolia
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_highlightResult")]
-        public global::Algolia.HighlightResultMap? HighlightResult { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult>? HighlightResult { get; set; }
 
         /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_snippetResult")]
-        public global::Algolia.SnippetResultMap? SnippetResult { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? SnippetResult { get; set; }
 
         /// <summary>
         /// Object with detailed information about the record's ranking.
@@ -70,8 +70,8 @@ namespace Algolia
 #endif
         public Hit(
             string objectID,
-            global::Algolia.HighlightResultMap? highlightResult,
-            global::Algolia.SnippetResultMap? snippetResult,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult>? highlightResult,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? snippetResult,
             global::Algolia.RankingInfo? rankingInfo,
             int? distinctSeqID)
         {

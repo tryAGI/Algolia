@@ -50,9 +50,9 @@ namespace Algolia.Recommend
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.Recommend.HighlightResultMap? HighlightResultMap { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? HighlightResultMap { get; init; }
 #else
-        public global::Algolia.Recommend.HighlightResultMap? HighlightResultMap { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? HighlightResultMap { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Algolia.Recommend
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Algolia.Recommend.HighlightResultMap? value)
+            out global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? value)
         {
             value = HighlightResultMap;
             return IsHighlightResultMap;
@@ -79,7 +79,7 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.HighlightResultMap PickHighlightResultMap() => IsHighlightResultMap
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult> PickHighlightResultMap() => IsHighlightResultMap
             ? HighlightResultMap!
             : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultMap' but the value was {ToString()}.");
 
@@ -145,17 +145,17 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator HighlightResult(global::Algolia.Recommend.HighlightResultMap value) => new HighlightResult((global::Algolia.Recommend.HighlightResultMap?)value);
+        public static implicit operator HighlightResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult> value) => new HighlightResult((global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Algolia.Recommend.HighlightResultMap?(HighlightResult @this) => @this.HighlightResultMap;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>?(HighlightResult @this) => @this.HighlightResultMap;
 
         /// <summary>
         ///
         /// </summary>
-        public HighlightResult(global::Algolia.Recommend.HighlightResultMap? value)
+        public HighlightResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? value)
         {
             HighlightResultMap = value;
         }
@@ -163,14 +163,14 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public static HighlightResult FromHighlightResultMap(global::Algolia.Recommend.HighlightResultMap? value) => new HighlightResult(value);
+        public static HighlightResult FromHighlightResultMap(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? value) => new HighlightResult(value);
 
         /// <summary>
         ///
         /// </summary>
         public HighlightResult(
             global::Algolia.Recommend.HighlightResultOption? highlightResultOption,
-            global::Algolia.Recommend.HighlightResultMap? highlightResultMap,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? highlightResultMap,
             global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>? highlightResultArray
             )
         {
@@ -210,7 +210,7 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.Recommend.HighlightResultOption, TResult>? highlightResultOption = null,
-            global::System.Func<global::Algolia.Recommend.HighlightResultMap, TResult>? highlightResultMap = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>, TResult>? highlightResultMap = null,
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>, TResult>? highlightResultArray = null,
             bool validate = true)
         {
@@ -241,7 +241,7 @@ namespace Algolia.Recommend
         public void Match(
             global::System.Action<global::Algolia.Recommend.HighlightResultOption>? highlightResultOption = null,
 
-            global::System.Action<global::Algolia.Recommend.HighlightResultMap>? highlightResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>>? highlightResultMap = null,
 
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>>? highlightResultArray = null,
             bool validate = true)
@@ -270,7 +270,7 @@ namespace Algolia.Recommend
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.Recommend.HighlightResultOption>? highlightResultOption = null,
-            global::System.Action<global::Algolia.Recommend.HighlightResultMap>? highlightResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>>? highlightResultMap = null,
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>>? highlightResultArray = null,
             bool validate = true)
         {
@@ -303,7 +303,7 @@ namespace Algolia.Recommend
                 HighlightResultOption,
                 typeof(global::Algolia.Recommend.HighlightResultOption),
                 HighlightResultMap,
-                typeof(global::Algolia.Recommend.HighlightResultMap),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>),
                 HighlightResultArray,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>),
             };
@@ -323,7 +323,7 @@ namespace Algolia.Recommend
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.HighlightResultOption?>.Default.Equals(HighlightResultOption, other.HighlightResultOption) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Recommend.HighlightResultMap?>.Default.Equals(HighlightResultMap, other.HighlightResultMap) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>?>.Default.Equals(HighlightResultMap, other.HighlightResultMap) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.Recommend.HighlightResult>?>.Default.Equals(HighlightResultArray, other.HighlightResultArray)
                 ;
         }

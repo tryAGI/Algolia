@@ -21,13 +21,13 @@ namespace Algolia.Recommend
         /// Surround words that match the query with HTML tags for highlighting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_highlightResult")]
-        public global::Algolia.Recommend.HighlightResultMap? HighlightResult { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? HighlightResult { get; set; }
 
         /// <summary>
         /// Snippets that show the context around a matching search query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_snippetResult")]
-        public global::Algolia.Recommend.SnippetResultMap? SnippetResult { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? SnippetResult { get; set; }
 
         /// <summary>
         /// Object with detailed information about the record's ranking.
@@ -78,8 +78,8 @@ namespace Algolia.Recommend
 #endif
         public RecommendHit(
             string objectID,
-            global::Algolia.Recommend.HighlightResultMap? highlightResult,
-            global::Algolia.Recommend.SnippetResultMap? snippetResult,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.HighlightResult>? highlightResult,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult>? snippetResult,
             global::Algolia.Recommend.RankingInfo? rankingInfo,
             int? distinctSeqID,
             double? score)

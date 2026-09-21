@@ -50,9 +50,9 @@ namespace Algolia
         /// Snippets that show the context around a matching search query.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Algolia.SnippetResultMap? SnippetResultMap { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? SnippetResultMap { get; init; }
 #else
-        public global::Algolia.SnippetResultMap? SnippetResultMap { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? SnippetResultMap { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Algolia
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Algolia.SnippetResultMap? value)
+            out global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? value)
         {
             value = SnippetResultMap;
             return IsSnippetResultMap;
@@ -79,7 +79,7 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SnippetResultMap PickSnippetResultMap() => IsSnippetResultMap
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult> PickSnippetResultMap() => IsSnippetResultMap
             ? SnippetResultMap!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultMap' but the value was {ToString()}.");
 
@@ -145,17 +145,17 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator SnippetResult(global::Algolia.SnippetResultMap value) => new SnippetResult((global::Algolia.SnippetResultMap?)value);
+        public static implicit operator SnippetResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult> value) => new SnippetResult((global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Algolia.SnippetResultMap?(SnippetResult @this) => @this.SnippetResultMap;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>?(SnippetResult @this) => @this.SnippetResultMap;
 
         /// <summary>
         ///
         /// </summary>
-        public SnippetResult(global::Algolia.SnippetResultMap? value)
+        public SnippetResult(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? value)
         {
             SnippetResultMap = value;
         }
@@ -163,14 +163,14 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public static SnippetResult FromSnippetResultMap(global::Algolia.SnippetResultMap? value) => new SnippetResult(value);
+        public static SnippetResult FromSnippetResultMap(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? value) => new SnippetResult(value);
 
         /// <summary>
         ///
         /// </summary>
         public SnippetResult(
             global::Algolia.SnippetResultOption? snippetResultOption,
-            global::Algolia.SnippetResultMap? snippetResultMap,
+            global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? snippetResultMap,
             global::System.Collections.Generic.IList<global::Algolia.SnippetResult>? snippetResultArray
             )
         {
@@ -210,7 +210,7 @@ namespace Algolia
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Algolia.SnippetResultOption, TResult>? snippetResultOption = null,
-            global::System.Func<global::Algolia.SnippetResultMap, TResult>? snippetResultMap = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>, TResult>? snippetResultMap = null,
             global::System.Func<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>, TResult>? snippetResultArray = null,
             bool validate = true)
         {
@@ -241,7 +241,7 @@ namespace Algolia
         public void Match(
             global::System.Action<global::Algolia.SnippetResultOption>? snippetResultOption = null,
 
-            global::System.Action<global::Algolia.SnippetResultMap>? snippetResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>>? snippetResultMap = null,
 
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>>? snippetResultArray = null,
             bool validate = true)
@@ -270,7 +270,7 @@ namespace Algolia
         /// </summary>
         public void Switch(
             global::System.Action<global::Algolia.SnippetResultOption>? snippetResultOption = null,
-            global::System.Action<global::Algolia.SnippetResultMap>? snippetResultMap = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>>? snippetResultMap = null,
             global::System.Action<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>>? snippetResultArray = null,
             bool validate = true)
         {
@@ -303,7 +303,7 @@ namespace Algolia
                 SnippetResultOption,
                 typeof(global::Algolia.SnippetResultOption),
                 SnippetResultMap,
-                typeof(global::Algolia.SnippetResultMap),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>),
                 SnippetResultArray,
                 typeof(global::System.Collections.Generic.IList<global::Algolia.SnippetResult>),
             };
@@ -323,7 +323,7 @@ namespace Algolia
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.SnippetResultOption?>.Default.Equals(SnippetResultOption, other.SnippetResultOption) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.SnippetResultMap?>.Default.Equals(SnippetResultMap, other.SnippetResultMap) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>?>.Default.Equals(SnippetResultMap, other.SnippetResultMap) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>?>.Default.Equals(SnippetResultArray, other.SnippetResultArray)
                 ;
         }
