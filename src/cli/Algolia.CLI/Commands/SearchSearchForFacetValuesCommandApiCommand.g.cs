@@ -76,6 +76,8 @@ This attribute must be included in the `attributesForFaceting` index setting wit
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"for-facet-values", @"Search for facet values
@@ -148,6 +150,7 @@ Searches for values of a specified facet attribute.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

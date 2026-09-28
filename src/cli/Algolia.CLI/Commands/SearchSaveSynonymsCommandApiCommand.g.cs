@@ -57,6 +57,8 @@ internal static partial class SearchSaveSynonymsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"save-synonyms", @"Create or replace synonyms
@@ -114,6 +116,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

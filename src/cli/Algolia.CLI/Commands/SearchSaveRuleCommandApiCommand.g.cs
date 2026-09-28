@@ -120,6 +120,8 @@ For more information, see [Consequences](https://www.algolia.com/doc/guides/mana
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"save-rule", @"Create or replace a rule
@@ -203,6 +205,7 @@ To create or update more than one rule, use the [`batch` operation](https://www.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

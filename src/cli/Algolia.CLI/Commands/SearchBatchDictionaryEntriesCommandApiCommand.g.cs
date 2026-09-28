@@ -60,6 +60,8 @@ internal static partial class SearchBatchDictionaryEntriesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"batch-dictionary-entries", @"Add or delete dictionary entries
@@ -112,6 +114,7 @@ Adds or deletes multiple entries from your plurals, segmentation, or stop word d
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

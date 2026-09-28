@@ -55,6 +55,8 @@ By default, all log entries are retrieved.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-logs", @"Retrieve log entries
@@ -103,6 +105,7 @@ The request must be authenticated by an API key with the [`logs` ACL](https://ww
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

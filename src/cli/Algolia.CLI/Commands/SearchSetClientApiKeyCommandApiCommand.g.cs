@@ -14,6 +14,8 @@ internal static partial class SearchSetClientApiKeyCommandApiCommand
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"set-client-api-key", @"Switch the API key used to authenticate requests
@@ -35,6 +37,7 @@ Switch the API key used to authenticate requests.
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

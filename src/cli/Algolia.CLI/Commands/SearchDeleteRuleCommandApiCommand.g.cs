@@ -43,6 +43,8 @@ internal static partial class SearchDeleteRuleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-rule", @"Delete a rule
@@ -78,6 +80,7 @@ use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

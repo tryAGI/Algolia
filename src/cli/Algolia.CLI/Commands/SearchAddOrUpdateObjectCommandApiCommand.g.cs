@@ -55,6 +55,8 @@ internal static partial class SearchAddOrUpdateObjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"add-or-update-object", @"Add or replace a record
@@ -111,6 +113,7 @@ To add, update, or replace multiple records, use the [`batch` operation](https:/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

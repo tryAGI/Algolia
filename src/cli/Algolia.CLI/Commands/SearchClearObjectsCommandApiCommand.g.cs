@@ -33,6 +33,8 @@ internal static partial class SearchClearObjectsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"clear-objects", @"Delete all records from an index
@@ -61,6 +63,7 @@ This operation is resource-intensive and subject to [indexing rate limits](https
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

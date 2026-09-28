@@ -47,6 +47,8 @@ internal static partial class SearchWaitForApiKeyCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"wait-for-api-key", @"Wait for an API key operation
@@ -79,6 +81,7 @@ Waits for an API key to be added, updated, or deleted.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

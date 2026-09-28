@@ -49,6 +49,8 @@ internal static partial class SearchSearchSingleIndexCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"single-index", @"Search an index
@@ -100,6 +102,7 @@ If you need more, use the [`browse` operation](https://www.algolia.com/doc/rest-
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

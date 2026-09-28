@@ -164,6 +164,8 @@ This parameter is ignored if you also specify `insideBoundingBox`.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-by", @"Delete records matching a filter
@@ -242,6 +244,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

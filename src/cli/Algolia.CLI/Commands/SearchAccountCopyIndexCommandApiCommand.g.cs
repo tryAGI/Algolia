@@ -41,6 +41,8 @@ internal static partial class SearchAccountCopyIndexCommandApiCommand
         Description = @"The size of the chunk of `objects`. Defaults to 1,000.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"account-copy-index", @"Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`
@@ -74,6 +76,7 @@ Copies the given `sourceIndexName` records, rules and synonyms to an other Algol
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

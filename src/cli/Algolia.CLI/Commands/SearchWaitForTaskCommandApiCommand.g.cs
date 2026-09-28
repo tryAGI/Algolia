@@ -41,6 +41,8 @@ internal static partial class SearchWaitForTaskCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"wait-for-task", @"Wait for operation to complete
@@ -73,6 +75,7 @@ All Algolia write operations are asynchronous. When you make a request for a wri
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

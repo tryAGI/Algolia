@@ -29,6 +29,8 @@ internal static partial class SearchGetDictionaryLanguagesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-dictionary-languages", @"List available languages
@@ -56,6 +58,7 @@ Lists supported languages with their supported dictionary types and number of cu
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

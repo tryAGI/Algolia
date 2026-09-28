@@ -33,6 +33,8 @@ internal static partial class SearchRestoreApiKeyCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"restore-api-key", @"Restore an API key
@@ -65,6 +67,7 @@ If you create more, the oldest API keys are deleted and can't be restored.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
