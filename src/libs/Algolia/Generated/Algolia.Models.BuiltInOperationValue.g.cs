@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickBuiltInOperationValueVariant1() => IsBuiltInOperationValueVariant1
-            ? BuiltInOperationValueVariant1!
+        public string PickBuiltInOperationValueVariant1() => BuiltInOperationValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperationValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public int PickBuiltInOperationValueVariant2() => IsBuiltInOperationValueVariant2
-            ? BuiltInOperationValueVariant2!.Value
+        public int PickBuiltInOperationValueVariant2() => BuiltInOperationValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperationValueVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBuiltInOperationValueVariant1 && builtInOperationValueVariant1 != null)
+            if (BuiltInOperationValueVariant1 is { } __value0 && builtInOperationValueVariant1 != null)
             {
-                return builtInOperationValueVariant1(BuiltInOperationValueVariant1!);
+                return builtInOperationValueVariant1(__value0);
             }
-            else if (IsBuiltInOperationValueVariant2 && builtInOperationValueVariant2 != null)
+            else if (BuiltInOperationValueVariant2 is { } __value1 && builtInOperationValueVariant2 != null)
             {
-                return builtInOperationValueVariant2(BuiltInOperationValueVariant2!);
+                return builtInOperationValueVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBuiltInOperationValueVariant1)
+            if (BuiltInOperationValueVariant1 is { } __value0)
             {
-                builtInOperationValueVariant1?.Invoke(BuiltInOperationValueVariant1!);
+                builtInOperationValueVariant1?.Invoke(__value0);
             }
-            else if (IsBuiltInOperationValueVariant2)
+            else if (BuiltInOperationValueVariant2 is { } __value1)
             {
-                builtInOperationValueVariant2?.Invoke(BuiltInOperationValueVariant2!);
+                builtInOperationValueVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBuiltInOperationValueVariant1)
+            if (BuiltInOperationValueVariant1 is { } __value0)
             {
-                builtInOperationValueVariant1?.Invoke(BuiltInOperationValueVariant1!);
+                builtInOperationValueVariant1?.Invoke(__value0);
             }
-            else if (IsBuiltInOperationValueVariant2)
+            else if (BuiltInOperationValueVariant2 is { } __value1)
             {
-                builtInOperationValueVariant2?.Invoke(BuiltInOperationValueVariant2!);
+                builtInOperationValueVariant2?.Invoke(__value1);
             }
         }
 

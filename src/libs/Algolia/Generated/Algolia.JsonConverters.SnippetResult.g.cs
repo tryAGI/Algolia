@@ -165,19 +165,19 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SnippetResultOption), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SnippetResultOption?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SnippetResultOption).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultOption!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSnippetResultOption(), typeInfo);
             }
             else if (value.IsSnippetResultMap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultMap!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSnippetResultMap(), typeInfo);
             }
             else if (value.IsSnippetResultArray)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.SnippetResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.SnippetResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.SnippetResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnippetResultArray!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSnippetResultArray(), typeInfo);
             }
         }
     }

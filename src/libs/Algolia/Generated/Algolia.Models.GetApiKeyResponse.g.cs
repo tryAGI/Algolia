@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseGetApiKeyResponse PickBase() => IsBase
-            ? Base!
+        public global::Algolia.BaseGetApiKeyResponse PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ApiKey PickApiKey() => IsApiKey
-            ? ApiKey!
+        public global::Algolia.ApiKey PickApiKey() => ApiKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsApiKey && apiKey != null)
+            else if (ApiKey is { } __value1 && apiKey != null)
             {
-                return apiKey(ApiKey!);
+                return apiKey(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value1)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value1)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value1);
             }
         }
 

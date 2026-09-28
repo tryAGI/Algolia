@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickAutoFilteringFilterEntryVariant1() => IsAutoFilteringFilterEntryVariant1
-            ? AutoFilteringFilterEntryVariant1!
+        public string PickAutoFilteringFilterEntryVariant1() => AutoFilteringFilterEntryVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickAutoFilteringFilterEntryVariant2() => IsAutoFilteringFilterEntryVariant2
-            ? AutoFilteringFilterEntryVariant2!
+        public global::System.Collections.Generic.IList<string> PickAutoFilteringFilterEntryVariant2() => AutoFilteringFilterEntryVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoFilteringFilterEntryVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutoFilteringFilterEntryVariant1 && autoFilteringFilterEntryVariant1 != null)
+            if (AutoFilteringFilterEntryVariant1 is { } __value0 && autoFilteringFilterEntryVariant1 != null)
             {
-                return autoFilteringFilterEntryVariant1(AutoFilteringFilterEntryVariant1!);
+                return autoFilteringFilterEntryVariant1(__value0);
             }
-            else if (IsAutoFilteringFilterEntryVariant2 && autoFilteringFilterEntryVariant2 != null)
+            else if (AutoFilteringFilterEntryVariant2 is { } __value1 && autoFilteringFilterEntryVariant2 != null)
             {
-                return autoFilteringFilterEntryVariant2(AutoFilteringFilterEntryVariant2!);
+                return autoFilteringFilterEntryVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutoFilteringFilterEntryVariant1)
+            if (AutoFilteringFilterEntryVariant1 is { } __value0)
             {
-                autoFilteringFilterEntryVariant1?.Invoke(AutoFilteringFilterEntryVariant1!);
+                autoFilteringFilterEntryVariant1?.Invoke(__value0);
             }
-            else if (IsAutoFilteringFilterEntryVariant2)
+            else if (AutoFilteringFilterEntryVariant2 is { } __value1)
             {
-                autoFilteringFilterEntryVariant2?.Invoke(AutoFilteringFilterEntryVariant2!);
+                autoFilteringFilterEntryVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutoFilteringFilterEntryVariant1)
+            if (AutoFilteringFilterEntryVariant1 is { } __value0)
             {
-                autoFilteringFilterEntryVariant1?.Invoke(AutoFilteringFilterEntryVariant1!);
+                autoFilteringFilterEntryVariant1?.Invoke(__value0);
             }
-            else if (IsAutoFilteringFilterEntryVariant2)
+            else if (AutoFilteringFilterEntryVariant2 is { } __value1)
             {
-                autoFilteringFilterEntryVariant2?.Invoke(AutoFilteringFilterEntryVariant2!);
+                autoFilteringFilterEntryVariant2?.Invoke(__value1);
             }
         }
 

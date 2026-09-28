@@ -45,8 +45,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponse PickBase() => IsBase
-            ? Base!
+        public global::Algolia.BaseSearchResponse PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchPagination PickPagination() => IsPagination
-            ? Pagination!
+        public global::Algolia.SearchPagination PickPagination() => Pagination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponsePartialVariant3 PickSearchResponsePartialVariant3() => IsSearchResponsePartialVariant3
-            ? SearchResponsePartialVariant3!
+        public global::Algolia.SearchResponsePartialVariant3 PickSearchResponsePartialVariant3() => SearchResponsePartialVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResponsePartialVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -245,17 +245,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsPagination && pagination != null)
+            else if (Pagination is { } __value1 && pagination != null)
             {
-                return pagination(Pagination!);
+                return pagination(__value1);
             }
-            else if (IsSearchResponsePartialVariant3 && searchResponsePartialVariant3 != null)
+            else if (SearchResponsePartialVariant3 is { } __value2 && searchResponsePartialVariant3 != null)
             {
-                return searchResponsePartialVariant3(SearchResponsePartialVariant3!);
+                return searchResponsePartialVariant3(__value2);
             }
 
             return default(TResult);
@@ -277,17 +277,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsPagination)
+            else if (Pagination is { } __value1)
             {
-                pagination?.Invoke(Pagination!);
+                pagination?.Invoke(__value1);
             }
-            else if (IsSearchResponsePartialVariant3)
+            else if (SearchResponsePartialVariant3 is { } __value2)
             {
-                searchResponsePartialVariant3?.Invoke(SearchResponsePartialVariant3!);
+                searchResponsePartialVariant3?.Invoke(__value2);
             }
         }
 
@@ -305,17 +305,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsPagination)
+            else if (Pagination is { } __value1)
             {
-                pagination?.Invoke(Pagination!);
+                pagination?.Invoke(__value1);
             }
-            else if (IsSearchResponsePartialVariant3)
+            else if (SearchResponsePartialVariant3 is { } __value2)
             {
-                searchResponsePartialVariant3?.Invoke(SearchResponsePartialVariant3!);
+                searchResponsePartialVariant3?.Invoke(__value2);
             }
         }
 

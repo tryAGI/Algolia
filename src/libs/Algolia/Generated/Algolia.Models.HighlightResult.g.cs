@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HighlightResultOption PickHighlightResultOption() => IsHighlightResultOption
-            ? HighlightResultOption!
+        public global::Algolia.HighlightResultOption PickHighlightResultOption() => HighlightResultOption is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultOption' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult> PickHighlightResultMap() => IsHighlightResultMap
-            ? HighlightResultMap!
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult> PickHighlightResultMap() => HighlightResultMap is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultMap' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.HighlightResult> PickHighlightResultArray() => IsHighlightResultArray
-            ? HighlightResultArray!
+        public global::System.Collections.Generic.IList<global::Algolia.HighlightResult> PickHighlightResultArray() => HighlightResultArray is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HighlightResultArray' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsHighlightResultOption && highlightResultOption != null)
+            if (HighlightResultOption is { } __value0 && highlightResultOption != null)
             {
-                return highlightResultOption(HighlightResultOption!);
+                return highlightResultOption(__value0);
             }
-            else if (IsHighlightResultMap && highlightResultMap != null)
+            else if (HighlightResultMap is { } __value1 && highlightResultMap != null)
             {
-                return highlightResultMap(HighlightResultMap!);
+                return highlightResultMap(__value1);
             }
-            else if (IsHighlightResultArray && highlightResultArray != null)
+            else if (HighlightResultArray is { } __value2 && highlightResultArray != null)
             {
-                return highlightResultArray(HighlightResultArray!);
+                return highlightResultArray(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsHighlightResultOption)
+            if (HighlightResultOption is { } __value0)
             {
-                highlightResultOption?.Invoke(HighlightResultOption!);
+                highlightResultOption?.Invoke(__value0);
             }
-            else if (IsHighlightResultMap)
+            else if (HighlightResultMap is { } __value1)
             {
-                highlightResultMap?.Invoke(HighlightResultMap!);
+                highlightResultMap?.Invoke(__value1);
             }
-            else if (IsHighlightResultArray)
+            else if (HighlightResultArray is { } __value2)
             {
-                highlightResultArray?.Invoke(HighlightResultArray!);
+                highlightResultArray?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsHighlightResultOption)
+            if (HighlightResultOption is { } __value0)
             {
-                highlightResultOption?.Invoke(HighlightResultOption!);
+                highlightResultOption?.Invoke(__value0);
             }
-            else if (IsHighlightResultMap)
+            else if (HighlightResultMap is { } __value1)
             {
-                highlightResultMap?.Invoke(HighlightResultMap!);
+                highlightResultMap?.Invoke(__value1);
             }
-            else if (IsHighlightResultArray)
+            else if (HighlightResultArray is { } __value2)
             {
-                highlightResultArray?.Invoke(HighlightResultArray!);
+                highlightResultArray?.Invoke(__value2);
             }
         }
 

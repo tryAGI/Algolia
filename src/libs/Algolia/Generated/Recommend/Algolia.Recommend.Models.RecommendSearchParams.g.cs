@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendSearchParams PickBase() => IsBase
-            ? Base!
+        public global::Algolia.Recommend.BaseRecommendSearchParams PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SearchParamsQuery PickQuery() => IsQuery
-            ? Query!
+        public global::Algolia.Recommend.SearchParamsQuery PickQuery() => Query is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendIndexSettings PickIndexSettings() => IsIndexSettings
-            ? IndexSettings!.Value
+        public global::Algolia.Recommend.RecommendIndexSettings PickIndexSettings() => IndexSettings is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettings' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendSearchParamsVariant4 PickRecommendSearchParamsVariant4() => IsRecommendSearchParamsVariant4
-            ? RecommendSearchParamsVariant4!
+        public global::Algolia.Recommend.RecommendSearchParamsVariant4 PickRecommendSearchParamsVariant4() => RecommendSearchParamsVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendSearchParamsVariant4' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsQuery && query != null)
+            else if (Query is { } __value1 && query != null)
             {
-                return query(Query!);
+                return query(__value1);
             }
-            else if (IsIndexSettings && indexSettings != null)
+            else if (IndexSettings is { } __value2 && indexSettings != null)
             {
-                return indexSettings(IndexSettings!);
+                return indexSettings(__value2);
             }
-            else if (IsRecommendSearchParamsVariant4 && recommendSearchParamsVariant4 != null)
+            else if (RecommendSearchParamsVariant4 is { } __value3 && recommendSearchParamsVariant4 != null)
             {
-                return recommendSearchParamsVariant4(RecommendSearchParamsVariant4!);
+                return recommendSearchParamsVariant4(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
-            else if (IsIndexSettings)
+            else if (IndexSettings is { } __value2)
             {
-                indexSettings?.Invoke(IndexSettings!);
+                indexSettings?.Invoke(__value2);
             }
-            else if (IsRecommendSearchParamsVariant4)
+            else if (RecommendSearchParamsVariant4 is { } __value3)
             {
-                recommendSearchParamsVariant4?.Invoke(RecommendSearchParamsVariant4!);
+                recommendSearchParamsVariant4?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
-            else if (IsIndexSettings)
+            else if (IndexSettings is { } __value2)
             {
-                indexSettings?.Invoke(IndexSettings!);
+                indexSettings?.Invoke(__value2);
             }
-            else if (IsRecommendSearchParamsVariant4)
+            else if (RecommendSearchParamsVariant4 is { } __value3)
             {
-                recommendSearchParamsVariant4?.Invoke(RecommendSearchParamsVariant4!);
+                recommendSearchParamsVariant4?.Invoke(__value3);
             }
         }
 

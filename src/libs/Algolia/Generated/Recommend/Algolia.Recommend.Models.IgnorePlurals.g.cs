@@ -45,8 +45,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickIgnorePluralsVariant1() => IsIgnorePluralsVariant1
-            ? IgnorePluralsVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickIgnorePluralsVariant1() => IgnorePluralsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BooleanString PickBooleanString() => IsBooleanString
-            ? BooleanString!.Value
+        public global::Algolia.Recommend.BooleanString PickBooleanString() => BooleanString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BooleanString' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public bool PickIgnorePluralsVariant3() => IsIgnorePluralsVariant3
-            ? IgnorePluralsVariant3!.Value
+        public bool PickIgnorePluralsVariant3() => IgnorePluralsVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IgnorePluralsVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -224,17 +224,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsIgnorePluralsVariant1 && ignorePluralsVariant1 != null)
+            if (IgnorePluralsVariant1 is { } __value0 && ignorePluralsVariant1 != null)
             {
-                return ignorePluralsVariant1(IgnorePluralsVariant1!);
+                return ignorePluralsVariant1(__value0);
             }
-            else if (IsBooleanString && booleanString != null)
+            else if (BooleanString is { } __value1 && booleanString != null)
             {
-                return booleanString(BooleanString!);
+                return booleanString(__value1);
             }
-            else if (IsIgnorePluralsVariant3 && ignorePluralsVariant3 != null)
+            else if (IgnorePluralsVariant3 is { } __value2 && ignorePluralsVariant3 != null)
             {
-                return ignorePluralsVariant3(IgnorePluralsVariant3!);
+                return ignorePluralsVariant3(__value2);
             }
 
             return default(TResult);
@@ -256,17 +256,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsIgnorePluralsVariant1)
+            if (IgnorePluralsVariant1 is { } __value0)
             {
-                ignorePluralsVariant1?.Invoke(IgnorePluralsVariant1!);
+                ignorePluralsVariant1?.Invoke(__value0);
             }
-            else if (IsBooleanString)
+            else if (BooleanString is { } __value1)
             {
-                booleanString?.Invoke(BooleanString!);
+                booleanString?.Invoke(__value1);
             }
-            else if (IsIgnorePluralsVariant3)
+            else if (IgnorePluralsVariant3 is { } __value2)
             {
-                ignorePluralsVariant3?.Invoke(IgnorePluralsVariant3!);
+                ignorePluralsVariant3?.Invoke(__value2);
             }
         }
 
@@ -284,17 +284,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsIgnorePluralsVariant1)
+            if (IgnorePluralsVariant1 is { } __value0)
             {
-                ignorePluralsVariant1?.Invoke(IgnorePluralsVariant1!);
+                ignorePluralsVariant1?.Invoke(__value0);
             }
-            else if (IsBooleanString)
+            else if (BooleanString is { } __value1)
             {
-                booleanString?.Invoke(BooleanString!);
+                booleanString?.Invoke(__value1);
             }
-            else if (IsIgnorePluralsVariant3)
+            else if (IgnorePluralsVariant3 is { } __value2)
             {
-                ignorePluralsVariant3?.Invoke(IgnorePluralsVariant3!);
+                ignorePluralsVariant3?.Invoke(__value2);
             }
         }
 

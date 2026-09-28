@@ -102,7 +102,7 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BaseRecommendSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BaseRecommendSearchParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BaseRecommendSearchParams).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BaseRecommendSearch!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBaseRecommendSearch(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -120,7 +120,7 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.SearchParamsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.SearchParamsQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.SearchParamsQuery).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.SearchQuery!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickSearchQuery(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -138,7 +138,7 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RecommendIndexSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RecommendIndexSettings> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RecommendIndexSettings).Name}");
-                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.RecommendIndexSettings!.Value, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickRecommendIndexSettings(), typeInfo);
                 if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -156,7 +156,7 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.FallbackParamsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.FallbackParamsVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.FallbackParamsVariant4).Name}");
-                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.FallbackParamsVariant4!, typeInfo);
+                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickFallbackParamsVariant4(), typeInfo);
                 if (__element3.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

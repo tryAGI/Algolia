@@ -86,7 +86,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchParamsWithoutQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchParamsWithoutQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchParamsWithoutQuery).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BaseSearchWithoutQuery!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBaseSearchWithoutQuery(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -104,7 +104,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.IndexSettingsAsSearchParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.IndexSettingsAsSearchParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.IndexSettingsAsSearchParams).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.IndexSettingsAsSearch!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickIndexSettingsAsSearch(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -122,7 +122,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Params?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Params).Name}");
-                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Params!, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickParams(), typeInfo);
                 if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

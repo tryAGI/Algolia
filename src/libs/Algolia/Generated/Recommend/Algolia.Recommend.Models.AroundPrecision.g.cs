@@ -46,8 +46,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public int PickAroundPrecisionVariant1() => IsAroundPrecisionVariant1
-            ? AroundPrecisionVariant1!.Value
+        public int PickAroundPrecisionVariant1() => AroundPrecisionVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AroundPrecisionVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem> PickRangeObjects() => IsRangeObjects
-            ? RangeObjects!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AroundPrecisionFromValueItem> PickRangeObjects() => RangeObjects is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RangeObjects' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -158,13 +158,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundPrecisionVariant1 && aroundPrecisionVariant1 != null)
+            if (AroundPrecisionVariant1 is { } __value0 && aroundPrecisionVariant1 != null)
             {
-                return aroundPrecisionVariant1(AroundPrecisionVariant1!);
+                return aroundPrecisionVariant1(__value0);
             }
-            else if (IsRangeObjects && rangeObjects != null)
+            else if (RangeObjects is { } __value1 && rangeObjects != null)
             {
-                return rangeObjects(RangeObjects!);
+                return rangeObjects(__value1);
             }
 
             return default(TResult);
@@ -184,13 +184,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundPrecisionVariant1)
+            if (AroundPrecisionVariant1 is { } __value0)
             {
-                aroundPrecisionVariant1?.Invoke(AroundPrecisionVariant1!);
+                aroundPrecisionVariant1?.Invoke(__value0);
             }
-            else if (IsRangeObjects)
+            else if (RangeObjects is { } __value1)
             {
-                rangeObjects?.Invoke(RangeObjects!);
+                rangeObjects?.Invoke(__value1);
             }
         }
 
@@ -207,13 +207,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundPrecisionVariant1)
+            if (AroundPrecisionVariant1 is { } __value0)
             {
-                aroundPrecisionVariant1?.Invoke(AroundPrecisionVariant1!);
+                aroundPrecisionVariant1?.Invoke(__value0);
             }
-            else if (IsRangeObjects)
+            else if (RangeObjects is { } __value1)
             {
-                rangeObjects?.Invoke(RangeObjects!);
+                rangeObjects?.Invoke(__value1);
             }
         }
 

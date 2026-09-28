@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchParams PickBase() => IsBase
-            ? Base!.Value
+        public global::Algolia.BaseSearchParams PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAs() => IsIndexSettingsAs
-            ? IndexSettingsAs!
+        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAs() => IndexSettingsAs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettingsAs' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsIndexSettingsAs && indexSettingsAs != null)
+            else if (IndexSettingsAs is { } __value1 && indexSettingsAs != null)
             {
-                return indexSettingsAs(IndexSettingsAs!);
+                return indexSettingsAs(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsIndexSettingsAs)
+            else if (IndexSettingsAs is { } __value1)
             {
-                indexSettingsAs?.Invoke(IndexSettingsAs!);
+                indexSettingsAs?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsIndexSettingsAs)
+            else if (IndexSettingsAs is { } __value1)
             {
-                indexSettingsAs?.Invoke(IndexSettingsAs!);
+                indexSettingsAs?.Invoke(__value1);
             }
         }
 

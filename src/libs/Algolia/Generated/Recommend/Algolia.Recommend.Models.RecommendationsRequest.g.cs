@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BoughtTogetherQuery PickFrequentlyBoughtTogether() => IsFrequentlyBoughtTogether
-            ? FrequentlyBoughtTogether!.Value
+        public global::Algolia.Recommend.BoughtTogetherQuery PickFrequentlyBoughtTogether() => FrequentlyBoughtTogether is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FrequentlyBoughtTogether' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RelatedQuery PickRelatedProducts() => IsRelatedProducts
-            ? RelatedProducts!.Value
+        public global::Algolia.Recommend.RelatedQuery PickRelatedProducts() => RelatedProducts is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RelatedProducts' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TrendingItemsQuery PickTrendingItems() => IsTrendingItems
-            ? TrendingItems!.Value
+        public global::Algolia.Recommend.TrendingItemsQuery PickTrendingItems() => TrendingItems is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingItems' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacetsQuery PickTrendingFacetValues() => IsTrendingFacetValues
-            ? TrendingFacetValues!.Value
+        public global::Algolia.Recommend.TrendingFacetsQuery PickTrendingFacetValues() => TrendingFacetValues is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetValues' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.LookingSimilarQuery PickLookingSimilar() => IsLookingSimilar
-            ? LookingSimilar!.Value
+        public global::Algolia.Recommend.LookingSimilarQuery PickLookingSimilar() => LookingSimilar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsFrequentlyBoughtTogether && frequentlyBoughtTogether != null)
+            if (FrequentlyBoughtTogether is { } __value0 && frequentlyBoughtTogether != null)
             {
-                return frequentlyBoughtTogether(FrequentlyBoughtTogether!);
+                return frequentlyBoughtTogether(__value0);
             }
-            else if (IsRelatedProducts && relatedProducts != null)
+            else if (RelatedProducts is { } __value1 && relatedProducts != null)
             {
-                return relatedProducts(RelatedProducts!);
+                return relatedProducts(__value1);
             }
-            else if (IsTrendingItems && trendingItems != null)
+            else if (TrendingItems is { } __value2 && trendingItems != null)
             {
-                return trendingItems(TrendingItems!);
+                return trendingItems(__value2);
             }
-            else if (IsTrendingFacetValues && trendingFacetValues != null)
+            else if (TrendingFacetValues is { } __value3 && trendingFacetValues != null)
             {
-                return trendingFacetValues(TrendingFacetValues!);
+                return trendingFacetValues(__value3);
             }
-            else if (IsLookingSimilar && lookingSimilar != null)
+            else if (LookingSimilar is { } __value4 && lookingSimilar != null)
             {
-                return lookingSimilar(LookingSimilar!);
+                return lookingSimilar(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsFrequentlyBoughtTogether)
+            if (FrequentlyBoughtTogether is { } __value0)
             {
-                frequentlyBoughtTogether?.Invoke(FrequentlyBoughtTogether!);
+                frequentlyBoughtTogether?.Invoke(__value0);
             }
-            else if (IsRelatedProducts)
+            else if (RelatedProducts is { } __value1)
             {
-                relatedProducts?.Invoke(RelatedProducts!);
+                relatedProducts?.Invoke(__value1);
             }
-            else if (IsTrendingItems)
+            else if (TrendingItems is { } __value2)
             {
-                trendingItems?.Invoke(TrendingItems!);
+                trendingItems?.Invoke(__value2);
             }
-            else if (IsTrendingFacetValues)
+            else if (TrendingFacetValues is { } __value3)
             {
-                trendingFacetValues?.Invoke(TrendingFacetValues!);
+                trendingFacetValues?.Invoke(__value3);
             }
-            else if (IsLookingSimilar)
+            else if (LookingSimilar is { } __value4)
             {
-                lookingSimilar?.Invoke(LookingSimilar!);
+                lookingSimilar?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsFrequentlyBoughtTogether)
+            if (FrequentlyBoughtTogether is { } __value0)
             {
-                frequentlyBoughtTogether?.Invoke(FrequentlyBoughtTogether!);
+                frequentlyBoughtTogether?.Invoke(__value0);
             }
-            else if (IsRelatedProducts)
+            else if (RelatedProducts is { } __value1)
             {
-                relatedProducts?.Invoke(RelatedProducts!);
+                relatedProducts?.Invoke(__value1);
             }
-            else if (IsTrendingItems)
+            else if (TrendingItems is { } __value2)
             {
-                trendingItems?.Invoke(TrendingItems!);
+                trendingItems?.Invoke(__value2);
             }
-            else if (IsTrendingFacetValues)
+            else if (TrendingFacetValues is { } __value3)
             {
-                trendingFacetValues?.Invoke(TrendingFacetValues!);
+                trendingFacetValues?.Invoke(__value3);
             }
-            else if (IsLookingSimilar)
+            else if (LookingSimilar is { } __value4)
             {
-                lookingSimilar?.Invoke(LookingSimilar!);
+                lookingSimilar?.Invoke(__value4);
             }
         }
 

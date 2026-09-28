@@ -166,19 +166,19 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Response!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponse(), typeInfo);
             }
             else if (value.IsForFacetValuesResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchForFacetValuesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchForFacetValuesResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchForFacetValuesResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ForFacetValuesResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickForFacetValuesResponse(), typeInfo);
             }
             else if (value.IsResponsePartial)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchResponsePartial), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchResponsePartial> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchResponsePartial).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsePartial!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsePartial(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
-            ? BaseRecommendRequest!
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => BaseRecommendRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.LookingSimilar PickLookingSimilar() => IsLookingSimilar
-            ? LookingSimilar!
+        public global::Algolia.Recommend.LookingSimilar PickLookingSimilar() => LookingSimilar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LookingSimilar' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest && baseRecommendRequest != null)
+            if (BaseRecommendRequest is { } __value0 && baseRecommendRequest != null)
             {
-                return baseRecommendRequest(BaseRecommendRequest!);
+                return baseRecommendRequest(__value0);
             }
-            else if (IsLookingSimilar && lookingSimilar != null)
+            else if (LookingSimilar is { } __value1 && lookingSimilar != null)
             {
-                return lookingSimilar(LookingSimilar!);
+                return lookingSimilar(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest)
+            if (BaseRecommendRequest is { } __value0)
             {
-                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+                baseRecommendRequest?.Invoke(__value0);
             }
-            else if (IsLookingSimilar)
+            else if (LookingSimilar is { } __value1)
             {
-                lookingSimilar?.Invoke(LookingSimilar!);
+                lookingSimilar?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest)
+            if (BaseRecommendRequest is { } __value0)
             {
-                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+                baseRecommendRequest?.Invoke(__value0);
             }
-            else if (IsLookingSimilar)
+            else if (LookingSimilar is { } __value1)
             {
-                lookingSimilar?.Invoke(LookingSimilar!);
+                lookingSimilar?.Invoke(__value1);
             }
         }
 

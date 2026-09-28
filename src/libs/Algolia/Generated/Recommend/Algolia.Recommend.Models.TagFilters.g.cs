@@ -47,8 +47,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters> PickTagFiltersVariant1() => IsTagFiltersVariant1
-            ? TagFiltersVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TagFilters> PickTagFiltersVariant1() => TagFiltersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public string PickTagFiltersVariant2() => IsTagFiltersVariant2
-            ? TagFiltersVariant2!
+        public string PickTagFiltersVariant2() => TagFiltersVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TagFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -159,13 +159,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTagFiltersVariant1 && tagFiltersVariant1 != null)
+            if (TagFiltersVariant1 is { } __value0 && tagFiltersVariant1 != null)
             {
-                return tagFiltersVariant1(TagFiltersVariant1!);
+                return tagFiltersVariant1(__value0);
             }
-            else if (IsTagFiltersVariant2 && tagFiltersVariant2 != null)
+            else if (TagFiltersVariant2 is { } __value1 && tagFiltersVariant2 != null)
             {
-                return tagFiltersVariant2(TagFiltersVariant2!);
+                return tagFiltersVariant2(__value1);
             }
 
             return default(TResult);
@@ -185,13 +185,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTagFiltersVariant1)
+            if (TagFiltersVariant1 is { } __value0)
             {
-                tagFiltersVariant1?.Invoke(TagFiltersVariant1!);
+                tagFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsTagFiltersVariant2)
+            else if (TagFiltersVariant2 is { } __value1)
             {
-                tagFiltersVariant2?.Invoke(TagFiltersVariant2!);
+                tagFiltersVariant2?.Invoke(__value1);
             }
         }
 
@@ -208,13 +208,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTagFiltersVariant1)
+            if (TagFiltersVariant1 is { } __value0)
             {
-                tagFiltersVariant1?.Invoke(TagFiltersVariant1!);
+                tagFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsTagFiltersVariant2)
+            else if (TagFiltersVariant2 is { } __value1)
             {
-                tagFiltersVariant2?.Invoke(TagFiltersVariant2!);
+                tagFiltersVariant2?.Invoke(__value1);
             }
         }
 

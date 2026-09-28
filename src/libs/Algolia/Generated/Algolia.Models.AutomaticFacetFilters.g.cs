@@ -45,8 +45,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter> PickAutomaticFacetFiltersVariant1() => IsAutomaticFacetFiltersVariant1
-            ? AutomaticFacetFiltersVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter> PickAutomaticFacetFiltersVariant1() => AutomaticFacetFiltersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickAutomaticFacetFiltersVariant2() => IsAutomaticFacetFiltersVariant2
-            ? AutomaticFacetFiltersVariant2!
+        public global::System.Collections.Generic.IList<string> PickAutomaticFacetFiltersVariant2() => AutomaticFacetFiltersVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutomaticFacetFiltersVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -135,13 +135,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutomaticFacetFiltersVariant1 && automaticFacetFiltersVariant1 != null)
+            if (AutomaticFacetFiltersVariant1 is { } __value0 && automaticFacetFiltersVariant1 != null)
             {
-                return automaticFacetFiltersVariant1(AutomaticFacetFiltersVariant1!);
+                return automaticFacetFiltersVariant1(__value0);
             }
-            else if (IsAutomaticFacetFiltersVariant2 && automaticFacetFiltersVariant2 != null)
+            else if (AutomaticFacetFiltersVariant2 is { } __value1 && automaticFacetFiltersVariant2 != null)
             {
-                return automaticFacetFiltersVariant2(AutomaticFacetFiltersVariant2!);
+                return automaticFacetFiltersVariant2(__value1);
             }
 
             return default(TResult);
@@ -161,13 +161,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutomaticFacetFiltersVariant1)
+            if (AutomaticFacetFiltersVariant1 is { } __value0)
             {
-                automaticFacetFiltersVariant1?.Invoke(AutomaticFacetFiltersVariant1!);
+                automaticFacetFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsAutomaticFacetFiltersVariant2)
+            else if (AutomaticFacetFiltersVariant2 is { } __value1)
             {
-                automaticFacetFiltersVariant2?.Invoke(AutomaticFacetFiltersVariant2!);
+                automaticFacetFiltersVariant2?.Invoke(__value1);
             }
         }
 
@@ -184,13 +184,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAutomaticFacetFiltersVariant1)
+            if (AutomaticFacetFiltersVariant1 is { } __value0)
             {
-                automaticFacetFiltersVariant1?.Invoke(AutomaticFacetFiltersVariant1!);
+                automaticFacetFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsAutomaticFacetFiltersVariant2)
+            else if (AutomaticFacetFiltersVariant2 is { } __value1)
             {
-                automaticFacetFiltersVariant2?.Invoke(AutomaticFacetFiltersVariant2!);
+                automaticFacetFiltersVariant2?.Invoke(__value1);
             }
         }
 

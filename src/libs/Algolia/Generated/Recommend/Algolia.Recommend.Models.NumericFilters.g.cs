@@ -48,8 +48,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters> PickNumericFiltersVariant1() => IsNumericFiltersVariant1
-            ? NumericFiltersVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.NumericFilters> PickNumericFiltersVariant1() => NumericFiltersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public string PickNumericFiltersVariant2() => IsNumericFiltersVariant2
-            ? NumericFiltersVariant2!
+        public string PickNumericFiltersVariant2() => NumericFiltersVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NumericFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -160,13 +160,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsNumericFiltersVariant1 && numericFiltersVariant1 != null)
+            if (NumericFiltersVariant1 is { } __value0 && numericFiltersVariant1 != null)
             {
-                return numericFiltersVariant1(NumericFiltersVariant1!);
+                return numericFiltersVariant1(__value0);
             }
-            else if (IsNumericFiltersVariant2 && numericFiltersVariant2 != null)
+            else if (NumericFiltersVariant2 is { } __value1 && numericFiltersVariant2 != null)
             {
-                return numericFiltersVariant2(NumericFiltersVariant2!);
+                return numericFiltersVariant2(__value1);
             }
 
             return default(TResult);
@@ -186,13 +186,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsNumericFiltersVariant1)
+            if (NumericFiltersVariant1 is { } __value0)
             {
-                numericFiltersVariant1?.Invoke(NumericFiltersVariant1!);
+                numericFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsNumericFiltersVariant2)
+            else if (NumericFiltersVariant2 is { } __value1)
             {
-                numericFiltersVariant2?.Invoke(NumericFiltersVariant2!);
+                numericFiltersVariant2?.Invoke(__value1);
             }
         }
 
@@ -209,13 +209,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsNumericFiltersVariant1)
+            if (NumericFiltersVariant1 is { } __value0)
             {
-                numericFiltersVariant1?.Invoke(NumericFiltersVariant1!);
+                numericFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsNumericFiltersVariant2)
+            else if (NumericFiltersVariant2 is { } __value1)
             {
-                numericFiltersVariant2?.Invoke(NumericFiltersVariant2!);
+                numericFiltersVariant2?.Invoke(__value1);
             }
         }
 

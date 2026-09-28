@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowseParamsConfig PickConfig() => IsConfig
-            ? Config!.Value
+        public global::Algolia.BrowseParamsConfig PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
-            ? SearchParametersAsQueryString!
+        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => SearchParametersAsQueryString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsQueryString' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsConfig && config != null)
+            if (Config is { } __value0 && config != null)
             {
-                return config(Config!);
+                return config(__value0);
             }
-            else if (IsSearchParametersAsQueryString && searchParametersAsQueryString != null)
+            else if (SearchParametersAsQueryString is { } __value1 && searchParametersAsQueryString != null)
             {
-                return searchParametersAsQueryString(SearchParametersAsQueryString!);
+                return searchParametersAsQueryString(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsConfig)
+            if (Config is { } __value0)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value0);
             }
-            else if (IsSearchParametersAsQueryString)
+            else if (SearchParametersAsQueryString is { } __value1)
             {
-                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+                searchParametersAsQueryString?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsConfig)
+            if (Config is { } __value0)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value0);
             }
-            else if (IsSearchParametersAsQueryString)
+            else if (SearchParametersAsQueryString is { } __value1)
             {
-                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+                searchParametersAsQueryString?.Invoke(__value1);
             }
         }
 

@@ -44,8 +44,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceQueryObject PickObjectValue() => IsObjectValue
-            ? ObjectValue!
+        public global::Algolia.ConsequenceQueryObject PickObjectValue() => ObjectValue is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickConsequenceQueryVariant2() => IsConsequenceQueryVariant2
-            ? ConsequenceQueryVariant2!
+        public string PickConsequenceQueryVariant2() => ConsequenceQueryVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConsequenceQueryVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectValue && objectValue != null)
+            if (ObjectValue is { } __value0 && objectValue != null)
             {
-                return objectValue(ObjectValue!);
+                return objectValue(__value0);
             }
-            else if (IsConsequenceQueryVariant2 && consequenceQueryVariant2 != null)
+            else if (ConsequenceQueryVariant2 is { } __value1 && consequenceQueryVariant2 != null)
             {
-                return consequenceQueryVariant2(ConsequenceQueryVariant2!);
+                return consequenceQueryVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectValue)
+            if (ObjectValue is { } __value0)
             {
-                objectValue?.Invoke(ObjectValue!);
+                objectValue?.Invoke(__value0);
             }
-            else if (IsConsequenceQueryVariant2)
+            else if (ConsequenceQueryVariant2 is { } __value1)
             {
-                consequenceQueryVariant2?.Invoke(ConsequenceQueryVariant2!);
+                consequenceQueryVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectValue)
+            if (ObjectValue is { } __value0)
             {
-                objectValue?.Invoke(ObjectValue!);
+                objectValue?.Invoke(__value0);
             }
-            else if (IsConsequenceQueryVariant2)
+            else if (ConsequenceQueryVariant2 is { } __value1)
             {
-                consequenceQueryVariant2?.Invoke(ConsequenceQueryVariant2!);
+                consequenceQueryVariant2?.Invoke(__value1);
             }
         }
 

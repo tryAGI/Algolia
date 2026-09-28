@@ -296,31 +296,31 @@ namespace Algolia.Recommend.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.BoughtTogetherQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.BoughtTogetherQuery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.BoughtTogetherQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FrequentlyBoughtTogether!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFrequentlyBoughtTogether(), typeInfo);
             }
             else if (value.IsRelatedProducts)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.RelatedQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.RelatedQuery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.RelatedQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RelatedProducts!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRelatedProducts(), typeInfo);
             }
             else if (value.IsTrendingItems)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TrendingItemsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TrendingItemsQuery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TrendingItemsQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TrendingItems!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTrendingItems(), typeInfo);
             }
             else if (value.IsTrendingFacetValues)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.TrendingFacetsQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.TrendingFacetsQuery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.TrendingFacetsQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TrendingFacetValues!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTrendingFacetValues(), typeInfo);
             }
             else if (value.IsLookingSimilar)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Recommend.LookingSimilarQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Recommend.LookingSimilarQuery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Recommend.LookingSimilarQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LookingSimilar!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLookingSimilar(), typeInfo);
             }
         }
     }

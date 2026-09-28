@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendHit PickRecommend() => IsRecommend
-            ? Recommend!
+        public global::Algolia.Recommend.RecommendHit PickRecommend() => Recommend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacetHit PickTrendingFacetHit() => IsTrendingFacetHit
-            ? TrendingFacetHit!
+        public global::Algolia.Recommend.TrendingFacetHit PickTrendingFacetHit() => TrendingFacetHit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacetHit' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRecommend && recommend != null)
+            if (Recommend is { } __value0 && recommend != null)
             {
-                return recommend(Recommend!);
+                return recommend(__value0);
             }
-            else if (IsTrendingFacetHit && trendingFacetHit != null)
+            else if (TrendingFacetHit is { } __value1 && trendingFacetHit != null)
             {
-                return trendingFacetHit(TrendingFacetHit!);
+                return trendingFacetHit(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRecommend)
+            if (Recommend is { } __value0)
             {
-                recommend?.Invoke(Recommend!);
+                recommend?.Invoke(__value0);
             }
-            else if (IsTrendingFacetHit)
+            else if (TrendingFacetHit is { } __value1)
             {
-                trendingFacetHit?.Invoke(TrendingFacetHit!);
+                trendingFacetHit?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRecommend)
+            if (Recommend is { } __value0)
             {
-                recommend?.Invoke(Recommend!);
+                recommend?.Invoke(__value0);
             }
-            else if (IsTrendingFacetHit)
+            else if (TrendingFacetHit is { } __value1)
             {
-                trendingFacetHit?.Invoke(TrendingFacetHit!);
+                trendingFacetHit?.Invoke(__value1);
             }
         }
 

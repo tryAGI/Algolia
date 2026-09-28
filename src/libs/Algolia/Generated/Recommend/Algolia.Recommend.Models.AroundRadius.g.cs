@@ -45,8 +45,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public int PickAroundRadiusVariant1() => IsAroundRadiusVariant1
-            ? AroundRadiusVariant1!.Value
+        public int PickAroundRadiusVariant1() => AroundRadiusVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AroundRadiusVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.AroundRadiusAll PickAll() => IsAll
-            ? All!.Value
+        public global::Algolia.Recommend.AroundRadiusAll PickAll() => All is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -180,13 +180,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundRadiusVariant1 && aroundRadiusVariant1 != null)
+            if (AroundRadiusVariant1 is { } __value0 && aroundRadiusVariant1 != null)
             {
-                return aroundRadiusVariant1(AroundRadiusVariant1!);
+                return aroundRadiusVariant1(__value0);
             }
-            else if (IsAll && all != null)
+            else if (All is { } __value1 && all != null)
             {
-                return all(All!);
+                return all(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundRadiusVariant1)
+            if (AroundRadiusVariant1 is { } __value0)
             {
-                aroundRadiusVariant1?.Invoke(AroundRadiusVariant1!);
+                aroundRadiusVariant1?.Invoke(__value0);
             }
-            else if (IsAll)
+            else if (All is { } __value1)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsAroundRadiusVariant1)
+            if (AroundRadiusVariant1 is { } __value0)
             {
-                aroundRadiusVariant1?.Invoke(AroundRadiusVariant1!);
+                aroundRadiusVariant1?.Invoke(__value0);
             }
-            else if (IsAll)
+            else if (All is { } __value1)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value1);
             }
         }
 

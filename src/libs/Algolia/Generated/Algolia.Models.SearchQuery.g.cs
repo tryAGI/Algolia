@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForHits PickForHits() => IsForHits
-            ? ForHits!.Value
+        public global::Algolia.SearchForHits PickForHits() => ForHits is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ForHits' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacets PickForFacets() => IsForFacets
-            ? ForFacets!.Value
+        public global::Algolia.SearchForFacets PickForFacets() => ForFacets is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacets' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsForHits && forHits != null)
+            if (ForHits is { } __value0 && forHits != null)
             {
-                return forHits(ForHits!);
+                return forHits(__value0);
             }
-            else if (IsForFacets && forFacets != null)
+            else if (ForFacets is { } __value1 && forFacets != null)
             {
-                return forFacets(ForFacets!);
+                return forFacets(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsForHits)
+            if (ForHits is { } __value0)
             {
-                forHits?.Invoke(ForHits!);
+                forHits?.Invoke(__value0);
             }
-            else if (IsForFacets)
+            else if (ForFacets is { } __value1)
             {
-                forFacets?.Invoke(ForFacets!);
+                forFacets?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsForHits)
+            if (ForHits is { } __value0)
             {
-                forHits?.Invoke(ForHits!);
+                forHits?.Invoke(__value0);
             }
-            else if (IsForFacets)
+            else if (ForFacets is { } __value1)
             {
-                forFacets?.Invoke(ForFacets!);
+                forFacets?.Invoke(__value1);
             }
         }
 

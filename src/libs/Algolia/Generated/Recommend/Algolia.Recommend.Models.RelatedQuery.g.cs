@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => IsBaseRecommendRequest
-            ? BaseRecommendRequest!
+        public global::Algolia.Recommend.BaseRecommendRequest PickBaseRecommendRequest() => BaseRecommendRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseRecommendRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RelatedProducts PickProducts() => IsProducts
-            ? Products!
+        public global::Algolia.Recommend.RelatedProducts PickProducts() => Products is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Products' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest && baseRecommendRequest != null)
+            if (BaseRecommendRequest is { } __value0 && baseRecommendRequest != null)
             {
-                return baseRecommendRequest(BaseRecommendRequest!);
+                return baseRecommendRequest(__value0);
             }
-            else if (IsProducts && products != null)
+            else if (Products is { } __value1 && products != null)
             {
-                return products(Products!);
+                return products(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest)
+            if (BaseRecommendRequest is { } __value0)
             {
-                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+                baseRecommendRequest?.Invoke(__value0);
             }
-            else if (IsProducts)
+            else if (Products is { } __value1)
             {
-                products?.Invoke(Products!);
+                products?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseRecommendRequest)
+            if (BaseRecommendRequest is { } __value0)
             {
-                baseRecommendRequest?.Invoke(BaseRecommendRequest!);
+                baseRecommendRequest?.Invoke(__value0);
             }
-            else if (IsProducts)
+            else if (Products is { } __value1)
             {
-                products?.Invoke(Products!);
+                products?.Invoke(__value1);
             }
         }
 

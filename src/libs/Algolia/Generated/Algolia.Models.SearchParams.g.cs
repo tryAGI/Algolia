@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => IsSearchParametersAsQueryString
-            ? SearchParametersAsQueryString!
+        public global::Algolia.SearchParamsString PickSearchParametersAsQueryString() => SearchParametersAsQueryString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsQueryString' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
-            ? SearchParametersAsObject!.Value
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => SearchParametersAsObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsQueryString && searchParametersAsQueryString != null)
+            if (SearchParametersAsQueryString is { } __value0 && searchParametersAsQueryString != null)
             {
-                return searchParametersAsQueryString(SearchParametersAsQueryString!);
+                return searchParametersAsQueryString(__value0);
             }
-            else if (IsSearchParametersAsObject && searchParametersAsObject != null)
+            else if (SearchParametersAsObject is { } __value1 && searchParametersAsObject != null)
             {
-                return searchParametersAsObject(SearchParametersAsObject!);
+                return searchParametersAsObject(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsQueryString)
+            if (SearchParametersAsQueryString is { } __value0)
             {
-                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+                searchParametersAsQueryString?.Invoke(__value0);
             }
-            else if (IsSearchParametersAsObject)
+            else if (SearchParametersAsObject is { } __value1)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                searchParametersAsObject?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsQueryString)
+            if (SearchParametersAsQueryString is { } __value0)
             {
-                searchParametersAsQueryString?.Invoke(SearchParametersAsQueryString!);
+                searchParametersAsQueryString?.Invoke(__value0);
             }
-            else if (IsSearchParametersAsObject)
+            else if (SearchParametersAsObject is { } __value1)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                searchParametersAsObject?.Invoke(__value1);
             }
         }
 

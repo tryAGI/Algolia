@@ -70,7 +70,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchParamsObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchParamsObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchParamsObject).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.SearchParametersAsObject!.Value, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickSearchParametersAsObject(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Cursor!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickCursor(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

@@ -149,13 +149,13 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReRankingApplyFilterVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReRankingApplyFilterVariant1(), typeInfo);
             }
             else if (value.IsReRankingApplyFilterVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReRankingApplyFilterVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReRankingApplyFilterVariant2(), typeInfo);
             }
         }
     }

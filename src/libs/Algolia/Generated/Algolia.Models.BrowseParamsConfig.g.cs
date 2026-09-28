@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => IsSearchParametersAsObject
-            ? SearchParametersAsObject!.Value
+        public global::Algolia.SearchParamsObject PickSearchParametersAsObject() => SearchParametersAsObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParametersAsObject' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Cursor PickCursor() => IsCursor
-            ? Cursor!
+        public global::Algolia.Cursor PickCursor() => Cursor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsObject && searchParametersAsObject != null)
+            if (SearchParametersAsObject is { } __value0 && searchParametersAsObject != null)
             {
-                return searchParametersAsObject(SearchParametersAsObject!);
+                return searchParametersAsObject(__value0);
             }
-            else if (IsCursor && cursor != null)
+            else if (Cursor is { } __value1 && cursor != null)
             {
-                return cursor(Cursor!);
+                return cursor(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsObject)
+            if (SearchParametersAsObject is { } __value0)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                searchParametersAsObject?.Invoke(__value0);
             }
-            else if (IsCursor)
+            else if (Cursor is { } __value1)
             {
-                cursor?.Invoke(Cursor!);
+                cursor?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsSearchParametersAsObject)
+            if (SearchParametersAsObject is { } __value0)
             {
-                searchParametersAsObject?.Invoke(SearchParametersAsObject!);
+                searchParametersAsObject?.Invoke(__value0);
             }
-            else if (IsCursor)
+            else if (Cursor is { } __value1)
             {
-                cursor?.Invoke(Cursor!);
+                cursor?.Invoke(__value1);
             }
         }
 

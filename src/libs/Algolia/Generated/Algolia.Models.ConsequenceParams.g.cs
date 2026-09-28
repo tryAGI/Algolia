@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchParamsWithoutQuery PickBaseSearchWithoutQuery() => IsBaseSearchWithoutQuery
-            ? BaseSearchWithoutQuery!
+        public global::Algolia.BaseSearchParamsWithoutQuery PickBaseSearchWithoutQuery() => BaseSearchWithoutQuery is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearchWithoutQuery' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAsSearch() => IsIndexSettingsAsSearch
-            ? IndexSettingsAsSearch!
+        public global::Algolia.IndexSettingsAsSearchParams PickIndexSettingsAsSearch() => IndexSettingsAsSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexSettingsAsSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Params PickParams() => IsParams
-            ? Params!
+        public global::Algolia.Params PickParams() => Params is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -243,17 +243,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearchWithoutQuery && baseSearchWithoutQuery != null)
+            if (BaseSearchWithoutQuery is { } __value0 && baseSearchWithoutQuery != null)
             {
-                return baseSearchWithoutQuery(BaseSearchWithoutQuery!);
+                return baseSearchWithoutQuery(__value0);
             }
-            else if (IsIndexSettingsAsSearch && indexSettingsAsSearch != null)
+            else if (IndexSettingsAsSearch is { } __value1 && indexSettingsAsSearch != null)
             {
-                return indexSettingsAsSearch(IndexSettingsAsSearch!);
+                return indexSettingsAsSearch(__value1);
             }
-            else if (IsParams && @params != null)
+            else if (Params is { } __value2 && @params != null)
             {
-                return @params(Params!);
+                return @params(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearchWithoutQuery)
+            if (BaseSearchWithoutQuery is { } __value0)
             {
-                baseSearchWithoutQuery?.Invoke(BaseSearchWithoutQuery!);
+                baseSearchWithoutQuery?.Invoke(__value0);
             }
-            else if (IsIndexSettingsAsSearch)
+            else if (IndexSettingsAsSearch is { } __value1)
             {
-                indexSettingsAsSearch?.Invoke(IndexSettingsAsSearch!);
+                indexSettingsAsSearch?.Invoke(__value1);
             }
-            else if (IsParams)
+            else if (Params is { } __value2)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearchWithoutQuery)
+            if (BaseSearchWithoutQuery is { } __value0)
             {
-                baseSearchWithoutQuery?.Invoke(BaseSearchWithoutQuery!);
+                baseSearchWithoutQuery?.Invoke(__value0);
             }
-            else if (IsIndexSettingsAsSearch)
+            else if (IndexSettingsAsSearch is { } __value1)
             {
-                indexSettingsAsSearch?.Invoke(IndexSettingsAsSearch!);
+                indexSettingsAsSearch?.Invoke(__value1);
             }
-            else if (IsParams)
+            else if (Params is { } __value2)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value2);
             }
         }
 

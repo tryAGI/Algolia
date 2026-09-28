@@ -102,7 +102,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BaseSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BaseSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BaseSearchResponse).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BaseSearch!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBaseSearch(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -120,7 +120,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.BrowsePagination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.BrowsePagination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.BrowsePagination).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Pagination!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickPagination(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -138,7 +138,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchHits), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchHits?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchHits).Name}");
-                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.SearchHits!, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickSearchHits(), typeInfo);
                 if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -156,7 +156,7 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.Cursor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.Cursor?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.Cursor).Name}");
-                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Cursor!, typeInfo);
+                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickCursor(), typeInfo);
                 if (__element3.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

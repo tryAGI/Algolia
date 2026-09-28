@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SnippetResultOption PickSnippetResultOption() => IsSnippetResultOption
-            ? SnippetResultOption!
+        public global::Algolia.Recommend.SnippetResultOption PickSnippetResultOption() => SnippetResultOption is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultOption' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult> PickSnippetResultMap() => IsSnippetResultMap
-            ? SnippetResultMap!
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Recommend.SnippetResult> PickSnippetResultMap() => SnippetResultMap is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultMap' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult> PickSnippetResultArray() => IsSnippetResultArray
-            ? SnippetResultArray!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SnippetResult> PickSnippetResultArray() => SnippetResultArray is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnippetResultArray' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSnippetResultOption && snippetResultOption != null)
+            if (SnippetResultOption is { } __value0 && snippetResultOption != null)
             {
-                return snippetResultOption(SnippetResultOption!);
+                return snippetResultOption(__value0);
             }
-            else if (IsSnippetResultMap && snippetResultMap != null)
+            else if (SnippetResultMap is { } __value1 && snippetResultMap != null)
             {
-                return snippetResultMap(SnippetResultMap!);
+                return snippetResultMap(__value1);
             }
-            else if (IsSnippetResultArray && snippetResultArray != null)
+            else if (SnippetResultArray is { } __value2 && snippetResultArray != null)
             {
-                return snippetResultArray(SnippetResultArray!);
+                return snippetResultArray(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSnippetResultOption)
+            if (SnippetResultOption is { } __value0)
             {
-                snippetResultOption?.Invoke(SnippetResultOption!);
+                snippetResultOption?.Invoke(__value0);
             }
-            else if (IsSnippetResultMap)
+            else if (SnippetResultMap is { } __value1)
             {
-                snippetResultMap?.Invoke(SnippetResultMap!);
+                snippetResultMap?.Invoke(__value1);
             }
-            else if (IsSnippetResultArray)
+            else if (SnippetResultArray is { } __value2)
             {
-                snippetResultArray?.Invoke(SnippetResultArray!);
+                snippetResultArray?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsSnippetResultOption)
+            if (SnippetResultOption is { } __value0)
             {
-                snippetResultOption?.Invoke(SnippetResultOption!);
+                snippetResultOption?.Invoke(__value0);
             }
-            else if (IsSnippetResultMap)
+            else if (SnippetResultMap is { } __value1)
             {
-                snippetResultMap?.Invoke(SnippetResultMap!);
+                snippetResultMap?.Invoke(__value1);
             }
-            else if (IsSnippetResultArray)
+            else if (SnippetResultArray is { } __value2)
             {
-                snippetResultArray?.Invoke(SnippetResultArray!);
+                snippetResultArray?.Invoke(__value2);
             }
         }
 
