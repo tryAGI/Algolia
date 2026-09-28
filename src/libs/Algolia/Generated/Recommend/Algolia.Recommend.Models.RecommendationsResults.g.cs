@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseSearchResponse PickBaseSearchResponse() => IsBaseSearchResponse
-            ? BaseSearchResponse!
+        public global::Algolia.Recommend.BaseSearchResponse PickBaseSearchResponse() => BaseSearchResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearchResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SearchPagination PickSearchPagination() => IsSearchPagination
-            ? SearchPagination!
+        public global::Algolia.Recommend.SearchPagination PickSearchPagination() => SearchPagination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPagination' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendationsHits PickHits() => IsHits
-            ? Hits!
+        public global::Algolia.Recommend.RecommendationsHits PickHits() => Hits is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hits' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseSearchResponse && baseSearchResponse != null)
+            if (BaseSearchResponse is { } __value0 && baseSearchResponse != null)
             {
-                return baseSearchResponse(BaseSearchResponse!);
+                return baseSearchResponse(__value0);
             }
-            else if (IsSearchPagination && searchPagination != null)
+            else if (SearchPagination is { } __value1 && searchPagination != null)
             {
-                return searchPagination(SearchPagination!);
+                return searchPagination(__value1);
             }
-            else if (IsHits && hits != null)
+            else if (Hits is { } __value2 && hits != null)
             {
-                return hits(Hits!);
+                return hits(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseSearchResponse)
+            if (BaseSearchResponse is { } __value0)
             {
-                baseSearchResponse?.Invoke(BaseSearchResponse!);
+                baseSearchResponse?.Invoke(__value0);
             }
-            else if (IsSearchPagination)
+            else if (SearchPagination is { } __value1)
             {
-                searchPagination?.Invoke(SearchPagination!);
+                searchPagination?.Invoke(__value1);
             }
-            else if (IsHits)
+            else if (Hits is { } __value2)
             {
-                hits?.Invoke(Hits!);
+                hits?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBaseSearchResponse)
+            if (BaseSearchResponse is { } __value0)
             {
-                baseSearchResponse?.Invoke(BaseSearchResponse!);
+                baseSearchResponse?.Invoke(__value0);
             }
-            else if (IsSearchPagination)
+            else if (SearchPagination is { } __value1)
             {
-                searchPagination?.Invoke(SearchPagination!);
+                searchPagination?.Invoke(__value1);
             }
-            else if (IsHits)
+            else if (Hits is { } __value2)
             {
-                hits?.Invoke(Hits!);
+                hits?.Invoke(__value2);
             }
         }
 

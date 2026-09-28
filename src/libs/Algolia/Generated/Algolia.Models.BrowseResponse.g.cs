@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponse PickBaseSearch() => IsBaseSearch
-            ? BaseSearch!
+        public global::Algolia.BaseSearchResponse PickBaseSearch() => BaseSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowsePagination PickPagination() => IsPagination
-            ? Pagination!
+        public global::Algolia.BrowsePagination PickPagination() => Pagination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pagination' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchHits PickSearchHits() => IsSearchHits
-            ? SearchHits!
+        public global::Algolia.SearchHits PickSearchHits() => SearchHits is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchHits' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Cursor PickCursor() => IsCursor
-            ? Cursor!
+        public global::Algolia.Cursor PickCursor() => Cursor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cursor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearch && baseSearch != null)
+            if (BaseSearch is { } __value0 && baseSearch != null)
             {
-                return baseSearch(BaseSearch!);
+                return baseSearch(__value0);
             }
-            else if (IsPagination && pagination != null)
+            else if (Pagination is { } __value1 && pagination != null)
             {
-                return pagination(Pagination!);
+                return pagination(__value1);
             }
-            else if (IsSearchHits && searchHits != null)
+            else if (SearchHits is { } __value2 && searchHits != null)
             {
-                return searchHits(SearchHits!);
+                return searchHits(__value2);
             }
-            else if (IsCursor && cursor != null)
+            else if (Cursor is { } __value3 && cursor != null)
             {
-                return cursor(Cursor!);
+                return cursor(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearch)
+            if (BaseSearch is { } __value0)
             {
-                baseSearch?.Invoke(BaseSearch!);
+                baseSearch?.Invoke(__value0);
             }
-            else if (IsPagination)
+            else if (Pagination is { } __value1)
             {
-                pagination?.Invoke(Pagination!);
+                pagination?.Invoke(__value1);
             }
-            else if (IsSearchHits)
+            else if (SearchHits is { } __value2)
             {
-                searchHits?.Invoke(SearchHits!);
+                searchHits?.Invoke(__value2);
             }
-            else if (IsCursor)
+            else if (Cursor is { } __value3)
             {
-                cursor?.Invoke(Cursor!);
+                cursor?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsBaseSearch)
+            if (BaseSearch is { } __value0)
             {
-                baseSearch?.Invoke(BaseSearch!);
+                baseSearch?.Invoke(__value0);
             }
-            else if (IsPagination)
+            else if (Pagination is { } __value1)
             {
-                pagination?.Invoke(Pagination!);
+                pagination?.Invoke(__value1);
             }
-            else if (IsSearchHits)
+            else if (SearchHits is { } __value2)
             {
-                searchHits?.Invoke(SearchHits!);
+                searchHits?.Invoke(__value2);
             }
-            else if (IsCursor)
+            else if (Cursor is { } __value3)
             {
-                cursor?.Invoke(Cursor!);
+                cursor?.Invoke(__value3);
             }
         }
 

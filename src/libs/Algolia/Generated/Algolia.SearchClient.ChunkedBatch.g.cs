@@ -171,7 +171,7 @@ namespace Algolia
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("indexName", indexName)
-                                .AddRequiredParameter("objects", objects, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddRequiredParameter("objects", objects, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("action", action?.ToValueString())
                                 .AddOptionalParameter("waitForTasks", waitForTasks?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("batchSize", batchSize?.ToString())
@@ -216,8 +216,8 @@ namespace Algolia
                 PrepareChunkedBatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexName: indexName!,
-                    objects: objects!,
+                    indexName: indexName,
+                    objects: objects,
                     action: action,
                     waitForTasks: waitForTasks,
                     batchSize: batchSize);
@@ -242,7 +242,7 @@ namespace Algolia
                                 pathTemplate: "\"/chunkedBatch\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace Algolia
                                 pathTemplate: "\"/chunkedBatch\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace Algolia
                                 pathTemplate: "\"/chunkedBatch\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace Algolia
                                 pathTemplate: "\"/chunkedBatch\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -387,7 +387,7 @@ namespace Algolia
                                 pathTemplate: "\"/chunkedBatch\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

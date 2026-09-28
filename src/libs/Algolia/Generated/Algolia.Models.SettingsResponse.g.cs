@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.IndexSettings PickIndex() => IsIndex
-            ? Index!.Value
+        public global::Algolia.IndexSettings PickIndex() => Index is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Index' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.WithPrimary PickWithPrimary() => IsWithPrimary
-            ? WithPrimary!
+        public global::Algolia.WithPrimary PickWithPrimary() => WithPrimary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithPrimary' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsIndex && index != null)
+            if (Index is { } __value0 && index != null)
             {
-                return index(Index!);
+                return index(__value0);
             }
-            else if (IsWithPrimary && withPrimary != null)
+            else if (WithPrimary is { } __value1 && withPrimary != null)
             {
-                return withPrimary(WithPrimary!);
+                return withPrimary(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsIndex)
+            if (Index is { } __value0)
             {
-                index?.Invoke(Index!);
+                index?.Invoke(__value0);
             }
-            else if (IsWithPrimary)
+            else if (WithPrimary is { } __value1)
             {
-                withPrimary?.Invoke(WithPrimary!);
+                withPrimary?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsIndex)
+            if (Index is { } __value0)
             {
-                index?.Invoke(Index!);
+                index?.Invoke(__value0);
             }
-            else if (IsWithPrimary)
+            else if (WithPrimary is { } __value1)
             {
-                withPrimary?.Invoke(WithPrimary!);
+                withPrimary?.Invoke(__value1);
             }
         }
 

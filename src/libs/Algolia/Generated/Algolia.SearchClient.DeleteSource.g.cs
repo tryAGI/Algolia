@@ -151,7 +151,7 @@ namespace Algolia
                 PrepareDeleteSourceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    source: source!);
+                    source: source);
 
                 return __httpRequest;
             }
@@ -173,7 +173,7 @@ namespace Algolia
                                 pathTemplate: "$\"/1/security/sources/{source}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -207,7 +207,7 @@ namespace Algolia
                                 pathTemplate: "$\"/1/security/sources/{source}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace Algolia
                                 pathTemplate: "$\"/1/security/sources/{source}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace Algolia
                                 pathTemplate: "$\"/1/security/sources/{source}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -318,7 +318,7 @@ namespace Algolia
                                 pathTemplate: "$\"/1/security/sources/{source}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

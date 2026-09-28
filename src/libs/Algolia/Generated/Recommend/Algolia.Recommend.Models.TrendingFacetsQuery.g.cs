@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TrendingFacets PickTrendingFacets() => IsTrendingFacets
-            ? TrendingFacets!
+        public global::Algolia.Recommend.TrendingFacets PickTrendingFacets() => TrendingFacets is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrendingFacets' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTrendingFacets && trendingFacets != null)
+            if (TrendingFacets is { } __value0 && trendingFacets != null)
             {
-                return trendingFacets(TrendingFacets!);
+                return trendingFacets(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTrendingFacets)
+            if (TrendingFacets is { } __value0)
             {
-                trendingFacets?.Invoke(TrendingFacets!);
+                trendingFacets?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTrendingFacets)
+            if (TrendingFacets is { } __value0)
             {
-                trendingFacets?.Invoke(TrendingFacets!);
+                trendingFacets?.Invoke(__value0);
             }
         }
 

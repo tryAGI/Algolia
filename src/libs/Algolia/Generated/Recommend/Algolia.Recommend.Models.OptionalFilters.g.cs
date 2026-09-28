@@ -50,8 +50,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters> PickOptionalFiltersVariant1() => IsOptionalFiltersVariant1
-            ? OptionalFiltersVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.OptionalFilters> PickOptionalFiltersVariant1() => OptionalFiltersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public string PickOptionalFiltersVariant2() => IsOptionalFiltersVariant2
-            ? OptionalFiltersVariant2!
+        public string PickOptionalFiltersVariant2() => OptionalFiltersVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -162,13 +162,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsOptionalFiltersVariant1 && optionalFiltersVariant1 != null)
+            if (OptionalFiltersVariant1 is { } __value0 && optionalFiltersVariant1 != null)
             {
-                return optionalFiltersVariant1(OptionalFiltersVariant1!);
+                return optionalFiltersVariant1(__value0);
             }
-            else if (IsOptionalFiltersVariant2 && optionalFiltersVariant2 != null)
+            else if (OptionalFiltersVariant2 is { } __value1 && optionalFiltersVariant2 != null)
             {
-                return optionalFiltersVariant2(OptionalFiltersVariant2!);
+                return optionalFiltersVariant2(__value1);
             }
 
             return default(TResult);
@@ -188,13 +188,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsOptionalFiltersVariant1)
+            if (OptionalFiltersVariant1 is { } __value0)
             {
-                optionalFiltersVariant1?.Invoke(OptionalFiltersVariant1!);
+                optionalFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsOptionalFiltersVariant2)
+            else if (OptionalFiltersVariant2 is { } __value1)
             {
-                optionalFiltersVariant2?.Invoke(OptionalFiltersVariant2!);
+                optionalFiltersVariant2?.Invoke(__value1);
             }
         }
 
@@ -211,13 +211,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsOptionalFiltersVariant1)
+            if (OptionalFiltersVariant1 is { } __value0)
             {
-                optionalFiltersVariant1?.Invoke(OptionalFiltersVariant1!);
+                optionalFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsOptionalFiltersVariant2)
+            else if (OptionalFiltersVariant2 is { } __value1)
             {
-                optionalFiltersVariant2?.Invoke(OptionalFiltersVariant2!);
+                optionalFiltersVariant2?.Invoke(__value1);
             }
         }
 

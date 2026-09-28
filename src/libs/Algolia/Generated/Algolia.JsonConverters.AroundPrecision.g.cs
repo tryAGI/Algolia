@@ -149,13 +149,13 @@ namespace Algolia.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AroundPrecisionVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAroundPrecisionVariant1(), typeInfo);
             }
             else if (value.IsRangeObjects)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Algolia.AroundPrecisionFromValueItem>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RangeObjects!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRangeObjects(), typeInfo);
             }
         }
     }

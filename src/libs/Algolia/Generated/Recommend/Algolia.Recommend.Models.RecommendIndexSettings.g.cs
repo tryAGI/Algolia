@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseIndexSettings PickBase1() => IsBase1
-            ? Base1!
+        public global::Algolia.Recommend.BaseIndexSettings PickBase1() => Base1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendIndexSettings PickBase2() => IsBase2
-            ? Base2!
+        public global::Algolia.Recommend.BaseRecommendIndexSettings PickBase2() => Base2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase1 && base1 != null)
+            if (Base1 is { } __value0 && base1 != null)
             {
-                return base1(Base1!);
+                return base1(__value0);
             }
-            else if (IsBase2 && base2 != null)
+            else if (Base2 is { } __value1 && base2 != null)
             {
-                return base2(Base2!);
+                return base2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase1)
+            if (Base1 is { } __value0)
             {
-                base1?.Invoke(Base1!);
+                base1?.Invoke(__value0);
             }
-            else if (IsBase2)
+            else if (Base2 is { } __value1)
             {
-                base2?.Invoke(Base2!);
+                base2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsBase1)
+            if (Base1 is { } __value0)
             {
-                base1?.Invoke(Base1!);
+                base1?.Invoke(__value0);
             }
-            else if (IsBase2)
+            else if (Base2 is { } __value1)
             {
-                base2?.Invoke(Base2!);
+                base2?.Invoke(__value1);
             }
         }
 

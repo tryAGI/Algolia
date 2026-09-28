@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.PromoteObjectIDs PickObjectIDs() => IsObjectIDs
-            ? ObjectIDs!
+        public global::Algolia.PromoteObjectIDs PickObjectIDs() => ObjectIDs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectIDs' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.PromoteObjectID PickObjectID() => IsObjectID
-            ? ObjectID!
+        public global::Algolia.PromoteObjectID PickObjectID() => ObjectID is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectID' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectIDs && objectIDs != null)
+            if (ObjectIDs is { } __value0 && objectIDs != null)
             {
-                return objectIDs(ObjectIDs!);
+                return objectIDs(__value0);
             }
-            else if (IsObjectID && objectID != null)
+            else if (ObjectID is { } __value1 && objectID != null)
             {
-                return objectID(ObjectID!);
+                return objectID(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectIDs)
+            if (ObjectIDs is { } __value0)
             {
-                objectIDs?.Invoke(ObjectIDs!);
+                objectIDs?.Invoke(__value0);
             }
-            else if (IsObjectID)
+            else if (ObjectID is { } __value1)
             {
-                objectID?.Invoke(ObjectID!);
+                objectID?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsObjectIDs)
+            if (ObjectIDs is { } __value0)
             {
-                objectIDs?.Invoke(ObjectIDs!);
+                objectIDs?.Invoke(__value0);
             }
-            else if (IsObjectID)
+            else if (ObjectID is { } __value1)
             {
-                objectID?.Invoke(ObjectID!);
+                objectID?.Invoke(__value1);
             }
         }
 

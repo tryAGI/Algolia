@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsQuery PickQuery() => IsQuery
-            ? Query!
+        public global::Algolia.SearchParamsQuery PickQuery() => Query is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchParamsWithoutQuery PickWithoutQuery() => IsWithoutQuery
-            ? WithoutQuery!
+        public global::Algolia.BaseSearchParamsWithoutQuery PickWithoutQuery() => WithoutQuery is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithoutQuery' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsQuery && query != null)
+            if (Query is { } __value0 && query != null)
             {
-                return query(Query!);
+                return query(__value0);
             }
-            else if (IsWithoutQuery && withoutQuery != null)
+            else if (WithoutQuery is { } __value1 && withoutQuery != null)
             {
-                return withoutQuery(WithoutQuery!);
+                return withoutQuery(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsQuery)
+            if (Query is { } __value0)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value0);
             }
-            else if (IsWithoutQuery)
+            else if (WithoutQuery is { } __value1)
             {
-                withoutQuery?.Invoke(WithoutQuery!);
+                withoutQuery?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsQuery)
+            if (Query is { } __value0)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value0);
             }
-            else if (IsWithoutQuery)
+            else if (WithoutQuery is { } __value1)
             {
-                withoutQuery?.Invoke(WithoutQuery!);
+                withoutQuery?.Invoke(__value1);
             }
         }
 

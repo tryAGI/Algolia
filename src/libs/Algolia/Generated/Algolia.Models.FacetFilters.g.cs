@@ -49,8 +49,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.FacetFilters> PickFacetFiltersVariant1() => IsFacetFiltersVariant1
-            ? FacetFiltersVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.FacetFilters> PickFacetFiltersVariant1() => FacetFiltersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickFacetFiltersVariant2() => IsFacetFiltersVariant2
-            ? FacetFiltersVariant2!
+        public string PickFacetFiltersVariant2() => FacetFiltersVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetFiltersVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -161,13 +161,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsFacetFiltersVariant1 && facetFiltersVariant1 != null)
+            if (FacetFiltersVariant1 is { } __value0 && facetFiltersVariant1 != null)
             {
-                return facetFiltersVariant1(FacetFiltersVariant1!);
+                return facetFiltersVariant1(__value0);
             }
-            else if (IsFacetFiltersVariant2 && facetFiltersVariant2 != null)
+            else if (FacetFiltersVariant2 is { } __value1 && facetFiltersVariant2 != null)
             {
-                return facetFiltersVariant2(FacetFiltersVariant2!);
+                return facetFiltersVariant2(__value1);
             }
 
             return default(TResult);
@@ -187,13 +187,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsFacetFiltersVariant1)
+            if (FacetFiltersVariant1 is { } __value0)
             {
-                facetFiltersVariant1?.Invoke(FacetFiltersVariant1!);
+                facetFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsFacetFiltersVariant2)
+            else if (FacetFiltersVariant2 is { } __value1)
             {
-                facetFiltersVariant2?.Invoke(FacetFiltersVariant2!);
+                facetFiltersVariant2?.Invoke(__value1);
             }
         }
 
@@ -210,13 +210,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsFacetFiltersVariant1)
+            if (FacetFiltersVariant1 is { } __value0)
             {
-                facetFiltersVariant1?.Invoke(FacetFiltersVariant1!);
+                facetFiltersVariant1?.Invoke(__value0);
             }
-            else if (IsFacetFiltersVariant2)
+            else if (FacetFiltersVariant2 is { } __value1)
             {
-                facetFiltersVariant2?.Invoke(FacetFiltersVariant2!);
+                facetFiltersVariant2?.Invoke(__value1);
             }
         }
 

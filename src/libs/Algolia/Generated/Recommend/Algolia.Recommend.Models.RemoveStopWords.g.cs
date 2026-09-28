@@ -46,8 +46,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickRemoveStopWordsVariant1() => IsRemoveStopWordsVariant1
-            ? RemoveStopWordsVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage> PickRemoveStopWordsVariant1() => RemoveStopWordsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RemoveStopWordsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public bool PickRemoveStopWordsVariant2() => IsRemoveStopWordsVariant2
-            ? RemoveStopWordsVariant2!.Value
+        public bool PickRemoveStopWordsVariant2() => RemoveStopWordsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RemoveStopWordsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -160,13 +160,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRemoveStopWordsVariant1 && removeStopWordsVariant1 != null)
+            if (RemoveStopWordsVariant1 is { } __value0 && removeStopWordsVariant1 != null)
             {
-                return removeStopWordsVariant1(RemoveStopWordsVariant1!);
+                return removeStopWordsVariant1(__value0);
             }
-            else if (IsRemoveStopWordsVariant2 && removeStopWordsVariant2 != null)
+            else if (RemoveStopWordsVariant2 is { } __value1 && removeStopWordsVariant2 != null)
             {
-                return removeStopWordsVariant2(RemoveStopWordsVariant2!);
+                return removeStopWordsVariant2(__value1);
             }
 
             return default(TResult);
@@ -186,13 +186,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRemoveStopWordsVariant1)
+            if (RemoveStopWordsVariant1 is { } __value0)
             {
-                removeStopWordsVariant1?.Invoke(RemoveStopWordsVariant1!);
+                removeStopWordsVariant1?.Invoke(__value0);
             }
-            else if (IsRemoveStopWordsVariant2)
+            else if (RemoveStopWordsVariant2 is { } __value1)
             {
-                removeStopWordsVariant2?.Invoke(RemoveStopWordsVariant2!);
+                removeStopWordsVariant2?.Invoke(__value1);
             }
         }
 
@@ -209,13 +209,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsRemoveStopWordsVariant1)
+            if (RemoveStopWordsVariant1 is { } __value0)
             {
-                removeStopWordsVariant1?.Invoke(RemoveStopWordsVariant1!);
+                removeStopWordsVariant1?.Invoke(__value0);
             }
-            else if (IsRemoveStopWordsVariant2)
+            else if (RemoveStopWordsVariant2 is { } __value1)
             {
-                removeStopWordsVariant2?.Invoke(RemoveStopWordsVariant2!);
+                removeStopWordsVariant2?.Invoke(__value1);
             }
         }
 

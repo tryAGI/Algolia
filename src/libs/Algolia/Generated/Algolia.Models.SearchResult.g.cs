@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponse PickResponse() => IsResponse
-            ? Response!.Value
+        public global::Algolia.SearchResponse PickResponse() => Response is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacetValuesResponse PickForFacetValuesResponse() => IsForFacetValuesResponse
-            ? ForFacetValuesResponse!
+        public global::Algolia.SearchForFacetValuesResponse PickForFacetValuesResponse() => ForFacetValuesResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ForFacetValuesResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponsePartial PickResponsePartial() => IsResponsePartial
-            ? ResponsePartial!.Value
+        public global::Algolia.SearchResponsePartial PickResponsePartial() => ResponsePartial is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsePartial' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -245,17 +245,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsResponse && response != null)
+            if (Response is { } __value0 && response != null)
             {
-                return response(Response!);
+                return response(__value0);
             }
-            else if (IsForFacetValuesResponse && forFacetValuesResponse != null)
+            else if (ForFacetValuesResponse is { } __value1 && forFacetValuesResponse != null)
             {
-                return forFacetValuesResponse(ForFacetValuesResponse!);
+                return forFacetValuesResponse(__value1);
             }
-            else if (IsResponsePartial && responsePartial != null)
+            else if (ResponsePartial is { } __value2 && responsePartial != null)
             {
-                return responsePartial(ResponsePartial!);
+                return responsePartial(__value2);
             }
 
             return default(TResult);
@@ -277,17 +277,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
-            else if (IsForFacetValuesResponse)
+            else if (ForFacetValuesResponse is { } __value1)
             {
-                forFacetValuesResponse?.Invoke(ForFacetValuesResponse!);
+                forFacetValuesResponse?.Invoke(__value1);
             }
-            else if (IsResponsePartial)
+            else if (ResponsePartial is { } __value2)
             {
-                responsePartial?.Invoke(ResponsePartial!);
+                responsePartial?.Invoke(__value2);
             }
         }
 
@@ -305,17 +305,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
-            else if (IsForFacetValuesResponse)
+            else if (ForFacetValuesResponse is { } __value1)
             {
-                forFacetValuesResponse?.Invoke(ForFacetValuesResponse!);
+                forFacetValuesResponse?.Invoke(__value1);
             }
-            else if (IsResponsePartial)
+            else if (ResponsePartial is { } __value2)
             {
-                responsePartial?.Invoke(ResponsePartial!);
+                responsePartial?.Invoke(__value2);
             }
         }
 

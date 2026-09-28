@@ -47,8 +47,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public bool PickDistinctVariant1() => IsDistinctVariant1
-            ? DistinctVariant1!.Value
+        public bool PickDistinctVariant1() => DistinctVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public int PickDistinctVariant2() => IsDistinctVariant2
-            ? DistinctVariant2!.Value
+        public int PickDistinctVariant2() => DistinctVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DistinctVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -188,13 +188,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsDistinctVariant1 && distinctVariant1 != null)
+            if (DistinctVariant1 is { } __value0 && distinctVariant1 != null)
             {
-                return distinctVariant1(DistinctVariant1!);
+                return distinctVariant1(__value0);
             }
-            else if (IsDistinctVariant2 && distinctVariant2 != null)
+            else if (DistinctVariant2 is { } __value1 && distinctVariant2 != null)
             {
-                return distinctVariant2(DistinctVariant2!);
+                return distinctVariant2(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsDistinctVariant1)
+            if (DistinctVariant1 is { } __value0)
             {
-                distinctVariant1?.Invoke(DistinctVariant1!);
+                distinctVariant1?.Invoke(__value0);
             }
-            else if (IsDistinctVariant2)
+            else if (DistinctVariant2 is { } __value1)
             {
-                distinctVariant2?.Invoke(DistinctVariant2!);
+                distinctVariant2?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsDistinctVariant1)
+            if (DistinctVariant1 is { } __value0)
             {
-                distinctVariant1?.Invoke(DistinctVariant1!);
+                distinctVariant1?.Invoke(__value0);
             }
-            else if (IsDistinctVariant2)
+            else if (DistinctVariant2 is { } __value1)
             {
-                distinctVariant2?.Invoke(DistinctVariant2!);
+                distinctVariant2?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter> PickReRankingApplyFilterVariant1() => IsReRankingApplyFilterVariant1
-            ? ReRankingApplyFilterVariant1!
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.ReRankingApplyFilter> PickReRankingApplyFilterVariant1() => ReRankingApplyFilterVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public string PickReRankingApplyFilterVariant2() => IsReRankingApplyFilterVariant2
-            ? ReRankingApplyFilterVariant2!
+        public string PickReRankingApplyFilterVariant2() => ReRankingApplyFilterVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReRankingApplyFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsReRankingApplyFilterVariant1 && reRankingApplyFilterVariant1 != null)
+            if (ReRankingApplyFilterVariant1 is { } __value0 && reRankingApplyFilterVariant1 != null)
             {
-                return reRankingApplyFilterVariant1(ReRankingApplyFilterVariant1!);
+                return reRankingApplyFilterVariant1(__value0);
             }
-            else if (IsReRankingApplyFilterVariant2 && reRankingApplyFilterVariant2 != null)
+            else if (ReRankingApplyFilterVariant2 is { } __value1 && reRankingApplyFilterVariant2 != null)
             {
-                return reRankingApplyFilterVariant2(ReRankingApplyFilterVariant2!);
+                return reRankingApplyFilterVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsReRankingApplyFilterVariant1)
+            if (ReRankingApplyFilterVariant1 is { } __value0)
             {
-                reRankingApplyFilterVariant1?.Invoke(ReRankingApplyFilterVariant1!);
+                reRankingApplyFilterVariant1?.Invoke(__value0);
             }
-            else if (IsReRankingApplyFilterVariant2)
+            else if (ReRankingApplyFilterVariant2 is { } __value1)
             {
-                reRankingApplyFilterVariant2?.Invoke(ReRankingApplyFilterVariant2!);
+                reRankingApplyFilterVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsReRankingApplyFilterVariant1)
+            if (ReRankingApplyFilterVariant1 is { } __value0)
             {
-                reRankingApplyFilterVariant1?.Invoke(ReRankingApplyFilterVariant1!);
+                reRankingApplyFilterVariant1?.Invoke(__value0);
             }
-            else if (IsReRankingApplyFilterVariant2)
+            else if (ReRankingApplyFilterVariant2 is { } __value1)
             {
-                reRankingApplyFilterVariant2?.Invoke(ReRankingApplyFilterVariant2!);
+                reRankingApplyFilterVariant2?.Invoke(__value1);
             }
         }
 

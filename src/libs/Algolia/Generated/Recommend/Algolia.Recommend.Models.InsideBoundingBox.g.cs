@@ -42,8 +42,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public string PickInsideBoundingBoxVariant1() => IsInsideBoundingBoxVariant1
-            ? InsideBoundingBoxVariant1!
+        public string PickInsideBoundingBoxVariant1() => InsideBoundingBoxVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public object PickInsideBoundingBoxVariant2() => IsInsideBoundingBoxVariant2
-            ? InsideBoundingBoxVariant2!
+        public object PickInsideBoundingBoxVariant2() => InsideBoundingBoxVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickArray() => IsArray
-            ? Array!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickArray() => Array is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -201,17 +201,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsInsideBoundingBoxVariant1 && insideBoundingBoxVariant1 != null)
+            if (InsideBoundingBoxVariant1 is { } __value0 && insideBoundingBoxVariant1 != null)
             {
-                return insideBoundingBoxVariant1(InsideBoundingBoxVariant1!);
+                return insideBoundingBoxVariant1(__value0);
             }
-            else if (IsInsideBoundingBoxVariant2 && insideBoundingBoxVariant2 != null)
+            else if (InsideBoundingBoxVariant2 is { } __value1 && insideBoundingBoxVariant2 != null)
             {
-                return insideBoundingBoxVariant2(InsideBoundingBoxVariant2!);
+                return insideBoundingBoxVariant2(__value1);
             }
-            else if (IsArray && array != null)
+            else if (Array is { } __value2 && array != null)
             {
-                return array(Array!);
+                return array(__value2);
             }
 
             return default(TResult);
@@ -233,17 +233,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsInsideBoundingBoxVariant1)
+            if (InsideBoundingBoxVariant1 is { } __value0)
             {
-                insideBoundingBoxVariant1?.Invoke(InsideBoundingBoxVariant1!);
+                insideBoundingBoxVariant1?.Invoke(__value0);
             }
-            else if (IsInsideBoundingBoxVariant2)
+            else if (InsideBoundingBoxVariant2 is { } __value1)
             {
-                insideBoundingBoxVariant2?.Invoke(InsideBoundingBoxVariant2!);
+                insideBoundingBoxVariant2?.Invoke(__value1);
             }
-            else if (IsArray)
+            else if (Array is { } __value2)
             {
-                array?.Invoke(Array!);
+                array?.Invoke(__value2);
             }
         }
 
@@ -261,17 +261,17 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsInsideBoundingBoxVariant1)
+            if (InsideBoundingBoxVariant1 is { } __value0)
             {
-                insideBoundingBoxVariant1?.Invoke(InsideBoundingBoxVariant1!);
+                insideBoundingBoxVariant1?.Invoke(__value0);
             }
-            else if (IsInsideBoundingBoxVariant2)
+            else if (InsideBoundingBoxVariant2 is { } __value1)
             {
-                insideBoundingBoxVariant2?.Invoke(InsideBoundingBoxVariant2!);
+                insideBoundingBoxVariant2?.Invoke(__value1);
             }
-            else if (IsArray)
+            else if (Array is { } __value2)
             {
-                array?.Invoke(Array!);
+                array?.Invoke(__value2);
             }
         }
 

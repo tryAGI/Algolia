@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickAttributeToUpdateVariant1() => IsAttributeToUpdateVariant1
-            ? AttributeToUpdateVariant1!
+        public string PickAttributeToUpdateVariant1() => AttributeToUpdateVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AttributeToUpdateVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BuiltInOperation PickBuiltInOperation() => IsBuiltInOperation
-            ? BuiltInOperation!
+        public global::Algolia.BuiltInOperation PickBuiltInOperation() => BuiltInOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BuiltInOperation' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAttributeToUpdateVariant1 && attributeToUpdateVariant1 != null)
+            if (AttributeToUpdateVariant1 is { } __value0 && attributeToUpdateVariant1 != null)
             {
-                return attributeToUpdateVariant1(AttributeToUpdateVariant1!);
+                return attributeToUpdateVariant1(__value0);
             }
-            else if (IsBuiltInOperation && builtInOperation != null)
+            else if (BuiltInOperation is { } __value1 && builtInOperation != null)
             {
-                return builtInOperation(BuiltInOperation!);
+                return builtInOperation(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAttributeToUpdateVariant1)
+            if (AttributeToUpdateVariant1 is { } __value0)
             {
-                attributeToUpdateVariant1?.Invoke(AttributeToUpdateVariant1!);
+                attributeToUpdateVariant1?.Invoke(__value0);
             }
-            else if (IsBuiltInOperation)
+            else if (BuiltInOperation is { } __value1)
             {
-                builtInOperation?.Invoke(BuiltInOperation!);
+                builtInOperation?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsAttributeToUpdateVariant1)
+            if (AttributeToUpdateVariant1 is { } __value0)
             {
-                attributeToUpdateVariant1?.Invoke(AttributeToUpdateVariant1!);
+                attributeToUpdateVariant1?.Invoke(__value0);
             }
-            else if (IsBuiltInOperation)
+            else if (BuiltInOperation is { } __value1)
             {
-                builtInOperation?.Invoke(BuiltInOperation!);
+                builtInOperation?.Invoke(__value1);
             }
         }
 

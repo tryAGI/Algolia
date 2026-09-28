@@ -54,8 +54,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public string PickOptionalWordsVariant1() => IsOptionalWordsVariant1
-            ? OptionalWordsVariant1!
+        public string PickOptionalWordsVariant1() => OptionalWordsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -91,8 +91,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public object PickOptionalWordsVariant2() => IsOptionalWordsVariant2
-            ? OptionalWordsVariant2!
+        public object PickOptionalWordsVariant2() => OptionalWordsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -130,8 +130,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickArray() => IsArray
-            ? Array!
+        public global::System.Collections.Generic.IList<string> PickArray() => Array is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Array' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -210,17 +210,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsOptionalWordsVariant1 && optionalWordsVariant1 != null)
+            if (OptionalWordsVariant1 is { } __value0 && optionalWordsVariant1 != null)
             {
-                return optionalWordsVariant1(OptionalWordsVariant1!);
+                return optionalWordsVariant1(__value0);
             }
-            else if (IsOptionalWordsVariant2 && optionalWordsVariant2 != null)
+            else if (OptionalWordsVariant2 is { } __value1 && optionalWordsVariant2 != null)
             {
-                return optionalWordsVariant2(OptionalWordsVariant2!);
+                return optionalWordsVariant2(__value1);
             }
-            else if (IsArray && array != null)
+            else if (Array is { } __value2 && array != null)
             {
-                return array(Array!);
+                return array(__value2);
             }
 
             return default(TResult);
@@ -242,17 +242,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsOptionalWordsVariant1)
+            if (OptionalWordsVariant1 is { } __value0)
             {
-                optionalWordsVariant1?.Invoke(OptionalWordsVariant1!);
+                optionalWordsVariant1?.Invoke(__value0);
             }
-            else if (IsOptionalWordsVariant2)
+            else if (OptionalWordsVariant2 is { } __value1)
             {
-                optionalWordsVariant2?.Invoke(OptionalWordsVariant2!);
+                optionalWordsVariant2?.Invoke(__value1);
             }
-            else if (IsArray)
+            else if (Array is { } __value2)
             {
-                array?.Invoke(Array!);
+                array?.Invoke(__value2);
             }
         }
 
@@ -270,17 +270,17 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsOptionalWordsVariant1)
+            if (OptionalWordsVariant1 is { } __value0)
             {
-                optionalWordsVariant1?.Invoke(OptionalWordsVariant1!);
+                optionalWordsVariant1?.Invoke(__value0);
             }
-            else if (IsOptionalWordsVariant2)
+            else if (OptionalWordsVariant2 is { } __value1)
             {
-                optionalWordsVariant2?.Invoke(OptionalWordsVariant2!);
+                optionalWordsVariant2?.Invoke(__value1);
             }
-            else if (IsArray)
+            else if (Array is { } __value2)
             {
-                array?.Invoke(Array!);
+                array?.Invoke(__value2);
             }
         }
 

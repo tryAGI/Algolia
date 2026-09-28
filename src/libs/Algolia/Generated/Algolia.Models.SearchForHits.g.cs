@@ -42,8 +42,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParams PickParams() => IsParams
-            ? Params!.Value
+        public global::Algolia.SearchParams PickParams() => Params is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForHitsSettings PickSettings() => IsSettings
-            ? Settings!
+        public global::Algolia.SearchForHitsSettings PickSettings() => Settings is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Settings' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsParams && @params != null)
+            if (Params is { } __value0 && @params != null)
             {
-                return @params(Params!);
+                return @params(__value0);
             }
-            else if (IsSettings && settings != null)
+            else if (Settings is { } __value1 && settings != null)
             {
-                return settings(Settings!);
+                return settings(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsParams)
+            if (Params is { } __value0)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value0);
             }
-            else if (IsSettings)
+            else if (Settings is { } __value1)
             {
-                settings?.Invoke(Settings!);
+                settings?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Algolia
                 Validate();
             }
 
-            if (IsParams)
+            if (Params is { } __value0)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value0);
             }
-            else if (IsSettings)
+            else if (Settings is { } __value1)
             {
-                settings?.Invoke(Settings!);
+                settings?.Invoke(__value1);
             }
         }
 

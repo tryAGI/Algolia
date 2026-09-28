@@ -44,8 +44,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public bool PickTypoToleranceVariant1() => IsTypoToleranceVariant1
-            ? TypoToleranceVariant1!.Value
+        public bool PickTypoToleranceVariant1() => TypoToleranceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TypoToleranceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TypoToleranceEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::Algolia.Recommend.TypoToleranceEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -183,13 +183,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTypoToleranceVariant1 && typoToleranceVariant1 != null)
+            if (TypoToleranceVariant1 is { } __value0 && typoToleranceVariant1 != null)
             {
-                return typoToleranceVariant1(TypoToleranceVariant1!);
+                return typoToleranceVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -209,13 +209,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTypoToleranceVariant1)
+            if (TypoToleranceVariant1 is { } __value0)
             {
-                typoToleranceVariant1?.Invoke(TypoToleranceVariant1!);
+                typoToleranceVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -232,13 +232,13 @@ namespace Algolia.Recommend
                 Validate();
             }
 
-            if (IsTypoToleranceVariant1)
+            if (TypoToleranceVariant1 is { } __value0)
             {
-                typoToleranceVariant1?.Invoke(TypoToleranceVariant1!);
+                typoToleranceVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
