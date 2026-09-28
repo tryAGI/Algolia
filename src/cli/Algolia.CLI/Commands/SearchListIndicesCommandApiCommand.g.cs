@@ -41,6 +41,8 @@ If `null`, the API response is not paginated.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-indices", @"List indices
@@ -81,6 +83,7 @@ The request follows any index restrictions of the API key you use to make the re
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -61,6 +61,8 @@ internal static partial class SearchPartialUpdateObjectsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"partial-update-objects", @"Replaces object content of all the given objects according to their respective `objectID` field
@@ -111,6 +113,7 @@ Helper: Replaces object content of all the given objects according to their resp
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

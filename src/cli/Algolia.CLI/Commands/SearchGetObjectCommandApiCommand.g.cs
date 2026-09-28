@@ -53,6 +53,8 @@ won't be retrieved unless the request is authenticated with the admin API key.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-object", @"Retrieve a record
@@ -88,6 +90,7 @@ To retrieve more than one record, use the [`objects` operation](https://www.algo
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

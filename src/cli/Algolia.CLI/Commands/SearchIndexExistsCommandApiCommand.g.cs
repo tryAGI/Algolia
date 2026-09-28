@@ -34,6 +34,8 @@ internal static partial class SearchIndexExistsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"index-exists", @"Check if an index exists or not
@@ -61,6 +63,7 @@ You can initialize an index with any name. The index is created on Algolia's ser
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

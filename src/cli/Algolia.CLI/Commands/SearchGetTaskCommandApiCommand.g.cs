@@ -39,6 +39,8 @@ internal static partial class SearchGetTaskCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-task", @"Check task status
@@ -75,6 +77,7 @@ The indexing tasks' responses include a task ID that you can use to check the st
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

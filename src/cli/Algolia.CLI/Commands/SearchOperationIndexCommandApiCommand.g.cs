@@ -73,6 +73,8 @@ If you omit the `scope` parameter, everything is copied: records, settings, syno
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"operation-index", @"Copy or move an index
@@ -154,6 +156,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

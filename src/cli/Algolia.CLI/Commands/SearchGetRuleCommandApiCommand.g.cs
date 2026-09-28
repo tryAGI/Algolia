@@ -39,6 +39,8 @@ internal static partial class SearchGetRuleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-rule", @"Retrieve a rule
@@ -70,6 +72,7 @@ To find the object ID of rules, use the [`search` operation](https://www.algolia
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

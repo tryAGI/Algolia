@@ -74,6 +74,8 @@ internal static partial class SearchSearchDictionaryEntriesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"dictionary-entries", @"Search dictionary entries
@@ -140,6 +142,7 @@ Searches for standard and custom dictionary entries.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

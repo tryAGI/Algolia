@@ -53,6 +53,8 @@ internal static partial class SearchReplaceAllObjectsWithTransformationCommandAp
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"replace-all-objects-with-transformation", @"Replace all records in an index
@@ -112,6 +114,7 @@ Notes:
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -29,6 +29,8 @@ internal static partial class SearchGetDictionarySettingsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-dictionary-settings", @"Retrieve dictionary settings
@@ -55,6 +57,7 @@ Retrieves the languages for which standard dictionary entries are turned off.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

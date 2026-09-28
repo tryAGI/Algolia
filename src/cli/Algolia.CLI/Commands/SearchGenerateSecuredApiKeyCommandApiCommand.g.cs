@@ -41,6 +41,8 @@ internal static partial class SearchGenerateSecuredApiKeyCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-secured-api-key", @"Create secured API keys
@@ -82,6 +84,7 @@ The generated API key can have the same restrictions as the parent API key, or b
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -57,6 +57,8 @@ internal static partial class SearchDeleteObjectsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-objects", @"Deletes every records for the given objectIDs
@@ -104,6 +106,7 @@ Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -110,6 +110,8 @@ internal static partial class SearchSaveSynonymCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"save-synonym", @"Create or replace a synonym
@@ -189,6 +191,7 @@ To add multiple synonyms in a single API request, use the [`batch` operation](ht
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

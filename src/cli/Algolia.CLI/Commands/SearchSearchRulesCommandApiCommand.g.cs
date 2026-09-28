@@ -107,6 +107,8 @@ For example, to display 10 results per page starting from the third page, set `h
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"rules", @"Search for rules
@@ -179,6 +181,7 @@ Searches for rules in your index.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

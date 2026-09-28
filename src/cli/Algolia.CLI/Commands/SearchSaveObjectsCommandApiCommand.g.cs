@@ -57,6 +57,8 @@ internal static partial class SearchSaveObjectsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"save-objects", @"Saves the given array of objects in the given index
@@ -104,6 +106,7 @@ Helper: Saves the given array of objects in the given index. The `chunkedBatch` 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

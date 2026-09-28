@@ -39,6 +39,8 @@ internal static partial class SearchDeleteObjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-object", @"Delete a record
@@ -72,6 +74,7 @@ To delete records matching a query, use the [`deleteBy` operation](https://www.a
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

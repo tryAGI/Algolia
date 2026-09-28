@@ -40,6 +40,8 @@ internal static partial class SearchBatchCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"batch", @"Batch indexing operations on one index
@@ -85,6 +87,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

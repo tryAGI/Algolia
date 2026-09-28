@@ -34,6 +34,8 @@ internal static partial class SearchWaitForAppTaskCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"wait-for-app-task", @"Wait for application-level operation to complete
@@ -60,6 +62,7 @@ Wait for a application-level task to complete.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

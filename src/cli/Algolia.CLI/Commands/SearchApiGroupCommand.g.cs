@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace Algolia.CLI.Commands;
 
-internal static class SearchApiGroupCommand
+internal static partial class SearchApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"search", @"search endpoint commands.");
@@ -78,6 +80,7 @@ internal static class SearchApiGroupCommand
                          command.Subcommands.Add(SearchWaitForApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(SearchWaitForAppTaskCommandApiCommand.Create());
                          command.Subcommands.Add(SearchWaitForTaskCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

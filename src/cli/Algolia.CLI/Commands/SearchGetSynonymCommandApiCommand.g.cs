@@ -39,6 +39,8 @@ internal static partial class SearchGetSynonymCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-synonym", @"Retrieve a synonym
@@ -71,6 +73,7 @@ use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

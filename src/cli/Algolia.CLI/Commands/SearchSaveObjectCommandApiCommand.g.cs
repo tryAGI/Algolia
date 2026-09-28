@@ -49,6 +49,8 @@ internal static partial class SearchSaveObjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"save-object", @"Add a new record (with auto-generated object ID)
@@ -107,6 +109,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

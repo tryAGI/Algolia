@@ -39,6 +39,8 @@ internal static partial class SearchCustomGetCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"custom-get", @"Send requests to the Algolia REST API
@@ -68,6 +70,7 @@ This method lets you send requests to the Algolia REST API.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

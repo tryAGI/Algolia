@@ -57,6 +57,8 @@ internal static partial class SearchChunkedBatchCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"chunked-batch", @"Replace all records in an index
@@ -104,6 +106,7 @@ Helper: Chunks the given `objects` list in subset of 1000 elements max in order 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

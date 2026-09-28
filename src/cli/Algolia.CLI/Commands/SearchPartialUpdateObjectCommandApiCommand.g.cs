@@ -59,6 +59,8 @@ internal static partial class SearchPartialUpdateObjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"partial-update-object", @"Add or update attributes
@@ -147,6 +149,7 @@ This operation is subject to [indexing rate limits](https://support.algolia.com/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
