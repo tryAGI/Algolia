@@ -45,9 +45,9 @@ internal static partial class SearchDeleteRuleCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-rule", @"Delete a rule
+        var command = new Command(commandName ?? @"delete-rule", @"Delete a rule
 Deletes a rule by its ID.
 To find the object ID for rules,
 use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-rules).

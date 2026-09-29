@@ -59,9 +59,9 @@ internal static partial class SearchSaveRulesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-rules", @"Create or update rules
+        var command = new Command(commandName ?? @"save-rules", @"Create or update rules
 Create or update multiple rules.
 
 If a rule with the specified object ID doesn't exist, Algolia creates a new one.

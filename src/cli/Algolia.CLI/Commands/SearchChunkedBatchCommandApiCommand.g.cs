@@ -59,9 +59,9 @@ internal static partial class SearchChunkedBatchCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"chunked-batch", @"Replace all records in an index
+        var command = new Command(commandName ?? @"chunked-batch", @"Replace all records in an index
 Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
 ");
                         command.Options.Add(IndexName);

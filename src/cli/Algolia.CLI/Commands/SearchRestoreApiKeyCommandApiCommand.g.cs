@@ -35,9 +35,9 @@ internal static partial class SearchRestoreApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"restore-api-key", @"Restore an API key
+        var command = new Command(commandName ?? @"restore-api-key", @"Restore an API key
 Restores a deleted API key.
 
 Restoring resets the `validity` attribute to `0`.

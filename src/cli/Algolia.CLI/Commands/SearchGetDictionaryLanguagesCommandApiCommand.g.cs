@@ -31,9 +31,9 @@ internal static partial class SearchGetDictionaryLanguagesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-dictionary-languages", @"List available languages
+        var command = new Command(commandName ?? @"get-dictionary-languages", @"List available languages
 Lists supported languages with their supported dictionary types and number of custom entries.
 ");
 

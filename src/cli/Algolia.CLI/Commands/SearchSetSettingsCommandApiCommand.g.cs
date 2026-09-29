@@ -55,9 +55,9 @@ internal static partial class SearchSetSettingsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"set-settings", @"Update index settings
+        var command = new Command(commandName ?? @"set-settings", @"Update index settings
 Update the specified index settings.
 
 Index settings that you don't specify are left unchanged.

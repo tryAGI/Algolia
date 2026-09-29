@@ -59,9 +59,9 @@ internal static partial class SearchSaveObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-objects", @"Saves the given array of objects in the given index
+        var command = new Command(commandName ?? @"save-objects", @"Saves the given array of objects in the given index
 Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
 ");
                         command.Options.Add(IndexName);

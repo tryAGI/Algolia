@@ -35,9 +35,9 @@ internal static partial class SearchGetApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-api-key", @"Retrieve API key permissions
+        var command = new Command(commandName ?? @"get-api-key", @"Retrieve API key permissions
 Gets the permissions and restrictions of an API key.
 
 When authenticating with the admin API key, you can request information for any of your application's keys.

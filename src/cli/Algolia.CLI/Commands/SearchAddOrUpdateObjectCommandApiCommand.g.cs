@@ -57,9 +57,9 @@ internal static partial class SearchAddOrUpdateObjectCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"add-or-update-object", @"Add or replace a record
+        var command = new Command(commandName ?? @"add-or-update-object", @"Add or replace a record
 If a record with the specified object ID exists, the existing record is replaced.
 Otherwise, a new record is added to the index.
 

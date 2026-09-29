@@ -23,9 +23,9 @@ internal static partial class SearchBrowseObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"browse-objects", @"Get all records from an index
+        var command = new Command(commandName ?? @"browse-objects", @"Get all records from an index
 You can use the browse method to get records from an index—for example, to export your index as a backup. To export all records, use an empty query.
 
 Use browse instead of search when exporting records from your index, when ranking, or analytics, isn't important. The Analytics API doesn't collect data when using browse.

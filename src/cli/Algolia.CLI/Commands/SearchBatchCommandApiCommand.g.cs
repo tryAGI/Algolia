@@ -42,9 +42,9 @@ internal static partial class SearchBatchCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"batch", @"Batch indexing operations on one index
+        var command = new Command(commandName ?? @"batch", @"Batch indexing operations on one index
 Adds, updates, or deletes records in one index with a single API request.
 
 Batching index updates reduces latency and increases data integrity.

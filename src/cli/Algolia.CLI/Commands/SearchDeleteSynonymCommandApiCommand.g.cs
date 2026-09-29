@@ -45,9 +45,9 @@ internal static partial class SearchDeleteSynonymCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-synonym", @"Delete a synonym
+        var command = new Command(commandName ?? @"delete-synonym", @"Delete a synonym
 Deletes a synonym by its ID.
 To find the object IDs of your synonyms, use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-synonyms).
 ");

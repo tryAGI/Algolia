@@ -31,9 +31,9 @@ internal static partial class SearchGetSourcesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-sources", @"List allowed sources
+        var command = new Command(commandName ?? @"get-sources", @"List allowed sources
 Retrieves all allowed IP addresses with access to your application.");
 
 

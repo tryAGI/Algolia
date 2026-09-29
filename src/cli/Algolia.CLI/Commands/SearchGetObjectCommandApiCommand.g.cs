@@ -55,9 +55,9 @@ won't be retrieved unless the request is authenticated with the admin API key.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-object", @"Retrieve a record
+        var command = new Command(commandName ?? @"get-object", @"Retrieve a record
 Retrieves one record by its object ID.
 
 To retrieve more than one record, use the [`objects` operation](https://www.algolia.com/doc/rest-api/search/get-objects).

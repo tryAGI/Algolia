@@ -35,9 +35,9 @@ internal static partial class SearchClearObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"clear-objects", @"Delete all records from an index
+        var command = new Command(commandName ?? @"clear-objects", @"Delete all records from an index
 Deletes only the records from an index while keeping settings, synonyms, and rules.
 This operation is resource-intensive and subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
 ");

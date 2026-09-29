@@ -41,9 +41,9 @@ internal static partial class SearchDeleteObjectCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-object", @"Delete a record
+        var command = new Command(commandName ?? @"delete-object", @"Delete a record
 Deletes a record by its object ID.
 
 To delete more than one record, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/batch).

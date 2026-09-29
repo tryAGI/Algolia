@@ -62,9 +62,9 @@ internal static partial class SearchSearchCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"search", @"Search multiple queries
+        var command = new Command(commandName ?? @"search", @"Search multiple queries
 Runs multiple search queries against one or more indices in a single API request.
 
 Use cases include:

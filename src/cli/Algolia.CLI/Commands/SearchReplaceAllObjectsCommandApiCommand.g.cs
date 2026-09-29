@@ -55,9 +55,9 @@ internal static partial class SearchReplaceAllObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"replace-all-objects", @"Replace all records in an index
+        var command = new Command(commandName ?? @"replace-all-objects", @"Replace all records in an index
 This method replaces all records in an index without interrupting ongoing searches.
 
 It combines [batch](https://www.algolia.com/doc/rest-api/search/batch) and [copy/move](https://www.algolia.com/doc/rest-api/search/operation-index) index operations:

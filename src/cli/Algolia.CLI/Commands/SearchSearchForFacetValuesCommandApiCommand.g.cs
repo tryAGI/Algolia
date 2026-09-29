@@ -78,9 +78,9 @@ This attribute must be included in the `attributesForFaceting` index setting wit
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"for-facet-values", @"Search for facet values
+        var command = new Command(commandName ?? @"for-facet-values", @"Search for facet values
 Searches for values of a specified facet attribute.
 
 - By default, facet values are sorted by decreasing count.

@@ -75,9 +75,9 @@ If you omit the `scope` parameter, everything is copied: records, settings, syno
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"operation-index", @"Copy or move an index
+        var command = new Command(commandName ?? @"operation-index", @"Copy or move an index
 Copies or moves (renames) an index within the same Algolia application.
 
 Notes:

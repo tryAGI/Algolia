@@ -35,9 +35,9 @@ internal static partial class SearchDeleteIndexCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-index", @"Delete an index
+        var command = new Command(commandName ?? @"delete-index", @"Delete an index
 Deletes an index and all its settings.
 
 - Deleting an index doesn't delete its analytics data.

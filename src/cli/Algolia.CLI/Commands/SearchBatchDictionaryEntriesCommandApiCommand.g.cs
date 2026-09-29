@@ -62,9 +62,9 @@ internal static partial class SearchBatchDictionaryEntriesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"batch-dictionary-entries", @"Add or delete dictionary entries
+        var command = new Command(commandName ?? @"batch-dictionary-entries", @"Add or delete dictionary entries
 Adds or deletes multiple entries from your plurals, segmentation, or stop word dictionaries.");
                         command.Arguments.Add(DictionaryName);
                         command.Options.Add(ClearExistingDictionaryEntries);

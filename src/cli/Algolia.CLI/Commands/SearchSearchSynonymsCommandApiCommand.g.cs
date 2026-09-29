@@ -75,9 +75,9 @@ internal static partial class SearchSearchSynonymsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"synonyms", @"Search for synonyms
+        var command = new Command(commandName ?? @"synonyms", @"Search for synonyms
 Searches for synonyms in your index.");
                         command.Arguments.Add(IndexName);
                         command.Options.Add(Query);

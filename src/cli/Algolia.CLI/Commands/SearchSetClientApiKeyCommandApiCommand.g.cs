@@ -16,9 +16,9 @@ internal static partial class SearchSetClientApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"set-client-api-key", @"Switch the API key used to authenticate requests
+        var command = new Command(commandName ?? @"set-client-api-key", @"Switch the API key used to authenticate requests
 Switch the API key used to authenticate requests.
 ");
                         command.Options.Add(ApiKey);

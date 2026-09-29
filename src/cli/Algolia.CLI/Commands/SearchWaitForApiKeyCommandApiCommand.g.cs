@@ -49,9 +49,9 @@ internal static partial class SearchWaitForApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"wait-for-api-key", @"Wait for an API key operation
+        var command = new Command(commandName ?? @"wait-for-api-key", @"Wait for an API key operation
 Waits for an API key to be added, updated, or deleted.");
                         command.Options.Add(Key);
                         command.Options.Add(Operation);

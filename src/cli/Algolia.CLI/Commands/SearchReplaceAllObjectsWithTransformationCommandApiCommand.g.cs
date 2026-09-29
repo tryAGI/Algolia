@@ -55,9 +55,9 @@ internal static partial class SearchReplaceAllObjectsWithTransformationCommandAp
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"replace-all-objects-with-transformation", @"Replace all records in an index
+        var command = new Command(commandName ?? @"replace-all-objects-with-transformation", @"Replace all records in an index
 Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).
 
 This method replaces all records without downtime. It performs these operations:

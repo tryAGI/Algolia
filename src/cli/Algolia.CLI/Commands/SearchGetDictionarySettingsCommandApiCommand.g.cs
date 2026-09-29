@@ -31,9 +31,9 @@ internal static partial class SearchGetDictionarySettingsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-dictionary-settings", @"Retrieve dictionary settings
+        var command = new Command(commandName ?? @"get-dictionary-settings", @"Retrieve dictionary settings
 Retrieves the languages for which standard dictionary entries are turned off.");
 
 

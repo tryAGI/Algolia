@@ -41,9 +41,9 @@ internal static partial class SearchGetSettingsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-settings", @"Retrieve index settings
+        var command = new Command(commandName ?? @"get-settings", @"Retrieve index settings
 Retrieves an object with non-null index settings.");
                         command.Arguments.Add(IndexName);
                         command.Options.Add(GetVersion);

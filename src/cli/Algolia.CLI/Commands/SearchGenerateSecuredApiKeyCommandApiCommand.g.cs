@@ -43,9 +43,9 @@ internal static partial class SearchGenerateSecuredApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-secured-api-key", @"Create secured API keys
+        var command = new Command(commandName ?? @"generate-secured-api-key", @"Create secured API keys
 Generates a secured API key without any requests to Algolia's servers.
 
 Secured API keys are API keys that you generate on your server without any API request to Algolia.

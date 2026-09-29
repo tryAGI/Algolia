@@ -35,9 +35,9 @@ internal static partial class SearchGetAppTaskCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-app-task", @"Check application task status
+        var command = new Command(commandName ?? @"get-app-task", @"Check application task status
 Checks the status of a given application task.
 ");
                         command.Arguments.Add(TaskID);

@@ -41,9 +41,9 @@ internal static partial class SearchGetTaskCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-task", @"Check task status
+        var command = new Command(commandName ?? @"get-task", @"Check task status
 Checks the status of a given task.
 
 Indexing tasks are asynchronous.
