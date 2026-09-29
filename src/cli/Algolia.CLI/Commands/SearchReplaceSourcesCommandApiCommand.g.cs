@@ -47,9 +47,9 @@ internal static partial class SearchReplaceSourcesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"replace-sources", @"Replace allowed sources
+        var command = new Command(commandName ?? @"replace-sources", @"Replace allowed sources
 Replaces the list of allowed sources.");
 
           command.Options.Add(Input);

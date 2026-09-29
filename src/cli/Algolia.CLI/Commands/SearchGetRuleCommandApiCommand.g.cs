@@ -41,9 +41,9 @@ internal static partial class SearchGetRuleCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-rule", @"Retrieve a rule
+        var command = new Command(commandName ?? @"get-rule", @"Retrieve a rule
 Retrieves a rule by its ID.
 To find the object ID of rules, use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-rules).
 ");

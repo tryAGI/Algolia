@@ -47,9 +47,9 @@ internal static partial class SearchAddApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"add-api-key", @"Create an API key
+        var command = new Command(commandName ?? @"add-api-key", @"Create an API key
 Creates a new API key with specific permissions and restrictions.");
                         command.Options.Add(ApiKeyOptionSetOptions.Acl);
                         command.Options.Add(ApiKeyOptionSetOptions.DescriptionOption);

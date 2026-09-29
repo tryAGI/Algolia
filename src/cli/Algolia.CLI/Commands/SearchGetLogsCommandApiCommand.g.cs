@@ -57,9 +57,9 @@ By default, all log entries are retrieved.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-logs", @"Retrieve log entries
+        var command = new Command(commandName ?? @"get-logs", @"Retrieve log entries
 The request must be authenticated by an API key with the [`logs` ACL](https://www.algolia.com/doc/guides/security/api-keys/#access-control-list-acl).
 
 - Logs are held for the last seven days.

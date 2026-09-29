@@ -51,9 +51,9 @@ internal static partial class SearchSaveObjectCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-object", @"Add a new record (with auto-generated object ID)
+        var command = new Command(commandName ?? @"save-object", @"Add a new record (with auto-generated object ID)
 Adds a record to an index or replaces it.
 
 - If the record doesn't have an object ID, a new record with an auto-generated object ID is added to your index.

@@ -43,9 +43,9 @@ internal static partial class SearchWaitForTaskCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"wait-for-task", @"Wait for operation to complete
+        var command = new Command(commandName ?? @"wait-for-task", @"Wait for operation to complete
 Wait for a task to complete to ensure synchronized index updates.
 
 All Algolia write operations are asynchronous. When you make a request for a write operation, for example, to add or update records in your index, Algolia creates a task on a queue and returns a taskID. The task itself runs separately, depending on the server load.

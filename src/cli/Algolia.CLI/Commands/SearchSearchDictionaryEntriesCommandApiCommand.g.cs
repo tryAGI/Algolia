@@ -76,9 +76,9 @@ internal static partial class SearchSearchDictionaryEntriesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"dictionary-entries", @"Search dictionary entries
+        var command = new Command(commandName ?? @"dictionary-entries", @"Search dictionary entries
 Searches for standard and custom dictionary entries.");
                         command.Arguments.Add(DictionaryName);
                         command.Options.Add(Query);

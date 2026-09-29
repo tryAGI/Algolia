@@ -58,9 +58,9 @@ internal static partial class SearchAppendSourceCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"append-source", @"Add a source
+        var command = new Command(commandName ?? @"append-source", @"Add a source
 Adds a source to the list of allowed sources.");
                         command.Options.Add(Source1);
                         command.Options.Add(DescriptionOption);

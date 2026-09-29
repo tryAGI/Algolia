@@ -59,9 +59,9 @@ internal static partial class SearchDeleteObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-objects", @"Deletes every records for the given objectIDs
+        var command = new Command(commandName ?? @"delete-objects", @"Deletes every records for the given objectIDs
 Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.
 ");
                         command.Options.Add(IndexName);

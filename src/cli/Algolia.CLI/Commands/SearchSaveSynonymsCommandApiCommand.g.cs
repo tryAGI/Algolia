@@ -59,9 +59,9 @@ internal static partial class SearchSaveSynonymsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-synonyms", @"Create or replace synonyms
+        var command = new Command(commandName ?? @"save-synonyms", @"Create or replace synonyms
 If a synonym with the `objectID` doesn't exist, Algolia adds a new one.
 Otherwise, existing synonyms are replaced.
 

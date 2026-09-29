@@ -31,9 +31,9 @@ internal static partial class SearchListApiKeysCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-api-keys", @"List API keys
+        var command = new Command(commandName ?? @"list-api-keys", @"List API keys
 Lists all API keys associated with your Algolia application, including their permissions and restrictions.");
 
 

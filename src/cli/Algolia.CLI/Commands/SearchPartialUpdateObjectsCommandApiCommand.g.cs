@@ -63,9 +63,9 @@ internal static partial class SearchPartialUpdateObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"partial-update-objects", @"Replaces object content of all the given objects according to their respective `objectID` field
+        var command = new Command(commandName ?? @"partial-update-objects", @"Replaces object content of all the given objects according to their respective `objectID` field
 Helper: Replaces object content of all the given objects according to their respective `objectID` field. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
 ");
                         command.Options.Add(IndexName);

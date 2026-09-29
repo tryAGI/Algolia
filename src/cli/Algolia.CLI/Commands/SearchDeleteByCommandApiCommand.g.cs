@@ -166,9 +166,9 @@ This parameter is ignored if you also specify `insideBoundingBox`.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-by", @"Delete records matching a filter
+        var command = new Command(commandName ?? @"delete-by", @"Delete records matching a filter
 This operation doesn't accept empty filters.
 
 This operation is resource-intensive.

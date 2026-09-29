@@ -57,9 +57,9 @@ internal static partial class SearchCustomPostCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"custom-post", @"Send requests to the Algolia REST API
+        var command = new Command(commandName ?? @"custom-post", @"Send requests to the Algolia REST API
 This method lets you send requests to the Algolia REST API.");
                         command.Arguments.Add(Path);
                         command.Options.Add(Parameters);

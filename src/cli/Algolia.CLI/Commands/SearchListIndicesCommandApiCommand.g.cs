@@ -43,9 +43,9 @@ If `null`, the API response is not paginated.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-indices", @"List indices
+        var command = new Command(commandName ?? @"list-indices", @"List indices
 Lists all indices in the current Algolia application.
 
 The request follows any index restrictions of the API key you use to make the request.

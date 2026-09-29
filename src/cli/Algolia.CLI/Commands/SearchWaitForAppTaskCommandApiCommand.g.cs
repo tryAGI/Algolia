@@ -36,9 +36,9 @@ internal static partial class SearchWaitForAppTaskCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"wait-for-app-task", @"Wait for application-level operation to complete
+        var command = new Command(commandName ?? @"wait-for-app-task", @"Wait for application-level operation to complete
 Wait for a application-level task to complete.");
                         command.Options.Add(TaskID);
 

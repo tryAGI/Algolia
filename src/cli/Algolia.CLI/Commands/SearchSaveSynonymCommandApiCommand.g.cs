@@ -112,9 +112,9 @@ internal static partial class SearchSaveSynonymCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-synonym", @"Create or replace a synonym
+        var command = new Command(commandName ?? @"save-synonym", @"Create or replace a synonym
 If a synonym with the specified object ID doesn't exist, Algolia adds a new one.
 Otherwise, the existing synonym is replaced.
 To add multiple synonyms in a single API request, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/save-synonyms).

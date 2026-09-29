@@ -35,9 +35,9 @@ internal static partial class SearchDeleteSourceCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-source", @"Delete a source
+        var command = new Command(commandName ?? @"delete-source", @"Delete a source
 Deletes a source from the list of allowed sources.");
                         command.Arguments.Add(Source);
 

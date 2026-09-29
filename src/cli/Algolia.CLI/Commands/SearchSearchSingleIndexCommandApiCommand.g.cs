@@ -51,9 +51,9 @@ internal static partial class SearchSearchSingleIndexCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"single-index", @"Search an index
+        var command = new Command(commandName ?? @"single-index", @"Search an index
 Searches a single index and returns matching search results as hits.
 
 This method lets you retrieve up to 1,000 hits.

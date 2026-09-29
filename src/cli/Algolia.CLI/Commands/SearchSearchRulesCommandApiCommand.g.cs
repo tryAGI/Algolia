@@ -109,9 +109,9 @@ For example, to display 10 results per page starting from the third page, set `h
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"rules", @"Search for rules
+        var command = new Command(commandName ?? @"rules", @"Search for rules
 Searches for rules in your index.");
                         command.Arguments.Add(IndexName);
                         command.Options.Add(Query);

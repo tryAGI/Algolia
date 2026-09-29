@@ -35,9 +35,9 @@ internal static partial class SearchDeleteApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-api-key", @"Delete an API key
+        var command = new Command(commandName ?? @"delete-api-key", @"Delete an API key
 Deletes the API key.");
                         command.Arguments.Add(Key);
 

@@ -39,9 +39,9 @@ internal static partial class SearchClearRulesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"clear-rules", @"Delete all rules
+        var command = new Command(commandName ?? @"clear-rules", @"Delete all rules
 Deletes all rules from the index.");
                         command.Arguments.Add(IndexName);
                         command.Options.Add(ForwardToReplicas);

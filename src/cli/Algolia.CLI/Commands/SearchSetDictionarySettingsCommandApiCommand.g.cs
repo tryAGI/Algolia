@@ -37,9 +37,9 @@ internal static partial class SearchSetDictionarySettingsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"set-dictionary-settings", @"Update dictionary settings
+        var command = new Command(commandName ?? @"set-dictionary-settings", @"Update dictionary settings
 Turns standard stop word dictionary entries on or off for a given language.");
                         command.Options.Add(DisableStandardEntries);
 

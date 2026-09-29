@@ -43,9 +43,9 @@ internal static partial class SearchAccountCopyIndexCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"account-copy-index", @"Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`
+        var command = new Command(commandName ?? @"account-copy-index", @"Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`
 Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`.
 ");
                         command.Options.Add(SourceIndexName);

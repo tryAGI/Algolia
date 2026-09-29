@@ -51,9 +51,9 @@ internal static partial class SearchBrowseCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"browse", @"Browse for records
+        var command = new Command(commandName ?? @"browse", @"Browse for records
 Retrieves records from an index, up to 1,000 per request.
 
 Searching returns _hits_ (records augmented with highlighting and ranking details).

@@ -52,9 +52,9 @@ internal static partial class SearchUpdateApiKeyCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-api-key", @"Update an API key
+        var command = new Command(commandName ?? @"update-api-key", @"Update an API key
 Replaces the permissions of an existing API key.
 
 Any unspecified attribute resets that attribute to its default value.

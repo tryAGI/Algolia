@@ -36,9 +36,9 @@ internal static partial class SearchIndexExistsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"index-exists", @"Check if an index exists or not
+        var command = new Command(commandName ?? @"index-exists", @"Check if an index exists or not
 You can initialize an index with any name. The index is created on Algolia's servers when you add objects or set settings. To prevent accidentally creating new indices, or changing existing indices, you can use the exists method. The exists method returns a boolean that indicates whether an initialized index has been created.
 ");
                         command.Options.Add(IndexName);

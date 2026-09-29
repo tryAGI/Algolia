@@ -36,9 +36,9 @@ internal static partial class SearchGetObjectsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-objects", @"Retrieve records
+        var command = new Command(commandName ?? @"get-objects", @"Retrieve records
 Retrieves one or more records, potentially from different indices.
 
 Records are returned in the same order as the requests.

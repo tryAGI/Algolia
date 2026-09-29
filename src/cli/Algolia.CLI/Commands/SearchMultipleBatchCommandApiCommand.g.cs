@@ -36,9 +36,9 @@ internal static partial class SearchMultipleBatchCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"multiple-batch", @"Batch indexing operations on multiple indices
+        var command = new Command(commandName ?? @"multiple-batch", @"Batch indexing operations on multiple indices
 Adds, updates, or deletes records in multiple indices with a single API request.
 
 - Actions are applied in the order they are specified.

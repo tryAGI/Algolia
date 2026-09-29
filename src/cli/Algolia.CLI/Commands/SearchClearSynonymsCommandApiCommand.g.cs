@@ -39,9 +39,9 @@ internal static partial class SearchClearSynonymsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"clear-synonyms", @"Delete all synonyms
+        var command = new Command(commandName ?? @"clear-synonyms", @"Delete all synonyms
 Deletes all synonyms from the index.");
                         command.Arguments.Add(IndexName);
                         command.Options.Add(ForwardToReplicas);

@@ -61,9 +61,9 @@ internal static partial class SearchPartialUpdateObjectCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"partial-update-object", @"Add or update attributes
+        var command = new Command(commandName ?? @"partial-update-object", @"Add or update attributes
 Adds new attributes to a record, or updates existing ones.
 
 - If a record with the specified object ID doesn't exist,

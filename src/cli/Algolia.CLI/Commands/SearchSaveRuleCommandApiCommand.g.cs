@@ -122,9 +122,9 @@ For more information, see [Consequences](https://www.algolia.com/doc/guides/mana
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"save-rule", @"Create or replace a rule
+        var command = new Command(commandName ?? @"save-rule", @"Create or replace a rule
 If a rule with the specified object ID doesn't exist, it's created.
 Otherwise, the existing rule is replaced.
 
