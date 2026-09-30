@@ -15,6 +15,12 @@ namespace Algolia
         public global::System.Collections.Generic.IList<global::Algolia.Banner>? Banners { get; set; }
 
         /// <summary>
+        /// Agent Studio Result Card to display for a given search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resultCard")]
+        public global::Algolia.ResultCard? ResultCard { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,13 +32,18 @@ namespace Algolia
         /// <param name="banners">
         /// Banners defined in the Merchandising Studio for a given search.
         /// </param>
+        /// <param name="resultCard">
+        /// Agent Studio Result Card to display for a given search.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Widgets(
-            global::System.Collections.Generic.IList<global::Algolia.Banner>? banners)
+            global::System.Collections.Generic.IList<global::Algolia.Banner>? banners,
+            global::Algolia.ResultCard? resultCard)
         {
             this.Banners = banners;
+            this.ResultCard = resultCard;
         }
 
         /// <summary>
