@@ -292,6 +292,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.BannerLink))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Banner))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Banner>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ResultCard))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Widgets))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.RenderingContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ReRankingApplyFilter), TypeInfoPropertyName = "ReRankingApplyFilter2")]

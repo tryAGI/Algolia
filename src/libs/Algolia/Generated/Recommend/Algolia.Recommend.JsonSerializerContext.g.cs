@@ -196,6 +196,7 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.BannerLink))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.Banner))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.Banner>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.ResultCard))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.Widgets))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RenderingContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.ReRankingApplyFilter), TypeInfoPropertyName = "ReRankingApplyFilter2")]
