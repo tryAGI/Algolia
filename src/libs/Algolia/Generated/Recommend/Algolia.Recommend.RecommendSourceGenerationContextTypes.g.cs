@@ -113,35 +113,35 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public object? Type20 { get; set; }
+        public global::Algolia.Recommend.SupportedLanguage? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SupportedLanguage? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? Type21 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? Type22 { get; set; }
+        public global::Algolia.Recommend.BaseRecommendSearchParams? Type22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseRecommendSearchParams? Type23 { get; set; }
+        public global::Algolia.Recommend.SearchParamsQuery? Type23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SearchParamsQuery? Type24 { get; set; }
+        public global::Algolia.Recommend.UserData? Type24 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.UserData? Type25 { get; set; }
+        public global::Algolia.Recommend.BaseIndexSettings? Type25 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.BaseIndexSettings? Type26 { get; set; }
+        public long? Type26 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public long? Type27 { get; set; }
+        public object? Type27 { get; set; }
         /// <summary>
         ///
         /// </summary>
