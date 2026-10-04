@@ -47,43 +47,6 @@ namespace Algolia.Recommend
             : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? InsideBoundingBoxVariant2 { get; init; }
-#else
-        public object? InsideBoundingBoxVariant2 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InsideBoundingBoxVariant2))]
-#endif
-        public bool IsInsideBoundingBoxVariant2 => InsideBoundingBoxVariant2 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickInsideBoundingBoxVariant2(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = InsideBoundingBoxVariant2;
-            return IsInsideBoundingBoxVariant2;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickInsideBoundingBoxVariant2() => InsideBoundingBoxVariant2 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InsideBoundingBoxVariant2' but the value was {ToString()}.");
-
-        /// <summary>
         /// Coordinates for a rectangular area in which to search.<br/>
         /// Each bounding box is defined by the two opposite points of its diagonal, and expressed as latitude and longitude pair:<br/>
         /// `[p1 lat, p1 long, p2 lat, p2 long]`.<br/>
@@ -152,12 +115,10 @@ namespace Algolia.Recommend
         /// </summary>
         public InsideBoundingBox(
             string? insideBoundingBoxVariant1,
-            object? insideBoundingBoxVariant2,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? array
             )
         {
             InsideBoundingBoxVariant1 = insideBoundingBoxVariant1;
-            InsideBoundingBoxVariant2 = insideBoundingBoxVariant2;
             Array = array;
         }
 
@@ -166,7 +127,6 @@ namespace Algolia.Recommend
         /// </summary>
         public object? Object =>
             Array as object ??
-            InsideBoundingBoxVariant2 as object ??
             InsideBoundingBoxVariant1 as object
             ;
 
@@ -175,7 +135,6 @@ namespace Algolia.Recommend
         /// </summary>
         public override string? ToString() =>
             InsideBoundingBoxVariant1?.ToString() ??
-            InsideBoundingBoxVariant2?.ToString() ??
             Array?.ToString()
             ;
 
@@ -184,7 +143,7 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsInsideBoundingBoxVariant1 && !IsInsideBoundingBoxVariant2 && !IsArray || !IsInsideBoundingBoxVariant1 && IsInsideBoundingBoxVariant2 && !IsArray || !IsInsideBoundingBoxVariant1 && !IsInsideBoundingBoxVariant2 && IsArray;
+            return IsInsideBoundingBoxVariant1 && !IsArray || !IsInsideBoundingBoxVariant1 && IsArray;
         }
 
         /// <summary>
@@ -192,7 +151,6 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? insideBoundingBoxVariant1 = null,
-            global::System.Func<object, TResult>? insideBoundingBoxVariant2 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, TResult>? array = null,
             bool validate = true)
         {
@@ -205,13 +163,9 @@ namespace Algolia.Recommend
             {
                 return insideBoundingBoxVariant1(__value0);
             }
-            else if (InsideBoundingBoxVariant2 is { } __value1 && insideBoundingBoxVariant2 != null)
+            else if (Array is { } __value1 && array != null)
             {
-                return insideBoundingBoxVariant2(__value1);
-            }
-            else if (Array is { } __value2 && array != null)
-            {
-                return array(__value2);
+                return array(__value1);
             }
 
             return default(TResult);
@@ -223,8 +177,6 @@ namespace Algolia.Recommend
         public void Match(
             global::System.Action<string>? insideBoundingBoxVariant1 = null,
 
-            global::System.Action<object>? insideBoundingBoxVariant2 = null,
-
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? array = null,
             bool validate = true)
         {
@@ -237,13 +189,9 @@ namespace Algolia.Recommend
             {
                 insideBoundingBoxVariant1?.Invoke(__value0);
             }
-            else if (InsideBoundingBoxVariant2 is { } __value1)
+            else if (Array is { } __value1)
             {
-                insideBoundingBoxVariant2?.Invoke(__value1);
-            }
-            else if (Array is { } __value2)
-            {
-                array?.Invoke(__value2);
+                array?.Invoke(__value1);
             }
         }
 
@@ -252,7 +200,6 @@ namespace Algolia.Recommend
         /// </summary>
         public void Switch(
             global::System.Action<string>? insideBoundingBoxVariant1 = null,
-            global::System.Action<object>? insideBoundingBoxVariant2 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? array = null,
             bool validate = true)
         {
@@ -265,13 +212,9 @@ namespace Algolia.Recommend
             {
                 insideBoundingBoxVariant1?.Invoke(__value0);
             }
-            else if (InsideBoundingBoxVariant2 is { } __value1)
+            else if (Array is { } __value1)
             {
-                insideBoundingBoxVariant2?.Invoke(__value1);
-            }
-            else if (Array is { } __value2)
-            {
-                array?.Invoke(__value2);
+                array?.Invoke(__value1);
             }
         }
 
@@ -284,8 +227,6 @@ namespace Algolia.Recommend
             {
                 InsideBoundingBoxVariant1,
                 typeof(string),
-                InsideBoundingBoxVariant2,
-                typeof(object),
                 Array,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>),
             };
@@ -305,7 +246,6 @@ namespace Algolia.Recommend
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InsideBoundingBoxVariant1, other.InsideBoundingBoxVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(InsideBoundingBoxVariant2, other.InsideBoundingBoxVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(Array, other.Array)
                 ;
         }

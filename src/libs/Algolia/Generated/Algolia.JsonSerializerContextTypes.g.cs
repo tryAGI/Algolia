@@ -137,59 +137,59 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public object? Type26 { get; set; }
+        public global::Algolia.SupportedLanguage? Type26 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SupportedLanguage? Type27 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? Type27 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SupportedLanguage>? Type28 { get; set; }
+        public global::Algolia.BaseSearchParamsWithoutQuery? Type28 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchParamsWithoutQuery? Type29 { get; set; }
+        public global::Algolia.BaseSearchParams? Type29 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchParams? Type30 { get; set; }
+        public global::Algolia.TypoToleranceEnum? Type30 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.TypoToleranceEnum? Type31 { get; set; }
+        public global::Algolia.TypoTolerance? Type31 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.TypoTolerance? Type32 { get; set; }
+        public global::Algolia.BooleanString? Type32 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BooleanString? Type33 { get; set; }
+        public global::Algolia.IgnorePlurals? Type33 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.IgnorePlurals? Type34 { get; set; }
+        public global::Algolia.RemoveStopWords? Type34 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RemoveStopWords? Type35 { get; set; }
+        public global::Algolia.QueryType? Type35 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.QueryType? Type36 { get; set; }
+        public global::Algolia.RemoveWordsIfNoResults? Type36 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RemoveWordsIfNoResults? Type37 { get; set; }
+        public global::Algolia.Mode? Type37 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Mode? Type38 { get; set; }
+        public global::Algolia.SemanticSearch? Type38 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SemanticSearch? Type39 { get; set; }
+        public object? Type39 { get; set; }
         /// <summary>
         ///
         /// </summary>

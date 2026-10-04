@@ -40,7 +40,7 @@ namespace Algolia.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -49,25 +49,12 @@ namespace Algolia.JsonConverters
                     }
                 }
             }
-            var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             string? optionalWordsVariant1 = default;
-            object? optionalWordsVariant2 = default;
             global::System.Collections.Generic.IList<string>? array = default;
             if (__bestIndex >= 0)
             {
@@ -93,23 +80,6 @@ namespace Algolia.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        optionalWordsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
                         array = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,7 +93,7 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (optionalWordsVariant1 == null && optionalWordsVariant2 == null && array == null)
+            if (optionalWordsVariant1 == null && array == null)
             {
                 try
                 {
@@ -140,24 +110,7 @@ namespace Algolia.JsonConverters
                 }
             }
 
-            if (optionalWordsVariant1 == null && optionalWordsVariant2 == null && array == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    optionalWordsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (optionalWordsVariant1 == null && optionalWordsVariant2 == null && array == null)
+            if (optionalWordsVariant1 == null && array == null)
             {
                 try
                 {
@@ -176,8 +129,6 @@ namespace Algolia.JsonConverters
 
             var __value = new global::Algolia.OptionalWords(
                 optionalWordsVariant1,
-
-                optionalWordsVariant2,
 
                 array
                 );
@@ -199,12 +150,6 @@ namespace Algolia.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOptionalWordsVariant1(), typeInfo);
-            }
-            else if (value.IsOptionalWordsVariant2)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOptionalWordsVariant2(), typeInfo);
             }
             else if (value.IsArray)
             {

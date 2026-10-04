@@ -40,7 +40,7 @@ namespace Algolia.Recommend.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -49,25 +49,12 @@ namespace Algolia.Recommend.JsonConverters
                     }
                 }
             }
-            var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             string? insideBoundingBoxVariant1 = default;
-            object? insideBoundingBoxVariant2 = default;
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? array = default;
             if (__bestIndex >= 0)
             {
@@ -93,23 +80,6 @@ namespace Algolia.Recommend.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        insideBoundingBoxVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>).Name}");
                         array = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,7 +93,7 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (insideBoundingBoxVariant1 == null && insideBoundingBoxVariant2 == null && array == null)
+            if (insideBoundingBoxVariant1 == null && array == null)
             {
                 try
                 {
@@ -140,24 +110,7 @@ namespace Algolia.Recommend.JsonConverters
                 }
             }
 
-            if (insideBoundingBoxVariant1 == null && insideBoundingBoxVariant2 == null && array == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    insideBoundingBoxVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (insideBoundingBoxVariant1 == null && insideBoundingBoxVariant2 == null && array == null)
+            if (insideBoundingBoxVariant1 == null && array == null)
             {
                 try
                 {
@@ -176,8 +129,6 @@ namespace Algolia.Recommend.JsonConverters
 
             var __value = new global::Algolia.Recommend.InsideBoundingBox(
                 insideBoundingBoxVariant1,
-
-                insideBoundingBoxVariant2,
 
                 array
                 );
@@ -199,12 +150,6 @@ namespace Algolia.Recommend.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInsideBoundingBoxVariant1(), typeInfo);
-            }
-            else if (value.IsInsideBoundingBoxVariant2)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInsideBoundingBoxVariant2(), typeInfo);
             }
             else if (value.IsArray)
             {

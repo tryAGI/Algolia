@@ -59,43 +59,6 @@ namespace Algolia.Recommend
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? OptionalWordsVariant2 { get; init; }
-#else
-        public object? OptionalWordsVariant2 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionalWordsVariant2))]
-#endif
-        public bool IsOptionalWordsVariant2 => OptionalWordsVariant2 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickOptionalWordsVariant2(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = OptionalWordsVariant2;
-            return IsOptionalWordsVariant2;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickOptionalWordsVariant2() => OptionalWordsVariant2 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant2' but the value was {ToString()}.");
-
-        /// <summary>
         /// List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).<br/>
         /// Default Value: []<br/>
         /// Example: [blue, iphone case]
@@ -161,12 +124,10 @@ namespace Algolia.Recommend
         /// </summary>
         public OptionalWords(
             string? optionalWordsVariant1,
-            object? optionalWordsVariant2,
             global::System.Collections.Generic.IList<string>? array
             )
         {
             OptionalWordsVariant1 = optionalWordsVariant1;
-            OptionalWordsVariant2 = optionalWordsVariant2;
             Array = array;
         }
 
@@ -175,7 +136,6 @@ namespace Algolia.Recommend
         /// </summary>
         public object? Object =>
             Array as object ??
-            OptionalWordsVariant2 as object ??
             OptionalWordsVariant1 as object
             ;
 
@@ -184,7 +144,6 @@ namespace Algolia.Recommend
         /// </summary>
         public override string? ToString() =>
             OptionalWordsVariant1?.ToString() ??
-            OptionalWordsVariant2?.ToString() ??
             Array?.ToString()
             ;
 
@@ -193,7 +152,7 @@ namespace Algolia.Recommend
         /// </summary>
         public bool Validate()
         {
-            return IsOptionalWordsVariant1 && !IsOptionalWordsVariant2 && !IsArray || !IsOptionalWordsVariant1 && IsOptionalWordsVariant2 && !IsArray || !IsOptionalWordsVariant1 && !IsOptionalWordsVariant2 && IsArray;
+            return IsOptionalWordsVariant1 && !IsArray || !IsOptionalWordsVariant1 && IsArray;
         }
 
         /// <summary>
@@ -201,7 +160,6 @@ namespace Algolia.Recommend
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? optionalWordsVariant1 = null,
-            global::System.Func<object, TResult>? optionalWordsVariant2 = null,
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? array = null,
             bool validate = true)
         {
@@ -214,13 +172,9 @@ namespace Algolia.Recommend
             {
                 return optionalWordsVariant1(__value0);
             }
-            else if (OptionalWordsVariant2 is { } __value1 && optionalWordsVariant2 != null)
+            else if (Array is { } __value1 && array != null)
             {
-                return optionalWordsVariant2(__value1);
-            }
-            else if (Array is { } __value2 && array != null)
-            {
-                return array(__value2);
+                return array(__value1);
             }
 
             return default(TResult);
@@ -232,8 +186,6 @@ namespace Algolia.Recommend
         public void Match(
             global::System.Action<string>? optionalWordsVariant1 = null,
 
-            global::System.Action<object>? optionalWordsVariant2 = null,
-
             global::System.Action<global::System.Collections.Generic.IList<string>>? array = null,
             bool validate = true)
         {
@@ -246,13 +198,9 @@ namespace Algolia.Recommend
             {
                 optionalWordsVariant1?.Invoke(__value0);
             }
-            else if (OptionalWordsVariant2 is { } __value1)
+            else if (Array is { } __value1)
             {
-                optionalWordsVariant2?.Invoke(__value1);
-            }
-            else if (Array is { } __value2)
-            {
-                array?.Invoke(__value2);
+                array?.Invoke(__value1);
             }
         }
 
@@ -261,7 +209,6 @@ namespace Algolia.Recommend
         /// </summary>
         public void Switch(
             global::System.Action<string>? optionalWordsVariant1 = null,
-            global::System.Action<object>? optionalWordsVariant2 = null,
             global::System.Action<global::System.Collections.Generic.IList<string>>? array = null,
             bool validate = true)
         {
@@ -274,13 +221,9 @@ namespace Algolia.Recommend
             {
                 optionalWordsVariant1?.Invoke(__value0);
             }
-            else if (OptionalWordsVariant2 is { } __value1)
+            else if (Array is { } __value1)
             {
-                optionalWordsVariant2?.Invoke(__value1);
-            }
-            else if (Array is { } __value2)
-            {
-                array?.Invoke(__value2);
+                array?.Invoke(__value1);
             }
         }
 
@@ -293,8 +236,6 @@ namespace Algolia.Recommend
             {
                 OptionalWordsVariant1,
                 typeof(string),
-                OptionalWordsVariant2,
-                typeof(object),
                 Array,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
@@ -314,7 +255,6 @@ namespace Algolia.Recommend
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OptionalWordsVariant1, other.OptionalWordsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OptionalWordsVariant2, other.OptionalWordsVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Array, other.Array)
                 ;
         }
