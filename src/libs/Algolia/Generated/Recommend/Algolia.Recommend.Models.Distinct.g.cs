@@ -8,7 +8,7 @@ namespace Algolia.Recommend
     /// Determines how many records of a group are included in the search results.<br/>
     /// Records with the same value for the `attributeForDistinct` attribute are considered a group.<br/>
     /// The `distinct` setting controls how many members of the group are returned.<br/>
-    /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).<br/>
+    /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).<br/>
     /// The `distinct` setting is ignored if `attributeForDistinct` is not set.<br/>
     /// Example: 1
     /// </summary>

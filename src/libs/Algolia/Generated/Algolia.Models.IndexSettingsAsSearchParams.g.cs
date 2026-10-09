@@ -43,7 +43,7 @@ namespace Algolia
 
         /// <summary>
         /// Relevancy threshold below which less relevant results aren't included in the results.<br/>
-        /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
+        /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).<br/>
         /// Use this setting to strike a balance between the relevance and number of returned results.<br/>
         /// Default Value: 100<br/>
         /// Example: 90
@@ -118,14 +118,14 @@ namespace Algolia
         public int? HitsPerPage { get; set; }
 
         /// <summary>
-        /// Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).<br/>
+        /// Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).<br/>
         /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minWordSizefor1Typo")]
         public int? MinWordSizefor1Typo { get; set; }
 
         /// <summary>
-        /// Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).<br/>
+        /// Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).<br/>
         /// Default Value: 8
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minWordSizefor2Typos")]
@@ -204,7 +204,7 @@ namespace Algolia
 
         /// <summary>
         /// Whether to split compound words in the query into their building blocks.<br/>
-        /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).<br/>
+        /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).<br/>
         /// Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.<br/>
         /// Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).<br/>
         /// For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).<br/>
@@ -299,7 +299,7 @@ namespace Algolia
         ///   results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.<br/>
         /// - If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).<br/>
         ///   Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.<br/>
-        /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).
+        /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optionalWords")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.OptionalWordsJsonConverter))]
@@ -372,7 +372,7 @@ namespace Algolia
         /// Determines how many records of a group are included in the search results.<br/>
         /// Records with the same value for the `attributeForDistinct` attribute are considered a group.<br/>
         /// The `distinct` setting controls how many members of the group are returned.<br/>
-        /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).<br/>
+        /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).<br/>
         /// The `distinct` setting is ignored if `attributeForDistinct` is not set.<br/>
         /// Example: 1
         /// </summary>
@@ -538,7 +538,7 @@ namespace Algolia
         /// </param>
         /// <param name="relevancyStrictness">
         /// Relevancy threshold below which less relevant results aren't included in the results.<br/>
-        /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).<br/>
+        /// You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).<br/>
         /// Use this setting to strike a balance between the relevance and number of returned results.<br/>
         /// Default Value: 100<br/>
         /// Example: 90
@@ -586,11 +586,11 @@ namespace Algolia
         /// Default Value: 20
         /// </param>
         /// <param name="minWordSizefor1Typo">
-        /// Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).<br/>
+        /// Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).<br/>
         /// Default Value: 4
         /// </param>
         /// <param name="minWordSizefor2Typos">
-        /// Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).<br/>
+        /// Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).<br/>
         /// Default Value: 8
         /// </param>
         /// <param name="typoTolerance">
@@ -641,7 +641,7 @@ namespace Algolia
         /// </param>
         /// <param name="decompoundQuery">
         /// Whether to split compound words in the query into their building blocks.<br/>
-        /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).<br/>
+        /// For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).<br/>
         /// Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.<br/>
         /// Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).<br/>
         /// For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).<br/>
@@ -708,7 +708,7 @@ namespace Algolia
         ///   results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.<br/>
         /// - If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).<br/>
         ///   Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.<br/>
-        /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).
+        /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).
         /// </param>
         /// <param name="disableExactOnAttributes">
         /// Searchable attributes for which you want to [turn off the Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes).<br/>
@@ -763,7 +763,7 @@ namespace Algolia
         /// Determines how many records of a group are included in the search results.<br/>
         /// Records with the same value for the `attributeForDistinct` attribute are considered a group.<br/>
         /// The `distinct` setting controls how many members of the group are returned.<br/>
-        /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).<br/>
+        /// This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).<br/>
         /// The `distinct` setting is ignored if `attributeForDistinct` is not set.<br/>
         /// Example: 1
         /// </param>

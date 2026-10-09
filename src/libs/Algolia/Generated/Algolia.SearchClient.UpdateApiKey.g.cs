@@ -651,7 +651,7 @@ namespace Algolia
         /// - `*.algolia.com` allows all referrers ending with ".algolia.com".<br/>
         /// - `*algolia.com*` allows all referrers in the domain "algolia.com".<br/>
         /// Like all HTTP headers, referrers can be spoofed. Don't rely on them to secure your data.<br/>
-        /// For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions).<br/>
+        /// For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).<br/>
         /// Default Value: []<br/>
         /// Example: [*algolia.com*]
         /// </param>

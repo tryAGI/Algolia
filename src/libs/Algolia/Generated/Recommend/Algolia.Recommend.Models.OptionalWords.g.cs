@@ -17,7 +17,7 @@ namespace Algolia.Recommend
     ///   results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.<br/>
     /// - If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).<br/>
     ///   Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.<br/>
-    /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).
+    /// For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).
     /// </summary>
     public readonly partial struct OptionalWords : global::System.IEquatable<OptionalWords>
     {
@@ -59,7 +59,7 @@ namespace Algolia.Recommend
             : throw new global::System.InvalidOperationException($"Expected union variant 'OptionalWordsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).<br/>
+        /// List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).<br/>
         /// Default Value: []<br/>
         /// Example: [blue, iphone case]
         /// </summary>
