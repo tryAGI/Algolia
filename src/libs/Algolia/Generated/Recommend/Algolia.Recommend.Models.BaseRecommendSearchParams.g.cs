@@ -94,7 +94,7 @@ namespace Algolia.Recommend
         /// Whether to sum all filter scores.<br/>
         /// If true, all filter scores are summed.<br/>
         /// Otherwise, the maximum filter score is kept.<br/>
-        /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).<br/>
+        /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sumOrFiltersScores")]
@@ -204,7 +204,7 @@ namespace Algolia.Recommend
 
         /// <summary>
         /// Assigns a rule context to the search query.<br/>
-        /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.<br/>
+        /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.<br/>
         /// Default Value: []<br/>
         /// Example: [mobile]
         /// </summary>
@@ -346,7 +346,7 @@ namespace Algolia.Recommend
         /// Whether to sum all filter scores.<br/>
         /// If true, all filter scores are summed.<br/>
         /// Otherwise, the maximum filter score is kept.<br/>
-        /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).<br/>
+        /// For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).<br/>
         /// Default Value: false
         /// </param>
         /// <param name="restrictSearchableAttributes">
@@ -411,7 +411,7 @@ namespace Algolia.Recommend
         /// </param>
         /// <param name="ruleContexts">
         /// Assigns a rule context to the search query.<br/>
-        /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.<br/>
+        /// [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.<br/>
         /// Default Value: []<br/>
         /// Example: [mobile]
         /// </param>

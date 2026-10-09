@@ -135,7 +135,7 @@ namespace Algolia.Recommend
         public global::System.Collections.Generic.IList<global::Algolia.Recommend.SupportedLanguage>? IndexLanguages { get; set; }
 
         /// <summary>
-        /// Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).<br/>
+        /// Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).<br/>
         /// Attribute names are case-sensitive.<br/>
         /// Default Value: []<br/>
         /// Example: [sku]
@@ -372,7 +372,7 @@ namespace Algolia.Recommend
         /// Example: [ja]
         /// </param>
         /// <param name="disablePrefixOnAttributes">
-        /// Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).<br/>
+        /// Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).<br/>
         /// Attribute names are case-sensitive.<br/>
         /// Default Value: []<br/>
         /// Example: [sku]
