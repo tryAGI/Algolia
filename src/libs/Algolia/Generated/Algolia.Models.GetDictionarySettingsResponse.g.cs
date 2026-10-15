@@ -9,7 +9,9 @@ namespace Algolia
     public sealed partial class GetDictionarySettingsResponse
     {
         /// <summary>
-        /// Key-value pairs of [supported language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) and boolean values.
+        /// Turn off the built-in Algolia stop words for specific languages.<br/>
+        /// Only `stopwords` is supported.<br/>
+        /// The keys of the `stopwords` object are [language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) of languages with a built-in stop-word dictionary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disableStandardEntries")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +27,9 @@ namespace Algolia
         /// Initializes a new instance of the <see cref="GetDictionarySettingsResponse" /> class.
         /// </summary>
         /// <param name="disableStandardEntries">
-        /// Key-value pairs of [supported language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) and boolean values.
+        /// Turn off the built-in Algolia stop words for specific languages.<br/>
+        /// Only `stopwords` is supported.<br/>
+        /// The keys of the `stopwords` object are [language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) of languages with a built-in stop-word dictionary.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -35,7 +35,9 @@ namespace Algolia
         /// Turns standard stop word dictionary entries on or off for a given language.
         /// </summary>
         /// <param name="disableStandardEntries">
-        /// Key-value pairs of [supported language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) and boolean values.
+        /// Turn off the built-in Algolia stop words for specific languages.<br/>
+        /// Only `stopwords` is supported.<br/>
+        /// The keys of the `stopwords` object are [language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) of languages with a built-in stop-word dictionary.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
