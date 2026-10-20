@@ -31,6 +31,10 @@ namespace Algolia.Recommend.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::Algolia.Recommend.SearchParamsQuery? query = default;
             try
@@ -44,6 +48,10 @@ namespace Algolia.Recommend.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
 
             global::Algolia.Recommend.RecommendIndexSettings? indexSettings = default;
@@ -59,6 +67,10 @@ namespace Algolia.Recommend.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::Algolia.Recommend.RecommendSearchParamsVariant4? recommendSearchParamsVariant4 = default;
             try
@@ -72,6 +84,10 @@ namespace Algolia.Recommend.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
             var __value = new global::Algolia.Recommend.RecommendSearchParams(
                 @base,
