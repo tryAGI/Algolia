@@ -52,7 +52,6 @@ namespace Algolia
         /// - This operation is resource-intensive.<br/>
         /// **Copy**<br/>
         /// - If the source index doesn't exist, copying creates a new index with 0 records and default settings.<br/>
-        /// - API keys from the source index are merged with the existing keys in the destination index.<br/>
         /// - You can't copy the `enableReRanking`, `mode`, and `replicas` settings.<br/>
         /// - You can't copy to a destination index that already has replicas.<br/>
         /// - Be aware of the [size limits](https://www.algolia.com/doc/guides/scaling/algolia-service-limits/#application-record-and-index-limits).<br/>
@@ -98,7 +97,6 @@ namespace Algolia
         /// - This operation is resource-intensive.<br/>
         /// **Copy**<br/>
         /// - If the source index doesn't exist, copying creates a new index with 0 records and default settings.<br/>
-        /// - API keys from the source index are merged with the existing keys in the destination index.<br/>
         /// - You can't copy the `enableReRanking`, `mode`, and `replicas` settings.<br/>
         /// - You can't copy to a destination index that already has replicas.<br/>
         /// - Be aware of the [size limits](https://www.algolia.com/doc/guides/scaling/algolia-service-limits/#application-record-and-index-limits).<br/>
@@ -639,7 +637,6 @@ namespace Algolia
         /// - This operation is resource-intensive.<br/>
         /// **Copy**<br/>
         /// - If the source index doesn't exist, copying creates a new index with 0 records and default settings.<br/>
-        /// - API keys from the source index are merged with the existing keys in the destination index.<br/>
         /// - You can't copy the `enableReRanking`, `mode`, and `replicas` settings.<br/>
         /// - You can't copy to a destination index that already has replicas.<br/>
         /// - Be aware of the [size limits](https://www.algolia.com/doc/guides/scaling/algolia-service-limits/#application-record-and-index-limits).<br/>
