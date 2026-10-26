@@ -230,6 +230,7 @@ namespace Algolia
     #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "ListObject_System_Collections_Generic_List_object")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.AttributeToUpdate), TypeInfoPropertyName = "AttributeToUpdate2")]
     #pragma warning restore CS0618
