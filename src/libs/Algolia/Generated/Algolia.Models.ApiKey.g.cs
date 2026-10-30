@@ -43,8 +43,9 @@ namespace Algolia
         public global::System.Collections.Generic.IList<string>? Indexes { get; set; }
 
         /// <summary>
-        /// Maximum number of results this API key can retrieve in one query.<br/>
-        /// By default, there's no limit.<br/>
+        /// Maximum number of hits this API key can retrieve per page.<br/>
+        /// If you set this to 0, the maximum allowed value (1,000) applies.<br/>
+        /// If you also set `hitsPerPage` on the index, the engine uses the lower of the two values.<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maxHitsPerQuery")]
@@ -127,8 +128,9 @@ namespace Algolia
         /// Example: [dev_*, prod_en_products]
         /// </param>
         /// <param name="maxHitsPerQuery">
-        /// Maximum number of results this API key can retrieve in one query.<br/>
-        /// By default, there's no limit.<br/>
+        /// Maximum number of hits this API key can retrieve per page.<br/>
+        /// If you set this to 0, the maximum allowed value (1,000) applies.<br/>
+        /// If you also set `hitsPerPage` on the index, the engine uses the lower of the two values.<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="maxQueriesPerIPPerHour">
