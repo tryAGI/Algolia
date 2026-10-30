@@ -46,8 +46,10 @@ You can use leading and trailing wildcard characters (`*`):
                 },
                 MaxHitsPerQuery: new Option<int?>($"--{normalizedPrefix}max-hits-per-query")
                 {
-                    Description = @"Maximum number of results this API key can retrieve in one query.
-By default, there's no limit.
+                    Description = @"Maximum number of hits this API key can retrieve per page.
+
+If you set this to 0, the maximum allowed value (1,000) applies.
+If you also set `hitsPerPage` on the index, the engine uses the lower of the two values.
 ",
                 },
                 MaxQueriesPerIPPerHour: new Option<int?>($"--{normalizedPrefix}max-queries-per-ipper-hour")
