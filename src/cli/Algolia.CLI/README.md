@@ -15,6 +15,18 @@ algolia --help
 algolia api --help
 ```
 
+## Shell completion
+
+The `completion` command prints a script built from the live command tree, so
+subcommands, option names and the values of enum-typed options stay correct after the
+spec is refreshed and the CLI regenerated — there is no word list to maintain.
+
+```bash
+algolia completion bash > /usr/local/etc/bash_completion.d/algolia
+algolia completion zsh  > _algolia   # then put it on your zsh fpath
+algolia completion fish > ~/.config/fish/completions/algolia.fish
+```
+
 ## Customization
 
 Generated operation, tag, and API group command classes are partial. Implement
