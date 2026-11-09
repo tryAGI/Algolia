@@ -18,7 +18,7 @@ namespace Algolia.Recommend.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Algolia.Recommend.RecommendModelsExtensions.ToEnum(stringValue) ?? default;
+                        return global::Algolia.Recommend.RecommendModelsExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::Algolia.Recommend.RecommendModels.");
                     }
 
                     break;

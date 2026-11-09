@@ -18,7 +18,7 @@ namespace Algolia.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Algolia.OperationTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Algolia.OperationTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::Algolia.OperationType.");
                     }
 
                     break;
