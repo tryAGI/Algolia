@@ -97,7 +97,6 @@ Notes:
 
 - If the source index doesn't exist, moving is ignored without returning an error.
 - When moving an index, the analytics data keeps its original name, and a new set of analytics data is started for the new name.
-
   To access the original analytics in the dashboard, create an index with the original name.
 - If the destination index has replicas, moving will overwrite the existing index and copy the data to the replica indices.
 - For more information, see [Move indices](https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-indices/how-to/move-indices).

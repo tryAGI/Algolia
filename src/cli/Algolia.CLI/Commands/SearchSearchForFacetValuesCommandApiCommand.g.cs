@@ -84,7 +84,6 @@ This attribute must be included in the `attributesForFaceting` index setting wit
 Searches for values of a specified facet attribute.
 
 - By default, facet values are sorted by decreasing count.
-
   You can adjust this with the `sortFacetValueBy` parameter.
 - Searching for facet values doesn't work if you have **more than 65 searchable facets and searchable attributes combined**.
 ");

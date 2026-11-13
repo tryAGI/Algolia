@@ -24,7 +24,6 @@ info:
     - `https://{APPLICATION_ID}.algolia.net`
 
     - `https://{APPLICATION_ID}-dsn.algolia.net`.
-
       If your subscription includes a [Distributed Search Network](https://dashboard.algolia.com/infra),
       this ensures that requests are sent to servers closest to users.
 
@@ -64,7 +63,6 @@ info:
     - `x-algolia-application-id`. Your Algolia application ID.
 
     - `x-algolia-api-key`. An API key with the necessary permissions to make the request.
-
       The required access control list (ACL) to make a request is listed in each endpoint's reference.
 
     You can find your application ID and API key in the [Algolia dashboard](https://dashboard.algolia.com/account/api-keys).
@@ -93,7 +91,6 @@ info:
 
 
     The current version of the Recommend API is version 1, indicated by the `/1/` in each endpoint's URL.
-
   version: 1.0.0
 servers:
   - url: https://ALGOLIA_APPLICATION_ID.algolia.net
@@ -353,7 +350,6 @@ paths:
         When you delete a rule, a task is created on a queue and completed depending on the load on the server.
 
         The API response includes a task ID that you can use to check the status.
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/Models'
@@ -430,7 +426,6 @@ paths:
                     Whether to only show rules where the value of their `enabled` property matches this parameter.
 
                     If absent, show all rules, regardless of their `enabled` property.
-
                 filters:
                   type: string
                   description: >-
@@ -516,7 +511,6 @@ paths:
         - Consequence `params` only covers filtering parameters.
 
         - Consequence `automaticFacetFilters` doesn't require a facet value placeholder (it tries to match the data source item's attributes instead).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/Models'
@@ -590,7 +584,6 @@ components:
       required: true
       description: >
         [Recommend model](https://www.algolia.com/doc/guides/algolia-recommend/overview/#recommend-models).
-
       schema:
         $ref: '#/components/schemas/recommendModels'
     ObjectID:
@@ -632,7 +625,6 @@ components:
         Since the `similarQuery` is supposed to do a broad search, they usually return many results.
 
         Combine it with `filters` to narrow down the list of results.
-
       default: ''
       example: comedy drama crime Macy Buscemi
       x-categories:
@@ -661,13 +653,10 @@ components:
 
 
         - You can only combine filters of the same type with `OR`.
-
           **Not supported:** `facet:value OR num > 3`.
         - You can't use `NOT` with combinations of filters.
-
           **Not supported:** `NOT(facet:value OR facet:value)`
         - You can't combine conjunctions (`AND`) with `OR`.
-
           **Not supported:** `facet:value OR (facet:value AND facet:value)`
 
         Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.
@@ -676,7 +665,6 @@ components:
 
 
         For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).
-
       example: (category:Book OR category:Ebook) AND _tags:published
       x-categories:
         - Filtering
@@ -699,7 +687,6 @@ components:
         - Optional filters don't work with numeric attributes.
 
         - On virtual replicas, optional filters are applied _after_ the replica's [relevant sort](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/relevant-sort).
-
       example:
         - category:Book
         - author:John Doe
@@ -725,7 +712,6 @@ components:
         You can also provide ranges: `facet:<lower> TO <upper>`. The range includes the lower and upper boundaries.
 
         The same combination rules apply as for `facetFilters`.
-
       example:
         - - inStock = 1
           - deliveryDate < 1441755506
@@ -750,7 +736,6 @@ components:
         You won't get a facet count.
 
         The same combination and escaping rules apply as for `facetFilters`.
-
       example:
         - - Book
           - Movie
@@ -772,7 +757,6 @@ components:
         Otherwise, the maximum filter score is kept.
 
         For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).
-
       default: false
       x-categories:
         - Filtering
@@ -799,7 +783,6 @@ components:
         To retrieve all facets, use the wildcard character `*`.
 
         For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).
-
       default: []
       example:
         - '*'
@@ -815,7 +798,6 @@ components:
         It's usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,
 
         as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.
-
       default: false
       x-categories:
         - Faceting
@@ -830,7 +812,6 @@ components:
         The radius of the circle is determined by the `aroundRadius` and `minimumAroundRadius` settings.
 
         This parameter is ignored if you also specify `insidePolygon` or `insideBoundingBox`.
-
       example: 40.71,-74.01
       default: ''
       x-categories:
@@ -858,7 +839,6 @@ components:
         By default, the search radius is determined automatically from the density of hits around the central location.
 
         The search radius is small if there are many hits close to the central coordinates.
-
       oneOf:
         - type: integer
           minimum: 1
@@ -890,7 +870,6 @@ components:
 
 
         The Geo ranking criterion considers all matches within the same range of distances to be equal.
-
       oneOf:
         - type: integer
           default: 10
@@ -901,7 +880,6 @@ components:
             For example, if you set `aroundPrecision` to 100, records wihin 100 meters to the central coordinate are considered to have the same distance,
 
             as are records between 100 and 199 meters.
-
         - $ref: '#/components/schemas/aroundPrecisionFromValue'
       x-categories:
         - Geo-Search
@@ -932,7 +910,6 @@ components:
         Provide multiple bounding boxes as nested arrays.
 
         For more information, see [rectangular area](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).
-
       example:
         - - 47.3165
           - 4.9665
@@ -969,7 +946,6 @@ components:
         For more information, see [filtering inside polygons](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).
 
         This parameter is ignored if you also specify `insideBoundingBox`.
-
       example:
         - - 47.3165
           - 4.9665
@@ -1069,7 +1045,6 @@ components:
         - Sets `removeWordsIfNoResults` to `allOptional`.
 
         - Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.
-
       default: []
       x-categories:
         - Languages
@@ -1081,7 +1056,6 @@ components:
         Assigns a rule context to the search query.
 
         [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.
-
       default: []
       example:
         - mobile
@@ -1095,7 +1069,6 @@ components:
         The higher this value is, the more Personalization determines the ranking compared to other factors.
 
         For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).
-
       default: 100
       minimum: 0
       maximum: 100
@@ -1110,7 +1083,6 @@ components:
         This helps with analytics and click and conversion events.
 
         For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).
-
       example: test-user-123
       x-categories:
         - Personalization
@@ -1132,7 +1104,6 @@ components:
         Whether to include a `queryID` attribute in the response.
 
         The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).
-
       default: false
       x-categories:
         - Analytics
@@ -1274,15 +1245,12 @@ components:
 
 
             - `filterOnly("ATTRIBUTE")`.
-
               Allows the attribute to be used as a filter but doesn't evaluate the facet values.
 
             - `searchable("ATTRIBUTE")`.
-
               Allows searching for facet values.
 
             - `afterDistinct("ATTRIBUTE")`.
-
               Evaluates the facet count _after_ deduplication with `distinct`.
               This ensures accurate facet counts.
               You can apply this modifier to searchable facets: `afterDistinct(searchable(ATTRIBUTE))`.
@@ -1315,7 +1283,6 @@ components:
 
 
             - `virtual("REPLICA")`.
-
               Create a virtual replica,
               Virtual replicas don't increase the number of records and are optimized for [Relevant sorting](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/relevant-sort).
           default: []
@@ -1332,7 +1299,6 @@ components:
             Higher pagination limits might slow down your search.
 
             For pagination limits above 1,000, the sorting of results beyond the 1,000th hit can't be guaranteed.
-
           default: 1000
           maximum: 20000
         unretrievableAttributes:
@@ -1350,7 +1316,6 @@ components:
             but don't want to include it in the search results.
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Attributes
@@ -1365,7 +1330,6 @@ components:
             Creates a list of [words which require exact matches](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#turn-off-typo-tolerance-for-certain-words).
 
             This also turns off [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) for the specified words.
-
           default: []
           x-categories:
             - Typos
@@ -1379,7 +1343,6 @@ components:
             To support transliteration, you must set the indexing language to Japanese.
 
             Attribute names are case-sensitive.
-
           type: array
           items:
             type: string
@@ -1398,7 +1361,6 @@ components:
             Attributes for which to split [camel case](https://wikipedia.org/wiki/Camel_case) words.
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Languages
@@ -1429,7 +1391,6 @@ components:
             Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).
 
             For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).
-
           default: {}
           x-categories:
             - Languages
@@ -1452,7 +1413,6 @@ components:
             This can lead to unexpected search results.
 
             For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).
-
           default: []
           x-categories:
             - Languages
@@ -1466,7 +1426,6 @@ components:
             Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Query strategy
@@ -1476,7 +1435,6 @@ components:
             Whether arrays with exclusively non-negative integers should be compressed for better performance.
 
             If true, the compressed arrays may be reordered.
-
           default: false
           x-categories:
             - Performance
@@ -1502,7 +1460,6 @@ components:
 
 
             - `equalOnly("ATTRIBUTE")`.
-
               Support only filtering based on equality comparisons `=` and `!=`.
           example:
             - equalOnly(quantity)
@@ -1528,7 +1485,6 @@ components:
             With `separatorsToIndex`, Algolia treats separator characters as separate words.
 
             For example, in a search for "Disney+", Algolia considers "Disney" and "+" as two separate words.
-
           default: ''
           x-categories:
             - Typos
@@ -1563,11 +1519,9 @@ components:
 
 
             - `unordered("ATTRIBUTE")`.
-
               Ignore the position of a match within the attribute.
 
             Without a modifier, matches at the beginning of an attribute rank higher than matches at the end.
-
           default: []
           x-categories:
             - Attributes
@@ -1578,7 +1532,6 @@ components:
             Characters and their normalized replacements.
 
             This overrides Algolia's default [normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization).
-
           type: object
           example:
             default:
@@ -1607,7 +1560,6 @@ components:
             If you want to use the same attribute also for faceting, use the `afterDistinct` modifier of the `attributesForFaceting` setting.
 
             This applies faceting _after_ deduplication, which will result in accurate facet counts.
-
           example: url
           type: string
         maxFacetHits:
@@ -1649,11 +1601,9 @@ components:
 
 
             - `asc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in ascending order.
 
             - `desc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in descending order.
 
             If you use two or more custom ranking attributes,
@@ -1661,7 +1611,6 @@ components:
             [reduce the precision](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/how-to/controlling-custom-ranking-metrics-precision) of your first attributes,
 
             or the other attributes will never be applied.
-
           default: []
           x-categories:
             - Ranking
@@ -1685,7 +1634,6 @@ components:
         - To retrieve all attributes except a specific one, prefix the attribute with a dash and combine it with the `*`: `["*", "-ATTRIBUTE"]`.
 
         - The `objectID` attribute is always included.
-
       default:
         - '*'
       x-categories:
@@ -1699,7 +1647,6 @@ components:
         You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).
 
         Use this setting to strike a balance between the relevance and number of returned results.
-
       default: 100
       x-categories:
         - Ranking
@@ -1726,7 +1673,6 @@ components:
         You can use this to visually highlight matching parts of a search query in your UI
 
         For more information, see [Highlighting and snippeting](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/highlighting-snippeting/js).
-
       x-categories:
         - Highlighting and Snippeting
     attributesToSnippet:
@@ -1750,7 +1696,6 @@ components:
         You can adjust the number of words with the following notation: `ATTRIBUTE:NUMBER`,
 
         where `NUMBER` is the number of words to be extracted.
-
       default: []
       x-categories:
         - Highlighting and Snippeting
@@ -1780,7 +1725,6 @@ components:
         Whether to restrict highlighting and snippeting to items that at least partially matched the search query.
 
         By default, all items are highlighted and snippeted.
-
       default: false
       x-categories:
         - Highlighting and Snippeting
@@ -1818,7 +1762,6 @@ components:
 
 
         If typo tolerance is true, `min`, or `strict`, [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) are also active.
-
       oneOf:
         - type: boolean
           default: true
@@ -1852,10 +1795,8 @@ components:
         - [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).
 
         - Reducing the number of matches when you have too many.
-
           This can happen with attributes that are long blocks of text, such as product descriptions.
         Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.
-
       default: []
       x-categories:
         - Typos
@@ -1884,7 +1825,6 @@ components:
             If true, `ignorePlurals` is active for all languages included in `queryLanguages`, or for all supported languages, if `queryLanguges` is empty.
 
             If false, singulars, plurals, and other declensions won't be considered equivalent.
-
           default: false
       x-categories:
         - Languages
@@ -1899,7 +1839,6 @@ components:
 
 
         Only use this feature for the languages used in your index.
-
       example:
         - ca
         - es
@@ -1915,7 +1854,6 @@ components:
             If true, stop words are removed for all languages you included in `queryLanguages`, or for all supported languages, if `queryLanguages` is empty.
 
             If false, stop words are not removed.
-
       x-categories:
         - Languages
     queryLanguages:
@@ -1942,7 +1880,6 @@ components:
         This can lead to unexpected search results.
 
         For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).
-
       default: []
       x-categories:
         - Languages
@@ -1958,7 +1895,6 @@ components:
         Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).
 
         For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).
-
       default: true
       x-categories:
         - Languages
@@ -1988,7 +1924,6 @@ components:
 
 
         For more information, see [Prefix searching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/prefix-searching).
-
       default: prefixLast
       x-categories:
         - Query strategy
@@ -2007,25 +1942,20 @@ components:
 
 
         - `none`.
-
           No words are removed when a query doesn't return results.
 
         - `lastWords`.
-
           Treat the last (then second to last, then third to last) word as optional,
           until there are results or at most 5 words have been removed.
 
         - `firstWords`.
-
           Treat the first (then second, then third) word as optional,
           until there are results or at most 5 words have been removed.
 
         - `allOptional`.
-
           Treat all words as optional.
 
         For more information, see [Remove words to improve results](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/in-depth/why-use-remove-words-if-no-results).
-
       default: none
       x-categories:
         - Query strategy
@@ -2035,7 +1965,6 @@ components:
         Whether to support phrase matching and excluding words from search queries.
 
         Use the `advancedSyntaxFeatures` parameter to control which feature is supported.
-
       default: false
       x-categories:
         - Query strategy
@@ -2073,14 +2002,11 @@ components:
 
 
         - If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:
-
           results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.
         - If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).
-
           Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.
 
         For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).
-
       oneOf:
         - type: string
         - type: 'null'
@@ -2103,7 +2029,6 @@ components:
         Turning off the Exact ranking criterion for these attributes favors exact matching on other attributes.
 
         This reduces the impact of individual attributes with a lot of content on ranking.
-
       default: []
       x-categories:
         - Query strategy
@@ -2118,16 +2043,13 @@ components:
 
 
         - `attribute`.
-
           The Exact ranking criterion is 1 if the query word and attribute value are the same.
           For example, a search for "road" will match the value "road", but not "road trip".
 
         - `none`.
-
           The Exact ranking criterion is ignored on single-word searches.
 
         - `word`.
-
           The Exact ranking criterion is 1 if the query word is found in the attribute value.
           The query word must have at least 3 characters and must not be a stop word.
           Only exact matches will be highlighted,
@@ -2160,13 +2082,10 @@ components:
         - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).
 
         - `ignorePlurals`.
-
           Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.
         - `singleWordSynonym`.
-
           Single-word synonyms, such as "NY" = "NYC", are considered exact matches.
         - `multiWordsSynonym`.
-
           Multi-word synonyms, such as "NY" = "New York", are considered exact matches.
       default:
         - ignorePlurals
@@ -2211,7 +2130,6 @@ components:
 
 
         The `distinct` setting is ignored if `attributeForDistinct` is not set.
-
       example: 1
       oneOf:
         - type: boolean
@@ -2223,10 +2141,8 @@ components:
 
 
             - Don't use `distinct > 1` for records that might be [promoted by rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits).
-
               The number of hits won't be correct and faceting won't work as expected.
             - With `distinct > 1`, the `hitsPerPage` parameter controls the number of returned groups.
-
               For example, with `hitsPerPage: 10` and `distinct: 2`, up to 20 records are returned.
               Likewise, the `nbHits` response attribute contains the number of returned groups.
           minimum: 0
@@ -2250,7 +2166,6 @@ components:
         With `replaceSynonymsInHighlight` set to `true`, a search for `home` still matches the same records,
 
         but all occurrences of "house" are replaced by "home" in the highlighted response.
-
       default: false
       x-categories:
         - Highlighting and Snippeting
@@ -2266,7 +2181,6 @@ components:
         by equally scoring matches that are farther apart
 
         For example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.
-
       default: 1
       x-categories:
         - Advanced
@@ -2294,7 +2208,6 @@ components:
         Your UI might also depend on other properties, for example, for pagination.
 
         Before restricting the response size, check the impact on your search experience.
-
       default:
         - '*'
       x-categories:
@@ -2312,16 +2225,13 @@ components:
         Order in which to retrieve facet values.
 
         - `count`.
-
           Facet values are retrieved by decreasing count.
           The count is the number of matching records containing this facet value.
         - `alpha`.
-
           Retrieve facet values alphabetically.
         This setting doesn't influence how facet values are displayed in your UI (see `renderingContent`).
 
         For more information, see [facet value display](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/facet-display/js).
-
       default: count
       x-categories:
         - Faceting
@@ -2340,7 +2250,6 @@ components:
         Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.
 
         If you set both, `attributeCriteriaComputedBy` takes precedence.
-
       default: false
       x-categories:
         - Advanced
@@ -2350,7 +2259,6 @@ components:
 
 
         This setting lets you always show specific facets or facet values at the top of the list.
-
       type: array
       items:
         type: string
@@ -2367,16 +2275,13 @@ components:
 
 
         - `count`.
-
           Order remaining facet values by decreasing count.
           The count is the number of matching records containing this facet value.
 
         - `alpha`.
-
           Sort facet values alphabetically.
 
         - `hidden`.
-
           Don't show facet values that aren't explicitly positioned.
       type: string
       enum:
@@ -2484,7 +2389,6 @@ components:
         You can use this to control aspects of your search UI, such as the order of facet names and values
 
         without changing your frontend code.
-
       type: object
       additionalProperties: false
       properties:
@@ -2502,14 +2406,12 @@ components:
         Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).
 
         This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.
-
       default: true
       x-categories:
         - Filtering
     reRankingApplyFilter:
       description: >
         Restrict [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) to records that match these filters.
-
       oneOf:
         - type: array
           items:
@@ -2643,7 +2545,6 @@ components:
             Depending on the available recommendations and the other request parameters,
 
             the actual number of recommendations may be lower than this value.
-
         queryParameters:
           $ref: '#/components/schemas/recommendSearchParams'
       required:
@@ -2656,7 +2557,6 @@ components:
 
 
         This model recommends items that have been purchased within 1 day with the item with the ID `objectID`.
-
       enum:
         - bought-together
     objectID:
@@ -2681,7 +2581,6 @@ components:
         While it's best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:
 
         `facet:\-value`.
-
       example:
         - - category:Book
           - category:-Movie
@@ -2731,7 +2630,6 @@ components:
         This model recommends items that are similar to the item with the ID `objectID`.
 
         Similarity is determined from the user interactions and attributes.
-
       enum:
         - related-products
     relatedProducts:
@@ -2757,21 +2655,18 @@ components:
         Facet attribute. To be used in combination with `facetValue`.
 
         If specified, only recommendations matching the facet filter will be returned.
-
     facetValue:
       type: string
       description: >
         Facet value. To be used in combination with `facetName`.
 
         If specified, only recommendations matching the facet filter will be returned.
-
     trendingItemsModel:
       description: >
         Trending items model.
 
 
         Trending items are determined from the number of conversion events collected on them.
-
       type: string
       enum:
         - trending-items
@@ -2800,7 +2695,6 @@ components:
 
 
         This model recommends trending facet values for the specified facet attribute.
-
       enum:
         - trending-facets
     trendingFacets:
@@ -2829,7 +2723,6 @@ components:
             Depending on the available recommendations and the other request parameters,
 
             the actual number of recommendations may be lower than this value.
-
         facetName:
           type: string
           description: Facet attribute for which to retrieve trending facet values.
@@ -2851,7 +2744,6 @@ components:
 
 
         This model recommends items that look similar to the item with the ID `objectID` based on image attributes in your index.
-
       enum:
         - looking-similar
     lookingSimilar:
@@ -3055,7 +2947,6 @@ components:
           type: object
           description: >
             [Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.
-
           properties:
             index:
               type: array
@@ -3383,7 +3274,6 @@ components:
         For example, if `context: mobile`, the rule is only triggered when the search request has a matching `ruleContexts: mobile`.
 
         A rule context must only contain alphanumeric characters.
-
       example: mobile
     Condition:
       type: object
@@ -3439,7 +3329,6 @@ components:
             If true, recommendations must not have the same value for the `facet` attribute.
 
             If false, recommendations must have the same value for the `facet` attribute.
-
     ParamsConsequence:
       type: object
       description: Filter or boost recommendations matching a facet filter.
@@ -3465,7 +3354,6 @@ components:
             Matches with higher weights (`<score=N>`) rank before matches with lower weights.
 
             If you're using a negative filter `facet:-value`, matching records rank after records that don't match.
-
           items:
             type: string
           example:
@@ -3541,7 +3429,6 @@ components:
         It might not run immediately.
 
         You can check the task's progress with the [`task` operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.
-
     deletedAt:
       type: string
       example: '2023-06-27T14:42:38.831Z'
@@ -3573,7 +3460,6 @@ components:
 
 
         For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.
-
     parameters_hitsPerPage:
       type: integer
       default: 20
@@ -3592,7 +3478,6 @@ components:
 
 
         For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.
-
     recommendUpdatedAtResponse:
       type: object
       description: Response, taskID, and update timestamp.
@@ -3667,7 +3552,6 @@ components:
         Include it when you contact the Algolia support team about a specific request.
 
         Retried requests can share an identifier, so don't use it as a unique key.
-
       example: MyAppl-1tMcE-a7BqLm2Pd0Z
       schema:
         type: string

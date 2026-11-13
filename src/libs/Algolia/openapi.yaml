@@ -24,7 +24,6 @@ info:
     - `https://{APPLICATION_ID}.algolia.net`
 
     - `https://{APPLICATION_ID}-dsn.algolia.net`.
-
       If your subscription includes a [Distributed Search Network](https://dashboard.algolia.com/infra),
       this ensures that requests are sent to servers closest to users.
 
@@ -64,7 +63,6 @@ info:
     - `x-algolia-application-id`. Your Algolia application ID.
 
     - `x-algolia-api-key`. An API key with the necessary permissions to make the request.
-
       The required access control list (ACL) to make a request is listed in each endpoint's reference.
 
     You can find your application ID and API key in the [Algolia dashboard](https://dashboard.algolia.com/account/api-keys).
@@ -135,7 +133,6 @@ info:
 
 
     The current version of the Search API is version 1, indicated by the `/1/` in each endpoint's URL.
-
   version: 1.0.0
 servers:
   - url: https://ALGOLIA_APPLICATION_ID.algolia.net
@@ -153,7 +150,6 @@ tags:
       API requests must be authenticated with an API key.
 
       API keys can have permissions (access control lists, ACL) and restrictions.
-
     externalDocs:
       url: https://www.algolia.com/doc/guides/security/api-keys
       description: API keys.
@@ -173,7 +169,6 @@ tags:
 
 
       Dictionaries are application-wide.
-
     externalDocs:
       url: https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp
       description: Natural languages.
@@ -185,7 +180,6 @@ tags:
       Indices are copies of your data that are stored on Algolia's servers.
 
       They're optimal data structures for fast search and are made up of records and settings.
-
     externalDocs:
       url: https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-indices
       description: Manage your indices.
@@ -201,7 +195,6 @@ tags:
       Records are schemaless JSON objects.
 
       When adding or updating many records, check the [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
     externalDocs:
       url: https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data
       description: Prepare your records.
@@ -217,7 +210,6 @@ tags:
       Consequences are changes to the search results, such as changing the order of search results or boosting a facet.
 
       This can be useful for tuning specific queries or for merchandising.
-
     externalDocs:
       url: https://www.algolia.com/doc/guides/managing-results/rules/rules-overview
       description: Index Rules.
@@ -369,7 +361,6 @@ paths:
         This method lets you retrieve up to 1,000 hits.
 
         If you need more, use the [`browse` operation](https://www.algolia.com/doc/rest-api/search/browse) or increase the `paginatedLimitedTo` index setting.
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
       requestBody:
@@ -419,7 +410,6 @@ paths:
 
 
         If you know the expected result type, use the `searchForHits` or `searchForFacets` helper to simplify the response format.
-
       requestBody:
         required: true
         description: >-
@@ -481,10 +471,8 @@ paths:
 
 
         - By default, facet values are sorted by decreasing count.
-
           You can adjust this with the `sortFacetValueBy` parameter.
         - Searching for facet values doesn't work if you have **more than 65 searchable facets and searchable attributes combined**.
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - name: facetName
@@ -493,7 +481,6 @@ paths:
 
 
             This attribute must be included in the `attributesForFaceting` index setting with the `searchable()` modifier.
-
           in: path
           required: true
           schema:
@@ -584,7 +571,6 @@ paths:
 
 
         If you send these parameters with your browse requests, they're ignored.
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
       requestBody:
@@ -637,7 +623,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       summary: Add a new record (with auto-generated object ID)
       parameters:
         - $ref: '#/components/parameters/IndexName'
@@ -702,7 +687,6 @@ paths:
         - If the index you want to delete has replica indices, the replicas become independent indices.
 
         - If the index you want to delete is a replica index, you must first unlink it from its primary index before you can delete it.
-
           For more information, see [Delete replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/deleting-replicas).
       externalDocs:
         url: https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-indices/how-to/delete-indices
@@ -733,7 +717,6 @@ paths:
 
 
         To retrieve more than one record, use the [`objects` operation](https://www.algolia.com/doc/rest-api/search/get-objects).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectID'
@@ -753,7 +736,6 @@ paths:
             Attributes included in `unretrievableAttributes`
 
             won't be retrieved unless the request is authenticated with the admin API key.
-
           schema:
             type: array
             items:
@@ -796,7 +778,6 @@ paths:
         To update _some_ attributes of an existing record, use the [`partial` operation](https://www.algolia.com/doc/rest-api/search/partial-update-object) instead.
 
         To add, update, or replace multiple records, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/batch).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectID'
@@ -838,7 +819,6 @@ paths:
         To delete more than one record, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/batch).
 
         To delete records matching a query, use the [`deleteBy` operation](https://www.algolia.com/doc/rest-api/search/delete-by).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectID'
@@ -876,7 +856,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       externalDocs:
         url: https://support.algolia.com/hc/articles/16385098766353-Should-I-use-the-deleteBy-method-for-deleting-records-that-match-a-query
         description: Should I use the deleteBy method for deleting records.
@@ -911,7 +890,6 @@ paths:
         Deletes only the records from an index while keeping settings, synonyms, and rules.
 
         This operation is resource-intensive and subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
       responses:
@@ -940,12 +918,10 @@ paths:
 
 
         - If a record with the specified object ID doesn't exist,
-
           a new record is added to the index **if** `createIfNotExists` is true.
         - If the index doesn't exist yet, this method creates a new index.
 
         - Use first-level attributes only. Nested attributes aren't supported.
-
           If you specify a nested attribute, this operation replaces its first-level ancestor.
 
         To update attributes without replacing the full record, use these built-in operations.
@@ -964,11 +940,9 @@ paths:
         - `AddUnique`: add a number or string element to an array attribute made of numbers or strings only if it's not already present.
 
         - `IncrementFrom`: increment a numeric integer attribute only if the provided value matches the current value. Otherwise, the update is ignored.
-
           Example: If you pass an `IncrementFrom` value of 2 for the `version` attribute but the current value is 1, the API ignores the update.
           If the object doesn't exist, the API only creates it if you pass an `IncrementFrom` value of 0.
         - `IncrementSet`: increment a numeric integer attribute only if the provided value is greater than the current value. Otherwise, the update is ignored.
-
           Example: If you pass an `IncrementSet` value of 2 for the `version` attribute and the current value is 1, the API updates the object.
           If the object doesn't exist yet, the API only creates it if you pass an `IncrementSet` value greater than 0.
 
@@ -984,7 +958,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectID'
@@ -1035,7 +1008,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
       x-codegen-request-body-name: batchWriteParams
@@ -1081,7 +1053,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       summary: Batch indexing operations on multiple indices
       requestBody:
         required: true
@@ -1204,7 +1175,6 @@ paths:
                           Attributes to retrieve.
 
                           If not specified, all retrievable attributes are returned.
-
                         example:
                           - author
                           - title
@@ -1246,7 +1216,6 @@ paths:
 
 
                         `null` if the requested `objectID` doesn't exist in the index.
-
                       nullable: true
                       x-is-generic: true
                 required:
@@ -1306,7 +1275,6 @@ paths:
 
 
         For best performance, update the index settings before you add new records to your index.
-
       summary: Update index settings
       parameters:
         - $ref: '#/components/parameters/IndexName'
@@ -1342,7 +1310,6 @@ paths:
         To find the object IDs for your synonyms,
 
         use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-synonyms).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/parameters_ObjectID'
@@ -1377,7 +1344,6 @@ paths:
         Otherwise, the existing synonym is replaced.
 
         To add multiple synonyms in a single API request, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/save-synonyms).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/parameters_ObjectID'
@@ -1430,7 +1396,6 @@ paths:
         Deletes a synonym by its ID.
 
         To find the object IDs of your synonyms, use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-synonyms).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/parameters_ObjectID'
@@ -1461,7 +1426,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ForwardToReplicas'
@@ -1642,7 +1606,6 @@ paths:
         When authenticating with other API keys, you can only retrieve information for that key,
 
         with the description replaced by `<redacted>`.
-
       parameters:
         - $ref: '#/components/parameters/KeyString'
       responses:
@@ -1763,7 +1726,6 @@ paths:
         Algolia stores up to 1,000 API keys per application.
 
         If you create more, the oldest API keys are deleted and can't be restored.
-
       parameters:
         - $ref: '#/components/parameters/KeyString'
       responses:
@@ -1796,7 +1758,6 @@ paths:
         Retrieves a rule by its ID.
 
         To find the object ID of rules, use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-rules).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectIDRule'
@@ -1832,7 +1793,6 @@ paths:
 
 
         To create or update more than one rule, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/save-rules).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectIDRule'
@@ -1867,7 +1827,6 @@ paths:
         To find the object ID for rules,
 
         use the [`search` operation](https://www.algolia.com/doc/rest-api/search/search-rules).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
         - $ref: '#/components/parameters/ObjectIDRule'
@@ -1901,7 +1860,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       x-codegen-request-body-name: rules
       parameters:
         - $ref: '#/components/parameters/IndexName'
@@ -2194,7 +2152,6 @@ paths:
               additionalProperties: false
               description: >
                 Turn on or off the built-in Algolia stop words for a specific language.
-
               required:
                 - disableStandardEntries
               properties:
@@ -2220,7 +2177,6 @@ paths:
         - settings
       description: >
         Lists supported languages with their supported dictionary types and number of custom entries.
-
       summary: List available languages
       externalDocs:
         url: https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages
@@ -2261,7 +2217,6 @@ paths:
 
 
         The time it takes to move a user is proportional to the amount of data linked to the user ID.
-
       parameters:
         - $ref: '#/components/parameters/UserIDInHeader'
       requestBody:
@@ -2304,7 +2259,6 @@ paths:
         Since it can take a few seconds to get the data from the different clusters,
 
         the response isn't real-time.
-
       parameters:
         - $ref: '#/components/parameters/Page'
         - $ref: '#/components/parameters/HitsPerPage'
@@ -2402,7 +2356,6 @@ paths:
         Since it can take a few seconds to get the data from the different clusters,
 
         the response isn't real-time.
-
       responses:
         '200':
           description: OK
@@ -2453,7 +2406,6 @@ paths:
         Since it can take a few seconds to get the data from the different clusters,
 
         the response isn't real-time.
-
       parameters:
         - $ref: '#/components/parameters/UserIDInPath'
       responses:
@@ -2567,7 +2519,6 @@ paths:
 
 
         To ensure rapid updates, the user IDs index isn't built at the same time as the mapping. Instead, it's built every 12 hours, at the same time as the update of user ID usage. For example, if you add or move a user ID, the search will show an old value until the next time the mapping is rebuilt (every 12 hours).
-
       requestBody:
         required: true
         content:
@@ -2670,7 +2621,6 @@ paths:
       summary: Get migration and user mapping status
       description: >
         To determine when the time-consuming process of creating a large batch of users or migrating users from one cluster to another is complete, this operation retrieves the status of the process.
-
       parameters:
         - in: query
           name: getClusters
@@ -2698,7 +2648,6 @@ paths:
                   clusters:
                     description: >
                       Cluster pending mapping state: migrating, creating, deleting.
-
                     type: object
                     additionalProperties:
                       type: array
@@ -2866,7 +2815,6 @@ paths:
         - Up to 1,000 API requests per server are logged.
 
         - This request counts towards your [operations quota](https://support.algolia.com/hc/articles/17245378392977-How-does-Algolia-count-records-and-operations) but doesn't appear in the logs itself.
-
       summary: Retrieve log entries
       parameters:
         - name: offset
@@ -2951,7 +2899,6 @@ paths:
                           description: Response body.
                           example: >
                             'n{\n "results": [\n  {\n   "hits": [\n    {\n     "name": "Amazon - Fire TV Stick",\n     "description": "Amazon Fire TV Stick connects to your TV's HDMI port. Just grab and go to enjoy Netflix, Prime Instant Video, Hulu Plus, YouTube.com, music, and much more.",\n     "brand": "Amazon",\n     "categories": [\n      "TV & Home Theater",\n      "Streaming Media Players"\n     ],\n     "hierarchicalCategories": {\n      "lvl0": "TV & Home Theater",\n      "lvl1": "TV & Home Theater > Streaming Media Players"\n     },\n     "type": "Streaming media player",\n     "price": 39.99,\n     "price_range": "1 }\n   ]\n  }\n ]\n}'
-
                         url:
                           type: string
                           format: uri-reference
@@ -3086,7 +3033,6 @@ paths:
 
 
         The indexing tasks' responses include a task ID that you can use to check the status.
-
       summary: Check task status
       parameters:
         - $ref: '#/components/parameters/IndexName'
@@ -3157,7 +3103,6 @@ paths:
         - If the source index doesn't exist, moving is ignored without returning an error.
 
         - When moving an index, the analytics data keeps its original name, and a new set of analytics data is started for the new name.
-
           To access the original analytics in the dashboard, create an index with the original name.
         - If the destination index has replicas, moving will overwrite the existing index and copy the data to the replica indices.
 
@@ -3165,7 +3110,6 @@ paths:
 
 
         This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
-
       parameters:
         - $ref: '#/components/parameters/IndexName'
       requestBody:
@@ -3192,7 +3136,6 @@ paths:
                     If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.
 
                     If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.
-
               required:
                 - operation
                 - destination
@@ -3221,7 +3164,6 @@ paths:
 
 
         The request follows any index restrictions of the API key you use to make the request.
-
       parameters:
         - $ref: '#/components/parameters/Page'
         - $ref: '#/components/parameters/HitsPerPage'
@@ -3318,7 +3260,6 @@ paths:
 
 
         All Algolia write operations are asynchronous. When you make a request for a write operation, for example, to add or update records in your index, Algolia creates a task on a queue and returns a taskID. The task itself runs separately, depending on the server load.
-
       parameters:
         - in: query
           name: indexName
@@ -3397,7 +3338,6 @@ paths:
 
 
         Don't use this method for building a search UI. Use search instead.
-
       parameters:
         - in: query
           name: indexName
@@ -3457,7 +3397,6 @@ paths:
         You can't create secured API keys from other secured API keys or from your Admin API key.
 
         The generated API key can have the same restrictions as the parent API key, or be more restrictive.
-
       parameters:
         - in: query
           name: parentApiKey
@@ -3499,7 +3438,6 @@ paths:
         Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`
       description: >
         Copies the given `sourceIndexName` records, rules and synonyms to an other Algolia application for the given `destinationIndexName`.
-
       parameters:
         - in: query
           name: sourceIndexName
@@ -3586,7 +3524,6 @@ paths:
         - This method creates a temporary index, which temporarily doubles your record count.
 
         - Algolia doesn't count the three days with the highest number of records toward your monthly usage.
-
       parameters:
         - in: query
           name: indexName
@@ -3656,7 +3593,6 @@ paths:
 
 
         This method replaces all records without downtime. It performs these operations:
-
           1. Copy settings, synonyms, and rules from your original index to a temporary index.
           2. Add your new records to the temporary index.
           3. Replace your original index with the temporary index.
@@ -3676,7 +3612,6 @@ paths:
         - If you're on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): `copySettings` and `moveIndex`.
 
         - The API key you use for this operation must have access to the index `YourIndex` and the temporary index `YourIndex_tmp`.
-
       parameters:
         - in: query
           name: indexName
@@ -3729,7 +3664,6 @@ paths:
       summary: Replace all records in an index
       description: >
         Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
-
       parameters:
         - in: query
           name: indexName
@@ -3799,7 +3733,6 @@ paths:
       summary: Saves the given array of objects in the given index
       description: >
         Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
-
       parameters:
         - in: query
           name: indexName
@@ -3874,7 +3807,6 @@ paths:
         Save objects to an Algolia index by leveraging the Transformation pipeline setup using the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push)
       description: >
         Helper: Similar to the `saveObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.
-
       parameters:
         - in: query
           name: indexName
@@ -3945,7 +3877,6 @@ paths:
       summary: Deletes every records for the given objectIDs
       description: >
         Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.
-
       parameters:
         - in: query
           name: indexName
@@ -4015,7 +3946,6 @@ paths:
         Replaces object content of all the given objects according to their respective `objectID` field
       description: >
         Helper: Replaces object content of all the given objects according to their respective `objectID` field. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
-
       parameters:
         - in: query
           name: indexName
@@ -4098,7 +4028,6 @@ paths:
         Save objects to an Algolia index by leveraging the Transformation pipeline setup using the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push)
       description: >
         Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.
-
       parameters:
         - in: query
           name: indexName
@@ -4177,7 +4106,6 @@ paths:
       summary: Check if an index exists or not
       description: >
         You can initialize an index with any name. The index is created on Algolia's servers when you add objects or set settings. To prevent accidentally creating new indices, or changing existing indices, you can use the exists method. The exists method returns a boolean that indicates whether an initialized index has been created.
-
       parameters:
         - in: query
           name: indexName
@@ -4279,7 +4207,6 @@ components:
         Since the `similarQuery` is supposed to do a broad search, they usually return many results.
 
         Combine it with `filters` to narrow down the list of results.
-
       default: ''
       example: comedy drama crime Macy Buscemi
       x-categories:
@@ -4308,13 +4235,10 @@ components:
 
 
         - You can only combine filters of the same type with `OR`.
-
           **Not supported:** `facet:value OR num > 3`.
         - You can't use `NOT` with combinations of filters.
-
           **Not supported:** `NOT(facet:value OR facet:value)`
         - You can't combine conjunctions (`AND`) with `OR`.
-
           **Not supported:** `facet:value OR (facet:value AND facet:value)`
 
         Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.
@@ -4323,7 +4247,6 @@ components:
 
 
         For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).
-
       example: (category:Book OR category:Ebook) AND _tags:published
       x-categories:
         - Filtering
@@ -4345,7 +4268,6 @@ components:
         While it's best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:
 
         `facet:\-value`.
-
       example:
         - - category:Book
           - category:-Movie
@@ -4376,7 +4298,6 @@ components:
         - Optional filters don't work with numeric attributes.
 
         - On virtual replicas, optional filters are applied _after_ the replica's [relevant sort](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/relevant-sort).
-
       example:
         - category:Book
         - author:John Doe
@@ -4402,7 +4323,6 @@ components:
         You can also provide ranges: `facet:<lower> TO <upper>`. The range includes the lower and upper boundaries.
 
         The same combination rules apply as for `facetFilters`.
-
       example:
         - - inStock = 1
           - deliveryDate < 1441755506
@@ -4427,7 +4347,6 @@ components:
         You won't get a facet count.
 
         The same combination and escaping rules apply as for `facetFilters`.
-
       example:
         - - Book
           - Movie
@@ -4449,7 +4368,6 @@ components:
         Otherwise, the maximum filter score is kept.
 
         For more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).
-
       default: false
       x-categories:
         - Filtering
@@ -4476,7 +4394,6 @@ components:
         It's usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,
 
         as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.
-
       default: false
       x-categories:
         - Faceting
@@ -4505,7 +4422,6 @@ components:
         The radius of the circle is determined by the `aroundRadius` and `minimumAroundRadius` settings.
 
         This parameter is ignored if you also specify `insidePolygon` or `insideBoundingBox`.
-
       example: 40.71,-74.01
       default: ''
       x-categories:
@@ -4533,7 +4449,6 @@ components:
         By default, the search radius is determined automatically from the density of hits around the central location.
 
         The search radius is small if there are many hits close to the central coordinates.
-
       oneOf:
         - type: integer
           minimum: 1
@@ -4565,7 +4480,6 @@ components:
 
 
         The Geo ranking criterion considers all matches within the same range of distances to be equal.
-
       oneOf:
         - type: integer
           default: 10
@@ -4576,7 +4490,6 @@ components:
             For example, if you set `aroundPrecision` to 100, records wihin 100 meters to the central coordinate are considered to have the same distance,
 
             as are records between 100 and 199 meters.
-
         - $ref: '#/components/schemas/aroundPrecisionFromValue'
       x-categories:
         - Geo-Search
@@ -4607,7 +4520,6 @@ components:
         Provide multiple bounding boxes as nested arrays.
 
         For more information, see [rectangular area](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).
-
       example:
         - - 47.3165
           - 4.9665
@@ -4644,7 +4556,6 @@ components:
         For more information, see [filtering inside polygons](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).
 
         This parameter is ignored if you also specify `insideBoundingBox`.
-
       example:
         - - 47.3165
           - 4.9665
@@ -4744,7 +4655,6 @@ components:
         - Sets `removeWordsIfNoResults` to `allOptional`.
 
         - Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.
-
       default: []
       x-categories:
         - Languages
@@ -4756,7 +4666,6 @@ components:
         Assigns a rule context to the search query.
 
         [Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.
-
       default: []
       example:
         - mobile
@@ -4770,7 +4679,6 @@ components:
         The higher this value is, the more Personalization determines the ranking compared to other factors.
 
         For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).
-
       default: 100
       minimum: 0
       maximum: 100
@@ -4785,7 +4693,6 @@ components:
         This helps with analytics and click and conversion events.
 
         For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).
-
       example: test-user-123
       x-categories:
         - Personalization
@@ -4807,7 +4714,6 @@ components:
         Whether to include a `queryID` attribute in the response.
 
         The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).
-
       default: false
       x-categories:
         - Analytics
@@ -4867,7 +4773,6 @@ components:
             To retrieve all facets, use the wildcard character `*`.
 
             For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).
-
           default: []
           example:
             - '*'
@@ -4946,7 +4851,6 @@ components:
         - To retrieve all attributes except a specific one, prefix the attribute with a dash and combine it with the `*`: `["*", "-ATTRIBUTE"]`.
 
         - The `objectID` attribute is always included.
-
       default:
         - '*'
       x-categories:
@@ -4960,7 +4864,6 @@ components:
         You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).
 
         Use this setting to strike a balance between the relevance and number of returned results.
-
       default: 100
       x-categories:
         - Ranking
@@ -4987,7 +4890,6 @@ components:
         You can use this to visually highlight matching parts of a search query in your UI
 
         For more information, see [Highlighting and snippeting](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/highlighting-snippeting/js).
-
       x-categories:
         - Highlighting and Snippeting
     attributesToSnippet:
@@ -5011,7 +4913,6 @@ components:
         You can adjust the number of words with the following notation: `ATTRIBUTE:NUMBER`,
 
         where `NUMBER` is the number of words to be extracted.
-
       default: []
       x-categories:
         - Highlighting and Snippeting
@@ -5041,7 +4942,6 @@ components:
         Whether to restrict highlighting and snippeting to items that at least partially matched the search query.
 
         By default, all items are highlighted and snippeted.
-
       default: false
       x-categories:
         - Highlighting and Snippeting
@@ -5087,7 +4987,6 @@ components:
 
 
         If typo tolerance is true, `min`, or `strict`, [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) are also active.
-
       oneOf:
         - type: boolean
           default: true
@@ -5121,10 +5020,8 @@ components:
         - [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).
 
         - Reducing the number of matches when you have too many.
-
           This can happen with attributes that are long blocks of text, such as product descriptions.
         Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.
-
       default: []
       x-categories:
         - Typos
@@ -5153,7 +5050,6 @@ components:
             If true, `ignorePlurals` is active for all languages included in `queryLanguages`, or for all supported languages, if `queryLanguges` is empty.
 
             If false, singulars, plurals, and other declensions won't be considered equivalent.
-
           default: false
       x-categories:
         - Languages
@@ -5168,7 +5064,6 @@ components:
 
 
         Only use this feature for the languages used in your index.
-
       example:
         - ca
         - es
@@ -5184,7 +5079,6 @@ components:
             If true, stop words are removed for all languages you included in `queryLanguages`, or for all supported languages, if `queryLanguages` is empty.
 
             If false, stop words are not removed.
-
       x-categories:
         - Languages
     queryLanguages:
@@ -5211,7 +5105,6 @@ components:
         This can lead to unexpected search results.
 
         For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).
-
       default: []
       x-categories:
         - Languages
@@ -5227,7 +5120,6 @@ components:
         Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).
 
         For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).
-
       default: true
       x-categories:
         - Languages
@@ -5263,7 +5155,6 @@ components:
 
 
         For more information, see [Prefix searching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/prefix-searching).
-
       default: prefixLast
       x-categories:
         - Query strategy
@@ -5282,25 +5173,20 @@ components:
 
 
         - `none`.
-
           No words are removed when a query doesn't return results.
 
         - `lastWords`.
-
           Treat the last (then second to last, then third to last) word as optional,
           until there are results or at most 5 words have been removed.
 
         - `firstWords`.
-
           Treat the first (then second, then third) word as optional,
           until there are results or at most 5 words have been removed.
 
         - `allOptional`.
-
           Treat all words as optional.
 
         For more information, see [Remove words to improve results](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/in-depth/why-use-remove-words-if-no-results).
-
       default: none
       x-categories:
         - Query strategy
@@ -5314,7 +5200,6 @@ components:
 
 
         This setting only applies to indices, for which Algolia enabled NeuralSearch for you.
-
       default: keywordSearch
       x-categories:
         - Query strategy
@@ -5340,7 +5225,6 @@ components:
         Whether to support phrase matching and excluding words from search queries.
 
         Use the `advancedSyntaxFeatures` parameter to control which feature is supported.
-
       default: false
       x-categories:
         - Query strategy
@@ -5378,14 +5262,11 @@ components:
 
 
         - If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:
-
           results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.
         - If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).
-
           Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.
 
         For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).
-
       oneOf:
         - type: string
         - type: 'null'
@@ -5408,7 +5289,6 @@ components:
         Turning off the Exact ranking criterion for these attributes favors exact matching on other attributes.
 
         This reduces the impact of individual attributes with a lot of content on ranking.
-
       default: []
       x-categories:
         - Query strategy
@@ -5423,16 +5303,13 @@ components:
 
 
         - `attribute`.
-
           The Exact ranking criterion is 1 if the query word and attribute value are the same.
           For example, a search for "road" will match the value "road", but not "road trip".
 
         - `none`.
-
           The Exact ranking criterion is ignored on single-word searches.
 
         - `word`.
-
           The Exact ranking criterion is 1 if the query word is found in the attribute value.
           The query word must have at least 3 characters and must not be a stop word.
           Only exact matches will be highlighted,
@@ -5465,13 +5342,10 @@ components:
         - "swimsuit" and "swimwear" are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).
 
         - `ignorePlurals`.
-
           Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.
         - `singleWordSynonym`.
-
           Single-word synonyms, such as "NY" = "NYC", are considered exact matches.
         - `multiWordsSynonym`.
-
           Multi-word synonyms, such as "NY" = "New York", are considered exact matches.
       default:
         - ignorePlurals
@@ -5516,7 +5390,6 @@ components:
 
 
         The `distinct` setting is ignored if `attributeForDistinct` is not set.
-
       example: 1
       oneOf:
         - type: boolean
@@ -5528,10 +5401,8 @@ components:
 
 
             - Don't use `distinct > 1` for records that might be [promoted by rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits).
-
               The number of hits won't be correct and faceting won't work as expected.
             - With `distinct > 1`, the `hitsPerPage` parameter controls the number of returned groups.
-
               For example, with `hitsPerPage: 10` and `distinct: 2`, up to 20 records are returned.
               Likewise, the `nbHits` response attribute contains the number of returned groups.
           minimum: 0
@@ -5555,7 +5426,6 @@ components:
         With `replaceSynonymsInHighlight` set to `true`, a search for `home` still matches the same records,
 
         but all occurrences of "house" are replaced by "home" in the highlighted response.
-
       default: false
       x-categories:
         - Highlighting and Snippeting
@@ -5571,7 +5441,6 @@ components:
         by equally scoring matches that are farther apart
 
         For example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.
-
       default: 1
       x-categories:
         - Advanced
@@ -5599,7 +5468,6 @@ components:
         Your UI might also depend on other properties, for example, for pagination.
 
         Before restricting the response size, check the impact on your search experience.
-
       default:
         - '*'
       x-categories:
@@ -5617,16 +5485,13 @@ components:
         Order in which to retrieve facet values.
 
         - `count`.
-
           Facet values are retrieved by decreasing count.
           The count is the number of matching records containing this facet value.
         - `alpha`.
-
           Retrieve facet values alphabetically.
         This setting doesn't influence how facet values are displayed in your UI (see `renderingContent`).
 
         For more information, see [facet value display](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/facet-display/js).
-
       default: count
       x-categories:
         - Faceting
@@ -5645,7 +5510,6 @@ components:
         Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.
 
         If you set both, `attributeCriteriaComputedBy` takes precedence.
-
       default: false
       x-categories:
         - Advanced
@@ -5672,15 +5536,12 @@ components:
 
 
         - `minProximity`.
-
           Pick the best matching attribute from the attributes that form the best proximity score.
           On an ordered attribute, the match position breaks ties.
         - `best`.
-
           Pick the best matching attribute from all attributes that match any query word.
           On an ordered attribute, the match position breaks ties.
         - `sum`.
-
           Add up a score for every query word instead of picking one attribute.
           Each word's score comes from the attribute it matched, and from its position in that attribute when the attribute is ordered.
           A query word that matches nothing adds a large penalty.
@@ -5696,7 +5557,6 @@ components:
 
 
         This setting lets you always show specific facets or facet values at the top of the list.
-
       type: array
       items:
         type: string
@@ -5713,16 +5573,13 @@ components:
 
 
         - `count`.
-
           Order remaining facet values by decreasing count.
           The count is the number of matching records containing this facet value.
 
         - `alpha`.
-
           Sort facet values alphabetically.
 
         - `hidden`.
-
           Don't show facet values that aren't explicitly positioned.
       type: string
       enum:
@@ -5830,7 +5687,6 @@ components:
         You can use this to control aspects of your search UI, such as the order of facet names and values
 
         without changing your frontend code.
-
       type: object
       additionalProperties: false
       properties:
@@ -5848,14 +5704,12 @@ components:
         Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).
 
         This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.
-
       default: true
       x-categories:
         - Filtering
     reRankingApplyFilter:
       description: >
         Restrict [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) to records that match these filters.
-
       oneOf:
         - type: array
           items:
@@ -5890,10 +5744,8 @@ components:
 
 
             - `asc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in ascending order.
             - `desc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in descending order.
 
             Before you modify the default setting,
@@ -5901,7 +5753,6 @@ components:
             test your changes in the dashboard,
 
             and by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).
-
           default:
             - typo
             - geo
@@ -6194,7 +6045,6 @@ components:
           type: object
           description: >
             [Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.
-
           properties:
             index:
               type: array
@@ -6431,7 +6281,6 @@ components:
 
 
         A hit is a record from your index, augmented with special attributes for highlighting, snippeting, and ranking.
-
       x-is-generic: true
       x-is-hit-object: true
       additionalProperties: true
@@ -6522,7 +6371,6 @@ components:
         This field is empty when the model cannot categorize the query.
 
         See [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/).
-
       properties:
         normalizedQuery:
           type: string
@@ -6546,7 +6394,6 @@ components:
         AI-generated metadata returned alongside search results.
 
         Present when Algolia AI features such as [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) are enabled.
-
       properties:
         queryCategorization:
           $ref: '#/components/schemas/queryCategorization'
@@ -6561,7 +6408,6 @@ components:
 
 
             Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.
-
           items:
             $ref: '#/components/schemas/hit'
         query:
@@ -6593,7 +6439,6 @@ components:
         - `default`: perform a search query.
 
         - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).
-
     searchExtensionsQueryCategorization:
       type: object
       description: >-
@@ -6615,7 +6460,6 @@ components:
         Additional parameters for Algolia AI features.
 
         Used to enable [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) and other AI-powered capabilities.
-
       properties:
         queryCategorization:
           $ref: '#/components/schemas/searchExtensionsQueryCategorization'
@@ -6657,7 +6501,6 @@ components:
         - `default`: perform a search query.
 
         - `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).
-
     searchForFacetsSettings:
       type: object
       properties:
@@ -6699,7 +6542,6 @@ components:
         - `none`. Run all queries.
 
         - `stopIfEnoughMatches`. Run the queries one by one, stopping as soon as a query matches at least the `hitsPerPage` number of results.
-
     searchForFacetValuesResponse:
       type: object
       additionalProperties: false
@@ -6737,7 +6579,6 @@ components:
             Whether the facet count is exhaustive (true) or approximate (false).
 
             For more information, see [Why are my facet and hit counts not accurate](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate).
-
         processingTimeMS:
           $ref: '#/components/schemas/processingTimeMS'
     searchResponsePartial:
@@ -6749,7 +6590,6 @@ components:
         none are required, so it acts as an unconditional fallback during oneOf
 
         deserialization.
-
       additionalProperties: true
       allOf:
         - $ref: '#/components/schemas/baseSearchResponse'
@@ -6764,7 +6604,6 @@ components:
 
 
                 Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.
-
               items:
                 $ref: '#/components/schemas/hit'
             query:
@@ -6793,7 +6632,6 @@ components:
             The parameter must match the value returned in the response of a previous request.
 
             The last page of the response does not return a `cursor` attribute.
-
           example: jMDY3M2MwM2QwMWUxMmQwYWI0ZTN
     browseParamsConfig:
       allOf:
@@ -6839,7 +6677,6 @@ components:
         It might not run immediately.
 
         You can check the task's progress with the [`task` operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.
-
     deletedAt:
       type: string
       example: '2023-06-27T14:42:38.831Z'
@@ -6895,25 +6732,19 @@ components:
 
 
         - `addObject`: adds records to an index.
-
            Equivalent to the "Add a new record (with auto-generated object ID)" operation.
         - `updateObject`: adds or replaces records in an index.
-
            Equivalent to the "Add or replace a record" operation.
         - `partialUpdateObject`: adds or updates attributes within records.
-
            Equivalent to the "Add or update attributes" operation with the `createIfNoExists` parameter set to true.
            (If a record with the specified `objectID` doesn't exist in the specified index, this action adds the record to the index).
         - `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.
-
            (A record isn't added to the index if its `objectID` doesn't exist).
         - `deleteObject`: delete records from an index.
-
           Equivalent to the "Delete a record" operation.
         - `delete`. Delete an index. Equivalent to the "Delete an index" operation.
 
         - `clear`: delete all records from an index. Equivalent to the "Delete all records from an index operation".
-
     batchWriteParams:
       title: batchWriteParams
       description: Batch parameters.
@@ -7003,15 +6834,12 @@ components:
 
 
             - `filterOnly("ATTRIBUTE")`.
-
               Allows the attribute to be used as a filter but doesn't evaluate the facet values.
 
             - `searchable("ATTRIBUTE")`.
-
               Allows searching for facet values.
 
             - `afterDistinct("ATTRIBUTE")`.
-
               Evaluates the facet count _after_ deduplication with `distinct`.
               This ensures accurate facet counts.
               You can apply this modifier to searchable facets: `afterDistinct(searchable(ATTRIBUTE))`.
@@ -7044,7 +6872,6 @@ components:
 
 
             - `virtual("REPLICA")`.
-
               Create a virtual replica,
               Virtual replicas don't increase the number of records and are optimized for [Relevant sorting](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/relevant-sort).
           default: []
@@ -7061,7 +6888,6 @@ components:
             Higher pagination limits might slow down your search.
 
             For pagination limits above 1,000, the sorting of results beyond the 1,000th hit can't be guaranteed.
-
           default: 1000
           maximum: 20000
         unretrievableAttributes:
@@ -7079,7 +6905,6 @@ components:
             but don't want to include it in the search results.
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Attributes
@@ -7094,7 +6919,6 @@ components:
             Creates a list of [words which require exact matches](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#turn-off-typo-tolerance-for-certain-words).
 
             This also turns off [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) for the specified words.
-
           default: []
           x-categories:
             - Typos
@@ -7108,7 +6932,6 @@ components:
             To support transliteration, you must set the indexing language to Japanese.
 
             Attribute names are case-sensitive.
-
           type: array
           items:
             type: string
@@ -7127,7 +6950,6 @@ components:
             Attributes for which to split [camel case](https://wikipedia.org/wiki/Camel_case) words.
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Languages
@@ -7158,7 +6980,6 @@ components:
             Decompounding doesn't work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).
 
             For example, `Gartenstühle` won't be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).
-
           default: {}
           x-categories:
             - Languages
@@ -7181,7 +7002,6 @@ components:
             This can lead to unexpected search results.
 
             For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).
-
           default: []
           x-categories:
             - Languages
@@ -7195,7 +7015,6 @@ components:
             Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).
 
             Attribute names are case-sensitive.
-
           default: []
           x-categories:
             - Query strategy
@@ -7205,7 +7024,6 @@ components:
             Whether arrays with exclusively non-negative integers should be compressed for better performance.
 
             If true, the compressed arrays may be reordered.
-
           default: false
           x-categories:
             - Performance
@@ -7231,7 +7049,6 @@ components:
 
 
             - `equalOnly("ATTRIBUTE")`.
-
               Support only filtering based on equality comparisons `=` and `!=`.
           example:
             - equalOnly(quantity)
@@ -7257,7 +7074,6 @@ components:
             With `separatorsToIndex`, Algolia treats separator characters as separate words.
 
             For example, in a search for "Disney+", Algolia considers "Disney" and "+" as two separate words.
-
           default: ''
           x-categories:
             - Typos
@@ -7292,11 +7108,9 @@ components:
 
 
             - `unordered("ATTRIBUTE")`.
-
               Ignore the position of a match within the attribute.
 
             Without a modifier, matches at the beginning of an attribute rank higher than matches at the end.
-
           default: []
           x-categories:
             - Attributes
@@ -7307,7 +7121,6 @@ components:
             Characters and their normalized replacements.
 
             This overrides Algolia's default [normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization).
-
           type: object
           example:
             default:
@@ -7336,7 +7149,6 @@ components:
             If you want to use the same attribute also for faceting, use the `afterDistinct` modifier of the `attributesForFaceting` setting.
 
             This applies faceting _after_ deduplication, which will result in accurate facet counts.
-
           example: url
           type: string
         maxFacetHits:
@@ -7378,11 +7190,9 @@ components:
 
 
             - `asc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in ascending order.
 
             - `desc("ATTRIBUTE")`.
-
               Sort the index by the values of an attribute, in descending order.
 
             If you use two or more custom ranking attributes,
@@ -7390,7 +7200,6 @@ components:
             [reduce the precision](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/how-to/controlling-custom-ranking-metrics-precision) of your first attributes,
 
             or the other attributes will never be applied.
-
           default: []
           x-categories:
             - Ranking
@@ -7407,7 +7216,6 @@ components:
           type: string
           description: >
             Replica indices only: the name of the primary index for this replica.
-
     settingsResponse:
       allOf:
         - $ref: '#/components/schemas/indexSettings'
@@ -7466,7 +7274,6 @@ components:
           type: string
           description: >
             [Placeholder token](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/synonyms-placeholders) to be put inside records.
-
           example: <Street>
         replacements:
           type: array
@@ -7561,7 +7368,6 @@ components:
             The required ACL is listed in each endpoint's reference.
 
             For more information, see [access control list](https://www.algolia.com/doc/guides/security/api-keys/#access-control-list-acl).
-
           example:
             - search
             - addObject
@@ -7589,7 +7395,6 @@ components:
             - `*_dev` matches all indices ending with "_dev".
 
             - `*_products_*` matches all indices containing "_products_".
-
           example:
             - dev_*
             - prod_en_products
@@ -7605,7 +7410,6 @@ components:
             If you set this to 0, the maximum allowed value (1,000) applies.
 
             If you also set `hitsPerPage` on the index, the engine uses the lower of the two values.
-
           default: 0
         maxQueriesPerIPPerHour:
           type: integer
@@ -7616,7 +7420,6 @@ components:
             If this limit is reached, the API returns an error with status code `429`.
 
             By default, there's no limit.
-
           default: 0
         queryParameters:
           type: string
@@ -7630,7 +7433,6 @@ components:
 
 
             Creating an API key fails if the request is made from an IP address outside the restricted range.
-
           example: typoTolerance=strict&restrictSources=192.168.1.0/24
           default: ''
         referers:
@@ -7654,7 +7456,6 @@ components:
             Like all HTTP headers, referrers can be spoofed. Don't rely on them to secure your data.
 
             For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).
-
           example:
             - '*algolia.com*'
           default: []
@@ -7713,7 +7514,6 @@ components:
         For example, if `context: mobile`, the rule is only triggered when the search request has a matching `ruleContexts: mobile`.
 
         A rule context must only contain alphanumeric characters.
-
       example: mobile
     condition:
       type: object
@@ -7730,7 +7530,6 @@ components:
             The rule is triggered if the query matches the literal string or a value of the specified facet.
 
             For example, with `pattern: {facet:genre}`, the rule is triggered when users search for a genre, such as "comedy".
-
           example: '{facet:genre}'
         anchoring:
           $ref: '#/components/schemas/anchoring'
@@ -7751,7 +7550,6 @@ components:
             You can use `filters` on its own or combine it with the `pattern` parameter.
 
             You can't combine multiple filters with `OR` and you can't use numeric filters.
-
           example: genre:comedy
     editType:
       description: Type of edit.
@@ -7794,7 +7592,6 @@ components:
         If `consequenceQuery` is a string, the entire search query is replaced with that string.
 
         If `consequenceQuery` is an object, it describes incremental edits made to the query.
-
       oneOf:
         - $ref: '#/components/schemas/consequenceQueryObject'
         - type: string
@@ -7811,7 +7608,6 @@ components:
             The name must match placeholders in the `pattern` parameter.
 
             For example, with `pattern: {facet:genre}`, `automaticFacetFilters` must be `genre`.
-
         score:
           type: integer
           default: 1
@@ -7826,7 +7622,6 @@ components:
             If true the filter has multiple matches, multiple occurrences are combined with the logical `OR` operation.
 
             If false, multiple occurrences are combined with the logical `AND` operation.
-
       required:
         - facet
     automaticFacetFilters:
@@ -7839,7 +7634,6 @@ components:
         For example, if users search for "comedy", which matches a facet value of the "genre" facet,
 
         you can filter the results to show the top-ranked comedy movies.
-
       oneOf:
         - type: array
           items:
@@ -7854,7 +7648,6 @@ components:
 
 
         You can use all search parameters, plus special `automaticFacetFilters`, `automaticOptionalFacetFilters`, and `query`.
-
       additionalProperties: false
       properties:
         query:
@@ -7925,7 +7718,6 @@ components:
 
 
         For more information, see [Consequences](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#consequences).
-
       additionalProperties: false
       properties:
         params:
@@ -7938,7 +7730,6 @@ components:
 
 
             You can promote up to 300 records, either individually, or as groups of up to 100 records each.
-
           items:
             $ref: '#/components/schemas/promote'
         filterPromotes:
@@ -7956,7 +7747,6 @@ components:
 
 
             > In the Algolia dashboard, when you use the **Pin an item** consequence, `filterPromotes` appears as the checkbox: **Pinned items must match active filters to be displayed.** For examples, see [Promote results with rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits/#promote-results-matching-active-filters).
-
         hide:
           type: array
           maxItems: 50
@@ -7991,7 +7781,6 @@ components:
             A JSON object with custom data that will be appended to the `userData` array in the response.
 
             This object isn't interpreted by the API and is limited to 1&nbsp;kB of minified JSON.
-
           example:
             settingID: f2a7b51e3503acc6a39b3784ffb84300
             pluginVersion: 1.6.0
@@ -8027,7 +7816,6 @@ components:
             Some consequences require specific conditions or don't require any condition.
 
             For more information, see [Conditions](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#conditions).
-
           items:
             $ref: '#/components/schemas/condition'
         consequence:
@@ -8054,7 +7842,10 @@ components:
           type: string
         condition:
           deprecated: true
-          description: "Legacy field for a single condition. This field is maintained for backward compatibility \nwith older rules but should not be used in new implementations.\n"
+          description: >
+            Legacy field for a single condition. This field is maintained for backward compatibility 
+
+            with older rules but should not be used in new implementations.
           $ref: '#/components/schemas/condition'
       required:
         - objectID
@@ -8079,7 +7870,6 @@ components:
 
 
         For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.
-
     parameters_hitsPerPage:
       type: integer
       default: 20
@@ -8098,7 +7888,6 @@ components:
 
 
         For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.
-
     dictionaryType:
       type: string
       enum:
@@ -8203,7 +7992,6 @@ components:
         Only `stopwords` is supported.
 
         The keys of the `stopwords` object are [language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) of languages with a built-in stop-word dictionary.
-
       additionalProperties: false
       properties:
         plurals:
@@ -8525,7 +8313,6 @@ components:
             For example, if you set `group:admin` as fixed filter on your generated API key,
 
             and add `groups:visitors` to the search query, the complete set of filters will be `group:admin AND groups:visitors`.
-
         validUntil:
           type: integer
           format: int64
@@ -8549,7 +8336,6 @@ components:
             - `*_dev` matches all indices ending with "_dev".
 
             - `*_products_*` matches all indices containing "_products_".
-
         restrictSources:
           type: string
           description: >
@@ -8559,7 +8345,6 @@ components:
             You can only add a single source, but you can provide a range of IP addresses.
 
             Use this to protect against API key leaking and reuse.
-
           example: 192.168.1.0/24
         userToken:
           type: string
@@ -8570,7 +8355,6 @@ components:
             By default, rate limits are set based on IP addresses. This can be an issue if many users search from the same IP address.
 
             To avoid this, add a user token to each generated API key.
-
     replaceAllObjectsResponse:
       type: object
       additionalProperties: false
@@ -8671,7 +8455,6 @@ components:
             This field is always null when used with the Push endpoint.
 
             When used for a source discover or source validate run, it will include the sampled data of the source.
-
           items:
             type: object
         events:
@@ -8975,7 +8758,6 @@ components:
         Include it when you contact the Algolia support team about a specific request.
 
         Retried requests can share an identifier, so don't use it as a unique key.
-
       example: MyAppl-1tMcE-a7BqLm2Pd0Z
       schema:
         type: string

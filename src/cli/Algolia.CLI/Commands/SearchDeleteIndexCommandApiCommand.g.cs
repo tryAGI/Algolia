@@ -44,7 +44,6 @@ Deletes an index and all its settings.
 - If you try to delete a non-existing index, the operation is ignored without warning.
 - If the index you want to delete has replica indices, the replicas become independent indices.
 - If the index you want to delete is a replica index, you must first unlink it from its primary index before you can delete it.
-
   For more information, see [Delete replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/deleting-replicas).
 ");
                         command.Arguments.Add(IndexName);

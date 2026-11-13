@@ -45,13 +45,10 @@ You can use these filter expressions:
 You can combine filters with `AND`, `OR`, and `NOT` operators with the following restrictions:
 
 - You can only combine filters of the same type with `OR`.
-
   **Not supported:** `facet:value OR num > 3`.
 - You can't use `NOT` with combinations of filters.
-
   **Not supported:** `NOT(facet:value OR facet:value)`
 - You can't combine conjunctions (`AND`) with `OR`.
-
   **Not supported:** `facet:value OR (facet:value AND facet:value)`
 
 Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.

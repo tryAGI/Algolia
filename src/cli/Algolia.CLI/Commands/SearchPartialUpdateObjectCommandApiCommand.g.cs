@@ -67,11 +67,9 @@ internal static partial class SearchPartialUpdateObjectCommandApiCommand
 Adds new attributes to a record, or updates existing ones.
 
 - If a record with the specified object ID doesn't exist,
-
   a new record is added to the index **if** `createIfNotExists` is true.
 - If the index doesn't exist yet, this method creates a new index.
 - Use first-level attributes only. Nested attributes aren't supported.
-
   If you specify a nested attribute, this operation replaces its first-level ancestor.
 
 To update attributes without replacing the full record, use these built-in operations.
@@ -83,11 +81,9 @@ These operations are useful when the initial data isn't available.
 - `Remove`: remove all matching number or string elements from an array attribute made of numbers or strings.
 - `AddUnique`: add a number or string element to an array attribute made of numbers or strings only if it's not already present.
 - `IncrementFrom`: increment a numeric integer attribute only if the provided value matches the current value. Otherwise, the update is ignored.
-
   Example: If you pass an `IncrementFrom` value of 2 for the `version` attribute but the current value is 1, the API ignores the update.
   If the object doesn't exist, the API only creates it if you pass an `IncrementFrom` value of 0.
 - `IncrementSet`: increment a numeric integer attribute only if the provided value is greater than the current value. Otherwise, the update is ignored.
-
   Example: If you pass an `IncrementSet` value of 2 for the `version` attribute and the current value is 1, the API updates the object.
   If the object doesn't exist yet, the API only creates it if you pass an `IncrementSet` value greater than 0.
 
