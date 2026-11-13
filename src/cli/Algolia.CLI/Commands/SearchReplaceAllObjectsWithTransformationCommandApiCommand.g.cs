@@ -61,7 +61,6 @@ internal static partial class SearchReplaceAllObjectsWithTransformationCommandAp
 Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).
 
 This method replaces all records without downtime. It performs these operations:
-
   1. Copy settings, synonyms, and rules from your original index to a temporary index.
   2. Add your new records to the temporary index.
   3. Replace your original index with the temporary index.
