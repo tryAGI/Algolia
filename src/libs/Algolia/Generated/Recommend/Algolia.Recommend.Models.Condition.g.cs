@@ -44,6 +44,15 @@ namespace Algolia.Recommend
         public string? Context { get; set; }
 
         /// <summary>
+        /// Facet that a Trending Items request must target for the rule to apply.<br/>
+        /// Only available for the `trending-items` model.<br/>
+        /// Rules without `requestScope` apply to all Trending Items requests.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("requestScope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.Recommend.JsonConverters.RequestScopeJsonConverter))]
+        public global::Algolia.Recommend.RequestScope? RequestScope { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,15 +87,22 @@ namespace Algolia.Recommend
         /// A rule context must only contain alphanumeric characters.<br/>
         /// Example: mobile
         /// </param>
+        /// <param name="requestScope">
+        /// Facet that a Trending Items request must target for the rule to apply.<br/>
+        /// Only available for the `trending-items` model.<br/>
+        /// Rules without `requestScope` apply to all Trending Items requests.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Condition(
             string? filters,
-            string? context)
+            string? context,
+            global::Algolia.Recommend.RequestScope? requestScope)
         {
             this.Filters = filters;
             this.Context = context;
+            this.RequestScope = requestScope;
         }
 
         /// <summary>

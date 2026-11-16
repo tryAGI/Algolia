@@ -14,7 +14,10 @@ namespace Algolia.Recommend
         /// - Condition `filters` triggers if the source item matches the specified filters.<br/>
         /// - Condition `filters` accepts numeric filters.<br/>
         /// - Consequence `params` only covers filtering parameters.<br/>
-        /// - Consequence `automaticFacetFilters` doesn't require a facet value placeholder (it tries to match the data source item's attributes instead).
+        /// - Consequence `automaticFacetFilters` doesn't require a facet value placeholder (it tries to match the data source item's attributes instead).<br/>
+        /// Trending Items requests have no source item, so rules for the `trending-items` model differ:<br/>
+        /// - Condition `filters` and consequence `automaticFacetFilters` are unavailable.<br/>
+        /// - Condition `requestScope` applies the rule to requests without a facet, or to requests for a specific facet.
         /// </summary>
         /// <param name="indexName">
         /// Example: ALGOLIA_INDEX_NAME
@@ -41,7 +44,10 @@ namespace Algolia.Recommend
         /// - Condition `filters` triggers if the source item matches the specified filters.<br/>
         /// - Condition `filters` accepts numeric filters.<br/>
         /// - Consequence `params` only covers filtering parameters.<br/>
-        /// - Consequence `automaticFacetFilters` doesn't require a facet value placeholder (it tries to match the data source item's attributes instead).
+        /// - Consequence `automaticFacetFilters` doesn't require a facet value placeholder (it tries to match the data source item's attributes instead).<br/>
+        /// Trending Items requests have no source item, so rules for the `trending-items` model differ:<br/>
+        /// - Condition `filters` and consequence `automaticFacetFilters` are unavailable.<br/>
+        /// - Condition `requestScope` applies the rule to requests without a facet, or to requests for a specific facet.
         /// </summary>
         /// <param name="indexName">
         /// Example: ALGOLIA_INDEX_NAME
