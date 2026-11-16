@@ -15,11 +15,11 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        RelatedProducts,
+        LookingSimilar,
         /// <summary>
         ///
         /// </summary>
-        TrendingFacets,
+        RelatedProducts,
         /// <summary>
         ///
         /// </summary>
@@ -39,8 +39,8 @@ namespace Algolia.Recommend
             return value switch
             {
                 RecommendModels.BoughtTogether => "bought-together",
+                RecommendModels.LookingSimilar => "looking-similar",
                 RecommendModels.RelatedProducts => "related-products",
-                RecommendModels.TrendingFacets => "trending-facets",
                 RecommendModels.TrendingItems => "trending-items",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace Algolia.Recommend
             return value switch
             {
                 "bought-together" => RecommendModels.BoughtTogether,
+                "looking-similar" => RecommendModels.LookingSimilar,
                 "related-products" => RecommendModels.RelatedProducts,
-                "trending-facets" => RecommendModels.TrendingFacets,
                 "trending-items" => RecommendModels.TrendingItems,
                 _ => null,
             };

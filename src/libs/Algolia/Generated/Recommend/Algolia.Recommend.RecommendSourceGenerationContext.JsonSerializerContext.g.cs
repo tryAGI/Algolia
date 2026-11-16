@@ -135,6 +135,8 @@ namespace Algolia.Recommend
 
             typeof(global::Algolia.Recommend.JsonConverters.RecommendationsResultsJsonConverter),
 
+            typeof(global::Algolia.Recommend.JsonConverters.RequestScopeJsonConverter),
+
             typeof(global::Algolia.Recommend.JsonConverters.UnixTimestampJsonConverter),
         })]
     #pragma warning restore CS3016
@@ -258,6 +260,9 @@ namespace Algolia.Recommend
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendationsResults), TypeInfoPropertyName = "RecommendationsResults2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RecommendModels), TypeInfoPropertyName = "RecommendModels2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.GlobalRequestScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.FacetRequestScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.RequestScope), TypeInfoPropertyName = "RequestScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.Condition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.Recommend.HideConsequenceObject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.Recommend.HideConsequenceObject>))]

@@ -506,99 +506,111 @@ namespace Algolia.Recommend
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.Condition? Type117 { get; set; }
+        public global::Algolia.Recommend.GlobalRequestScope? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.HideConsequenceObject? Type118 { get; set; }
+        public global::Algolia.Recommend.FacetRequestScope? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HideConsequenceObject>? Type119 { get; set; }
+        public global::Algolia.Recommend.RequestScope? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.PromoteConsequenceObject? Type120 { get; set; }
+        public global::Algolia.Recommend.Condition? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.PromoteConsequenceObject>? Type121 { get; set; }
+        public global::Algolia.Recommend.HideConsequenceObject? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.AutoFacetFilter? Type122 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.HideConsequenceObject>? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.ParamsConsequence? Type123 { get; set; }
+        public global::Algolia.Recommend.PromoteConsequenceObject? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AutoFacetFilter>? Type124 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.PromoteConsequenceObject>? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.Consequence? Type125 { get; set; }
+        public global::Algolia.Recommend.AutoFacetFilter? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TimeRange? Type126 { get; set; }
+        public global::Algolia.Recommend.ParamsConsequence? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendRule? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.AutoFacetFilter>? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendRuleMetadata? Type128 { get; set; }
+        public global::Algolia.Recommend.Consequence? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TimeRange>? Type129 { get; set; }
+        public global::Algolia.Recommend.TimeRange? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.TaskStatus? Type130 { get; set; }
+        public global::Algolia.Recommend.RecommendRule? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.RecommendUpdatedAtResponse? Type131 { get; set; }
+        public global::Algolia.Recommend.RecommendRuleMetadata? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendationsRequest? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.TimeRange>? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsRequest>? Type133 { get; set; }
+        public global::Algolia.Recommend.TaskStatus? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SearchRecommendRulesRequest? Type134 { get; set; }
+        public global::Algolia.Recommend.RecommendUpdatedAtResponse? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendRule>? Type135 { get; set; }
+        public global::Algolia.Recommend.GetRecommendationsRequest? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendationsResponse? Type136 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsRequest>? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsResults>? Type137 { get; set; }
+        public global::Algolia.Recommend.SearchRecommendRulesRequest? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.DeleteRecommendRuleResponse? Type138 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendRule>? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.GetRecommendStatusResponse? Type139 { get; set; }
+        public global::Algolia.Recommend.GetRecommendationsResponse? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Recommend.SearchRecommendRulesResponse? Type140 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Recommend.RecommendationsResults>? Type140 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Algolia.Recommend.DeleteRecommendRuleResponse? Type141 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Algolia.Recommend.GetRecommendStatusResponse? Type142 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Algolia.Recommend.SearchRecommendRulesResponse? Type143 { get; set; }
 
         /// <summary>
         ///
