@@ -23,7 +23,7 @@ internal static partial class SearchDeleteObjectsCommandApiCommand
 
     private static Option<bool?> WaitForTasks { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--wait-for-tasks",
-        description: @"Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.");
+        description: @"Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. In Java, pass `waitForTasks` together with `batchSize` or `requestOptions`; there's no overload that takes `waitForTasks` on its own.");
 
     private static Option<int?> BatchSize { get; } = new(
         name: @"--batch-size")
