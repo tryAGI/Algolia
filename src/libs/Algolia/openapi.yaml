@@ -3751,7 +3751,7 @@ paths:
         - in: query
           name: waitForTasks
           description: >-
-            Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.
+            Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. In Java, pass `waitForTasks` together with `batchSize` or `requestOptions`; there's no overload that takes `waitForTasks` on its own.
           required: false
           schema:
             type: boolean
@@ -3895,7 +3895,7 @@ paths:
         - in: query
           name: waitForTasks
           description: >-
-            Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.
+            Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. In Java, pass `waitForTasks` together with `batchSize` or `requestOptions`; there's no overload that takes `waitForTasks` on its own.
           required: false
           schema:
             type: boolean
