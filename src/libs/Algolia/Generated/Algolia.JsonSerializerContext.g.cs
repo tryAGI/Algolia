@@ -299,6 +299,7 @@ namespace Algolia
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.ReRankingApplyFilter), TypeInfoPropertyName = "ReRankingApplyFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Algolia.ReRankingApplyFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.IndexSettingsAsSearchParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchParamsAllowReRanking))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchParamsObject), TypeInfoPropertyName = "SearchParamsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.SearchParams), TypeInfoPropertyName = "SearchParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Algolia.RedirectRuleIndexMetadata))]

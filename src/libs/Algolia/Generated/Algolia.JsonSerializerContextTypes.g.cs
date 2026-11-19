@@ -302,855 +302,859 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParamsObject? Type66 { get; set; }
+        public global::Algolia.SearchParamsAllowReRanking? Type66 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchParams? Type67 { get; set; }
+        public global::Algolia.SearchParamsObject? Type67 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RedirectRuleIndexMetadata? Type68 { get; set; }
+        public global::Algolia.SearchParams? Type68 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RedirectRuleIndexMetadataData? Type69 { get; set; }
+        public global::Algolia.RedirectRuleIndexMetadata? Type69 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.UserData? Type70 { get; set; }
+        public global::Algolia.RedirectRuleIndexMetadataData? Type70 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponse? Type71 { get; set; }
+        public global::Algolia.UserData? Type71 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponseExhaustive? Type72 { get; set; }
+        public global::Algolia.BaseSearchResponse? Type72 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, int>>? Type73 { get; set; }
+        public global::Algolia.BaseSearchResponseExhaustive? Type73 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int>? Type74 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, int>>? Type74 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.BaseSearchResponseFacetsStats2>? Type75 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type75 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponseFacetsStats2? Type76 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.BaseSearchResponseFacetsStats2>? Type76 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseSearchResponseRedirect? Type77 { get; set; }
+        public global::Algolia.BaseSearchResponseFacetsStats2? Type77 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.RedirectRuleIndexMetadata>? Type78 { get; set; }
+        public global::Algolia.BaseSearchResponseRedirect? Type78 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchPagination? Type79 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.RedirectRuleIndexMetadata>? Type79 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.MatchLevel? Type80 { get; set; }
+        public global::Algolia.SearchPagination? Type80 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HighlightResultOption? Type81 { get; set; }
+        public global::Algolia.MatchLevel? Type81 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult>? Type82 { get; set; }
+        public global::Algolia.HighlightResultOption? Type82 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HighlightResult? Type83 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.HighlightResult>? Type83 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.HighlightResult>? Type84 { get; set; }
+        public global::Algolia.HighlightResult? Type84 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SnippetResultOption? Type85 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.HighlightResult>? Type85 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? Type86 { get; set; }
+        public global::Algolia.SnippetResultOption? Type86 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SnippetResult? Type87 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.SnippetResult>? Type87 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SnippetResult>? Type88 { get; set; }
+        public global::Algolia.SnippetResult? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.MatchedGeoLocation? Type89 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SnippetResult>? Type89 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Personalization? Type90 { get; set; }
+        public global::Algolia.MatchedGeoLocation? Type90 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RankingInfo? Type91 { get; set; }
+        public global::Algolia.Personalization? Type91 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Hit? Type92 { get; set; }
+        public global::Algolia.RankingInfo? Type92 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.QueryCategorizationType? Type93 { get; set; }
+        public global::Algolia.Hit? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.CategoryPredictionBin? Type94 { get; set; }
+        public global::Algolia.QueryCategorizationType? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HierarchyPathEntry? Type95 { get; set; }
+        public global::Algolia.CategoryPredictionBin? Type95 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.CategoryPrediction? Type96 { get; set; }
+        public global::Algolia.HierarchyPathEntry? Type96 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.HierarchyPathEntry>? Type97 { get; set; }
+        public global::Algolia.CategoryPrediction? Type97 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AutoFilteringFilterEntry? Type98 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.HierarchyPathEntry>? Type98 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AutoFilteringResult? Type99 { get; set; }
+        public global::Algolia.AutoFilteringFilterEntry? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.AutoFilteringFilterEntry>? Type100 { get; set; }
+        public global::Algolia.AutoFilteringResult? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.QueryCategorization? Type101 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.AutoFilteringFilterEntry>? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.CategoryPrediction>? Type102 { get; set; }
+        public global::Algolia.QueryCategorization? Type102 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ResponseExtensions? Type103 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.CategoryPrediction>? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchHits? Type104 { get; set; }
+        public global::Algolia.ResponseExtensions? Type104 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Hit>? Type105 { get; set; }
+        public global::Algolia.SearchHits? Type105 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponse? Type106 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Hit>? Type106 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchTypeDefault? Type107 { get; set; }
+        public global::Algolia.SearchResponse? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchExtensionsQueryCategorization? Type108 { get; set; }
+        public global::Algolia.SearchTypeDefault? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchExtensions? Type109 { get; set; }
+        public global::Algolia.SearchExtensionsQueryCategorization? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForHitsSettings? Type110 { get; set; }
+        public global::Algolia.SearchExtensions? Type110 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForHits? Type111 { get; set; }
+        public global::Algolia.SearchForHitsSettings? Type111 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchTypeFacet? Type112 { get; set; }
+        public global::Algolia.SearchForHits? Type112 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacetsSettings? Type113 { get; set; }
+        public global::Algolia.SearchTypeFacet? Type113 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacets? Type114 { get; set; }
+        public global::Algolia.SearchForFacetsSettings? Type114 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchQuery? Type115 { get; set; }
+        public global::Algolia.SearchForFacets? Type115 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchStrategy? Type116 { get; set; }
+        public global::Algolia.SearchQuery? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacetValuesResponse? Type117 { get; set; }
+        public global::Algolia.SearchStrategy? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SearchForFacetValuesResponseFacetHit>? Type118 { get; set; }
+        public global::Algolia.SearchForFacetValuesResponse? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacetValuesResponseFacetHit? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SearchForFacetValuesResponseFacetHit>? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponsePartial? Type120 { get; set; }
+        public global::Algolia.SearchForFacetValuesResponseFacetHit? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponsePartialVariant3? Type121 { get; set; }
+        public global::Algolia.SearchResponsePartial? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResult? Type122 { get; set; }
+        public global::Algolia.SearchResponsePartialVariant3? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Cursor? Type123 { get; set; }
+        public global::Algolia.SearchResult? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowseParamsConfig? Type124 { get; set; }
+        public global::Algolia.Cursor? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowseParams? Type125 { get; set; }
+        public global::Algolia.BrowseParamsConfig? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowsePagination? Type126 { get; set; }
+        public global::Algolia.BrowseParams? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BrowseResponse? Type127 { get; set; }
+        public global::Algolia.BrowsePagination? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public long? Type128 { get; set; }
+        public global::Algolia.BrowseResponse? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteByParams? Type129 { get; set; }
+        public long? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.UpdatedAtResponse? Type130 { get; set; }
+        public global::Algolia.DeleteByParams? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Action? Type131 { get; set; }
+        public global::Algolia.UpdatedAtResponse? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchWriteParams? Type132 { get; set; }
+        public global::Algolia.Action? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.BatchWriteParamsRequest>? Type133 { get; set; }
+        public global::Algolia.BatchWriteParams? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchWriteParamsRequest? Type134 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.BatchWriteParamsRequest>? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchResponse? Type135 { get; set; }
+        public global::Algolia.BatchWriteParamsRequest? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseIndexSettings? Type136 { get; set; }
+        public global::Algolia.BatchResponse? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, string>>? Type137 { get; set; }
+        public global::Algolia.BaseIndexSettings? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type138 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, string>>? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.IndexSettings? Type139 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.WithPrimary? Type140 { get; set; }
+        public global::Algolia.IndexSettings? Type140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SettingsResponse? Type141 { get; set; }
+        public global::Algolia.WithPrimary? Type141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SynonymType? Type142 { get; set; }
+        public global::Algolia.SettingsResponse? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SynonymHit? Type143 { get; set; }
+        public global::Algolia.SynonymType? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SynonymHit>? Type144 { get; set; }
+        public global::Algolia.SynonymHit? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchSynonymsResponse? Type145 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SynonymHit>? Type145 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BaseGetApiKeyResponse? Type146 { get; set; }
+        public global::Algolia.SearchSynonymsResponse? Type146 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Acl? Type147 { get; set; }
+        public global::Algolia.BaseGetApiKeyResponse? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ApiKey? Type148 { get; set; }
+        public global::Algolia.Acl? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Acl>? Type149 { get; set; }
+        public global::Algolia.ApiKey? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetApiKeyResponse? Type150 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Acl>? Type150 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AddApiKeyResponse? Type151 { get; set; }
+        public global::Algolia.GetApiKeyResponse? Type151 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Anchoring? Type152 { get; set; }
+        public global::Algolia.AddApiKeyResponse? Type152 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Condition? Type153 { get; set; }
+        public global::Algolia.Anchoring? Type153 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.EditType? Type154 { get; set; }
+        public global::Algolia.Condition? Type154 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Edit? Type155 { get; set; }
+        public global::Algolia.EditType? Type155 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceQueryObject? Type156 { get; set; }
+        public global::Algolia.Edit? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Edit>? Type157 { get; set; }
+        public global::Algolia.ConsequenceQueryObject? Type157 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceQuery? Type158 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Edit>? Type158 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AutomaticFacetFilter? Type159 { get; set; }
+        public global::Algolia.ConsequenceQuery? Type159 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AutomaticFacetFilters? Type160 { get; set; }
+        public global::Algolia.AutomaticFacetFilter? Type160 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? Type161 { get; set; }
+        public global::Algolia.AutomaticFacetFilters? Type161 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Params? Type162 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.AutomaticFacetFilter>? Type162 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceParams? Type163 { get; set; }
+        public global::Algolia.Params? Type163 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.PromoteObjectIDs? Type164 { get; set; }
+        public global::Algolia.ConsequenceParams? Type164 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.PromoteObjectID? Type165 { get; set; }
+        public global::Algolia.PromoteObjectIDs? Type165 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Promote? Type166 { get; set; }
+        public global::Algolia.PromoteObjectID? Type166 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Consequence? Type167 { get; set; }
+        public global::Algolia.Promote? Type167 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Promote>? Type168 { get; set; }
+        public global::Algolia.Consequence? Type168 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.ConsequenceHideItem>? Type169 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Promote>? Type169 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceHideItem? Type170 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.ConsequenceHideItem>? Type170 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ConsequenceRedirect? Type171 { get; set; }
+        public global::Algolia.ConsequenceHideItem? Type171 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.TimeRange? Type172 { get; set; }
+        public global::Algolia.ConsequenceRedirect? Type172 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Rule? Type173 { get; set; }
+        public global::Algolia.TimeRange? Type173 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Condition>? Type174 { get; set; }
+        public global::Algolia.Rule? Type174 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.TimeRange>? Type175 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Condition>? Type175 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryType? Type176 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.TimeRange>? Type176 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryAction? Type177 { get; set; }
+        public global::Algolia.DictionaryType? Type177 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryEntryState? Type178 { get; set; }
+        public global::Algolia.DictionaryAction? Type178 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryEntryType? Type179 { get; set; }
+        public global::Algolia.DictionaryEntryState? Type179 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryEntry? Type180 { get; set; }
+        public global::Algolia.DictionaryEntryType? Type180 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchDictionaryEntriesResponse? Type181 { get; set; }
+        public global::Algolia.DictionaryEntry? Type181 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.DictionaryEntry>? Type182 { get; set; }
+        public global::Algolia.SearchDictionaryEntriesResponse? Type182 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, bool>? Type183 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.DictionaryEntry>? Type183 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.StandardEntries? Type184 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Type184 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DictionaryLanguageVariant1? Type185 { get; set; }
+        public global::Algolia.StandardEntries? Type185 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Languages? Type186 { get; set; }
+        public global::Algolia.DictionaryLanguageVariant1? Type186 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.UserId? Type187 { get; set; }
+        public global::Algolia.Languages? Type187 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Source? Type188 { get; set; }
+        public global::Algolia.UserId? Type188 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Source>? Type189 { get; set; }
+        public global::Algolia.Source? Type189 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.LogType? Type190 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Source>? Type190 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.TaskStatus? Type191 { get; set; }
+        public global::Algolia.LogType? Type191 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetTaskResponse? Type192 { get; set; }
+        public global::Algolia.TaskStatus? Type192 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.OperationType? Type193 { get; set; }
+        public global::Algolia.GetTaskResponse? Type193 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ScopeType? Type194 { get; set; }
+        public global::Algolia.OperationType? Type194 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.FetchedIndexAbTestTarget? Type195 { get; set; }
+        public global::Algolia.ScopeType? Type195 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.FetchedIndexAbTestVariant? Type196 { get; set; }
+        public global::Algolia.FetchedIndexAbTestTarget? Type196 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.FetchedIndexAbTest? Type197 { get; set; }
+        public global::Algolia.FetchedIndexAbTestVariant? Type197 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.FetchedIndexAbTestVariant>? Type198 { get; set; }
+        public global::Algolia.FetchedIndexAbTest? Type198 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.FetchedIndex? Type199 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.FetchedIndexAbTestVariant>? Type199 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ListIndicesResponse? Type200 { get; set; }
+        public global::Algolia.FetchedIndex? Type200 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.FetchedIndex>? Type201 { get; set; }
+        public global::Algolia.ListIndicesResponse? Type201 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ApiKeyOperation? Type202 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.FetchedIndex>? Type202 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SecuredApiKeyRestrictions? Type203 { get; set; }
+        public global::Algolia.ApiKeyOperation? Type203 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ReplaceAllObjectsResponse? Type204 { get; set; }
+        public global::Algolia.SecuredApiKeyRestrictions? Type204 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.BatchResponse>? Type205 { get; set; }
+        public global::Algolia.ReplaceAllObjectsResponse? Type205 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.EventStatusEnum? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.BatchResponse>? Type206 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.EventType? Type207 { get; set; }
+        public global::Algolia.EventStatusEnum? Type207 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.Event? Type208 { get; set; }
+        public global::Algolia.EventType? Type208 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.WatchResponse? Type209 { get; set; }
+        public global::Algolia.Event? Type209 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Event>? Type210 { get; set; }
+        public global::Algolia.WatchResponse? Type210 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ReplaceAllObjectsWithTransformationResponse? Type211 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Event>? Type211 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.WatchResponse>? Type212 { get; set; }
+        public global::Algolia.ReplaceAllObjectsWithTransformationResponse? Type212 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BuiltInOperationType? Type213 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.WatchResponse>? Type213 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BuiltInOperationValue? Type214 { get; set; }
+        public global::Algolia.BuiltInOperationType? Type214 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchRequest? Type215 { get; set; }
+        public global::Algolia.BuiltInOperationValue? Type215 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SearchQuery>? Type216 { get; set; }
+        public global::Algolia.SearchRequest? Type216 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchForFacetValuesRequest? Type217 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SearchQuery>? Type217 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.MultipleBatchRequest? Type218 { get; set; }
+        public global::Algolia.SearchForFacetValuesRequest? Type218 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.MultipleBatchRequestRequest>? Type219 { get; set; }
+        public global::Algolia.MultipleBatchRequest? Type219 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.MultipleBatchRequestRequest? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.MultipleBatchRequestRequest>? Type220 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetObjectsRequest? Type221 { get; set; }
+        public global::Algolia.MultipleBatchRequestRequest? Type221 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.GetObjectsRequestRequest>? Type222 { get; set; }
+        public global::Algolia.GetObjectsRequest? Type222 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetObjectsRequestRequest? Type223 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.GetObjectsRequestRequest>? Type223 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchSynonymsRequest? Type224 { get; set; }
+        public global::Algolia.GetObjectsRequestRequest? Type224 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.Rule>? Type225 { get; set; }
+        public global::Algolia.SearchSynonymsRequest? Type225 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchRulesRequest? Type226 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.Rule>? Type226 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchDictionaryEntriesRequest? Type227 { get; set; }
+        public global::Algolia.SearchRulesRequest? Type227 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.BatchDictionaryEntriesRequestRequest>? Type228 { get; set; }
+        public global::Algolia.BatchDictionaryEntriesRequest? Type228 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchDictionaryEntriesRequestRequest? Type229 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.BatchDictionaryEntriesRequestRequest>? Type229 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchDictionaryEntriesRequest? Type230 { get; set; }
+        public global::Algolia.BatchDictionaryEntriesRequestRequest? Type230 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SetDictionarySettingsRequest? Type231 { get; set; }
+        public global::Algolia.SearchDictionaryEntriesRequest? Type231 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AssignUserIdRequest? Type232 { get; set; }
+        public global::Algolia.SetDictionarySettingsRequest? Type232 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchAssignUserIdsRequest? Type233 { get; set; }
+        public global::Algolia.AssignUserIdRequest? Type233 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchUserIdsRequest? Type234 { get; set; }
+        public global::Algolia.BatchAssignUserIdsRequest? Type234 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.OperationIndexRequest? Type235 { get; set; }
+        public global::Algolia.SearchUserIdsRequest? Type235 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.ScopeType>? Type236 { get; set; }
+        public global::Algolia.OperationIndexRequest? Type236 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchResponse2? Type237 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.ScopeType>? Type237 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SearchResult>? Type238 { get; set; }
+        public global::Algolia.SearchResponse2? Type238 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SaveObjectResponse? Type239 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SearchResult>? Type239 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteIndexResponse? Type240 { get; set; }
+        public global::Algolia.SaveObjectResponse? Type240 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AddOrUpdateObjectResponse? Type241 { get; set; }
+        public global::Algolia.DeleteIndexResponse? Type241 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteObjectResponse? Type242 { get; set; }
+        public global::Algolia.AddOrUpdateObjectResponse? Type242 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.PartialUpdateObjectResponse? Type243 { get; set; }
+        public global::Algolia.DeleteObjectResponse? Type243 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.MultipleBatchResponse? Type244 { get; set; }
+        public global::Algolia.PartialUpdateObjectResponse? Type244 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, long>? Type245 { get; set; }
+        public global::Algolia.MultipleBatchResponse? Type245 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetObjectsResponse? Type246 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, long>? Type246 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SaveSynonymResponse? Type247 { get; set; }
+        public global::Algolia.GetObjectsResponse? Type247 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteSynonymResponse? Type248 { get; set; }
+        public global::Algolia.SaveSynonymResponse? Type248 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ListApiKeysResponse? Type249 { get; set; }
+        public global::Algolia.DeleteSynonymResponse? Type249 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.GetApiKeyResponse>? Type250 { get; set; }
+        public global::Algolia.ListApiKeysResponse? Type250 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.UpdateApiKeyResponse? Type251 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.GetApiKeyResponse>? Type251 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteApiKeyResponse? Type252 { get; set; }
+        public global::Algolia.UpdateApiKeyResponse? Type252 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchRulesResponse? Type253 { get; set; }
+        public global::Algolia.DeleteApiKeyResponse? Type253 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetDictionarySettingsResponse? Type254 { get; set; }
+        public global::Algolia.SearchRulesResponse? Type254 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Languages>? Type255 { get; set; }
+        public global::Algolia.GetDictionarySettingsResponse? Type255 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AssignUserIdResponse? Type256 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Algolia.Languages>? Type256 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ListUserIdsResponse? Type257 { get; set; }
+        public global::Algolia.AssignUserIdResponse? Type257 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.UserId>? Type258 { get; set; }
+        public global::Algolia.ListUserIdsResponse? Type258 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.BatchAssignUserIdsResponse? Type259 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.UserId>? Type259 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetTopUserIdsResponse? Type260 { get; set; }
+        public global::Algolia.BatchAssignUserIdsResponse? Type260 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Algolia.UserId>>>? Type261 { get; set; }
+        public global::Algolia.GetTopUserIdsResponse? Type261 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Algolia.UserId>>? Type262 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Algolia.UserId>>>? Type262 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.RemoveUserIdResponse? Type263 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Algolia.UserId>>? Type263 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ListClustersResponse? Type264 { get; set; }
+        public global::Algolia.RemoveUserIdResponse? Type264 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchUserIdsResponse? Type265 { get; set; }
+        public global::Algolia.ListClustersResponse? Type265 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.SearchUserIdsResponseHit>? Type266 { get; set; }
+        public global::Algolia.SearchUserIdsResponse? Type266 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchUserIdsResponseHit? Type267 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.SearchUserIdsResponseHit>? Type267 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.SearchUserIdsResponseHitHighlightResult? Type268 { get; set; }
+        public global::Algolia.SearchUserIdsResponseHit? Type268 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.HasPendingMappingsResponse? Type269 { get; set; }
+        public global::Algolia.SearchUserIdsResponseHitHighlightResult? Type269 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type270 { get; set; }
+        public global::Algolia.HasPendingMappingsResponse? Type270 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.ReplaceSourcesResponse? Type271 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type271 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.AppendSourceResponse? Type272 { get; set; }
+        public global::Algolia.ReplaceSourcesResponse? Type272 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.DeleteSourceResponse? Type273 { get; set; }
+        public global::Algolia.AppendSourceResponse? Type273 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetLogsResponse? Type274 { get; set; }
+        public global::Algolia.DeleteSourceResponse? Type274 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.GetLogsResponseLog>? Type275 { get; set; }
+        public global::Algolia.GetLogsResponse? Type275 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetLogsResponseLog? Type276 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.GetLogsResponseLog>? Type276 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Algolia.GetLogsResponseLogInnerQuerie>? Type277 { get; set; }
+        public global::Algolia.GetLogsResponseLog? Type277 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Algolia.GetLogsResponseLogInnerQuerie? Type278 { get; set; }
+        public global::System.Collections.Generic.IList<global::Algolia.GetLogsResponseLogInnerQuerie>? Type278 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Algolia.GetLogsResponseLogInnerQuerie? Type279 { get; set; }
 
         /// <summary>
         ///
