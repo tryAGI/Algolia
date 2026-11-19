@@ -53,10 +53,30 @@ namespace Algolia.JsonConverters
             {
                 // Legacy enum converters signal an incompatible JSON token with this exception.
             }
+
+            global::Algolia.SearchParamsAllowReRanking? allowReRanking = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchParamsAllowReRanking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchParamsAllowReRanking> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchParamsAllowReRanking).Name}");
+                allowReRanking = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
             var __value = new global::Algolia.SearchParamsObject(
                 @base,
 
-                indexSettingsAs
+                indexSettingsAs,
+
+                allowReRanking
                 );
 
             return __value;
@@ -103,6 +123,24 @@ namespace Algolia.JsonConverters
                 }
 
                 foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
+            }
+            if (value.IsAllowReRanking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Algolia.SearchParamsAllowReRanking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Algolia.SearchParamsAllowReRanking?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Algolia.SearchParamsAllowReRanking).Name}");
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickAllowReRanking(), typeInfo);
+                if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element2.EnumerateObject())
                 {
                     if (__writtenPropertyNames.Add(__property.Name))
                     {

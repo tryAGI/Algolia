@@ -120,6 +120,43 @@ namespace Algolia
         public global::Algolia.Params PickParams() => Params is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Algolia.SearchParamsAllowReRanking? SearchAllowReRanking { get; init; }
+#else
+        public global::Algolia.SearchParamsAllowReRanking? SearchAllowReRanking { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchAllowReRanking))]
+#endif
+        public bool IsSearchAllowReRanking => SearchAllowReRanking != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSearchAllowReRanking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Algolia.SearchParamsAllowReRanking? value)
+        {
+            value = SearchAllowReRanking;
+            return IsSearchAllowReRanking;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Algolia.SearchParamsAllowReRanking PickSearchAllowReRanking() => SearchAllowReRanking is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchAllowReRanking' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -192,21 +229,47 @@ namespace Algolia
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ConsequenceParams(global::Algolia.SearchParamsAllowReRanking value) => new ConsequenceParams((global::Algolia.SearchParamsAllowReRanking?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Algolia.SearchParamsAllowReRanking?(ConsequenceParams @this) => @this.SearchAllowReRanking;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ConsequenceParams(global::Algolia.SearchParamsAllowReRanking? value)
+        {
+            SearchAllowReRanking = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ConsequenceParams FromSearchAllowReRanking(global::Algolia.SearchParamsAllowReRanking? value) => new ConsequenceParams(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public ConsequenceParams(
             global::Algolia.BaseSearchParamsWithoutQuery? baseSearchWithoutQuery,
             global::Algolia.IndexSettingsAsSearchParams? indexSettingsAsSearch,
-            global::Algolia.Params? @params
+            global::Algolia.Params? @params,
+            global::Algolia.SearchParamsAllowReRanking? searchAllowReRanking
             )
         {
             BaseSearchWithoutQuery = baseSearchWithoutQuery;
             IndexSettingsAsSearch = indexSettingsAsSearch;
             Params = @params;
+            SearchAllowReRanking = searchAllowReRanking;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            SearchAllowReRanking as object ??
             Params as object ??
             IndexSettingsAsSearch as object ??
             BaseSearchWithoutQuery as object
@@ -218,7 +281,8 @@ namespace Algolia
         public override string? ToString() =>
             BaseSearchWithoutQuery?.ToString() ??
             IndexSettingsAsSearch?.ToString() ??
-            Params?.ToString()
+            Params?.ToString() ??
+            SearchAllowReRanking?.ToString()
             ;
 
         /// <summary>
@@ -226,7 +290,7 @@ namespace Algolia
         /// </summary>
         public bool Validate()
         {
-            return IsBaseSearchWithoutQuery && IsIndexSettingsAsSearch && IsParams;
+            return IsBaseSearchWithoutQuery && IsIndexSettingsAsSearch && IsParams && IsSearchAllowReRanking;
         }
 
         /// <summary>
@@ -236,6 +300,7 @@ namespace Algolia
             global::System.Func<global::Algolia.BaseSearchParamsWithoutQuery, TResult>? baseSearchWithoutQuery = null,
             global::System.Func<global::Algolia.IndexSettingsAsSearchParams, TResult>? indexSettingsAsSearch = null,
             global::System.Func<global::Algolia.Params, TResult>? @params = null,
+            global::System.Func<global::Algolia.SearchParamsAllowReRanking, TResult>? searchAllowReRanking = null,
             bool validate = true)
         {
             if (validate)
@@ -255,6 +320,10 @@ namespace Algolia
             {
                 return @params(__value2);
             }
+            else if (SearchAllowReRanking is { } __value3 && searchAllowReRanking != null)
+            {
+                return searchAllowReRanking(__value3);
+            }
 
             return default(TResult);
         }
@@ -268,6 +337,8 @@ namespace Algolia
             global::System.Action<global::Algolia.IndexSettingsAsSearchParams>? indexSettingsAsSearch = null,
 
             global::System.Action<global::Algolia.Params>? @params = null,
+
+            global::System.Action<global::Algolia.SearchParamsAllowReRanking>? searchAllowReRanking = null,
             bool validate = true)
         {
             if (validate)
@@ -286,6 +357,10 @@ namespace Algolia
             else if (Params is { } __value2)
             {
                 @params?.Invoke(__value2);
+            }
+            else if (SearchAllowReRanking is { } __value3)
+            {
+                searchAllowReRanking?.Invoke(__value3);
             }
         }
 
@@ -296,6 +371,7 @@ namespace Algolia
             global::System.Action<global::Algolia.BaseSearchParamsWithoutQuery>? baseSearchWithoutQuery = null,
             global::System.Action<global::Algolia.IndexSettingsAsSearchParams>? indexSettingsAsSearch = null,
             global::System.Action<global::Algolia.Params>? @params = null,
+            global::System.Action<global::Algolia.SearchParamsAllowReRanking>? searchAllowReRanking = null,
             bool validate = true)
         {
             if (validate)
@@ -314,6 +390,10 @@ namespace Algolia
             else if (Params is { } __value2)
             {
                 @params?.Invoke(__value2);
+            }
+            else if (SearchAllowReRanking is { } __value3)
+            {
+                searchAllowReRanking?.Invoke(__value3);
             }
         }
 
@@ -330,6 +410,8 @@ namespace Algolia
                 typeof(global::Algolia.IndexSettingsAsSearchParams),
                 Params,
                 typeof(global::Algolia.Params),
+                SearchAllowReRanking,
+                typeof(global::Algolia.SearchParamsAllowReRanking),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -348,7 +430,8 @@ namespace Algolia
             return
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.BaseSearchParamsWithoutQuery?>.Default.Equals(BaseSearchWithoutQuery, other.BaseSearchWithoutQuery) &&
                 global::System.Collections.Generic.EqualityComparer<global::Algolia.IndexSettingsAsSearchParams?>.Default.Equals(IndexSettingsAsSearch, other.IndexSettingsAsSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::Algolia.Params?>.Default.Equals(Params, other.Params)
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.Params?>.Default.Equals(Params, other.Params) &&
+                global::System.Collections.Generic.EqualityComparer<global::Algolia.SearchParamsAllowReRanking?>.Default.Equals(SearchAllowReRanking, other.SearchAllowReRanking)
                 ;
         }
 
