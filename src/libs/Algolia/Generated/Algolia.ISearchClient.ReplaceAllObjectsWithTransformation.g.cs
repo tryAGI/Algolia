@@ -13,7 +13,7 @@ namespace Algolia
         ///   3. Replace your original index with the temporary index.<br/>
         /// Notes:<br/>
         /// - Use the `safe` parameter to run these (asynchronous) operations in sequence.<br/>
-        /// - If there's an error during one of these steps, the temporary index isn't deleted.<br/>
+        /// - The method waits for every ingestion event of the pushed records to succeed before replacing your original index. If ingestion of any record batch fails (for example, the event status is `failed` or `critical`), the method throws an error, leaves your original index untouched, and tries to delete the temporary index.<br/>
         /// - This operation is rate-limited.<br/>
         /// - This method creates a temporary index, which temporarily doubles your record count.<br/>
         /// - Algolia doesn't count the three days with the highest number of records toward your monthly usage.<br/>
@@ -45,7 +45,7 @@ namespace Algolia
         ///   3. Replace your original index with the temporary index.<br/>
         /// Notes:<br/>
         /// - Use the `safe` parameter to run these (asynchronous) operations in sequence.<br/>
-        /// - If there's an error during one of these steps, the temporary index isn't deleted.<br/>
+        /// - The method waits for every ingestion event of the pushed records to succeed before replacing your original index. If ingestion of any record batch fails (for example, the event status is `failed` or `critical`), the method throws an error, leaves your original index untouched, and tries to delete the temporary index.<br/>
         /// - This operation is rate-limited.<br/>
         /// - This method creates a temporary index, which temporarily doubles your record count.<br/>
         /// - Algolia doesn't count the three days with the highest number of records toward your monthly usage.<br/>

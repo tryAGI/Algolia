@@ -23,7 +23,7 @@ internal static partial class SearchSaveObjectsWithTransformationCommandApiComma
 
     private static Option<bool?> WaitForTasks { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--wait-for-tasks",
-        description: @"Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.");
+        description: @"Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. When `true`, the method throws an error if the ingestion event of any batch doesn't succeed (for example, its status is `failed` or `critical`).");
 
     private static Option<int?> BatchSize { get; } = new(
         name: @"--batch-size")
