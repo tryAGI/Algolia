@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Algolia
@@ -15,6 +17,14 @@ namespace Algolia
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Algolia.JsonConverters.TaskStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Algolia.TaskStatus Status { get; set; }
+
+        /// <summary>
+        /// Indicates whether the index has pending tasks. This value is deprecated and always `false`. Don't use it.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pendingTask")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? PendingTask { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
